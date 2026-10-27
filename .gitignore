@@ -1,0 +1,19 @@
+# Dependencias y temporales
+node_modules/
+dist/
+build/
+.cache/
+*.log
+
+# Scripts de testeo y archivos temporales
+test_script.js
+check_script_*.js
+*.tmp
+
+# Archivos de entorno y SO
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Agentes locales
+.agents/
