@@ -1,0 +1,1655 @@
+[
+  {
+    "id": 145,
+    "tp_number": 1,
+    "tp_question": 1,
+    "prompt": "Situación 6: Instalación y funcionamiento de un servidor de base de datos relacional.\nHemos decido instalar SQLite debido a una diferencia con las anteriores en cuanto a los sistemas operativos en los que podemos ejecutarla. Indica cuál es la opción correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "La base de datos SQLite usa otros lenguajes, además que el SQL.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "SQLite funciona en un dispositivo con sistema operativo Android, entre otros.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "El Servicio SQLite se inicia automáticamente cuando el equipo es encendido o reiniciado.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "SQLite utiliza varios archivos de datos para guardar la información.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "SQLite funciona en un dispositivo con sistema operativo Android, entre otros."
+    ],
+    "module": "M1",
+    "lecture": "L1",
+    "lecture_name": "Módulo 1 - Lectura 1: Motores de base de datos relacionales",
+    "topic": "TP1: Motores de BD y Arquitectura (SQLite)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "SQLite es un motor de base de datos relacional embebido, liviano y sin servidor, diseñado para funcionar nativamente en sistemas operativos móviles como Android, iOS y sistemas de escritorio.",
+    "exam_tip": "SQLite no requiere un proceso servidor o servicio en segundo plano; se embebe directamente en la aplicación y es el estándar en Android."
+  },
+  {
+    "id": 146,
+    "tp_number": 1,
+    "tp_question": 2,
+    "prompt": "Situación 8: Imágenes de un diagrama de tablas.\nPara trabajar hemos elegido MySql Workbench, y en el diagrama de tablas, se han seleccionado varias tablas del esquema que viene por defecto. Indica cuál es la opción correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "El diagrama debe mostrar todas las tablas del esquema.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Además de las tablas y relaciones, se muestran los atributos que conforman cada tabla.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "Una relación puede unir más de dos tablas.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Es posible ver los datos que componen las filas de las tablas, a simple vista.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Además de las tablas y relaciones, se muestran los atributos que conforman cada tabla."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Herramientas MySQL Workbench",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En MySQL Workbench, los diagramas de modelo físico de tablas (EER Diagram) exhiben de manera visual las tablas seleccionadas, sus relaciones (conectores) y la lista completa de atributos/columnas que componen cada tabla junto a sus tipos de datos y marcas de clave.",
+    "exam_tip": "Un diagrama de Workbench es un diseño estructural lógico-físico; muestra metadatos (tablas, atributos, constraints), no los datos individuales de las filas."
+  },
+  {
+    "id": 147,
+    "tp_number": 1,
+    "tp_question": 3,
+    "prompt": "Situación 9: se mostrará un modelo de tablas para orientar en la realización de unas sentencias en álgebra relacional.\nPara realizar, en álgebra relacional, un Join o Combinación entre las tablas Language y Film para luego Proyectar o mostrar el título de la película y el nombre del lenguaje en la que está hablada. ¿Cuál de las siguientes opciones muestra la operación correcta?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "π (film ⋈ language) film.language_id=language.language_id title, name",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "σ (film ⋈ language)title, name film.language_id=language.language_id",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "π (film ⋈ language)title, name film.language_id=language.language_id",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "σ (film σ language) title, name film.language_id=language.language_id",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      2
+    ],
+    "correct_answers": [
+      "π (film ⋈ language)title, name film.language_id=language.language_id"
+    ],
+    "module": "M1",
+    "lecture": "L4",
+    "lecture_name": "Módulo 1 - Lectura 4: Álgebra relacional, definición y operaciones",
+    "topic": "TP1: Álgebra Relacional (Join y Proyección)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "La operación de proyección (π) se utiliza para seleccionar las columnas deseadas (title, name). Se aplica sobre el resultado de la reunión o Join (⋈) entre las tablas film y language bajo la condición de igualdad en la clave foránea film.language_id = language.language_id.",
+    "exam_tip": "Recordar: π (pi) = Proyección vertical de columnas; σ (sigma) = Selección horizontal de filas; ⋈ = Reunión / Join."
+  },
+  {
+    "id": 148,
+    "tp_number": 1,
+    "tp_question": 4,
+    "prompt": "Situación 2: Descarga e instalación de un servidor de base de datos relacional.\nHemos decidido instalar la base de datos Oracle y al iniciar el proceso tenemos que considerar los aspectos del sistema operativo que debemos pre instalar, para que funcione este motor de base de datos. Oracle se ejecuta en un solo sistema operativo, Oracle Linux.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Verdadero, porque la base de datos Oracle se ejecuta en una sola marca de sistema operativo, Oracle Linux.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Falso, porque Oracle tiene posibilidad de ser instalado en múltiples plataformas de sistemas operativos.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Falso, porque Oracle tiene posibilidad de ser instalado en múltiples plataformas de sistemas operativos."
+    ],
+    "module": "M1",
+    "lecture": "L1",
+    "lecture_name": "Módulo 1 - Lectura 1: Motores de base de datos relacionales",
+    "topic": "TP1: Motores de BD (Oracle Database)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "Oracle Database es un motor multiplataforma empresarial de alta disponibilidad que puede instalarse y ejecutarse en Windows Server, Linux (Oracle Linux, Red Hat, SUSE, Ubuntu), AIX, Solaris y HP-UX.",
+    "exam_tip": "Oracle NO está limitado a Oracle Linux; es multiplataforma y tiene versiones oficiales para Windows y Unix/Linux."
+  },
+  {
+    "id": 149,
+    "tp_number": 1,
+    "tp_question": 5,
+    "prompt": "Situación 7: Acciones a realizar por los distintos usuarios de Base de datos.\nIndica cuál es la opción correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "El acceso en MySQL no requiere un usuario para trabajar.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Para empezar a operar en MySQL en los distintos roles necesitamos un usuario.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "El usuario DBA si precisa un usuario, el resto no.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "El usuario genérico es denominado BD1.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Para empezar a operar en MySQL en los distintos roles necesitamos un usuario."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Seguridad y Usuarios en MySQL",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "El esquema de seguridad y control de acceso de MySQL requiere obligatoriamente autenticar la identidad mediante una cuenta de usuario ('usuario'@'host') con contraseña para desempeñar cualquier rol (DBA, desarrollador o usuario de consulta).",
+    "exam_tip": "Todo acceso a un motor relacional en producción requiere una cuenta de usuario definida con sus credenciales y privilegios correspondientes."
+  },
+  {
+    "id": 150,
+    "tp_number": 1,
+    "tp_question": 6,
+    "prompt": "Situación 7: Acciones a realizar por los distintos usuarios de Base de datos.\nIndica cuál es la opción que corresponde a una afirmación verdadera en MySQL.",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "El control de tareas sobre las tablas, y demás, de un esquema se realiza asignando privilegios de realizar acciones sobre objetos.",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "El control de tareas sobre un esquema y sus objetos es opcional, ya que no se controla en MySQL.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Los privilegios se otorgan automáticamente cuando se crea el usuario, sin ninguna acción especial.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Los privilegios se deben definir antes de asignarlos, explicando brevemente que hace cada uno y luego asignarlos.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "El control de tareas sobre las tablas, y demás, de un esquema se realiza asignando privilegios de realizar acciones sobre objetos."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Seguridad y Privilegios en MySQL",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En MySQL, la seguridad granular se implementa mediante la asignación de privilegios específicos (SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, etc.) que otorgan autorización para ejecutar determinadas acciones sobre objetos concretos del esquema.",
+    "exam_tip": "La administración de permisos en SQL se realiza a través de las sentencias GRANT y REVOKE sobre tablas y objetos específicos."
+  },
+  {
+    "id": 151,
+    "tp_number": 1,
+    "tp_question": 7,
+    "prompt": "Situación 8: Imágenes de un diagrama de tablas.\nEn el diagrama de tablas, realizado con MySql Workbench se muestran las tablas y sus atributos, entre otros elementos.\n¿Qué son los atributos?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Contienen las filas de una tabla.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Son las propiedades que caracterizan a cada entidad y son irrepetibles.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "Deben estar en un orden determinados y pueden repetirse",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Forman el cuerpo de una tabla.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Son las propiedades que caracterizan a cada entidad y son irrepetibles."
+    ],
+    "module": "M1",
+    "lecture": "L3",
+    "lecture_name": "Módulo 1 - Lectura 3: Componentes del modelo relacional en MySQL",
+    "topic": "TP1: Elementos del Modelo Relacional (Atributos)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "Los atributos corresponden a las propiedades o rasgos descriptivos que caracterizan a una entidad o relación. En una tabla dada, cada nombre de atributo es único e irrepetible en la cabecera.",
+    "exam_tip": "En la cabecera de una relación no pueden existir dos columnas con el mismo nombre; los atributos describen propiedades elementales."
+  },
+  {
+    "id": 152,
+    "tp_number": 1,
+    "tp_question": 8,
+    "prompt": "Situación 5: Instalación y funcionamiento de un servidor de base de datos relacional.\nHemos terminado de instalar la base de datos MySQL y al iniciar el proceso de revisión observamos la imagen de la presente situación. Indica las opciones correctas:",
+    "kind": "multiple",
+    "options": [
+      {
+        "index": 0,
+        "text": "El proceso de respaldo de este servicio está haciendo un backup.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "El equipo debe ser reiniciado de inmediato.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "El Servicio MySQL80, se iniciará automáticamente cuando se inicie el equipo en la próxima oportunidad.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "La base de datos MySQL80 está iniciada y funcionando automáticamente.",
+        "is_correct": false
+      },
+      {
+        "index": 4,
+        "text": "El Servicio MySQL80, está iniciado y en funcionamiento.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      2,
+      4
+    ],
+    "correct_answers": [
+      "El Servicio MySQL80, se iniciará automáticamente cuando se inicie el equipo en la próxima oportunidad.",
+      "El Servicio MySQL80, está iniciado y en funcionamiento."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Servicios de Windows y MySQL80",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En el Administrador de Servicios del Sistema Operativo Windows, el servicio MySQL80 figura con estado 'En ejecución' (iniciado y en funcionamiento) y con Tipo de Inicio configurado como 'Automático' (lo que garantiza su arranque automático en cada reinicio del equipo).",
+    "exam_tip": "Pregunta de respuesta múltiple (marcar las dos opciones correctas sobre el estado del servicio de MySQL en Windows)."
+  },
+  {
+    "id": 153,
+    "tp_number": 1,
+    "tp_question": 9,
+    "prompt": "Situación 8: Imágenes de un diagrama de tablas.\nEn el diagrama de tablas realizado con MySql Workbench, se muestran entre otras cosas a las tablas.\n¿Qué se puede afirmar acerca de las tablas?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Que son equivalentes a atributos que forman una fila.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Que son equivalentes a filas que están integradas por atributos o columnas.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Que son filas organizadas en atributos, que pueden repetirse.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Que son equivalentes a relaciones, que son una representación en dos dimensiones constituidas por columnas y filas.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "Que son equivalentes a relaciones, que son una representación en dos dimensiones constituidas por columnas y filas."
+    ],
+    "module": "M1",
+    "lecture": "L3",
+    "lecture_name": "Módulo 1 - Lectura 3: Componentes del modelo relacional en MySQL",
+    "topic": "TP1: Concepto Formal de Relación / Tabla",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En el modelo relacional formal de Edgar F. Codd, una tabla es la representación bidimensional (matriz) de una Relación, compuesta estructuralmente por columnas (atributos de la cabecera) y filas (tuplas del cuerpo).",
+    "exam_tip": "Tabla = Relación bidimensional formada por filas (tuplas) y columnas (atributos)."
+  },
+  {
+    "id": 154,
+    "tp_number": 1,
+    "tp_question": 10,
+    "prompt": "Situación 8: Imágenes de un diagrama de tablas.\nEn el diagrama de tablas, realizado con MySql Workbench se cumplen con pasos para construir un modelo y luego el diagrama.\nLa acción para construir un diagrama en un modelo basado en un esquema que ya existe (como Sakila) se denomina en la herramienta como:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Software Engineer.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Reverse Engineer.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "Forward Engineer.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Reverse Engineer."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Ingeniería Inversa en MySQL Workbench",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "La función 'Reverse Engineer' (Ingeniería Inversa) de MySQL Workbench se conecta al motor de base de datos, lee el diccionario de datos de un esquema existente (como Sakila) y genera automáticamente el diagrama EER con sus tablas y claves foráneas.",
+    "exam_tip": "Forward Engineer = del diagrama al código SQL; Reverse Engineer = de la base de datos existente al diagrama visual."
+  },
+  {
+    "id": 155,
+    "tp_number": 1,
+    "tp_question": 11,
+    "prompt": "Situación 6: Instalación y funcionamiento de un servidor de base de datos relacional.\nHemos decido instalar SQLite debido a su facilidad de uso. Indica cuál es la opción correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "SQLite tiene un diseño más complicado que Oracle y MySQL.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "SQLite requiere un servicio externo a la aplicación que lo usa.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "La base de datos SQLite funciona solamente en el sistema operativo Android.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "SQLite se integra al programa principal con una librería.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "SQLite se integra al programa principal con una librería."
+    ],
+    "module": "M1",
+    "lecture": "L1",
+    "lecture_name": "Módulo 1 - Lectura 1: Motores de base de datos relacionales",
+    "topic": "TP1: Arquitectura de SQLite (Librería Embebida)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "A diferencia de motores cliente-servidor como MySQL u Oracle, SQLite es una biblioteca de enlace (librería C) que se compila e integra directamente en el código de la aplicación cliente, operando sin un proceso servidor independiente.",
+    "exam_tip": "SQLite es una base de datos 'serverless': no tiene un proceso servidor separado, sino que se enlaza como librería."
+  },
+  {
+    "id": 156,
+    "tp_number": 1,
+    "tp_question": 12,
+    "prompt": "Situación 4: Descarga e instalación de un servidor de base de datos relacional.\nHemos decidido instalar la base de datos MySQL y al iniciar el proceso tiene varias características y es complejo. El instalador permite instalar la base en sí misma y una herramienta muy útil como cliente para diseño y consulta de las tablas de la aplicación, se llama MS SQL Server.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Verdadero, porque la principal herramienta de trabajo de MySQL se llama MS SQL Server.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Falso, porque la herramienta elegida por su utilidad y que se puede instalar en ese momento, o posteriormente se llama MySQL Workbench.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Falso, porque la herramienta elegida por su utilidad y que se puede instalar en ese momento, o posteriormente se llama MySQL Workbench."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Herramientas Oficiales de MySQL",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "MS SQL Server es el motor y producto de Microsoft. La herramienta oficial visual provista e integrada en el instalador de MySQL para diseño, desarrollo y consulta se denomina MySQL Workbench.",
+    "exam_tip": "No confundir el motor comercial de Microsoft (SQL Server) con la herramienta oficial de MySQL (MySQL Workbench)."
+  },
+  {
+    "id": 157,
+    "tp_number": 1,
+    "tp_question": 13,
+    "prompt": "Situación 9: Se mostrará un modelo de tablas para orientar en la realización de unas sentencias en álgebra relacional.\nPara tratar el tema de álgebra relacional, se necesita de la definición de Grado.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Falso, ya que esta definición no tiene importancia en las operaciones de álgebra relacional.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Verdadero, ya que para la operación unión las tablas deben tener el mismo Grado.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Verdadero, ya que para la operación unión las tablas deben tener el mismo Grado."
+    ],
+    "module": "M1",
+    "lecture": "L4",
+    "lecture_name": "Módulo 1 - Lectura 4: Álgebra relacional, definición y operaciones",
+    "topic": "TP1: Álgebra Relacional (Grado y Unión)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "La definición de Grado (número de atributos o columnas) es indispensable en álgebra relacional, ya que la condición de Unión-Compatibilidad exige que ambas relaciones posean idéntico grado y dominios compatibles correspondientes.",
+    "exam_tip": "Para poder aplicar Unión, Diferencia o Intersección, las relaciones deben ser unión-compatibles (mismo grado)."
+  },
+  {
+    "id": 158,
+    "tp_number": 1,
+    "tp_question": 14,
+    "prompt": "Situación 6: Instalación y funcionamiento de un servidor de base de datos relacional.\nHemos decidido instalar SQLite debido a su simplicidad de diseño. Indica cuál es la opción correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "SQLite utiliza la misma arquitectura de archivos diversos como MySQL.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "La base de datos SQLite no requiere archivos especiales, trabaja todo en memoria.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "SQLite guarda todas las definiciones como un solo archivo estándar.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "El software de SQLite utiliza librerías de Oracle para su funcionamiento.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      2
+    ],
+    "correct_answers": [
+      "SQLite guarda todas las definiciones como un solo archivo estándar."
+    ],
+    "module": "M1",
+    "lecture": "L1",
+    "lecture_name": "Módulo 1 - Lectura 1: Motores de base de datos relacionales",
+    "topic": "TP1: Almacenamiento Físico de SQLite",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "Una de las características más destacadas de SQLite es que toda la base de datos completa (tablas, índices, disparadores y datos) se almacena en un único archivo de disco multiplataforma estándar (.db o .sqlite).",
+    "exam_tip": "SQLite almacena toda la base de datos en un único archivo de disco ordinario."
+  },
+  {
+    "id": 159,
+    "tp_number": 1,
+    "tp_question": 15,
+    "prompt": "Situación 9: se mostrará un modelo de tablas para orientar en la realización de unas sentencias en álgebra relacional.\nDado este diagrama de tablas, si se deseara realizar la operación de Proyección sobre la tabla film para mostrar las columnas description, rating y length, indica cuál de las siguientes opciones es la correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "π (film)description, rating, length = 101",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "π (film)description, rating, length",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "σ (film)film_id=description, rating, length",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "π description, rating, length(film)",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "π (film)description, rating, length"
+    ],
+    "module": "M1",
+    "lecture": "L4",
+    "lecture_name": "Módulo 1 - Lectura 4: Álgebra relacional, definición y operaciones",
+    "topic": "TP1: Álgebra Relacional (Proyección Simple)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "La operación de proyección en álgebra relacional pura se denota con la letra griega pi (π) indicando las columnas deseadas como subíndice o especificador y la relación base sobre la cual opera entre paréntesis: π(film)[description, rating, length].",
+    "exam_tip": "La proyección utiliza la letra griega π (pi) para extraer un subconjunto vertical de columnas."
+  },
+  {
+    "id": 160,
+    "tp_number": 1,
+    "tp_question": 16,
+    "prompt": "Situación 9: se mostrarán un modelo de tablas para orientar en la realización de unas sentencias en álgebra relacional.\nPara unir las filas de las tablas Language y Actor, pero sólo de las columnas nombre (de actor y de language) y fecha de actualización de ambos, más los literales “language” y “actor” para que indiquen de qué tabla proviene con la operación Unión, se pueden combinar las operaciones proyección y unión. ¿Cuál de las siguientes opciones es la correcta?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Π (name, '(Language)', last_update (LANGUAGE)) U (Π last_name, '(actor)' last_update (ACTOR))",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "Π (name, '(Language)', last_update (LANGUAGE)) U (Π last_name, '(actor)' last_update (ACTOR)) [Opción 2]",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Π (name, '(Language)', last_update (LANGUAGE)) U (Π last_name, '(actor)' last_update (ACTOR)) [Opción 3]",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Π (name, '(Language)', last_update (LANGUAGE)) U (Π last_name, '(actor)' last_update (ACTOR)) [Opción 4]",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "Π (name, '(Language)', last_update (LANGUAGE)) U (Π last_name, '(actor)' last_update (ACTOR))"
+    ],
+    "module": "M1",
+    "lecture": "L4",
+    "lecture_name": "Módulo 1 - Lectura 4: Álgebra relacional, definición y operaciones",
+    "topic": "TP1: Álgebra Relacional (Proyección y Unión)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "Se aplica la proyección (Π) a cada tabla para obtener 3 atributos compatibles (nombre, literal identificador, last_update), logrando que ambas relaciones intermedias sean unión-compatibles (grado 3), para luego unirlas con el operador Unión (U).",
+    "exam_tip": "En el examen de Canvas las 4 opciones fueron duplicadas con mínimas variaciones de espaciado; la opción 1 (primera) es la clave correcta estándar."
+  },
+  {
+    "id": 161,
+    "tp_number": 1,
+    "tp_question": 17,
+    "prompt": "Situación 3: Descarga e instalación de un servidor de base de datos relacional.\nHemos decidido instalar la base de datos MySQL y debemos tener en cuenta el lenguaje en el que está desarrollado. MySQL está íntegramente desarrollado en lenguaje Java.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Falso, porque MySQL ha sido desarrollado en su mayor parte, en lenguaje ANSI C y C++.",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "Verdadero, porque la base de datos MySQL ha sido desarrollada completamente en el lenguaje C.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "Falso, porque MySQL ha sido desarrollado en su mayor parte, en lenguaje ANSI C y C++."
+    ],
+    "module": "M1",
+    "lecture": "L1",
+    "lecture_name": "Módulo 1 - Lectura 1: Motores de base de datos relacionales",
+    "topic": "TP1: Desarrollo y Arquitectura de MySQL",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "El núcleo del motor MySQL está programado principalmente en C y C++ (ANSI C/C++) para maximizar el rendimiento y la portabilidad, no en Java.",
+    "exam_tip": "MySQL fue escrito en C y C++; no está desarrollado en Java."
+  },
+  {
+    "id": 162,
+    "tp_number": 1,
+    "tp_question": 18,
+    "prompt": "Situación 9: Se mostrará un modelo de tablas para orientar en la realización de unas sentencias en álgebra relacional.\nPara tratar el tema de álgebra relacional, se necesita de la definición de Unión Compatible.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Verdadero, ya que para la operación unión las tablas deben ser compatibles el mismo Grado y Dominio.",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "Falso, ya que la unión es una operación sobre tablas que pueden ser no compatibles.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "Verdadero, ya que para la operación unión las tablas deben ser compatibles el mismo Grado y Dominio."
+    ],
+    "module": "M1",
+    "lecture": "L4",
+    "lecture_name": "Módulo 1 - Lectura 4: Álgebra relacional, definición y operaciones",
+    "topic": "TP1: Álgebra Relacional (Unión-Compatibilidad)",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En el álgebra relacional pura, la operación Unión (∪) solamente es aplicable entre dos relaciones si son unión-compatibles, lo que requiere tener el mismo grado (número de atributos) y que los dominios de los atributos correspondientes sean compatibles uno a uno.",
+    "exam_tip": "Unión-compatible = mismo grado (cantidad de columnas) y mismos dominios posicionales."
+  },
+  {
+    "id": 163,
+    "tp_number": 1,
+    "tp_question": 19,
+    "prompt": "Situación 8: Imágenes de un diagrama de tablas.\nPara trabajar hemos elegido MySql Workbench, y en el diagrama de tablas, se han seleccionado varias tablas del esquema que viene por defecto. Indica cuál es la opción correcta:",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "El diagrama es una imagen estática y no pueden reacomodarse las tablas una vez definido.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Las relaciones son de a tres tablas, lo que queda registrado en el diagrama.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Los símbolos de cada atributo son meramente decorativos.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Es posible que haya dos o más relaciones entre dos tablas dadas.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "Es posible que haya dos o más relaciones entre dos tablas dadas."
+    ],
+    "module": "M1",
+    "lecture": "L2",
+    "lecture_name": "Módulo 1 - Lectura 2: Componentes del motor de bases de datos MySQL",
+    "topic": "TP1: Diagramas de Tablas y Relaciones Múltiples",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En el diseño relacional y en MySQL Workbench, dos tablas pueden tener más de una relación entre sí cuando representan diferentes vínculos semánticos (por ejemplo, film tiene una relación con language para el idioma original y otra relación con language para el idioma de doblaje).",
+    "exam_tip": "Es perfectamente válido y común que dos tablas compartan múltiples relaciones para distintos roles."
+  },
+  {
+    "id": 164,
+    "tp_number": 1,
+    "tp_question": 20,
+    "prompt": "Situación 8: Imágenes de un diagrama de tablas.\nEn el diagrama de tablas, realizado con MySql Workbench se muestran las tablas y sus atributos, entre otros elementos.\n¿Qué es un dominio?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Es la cantidad de filas que posee una tabla.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Es el conjunto de valores distintos que un atributo tiene en una tabla dada.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Es el conjunto de valores posibles de un atributo.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "Es el poseedor de las tablas de un esquema.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      2
+    ],
+    "correct_answers": [
+      "Es el conjunto de valores posibles de un atributo."
+    ],
+    "module": "M1",
+    "lecture": "L3",
+    "lecture_name": "Módulo 1 - Lectura 3: Componentes del modelo relacional en MySQL",
+    "topic": "TP1: Concepto Formal de Dominio",
+    "priority": "ALTA",
+    "source": "TP1",
+    "explanation": "En el modelo relacional, un Dominio es el conjunto homogéneo de todos los valores válidos y admisibles que puede tomar un atributo determinado.",
+    "exam_tip": "Dominio = Conjunto de valores válidos/posibles de un atributo (tipo de dato, rango, formato)."
+  },
+  {
+    "id": 165,
+    "tp_number": 2,
+    "tp_question": 1,
+    "prompt": "En la resolución vemos que la cardinalidad de la relación Redactores y Personas es uno a uno (1:1). Esto quiere decir que, por el criterio de asignación de una clave foránea en este tipo de relación, es decir que va en la tabla con menos filas, la clave foránea va del lado de Redactores.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Verdadero, porque la clave foránea va del lado de Redactores.",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "Falso, porque la clave foránea no va del lado de Redactores.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "Verdadero, porque la clave foránea va del lado de Redactores."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Relaciones 1:1 y Claves Foráneas",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "En relaciones 1:1 originadas por jerarquías de especialización, la clave foránea se coloca en la subclase (la entidad con menor cantidad de filas, en este caso Redactores) para evitar la proliferación de valores nulos en la superclase Personas.",
+    "exam_tip": "En relaciones 1:1 opcionales, la clave foránea se sitúa en la tabla con participación total o menor número de tuplas."
+  },
+  {
+    "id": 166,
+    "tp_number": 2,
+    "tp_question": 2,
+    "prompt": "En la tabla Cuestionarios, ¿cuál será la clave primaria?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "idpersonas_participante.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "fechaCreacion.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "idCuestionarios.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "fechaAsignacion.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      2
+    ],
+    "correct_answers": [
+      "idCuestionarios."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Claves Primarias de Entidades",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "La tabla Cuestionarios representa la entidad Cuestionario y tiene como identificador unívoco propio a su clave primaria idCuestionarios.",
+    "exam_tip": "idpersonas_participante es clave foránea (FK), no clave primaria (PK) de Cuestionarios."
+  },
+  {
+    "id": 167,
+    "tp_number": 2,
+    "tp_question": 3,
+    "prompt": "En la tabla composicionCuestionarios, ¿en qué forma normal se encontraría si Premio Dependiera Funcionalmente de Orden?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "En la 3FN porque cumple con la 2FN y no hay interdependencia.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "En la 2FN, porque habría dependencia funcional entre columnas no clave.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "En la 1FN porque no tiene campos repetitivos.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "En la 3FN porque no hay dependencia transitiva.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "En la 2FN, porque habría dependencia funcional entre columnas no clave."
+    ],
+    "module": "M2",
+    "lecture": "L3",
+    "lecture_name": "Módulo 2 - Lectura 3: Normalización más allá de la 1NF",
+    "topic": "TP2: Dependencias Transitivas y 2FN vs 3FN",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Si Premio depende funcionalmente de Orden (un atributo no clave determina a otro no clave), existe una dependencia transitiva. La tabla satisface 2FN (no hay dependencias parciales de la PK compuesta), pero no alcanza la 3FN debido a dicha dependencia entre columnas no clave.",
+    "exam_tip": "Una dependencia funcional entre columnas no clave es una dependencia transitiva y retiene a la tabla en 2FN."
+  },
+  {
+    "id": 168,
+    "tp_number": 2,
+    "tp_question": 4,
+    "prompt": "En la tabla Temas, ¿con cuáles tablas se relaciona?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Preguntas y Participantes.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Preguntas y cuestionarios.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Redactores y Preguntas.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Preguntas y con ella misma, Temas.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "Preguntas y con ella misma, Temas."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Relaciones Recursivas / Reflexivas",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Temas posee una relación recursiva/reflexiva con sí misma (la columna tema_padre apunta a idTemas para modelar subtemas como Historia -> Argentina -> Moderna) y se vincula con Preguntas (cada pregunta pertenece a un tema).",
+    "exam_tip": "Las jerarquías de categorías se modelan mediante una relación reflexiva de una tabla hacia sí misma."
+  },
+  {
+    "id": 169,
+    "tp_number": 2,
+    "tp_question": 5,
+    "prompt": "En el ejemplo vemos que la cardinalidad de la relación Cuestionarios y Preguntas es M:M. ¿Cómo se resuelve este tipo de relaciones en el modelo relacional?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "La clave foránea va en las dos tablas.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "No corresponde usar una clave foránea.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "La clave foránea va del lado de Cuestionarios.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Se crea otra tabla con las dos claves foráneas.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "Se crea otra tabla con las dos claves foráneas."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Transformación de Relaciones M:M",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "En el modelo relacional, las relaciones de cardinalidad Muchos a Muchos (M:M) no admiten claves foráneas directas; se resuelven creando una tabla asociativa/intermedia (ComposicionCuestionario) que contiene las claves foráneas hacia ambas entidades originales.",
+    "exam_tip": "Regla de oro: M:M siempre genera una nueva tabla intermedia que hereda las PKs de las tablas participantes."
+  },
+  {
+    "id": 170,
+    "tp_number": 2,
+    "tp_question": 6,
+    "prompt": "En la tabla Participante, ¿cuál será la clave primaria?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "idpersona_participante.",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "apodo.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "No tiene clave primaria.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "idpersona_participante y apodo.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "idpersona_participante."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Claves en Subclases de Especialización",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Participante es una especialización (subclase) de Personas. Su clave primaria es idpersona_participante, que coincide con la clave primaria de Personas y sirve al mismo tiempo como clave primaria y como clave foránea.",
+    "exam_tip": "En la herencia relacional, la clave primaria de la subclase es idéntica a la clave primaria de la superclase."
+  },
+  {
+    "id": 171,
+    "tp_number": 2,
+    "tp_question": 7,
+    "prompt": "La tabla Cuestionarios, ¿con qué tablas se relaciona?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Participante y ComposiciónCuestionarios.",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "Participantes.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Preguntas y Participantes.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Preguntas.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "Participante y ComposiciónCuestionarios."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Estructura de Tablas y Relaciones del Caso",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "En el esquema de base de datos normalizado, Cuestionarios tiene una clave foránea apuntando a Participante (idpersonas_participante) y se relaciona con Preguntas mediante la tabla asociativa intermedia ComposicionCuestionarios.",
+    "exam_tip": "Cuestionarios no se vincula directamente a Preguntas en el esquema físico; lo hace mediante la tabla ComposicionCuestionarios."
+  },
+  {
+    "id": 172,
+    "tp_number": 2,
+    "tp_question": 8,
+    "prompt": "La tabla empleados, ¿en qué forma normal se encuentra?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "En la 3FN pero no en la segunda.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "En la 3FN y las anteriores.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "En la 3FN pero no en la 1FN.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "En la 2FN pero no en la 3FN.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "En la 3FN y las anteriores."
+    ],
+    "module": "M2",
+    "lecture": "L3",
+    "lecture_name": "Módulo 2 - Lectura 3: Normalización más allá de la 1NF",
+    "topic": "TP2: Jerarquía Acumulativa de Formas Normales",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Las formas normales son inclusivas y acumulativas: para que una tabla se encuentre en 3FN debe haber alcanzado previamente la 1FN (atomicidad) y la 2FN (dependencia funcional completa).",
+    "exam_tip": "No es posible pertenecer a una forma normal superior sin cumplir rigurosamente todas las anteriores."
+  },
+  {
+    "id": 173,
+    "tp_number": 2,
+    "tp_question": 9,
+    "prompt": "¿Cuál es la cardinalidad de la relación Temas y Preguntas?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Una pregunta tiene muchos Temas y un Tema tiene muchas preguntas (M:M).",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Una pregunta tiene un tema y un tema tiene muchas preguntas asociadas (1:M).",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Una pregunta tiene un tema y un tema tiene muchas preguntas asociadas (1:M)."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Cardinalidad en Análisis y Diseño",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Según el enunciado del caso, cada pregunta específica pertenece a un único tema determinado (clave foránea temas_id), mientras que un tema puede contener múltiples preguntas asociadas (cardinalidad 1 a Muchos).",
+    "exam_tip": "La clave foránea se coloca en Preguntas, lo que ratifica la cardinalidad 1 tema a N preguntas."
+  },
+  {
+    "id": 174,
+    "tp_number": 2,
+    "tp_question": 10,
+    "prompt": "En la tabla Composición tenemos una clave compuesta, ¿cuáles son sus integrantes?",
+    "kind": "multiple",
+    "options": [
+      {
+        "index": 0,
+        "text": "Orden.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Cuestionarios_idCuestionarios.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "Preguntas_idPreguntas.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "Premio.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1,
+      2
+    ],
+    "correct_answers": [
+      "Cuestionarios_idCuestionarios.",
+      "Preguntas_idPreguntas."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Claves Primarias Compuestas en Tablas Puente",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "En la tabla intermedia ComposicionCuestionario, la clave primaria compuesta se construye con las claves primarias de las dos entidades vinculadas: Cuestionarios_idCuestionarios y Preguntas_idPreguntas. Orden y Premio son atributos ordinarios de la relación.",
+    "exam_tip": "Pregunta de respuesta múltiple (seleccionar las 2 columnas que conforman la clave primaria compuesta)."
+  },
+  {
+    "id": 175,
+    "tp_number": 2,
+    "tp_question": 11,
+    "prompt": "En la tabla Temas, ¿cuál será la clave primaria?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "descripción y tema_padre.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "idTemas.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "descripción.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "tema_padre.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "idTemas."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Identificadores Únicos en Tablas Jerárquicas",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Cada registro de la tabla Temas se identifica de forma única por su clave primaria idTemas. El atributo tema_padre es una clave foránea recursiva.",
+    "exam_tip": "Las claves primarias deben ser estables y mínimas; idTemas identifica cada nodo de la jerarquía."
+  },
+  {
+    "id": 176,
+    "tp_number": 2,
+    "tp_question": 12,
+    "prompt": "La tabla Persona tiene varias columnas, ¿cuáles de las siguientes columnas le pertenece?",
+    "kind": "multiple",
+    "options": [
+      {
+        "index": 0,
+        "text": "apodo.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "idPersona.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "apellido.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "organización.",
+        "is_correct": false
+      },
+      {
+        "index": 4,
+        "text": "fecha de nacimiento.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      1,
+      2,
+      4
+    ],
+    "correct_answers": [
+      "idPersona.",
+      "apellido.",
+      "fecha de nacimiento."
+    ],
+    "module": "M2",
+    "lecture": "L4",
+    "lecture_name": "Módulo 2 - Lectura 4: Herramienta gráfica DER o diagrama entidad relación",
+    "topic": "TP2: Generalización y Atributos Comunes (EER)",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Al realizar la generalización hacia la superentidad Personas, se extraen los atributos comunes compartidos tanto por Participantes como por Redactores: idPersona, apellido, nombre y fecha de nacimiento. Los atributos apodo (propio de Participante) y organización (propio de Redactor) quedan en sus respectivas subclases.",
+    "exam_tip": "Pregunta de respuesta múltiple (marcar las 3 columnas universales que pertenecen a Personas)."
+  },
+  {
+    "id": 177,
+    "tp_number": 2,
+    "tp_question": 13,
+    "prompt": "En la resolución vemos que la cardinalidad de la relación Preguntas y Redactores es muchos a uno (M:1). Esto quiere decir que la clave foránea va del lado de redactores.",
+    "kind": "vf",
+    "options": [
+      {
+        "index": 0,
+        "text": "Verdadero, porque es muchos a uno.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Falso, porque no el lado muchos es Preguntas.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Falso, porque no el lado muchos es Preguntas."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Regla de Ubicación de Claves Foráneas (1:N)",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "En una relación 1 a Muchos (1:M), la clave foránea se ubica siempre en la tabla del lado 'Muchos'. Como muchas preguntas son elaboradas por un redactor, la clave foránea idPersona_redactor va en la tabla Preguntas, nunca en Redactores.",
+    "exam_tip": "Regla mnemotécnica de examen: La clave foránea va SIEMPRE en la tabla del lado de los MUCHOS."
+  },
+  {
+    "id": 178,
+    "tp_number": 2,
+    "tp_question": 14,
+    "prompt": "La tabla Participante, ¿con qué tablas se relaciona?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Cuestionarios.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Personas y Preguntas.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Preguntas y Personas.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Personas y Cuestionarios.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "Personas y Cuestionarios."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Conectividad de la Entidad Participante",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Participante se relaciona con Personas (relación de herencia 1:1 mediante idpersona_participante) y con Cuestionarios (relación 1:N donde a un participante se le asignan cuestionarios).",
+    "exam_tip": "Participante no tiene relación directa con Preguntas, ya que las preguntas se asocian a Cuestionarios."
+  },
+  {
+    "id": 179,
+    "tp_number": 2,
+    "tp_question": 15,
+    "prompt": "En la tabla Redactores, ¿con cuáles tablas se relaciona?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Participantes y Personas.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Temas y Cuestionarios.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Personas y Preguntas.",
+        "is_correct": true
+      },
+      {
+        "index": 3,
+        "text": "Redactores y Preguntas.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      2
+    ],
+    "correct_answers": [
+      "Personas y Preguntas."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Conectividad de la Entidad Redactores",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Redactores se relaciona con Personas (su superclase mediante idPersona) y con Preguntas (redacta preguntas 1:M).",
+    "exam_tip": "Redactores no se vincula con Cuestionarios ni con Temas de forma directa."
+  },
+  {
+    "id": 180,
+    "tp_number": 2,
+    "tp_question": 16,
+    "prompt": "En el ejemplo vemos la relación entre las tablas Participantes y Cuestionarios, ¿cómo es la cardinalidad de la misma?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Un participante puede tener un cuestionario y un cuestionario puede tener más de un participante asignado o ninguno.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Un participante puede tener un solo cuestionario y un cuestionario puede tener un solo participante asignado o ninguno.",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Un participante puede tener uno o más cuestionarios y un cuestionario debe tener un solo participante asignado.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Un participante puede tener uno o más cuestionarios y un cuestionario puede tener un solo participante asignado o ninguno.",
+        "is_correct": true
+      }
+    ],
+    "correct_indices": [
+      3
+    ],
+    "correct_answers": [
+      "Un participante puede tener uno o más cuestionarios y un cuestionario puede tener un solo participante asignado o ninguno."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Cardinalidad y Participación Opcional",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Un participante puede jugar y responder uno o múltiples cuestionarios a lo largo de los programas (1:N). Por su parte, un cuestionario se asigna como máximo a un participante, pero la FK idpersonas_participante puede ser nula mientras no esté asignado (participación opcional).",
+    "exam_tip": "La posibilidad de valor nulo en la FK de Cuestionarios representa la condición 'o ninguno'."
+  },
+  {
+    "id": 181,
+    "tp_number": 2,
+    "tp_question": 17,
+    "prompt": "¿Cuál es la cardinalidad de la relación Cuestionarios y Preguntas?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "Muchos a Muchos (M:M).",
+        "is_correct": true
+      },
+      {
+        "index": 1,
+        "text": "Uno a uno (1:1).",
+        "is_correct": false
+      },
+      {
+        "index": 2,
+        "text": "Uno a muchos (1:M).",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "Muchos a uno (M:1).",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      0
+    ],
+    "correct_answers": [
+      "Muchos a Muchos (M:M)."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Cardinalidad Cuestionarios vs Preguntas",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Un cuestionario está integrado por hasta 16 preguntas (1 a muchas), y cada pregunta puede reutilizarse en varios cuestionarios o no aparecer en ninguno (1 a muchas). La cardinalidad combinada es Muchos a Muchos (M:M).",
+    "exam_tip": "Cuando ambas direcciones admiten multiplicidad 'muchos', la cardinalidad es M:M y exige tabla intermedia."
+  },
+  {
+    "id": 182,
+    "tp_number": 2,
+    "tp_question": 18,
+    "prompt": "En la tabla Redactores, ¿cuál será la clave primaria?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "organización.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "idPersona.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "idPersona y organización.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "No lleva clave primaria.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "idPersona."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Clave Primaria en Subclase Redactores",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Al derivarse de la jerarquía de Personas, la tabla Redactores hereda idPersona como su clave primaria para mantener la correspondencia 1:1 con la superentidad.",
+    "exam_tip": "Toda tabla en un modelo relacional bien diseñado debe poseer clave primaria; en subclases es la FK hacia la superclase."
+  },
+  {
+    "id": 183,
+    "tp_number": 2,
+    "tp_question": 19,
+    "prompt": "Si se uniera la tabla Redactores a Personas, la columna organización se integraría a ella, ¿habría dependencia funcional con la clave primaria de Personas?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "No y bajaría a 1FN.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "Si, y seguiría estando en 3FN.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "Si, pero tendría que formar parte de la clave.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "No, y bajaría a 2FN.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "Si, y seguiría estando en 3FN."
+    ],
+    "module": "M2",
+    "lecture": "L3",
+    "lecture_name": "Módulo 2 - Lectura 3: Normalización más allá de la 1NF",
+    "topic": "TP2: Impacto de la Fusión de Tablas en Formas Normales",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "Al fusionar organización en Personas, el valor de idPersona sigue determinando unívocamente la organización de esa persona (idPersona -> organización). Dado que la clave es simple, no surgen dependencias parciales ni transitivas con respecto a la clave primaria, por lo que la tabla permanece en 3FN.",
+    "exam_tip": "La dependencia funcional directa entre la PK simple y el atributo no clave preserva la 3FN."
+  },
+  {
+    "id": 184,
+    "tp_number": 2,
+    "tp_question": 20,
+    "prompt": "En la tabla Preguntas, ¿cuál será la clave primaria?",
+    "kind": "single",
+    "options": [
+      {
+        "index": 0,
+        "text": "texto.",
+        "is_correct": false
+      },
+      {
+        "index": 1,
+        "text": "idPregunta.",
+        "is_correct": true
+      },
+      {
+        "index": 2,
+        "text": "idPersona_redactor.",
+        "is_correct": false
+      },
+      {
+        "index": 3,
+        "text": "temas_id.",
+        "is_correct": false
+      }
+    ],
+    "correct_indices": [
+      1
+    ],
+    "correct_answers": [
+      "idPregunta."
+    ],
+    "module": "M2",
+    "lecture": "L1",
+    "lecture_name": "Módulo 2 - Lectura 1: Análisis y diseño de un modelo de datos relacional",
+    "topic": "TP2: Clave Primaria de la Entidad Preguntas",
+    "priority": "ALTA",
+    "source": "TP2",
+    "explanation": "La tabla Preguntas representa la entidad individual Pregunta y tiene a idPregunta como su clave primaria identificadora única. idPersona_redactor y temas_id son claves foráneas.",
+    "exam_tip": "idPregunta es la clave primaria; temas_id y idPersona_redactor son claves foráneas."
+  }
+]

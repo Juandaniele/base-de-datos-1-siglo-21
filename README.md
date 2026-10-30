@@ -96,7 +96,7 @@ Haz doble clic en:
 ```bash
 INICIAR_SISTEMA_LOCAL.bat
 ```
-El script levantará el servidor local en el puerto 3000 y abrirá automáticamente tu navegador en `http://localhost:3000`.
+El script levantará el servidor local en el puerto 8080 y abrirá automáticamente tu navegador en `http://localhost:8080`.
 
 ### Opción 2: Modo 100% Offline (Sin Servidor)
 Puedes abrir directamente el archivo:

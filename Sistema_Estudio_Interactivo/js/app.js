@@ -25,7 +25,18 @@
     // 3D Model state
     current3DModel: 'bd_der',
     // Search
-    searchQuery: ''
+    searchQuery: '',
+    // Question Bank state
+    bankModuleFilter: 'ALL',
+    bankLectureFilter: 'ALL',
+    bankSortOrder: 'recent',
+    bankKindFilter: 'ALL',
+    bankSourceFilter: 'ALL',
+    bankSearchText: '',
+    bankUserSelections: {}, // qid -> array of selected opt indices
+    bankEvaluated: {},      // qid -> boolean
+    bankRevealed: {},       // qid -> boolean
+    bankAllRevealed: false
   };
 
   window.App = {
@@ -50,6 +61,14 @@
     resetExam: resetExam,
     // Bank
     filterQuestions: filterQuestions,
+    applyBankFilters: applyBankFilters,
+    onBankModuleChange: onBankModuleChange,
+    setQuickPillFilter: setQuickPillFilter,
+    selectBankOption: selectBankOption,
+    checkMultipleBankQuestion: checkMultipleBankQuestion,
+    resetBankQuestion: resetBankQuestion,
+    resetAllBankAnswers: resetAllBankAnswers,
+    toggleAllBankAnswers: toggleAllBankAnswers,
     toggleAnswer: toggleAnswer,
     // Labs
     runAlgebraOperation: runAlgebraOperation,
@@ -292,12 +311,25 @@
           </div>
           <div class="lecture-grid">
             ${mod.lectures.map(lec => `
-              <div class="lecture-card" style="border-top: 3px solid ${sub.color};">
+              <div class="lecture-card${lec.detail ? ' lecture-card-wide' : ''}" style="border-top: 3px solid ${sub.color};">
                 <div>
                   <span class="badge" style="background: rgba(255,255,255,0.05); color: ${sub.color}; margin-bottom: 0.5rem;">${lec.id}</span>
                   <h3>${lec.title}</h3>
                   <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">${lec.summary}</p>
-                  
+
+                  ${lec.detail && lec.detail.length > 0 ? `
+                    <div class="detail-sections">
+                      ${lec.detail.map(sec => `
+                        <details class="detail-section" open>
+                          <summary style="color: ${sub.color};">${sec.title}</summary>
+                          <ul>
+                            ${sec.points.map(p => `<li>${p}</li>`).join('')}
+                          </ul>
+                        </details>
+                      `).join('')}
+                    </div>
+                  ` : ''}
+
                   <div class="key-concepts-box">
                     <strong style="color: ${sub.color}; font-size: 0.85rem; text-transform: uppercase;">Conceptos Esenciales:</strong>
                     <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.85rem;">
@@ -467,76 +499,562 @@
   }
 
   // =========================================================================
-  // RENDERERS: BANCO DE PREGUNTAS
+  // RENDERERS: BANCO DE PREGUNTAS (FILTROS, ORDENAMIENTO E INTERACTIVIDAD)
   // =========================================================================
   function renderQuestionsBank(sub) {
+    if (!sub || !sub.questions) return;
+
+    // Reset subject-specific filters if needed, keeping default sort
+    state.bankSearchText = '';
+    const searchInput = document.getElementById('searchQuestionInput');
+    if (searchInput) searchInput.value = '';
+
+    // Populate module select dropdown dynamically
+    const modSelect = document.getElementById('bankModuleSelect');
+    if (modSelect) {
+      const uniqueMods = [...new Set(sub.questions.map(q => q.module).filter(Boolean))].sort();
+      let modHtml = `<option value="ALL">Todos los Módulos (${sub.questions.length})</option>`;
+      uniqueMods.forEach(m => {
+        const count = sub.questions.filter(q => q.module === m).length;
+        const label = m === 'M1' ? 'Módulo 1' : (m === 'M2' ? 'Módulo 2' : m);
+        modHtml += `<option value="${m}">${label} (${count})</option>`;
+      });
+      modSelect.innerHTML = modHtml;
+      modSelect.value = state.bankModuleFilter || 'ALL';
+    }
+
+    populateSourceDropdown(sub.questions);
+
+    // Populate lecture select dropdown dynamically
+    updateLectureDropdown(sub.questions);
+
+    // Apply filters and render cards
+    applyBankFilters();
+  }
+
+  function updateLectureDropdown(questions) {
+    const lecSelect = document.getElementById('bankLectureSelect');
+    if (!lecSelect) return;
+
+    let availableQuestions = questions;
+    if (state.bankModuleFilter && state.bankModuleFilter !== 'ALL') {
+      availableQuestions = questions.filter(q => q.module === state.bankModuleFilter);
+    }
+
+    const uniqueLecs = [...new Set(availableQuestions.map(q => q.lecture).filter(Boolean))].sort((a, b) => {
+      const na = parseInt(String(a).replace(/\D/g, '') || '0', 10);
+      const nb = parseInt(String(b).replace(/\D/g, '') || '0', 10);
+      return na - nb;
+    });
+
+    let lecHtml = `<option value="ALL">Todas las Lecturas</option>`;
+    uniqueLecs.forEach(l => {
+      const count = availableQuestions.filter(q => q.lecture === l).length;
+      const label = l.startsWith('L') ? `Lectura ${l.replace('L', '')}` : l;
+      lecHtml += `<option value="${l}">${label} (${count})</option>`;
+    });
+    lecSelect.innerHTML = lecHtml;
+    lecSelect.value = uniqueLecs.includes(state.bankLectureFilter) ? state.bankLectureFilter : 'ALL';
+  }
+
+  function onBankModuleChange() {
+    const modSelect = document.getElementById('bankModuleSelect');
+    const lecSelect = document.getElementById('bankLectureSelect');
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (modSelect) {
+      state.bankModuleFilter = modSelect.value;
+    }
+    if (sub && sub.questions) {
+      updateLectureDropdown(sub.questions);
+    }
+    if (lecSelect) {
+      state.bankLectureFilter = lecSelect.value;
+    }
+    applyBankFilters();
+  }
+
+  function setQuickPillFilter(mod, lec) {
+    state.bankModuleFilter = mod;
+    state.bankLectureFilter = lec;
+
+    const modSelect = document.getElementById('bankModuleSelect');
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+
+    if (modSelect) modSelect.value = mod;
+    if (sub && sub.questions) {
+      updateLectureDropdown(sub.questions);
+    }
+
+    const lecSelect = document.getElementById('bankLectureSelect');
+    if (lecSelect) lecSelect.value = lec;
+
+    applyBankFilters();
+  }
+
+  function populateQuickPills(questions) {
+    const pillsContainer = document.getElementById('bankQuickPills');
+    if (!pillsContainer) return;
+
+    // Collect unique module-lecture pairs
+    const pairsMap = new Map();
+    questions.forEach(q => {
+      if (q.module && q.lecture) {
+        const key = `${q.module}-${q.lecture}`;
+        if (!pairsMap.has(key)) {
+          pairsMap.set(key, { module: q.module, lecture: q.lecture, count: 0 });
+        }
+        pairsMap.get(key).count++;
+      }
+    });
+
+    const getModNum = (s) => { const m = String(s || '').match(/\d+/); return m ? parseInt(m[0], 10) : 999; };
+    const getLecNum = (s) => { const m = String(s || '').match(/\d+/); return m ? parseInt(m[0], 10) : 999; };
+
+    const sortedPairs = Array.from(pairsMap.values()).sort((a, b) => {
+      const ma = getModNum(a.module), mb = getModNum(b.module);
+      if (ma !== mb) return ma - mb;
+      const la = getLecNum(a.lecture), lb = getLecNum(b.lecture);
+      return la - lb;
+    });
+
+    const isAllActive = state.bankModuleFilter === 'ALL' && state.bankLectureFilter === 'ALL';
+
+    let html = `
+      <button type="button" class="bank-pill-btn ${isAllActive ? 'active' : ''}" onclick="App.setQuickPillFilter('ALL', 'ALL')">
+        Todos (${questions.length})
+      </button>
+    `;
+
+    sortedPairs.forEach(p => {
+      const isActive = state.bankModuleFilter === p.module && state.bankLectureFilter === p.lecture;
+      html += `
+        <button type="button" class="bank-pill-btn ${isActive ? 'active' : ''}" onclick="App.setQuickPillFilter('${p.module}', '${p.lecture}')">
+          ${p.module} - ${p.lecture} (${p.count})
+        </button>
+      `;
+    });
+
+    pillsContainer.innerHTML = html;
+  }
+
+  const SOURCE_LABELS = {
+    PARCIAL: 'Parcial (banco de preguntas)',
+    TP1: 'Trabajo Práctico 1',
+    TP2: 'Trabajo Práctico 2',
+    REPASO_STUDOCU: 'Studocu · Repaso',
+    INTEGRAL_STUDOCU: 'Studocu · Examen integral',
+    ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025 (archivo 1)',
+    ING_PRE2025_B: 'Studocu · Preguntero Ing. SW 2025 (archivo 2, copia)',
+    ING_PARCIAL2023: 'Studocu · Parcial 1 2023',
+    OTRAS: 'Banco de lecturas y casos'
+  };
+
+  function questionYear(q) {
+    return q.source_year || 0;
+  }
+
+  function questionSource(q) {
+    return q.source || 'OTRAS';
+  }
+
+  function populateSourceDropdown(questions) {
+    const sel = document.getElementById('bankSourceSelect');
+    if (!sel) return;
+    const counts = {};
+    questions.forEach(q => { const s = questionSource(q); counts[s] = (counts[s] || 0) + 1; });
+    const order = ['PARCIAL', 'TP1', 'TP2', 'REPASO_STUDOCU', 'INTEGRAL_STUDOCU', 'OTRAS'];
+    const years = {};
+    questions.forEach(q => { const s = questionSource(q); years[s] = Math.max(years[s] || 0, questionYear(q)); });
+    const keys = Object.keys(counts).sort((a, b) => {
+      if (years[a] !== years[b]) return years[b] - years[a];
+      const ia = order.indexOf(a), ib = order.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+    });
+    let html = '<option value="ALL">Todas las fuentes (' + questions.length + ')</option>';
+    keys.forEach(k => {
+      html += '<option value="' + k + '">' + (SOURCE_LABELS[k] || k) + ' (' + counts[k] + ')</option>';
+    });
+    sel.innerHTML = html;
+    if (state.bankSourceFilter !== 'ALL' && !counts[state.bankSourceFilter]) state.bankSourceFilter = 'ALL';
+    sel.value = state.bankSourceFilter || 'ALL';
+  }
+
+  function applyBankFilters() {
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (!sub || !sub.questions) return;
+
     const container = document.getElementById('questionsListContainer');
     const countBadge = document.getElementById('bankQuestionsCount');
+    const answeredBadge = document.getElementById('bankAnsweredCount');
+    const scoreBadge = document.getElementById('bankScoreBadge');
     if (!container) return;
 
-    const questions = sub.questions || [];
-    if (countBadge) countBadge.innerText = `${questions.length} preguntas`;
+    // Read UI values if controls exist
+    const searchInput = document.getElementById('searchQuestionInput');
+    const modSelect = document.getElementById('bankModuleSelect');
+    const lecSelect = document.getElementById('bankLectureSelect');
+    const sortSelect = document.getElementById('bankSortSelect');
+    const kindSelect = document.getElementById('bankKindSelect');
+    const sourceSelect = document.getElementById('bankSourceSelect');
 
-    container.innerHTML = questions.map(q => `
-      <div class="card question-card" data-qid="${q.id}">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-          <div style="display: flex; gap: 0.5rem; align-items: center;">
+    const searchTxt = searchInput ? searchInput.value.toLowerCase().trim() : (state.bankSearchText || '');
+    const modVal = (modSelect && modSelect.value) ? modSelect.value : (state.bankModuleFilter || 'ALL');
+    const lecVal = (lecSelect && lecSelect.value) ? lecSelect.value : (state.bankLectureFilter || 'ALL');
+    const sortVal = (sortSelect && sortSelect.value) ? sortSelect.value : (state.bankSortOrder || 'module-lecture-asc');
+    const kindVal = (kindSelect && kindSelect.value) ? kindSelect.value : (state.bankKindFilter || 'ALL');
+
+    state.bankSearchText = searchTxt;
+    state.bankModuleFilter = modVal;
+    state.bankLectureFilter = lecVal;
+    state.bankSortOrder = sortVal;
+    state.bankKindFilter = kindVal;
+    const sourceVal = (sourceSelect && sourceSelect.value) ? sourceSelect.value : (state.bankSourceFilter || 'ALL');
+    state.bankSourceFilter = sourceVal;
+
+    // Refresh quick pills
+    populateQuickPills(sub.questions);
+
+    // Filter questions
+    let filtered = sub.questions.filter(q => {
+      // Search text
+      if (searchTxt) {
+        const inPrompt = (q.prompt || '').toLowerCase().includes(searchTxt);
+        const inExpl = (q.explanation || '').toLowerCase().includes(searchTxt);
+        const inOpts = (q.options || []).some(o => (o.text || '').toLowerCase().includes(searchTxt));
+        const inId = String(q.id) === searchTxt;
+        const inTopic = (q.topic || '').toLowerCase().includes(searchTxt);
+        if (!inPrompt && !inExpl && !inOpts && !inId && !inTopic) return false;
+      }
+      // Module filter
+      if (modVal !== 'ALL' && q.module !== modVal) return false;
+      // Lecture filter
+      if (lecVal !== 'ALL' && q.lecture !== lecVal) return false;
+      // Kind filter
+      if (kindVal !== 'ALL' && q.kind !== kindVal) return false;
+      // Source filter
+      if (sourceVal !== 'ALL' && questionSource(q) !== sourceVal) return false;
+
+      return true;
+    });
+
+    // Helper functions for module & lecture numeric parsing
+    const getModNum = (s) => { const m = String(s || '').match(/\d+/); return m ? parseInt(m[0], 10) : 999; };
+    const getLecNum = (s) => { const m = String(s || '').match(/\d+/); return m ? parseInt(m[0], 10) : 999; };
+
+    // Sort questions
+    if (sortVal === 'recent') {
+      filtered.sort((a, b) => {
+        const ya = questionYear(a), yb = questionYear(b);
+        if (ya !== yb) return yb - ya;
+        const ma = getModNum(a.module), mb = getModNum(b.module);
+        if (ma !== mb) return ma - mb;
+        const la = getLecNum(a.lecture), lb = getLecNum(b.lecture);
+        if (la !== lb) return la - lb;
+        return (a.id || 0) - (b.id || 0);
+      });
+    } else if (sortVal === 'module-lecture-asc') {
+      filtered.sort((a, b) => {
+        const ma = getModNum(a.module), mb = getModNum(b.module);
+        if (ma !== mb) return ma - mb;
+        const la = getLecNum(a.lecture), lb = getLecNum(b.lecture);
+        if (la !== lb) return la - lb;
+        return (a.id || 0) - (b.id || 0);
+      });
+    } else if (sortVal === 'module-lecture-desc') {
+      filtered.sort((a, b) => {
+        const ma = getModNum(a.module), mb = getModNum(b.module);
+        if (ma !== mb) return mb - ma;
+        const la = getLecNum(a.lecture), lb = getLecNum(b.lecture);
+        if (la !== lb) return lb - la;
+        return (b.id || 0) - (a.id || 0);
+      });
+    } else if (sortVal === 'id-asc') {
+      filtered.sort((a, b) => (a.id || 0) - (b.id || 0));
+    } else if (sortVal === 'id-desc') {
+      filtered.sort((a, b) => (b.id || 0) - (a.id || 0));
+    } else if (sortVal === 'kind') {
+      filtered.sort((a, b) => (a.kind || '').localeCompare(b.kind || '') || (a.id || 0) - (b.id || 0));
+    }
+
+    // Update count badge
+    if (countBadge) {
+      countBadge.innerText = `${filtered.length} de ${sub.questions.length} preguntas`;
+    }
+
+    // Update live stats
+    updateBankStats(sub.questions);
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="card" style="text-align: center; padding: 3rem 1.5rem; color: var(--text-muted);">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
+          <h3 style="color: var(--text-main); margin-bottom: 0.5rem;">No se encontraron preguntas</h3>
+          <p>No hay preguntas que coincidan con los filtros seleccionados (Módulo: ${modVal}, Lectura: ${lecVal}).</p>
+          <button class="btn btn-primary btn-sm" onclick="App.setQuickPillFilter('ALL', 'ALL')" style="margin-top: 1rem;">
+            Ver todas las preguntas
+          </button>
+        </div>
+      `;
+      return;
+    }
+
+    // Render question cards
+    container.innerHTML = filtered.map(q => renderSingleBankCard(q)).join('');
+  }
+
+  function renderSingleBankCard(q) {
+    const userSel = state.bankUserSelections[q.id] || [];
+    const isEvaluated = !!state.bankEvaluated[q.id];
+    const isRevealed = !!state.bankRevealed[q.id] || state.bankAllRevealed;
+    const isMultiple = q.kind === 'multiple';
+
+    // Check correctness if evaluated
+    const correctIndices = (q.options || []).filter(o => o.is_correct).map(o => o.index);
+    const isAllCorrect = isEvaluated && userSel.length === correctIndices.length && userSel.every(idx => correctIndices.includes(idx));
+
+    return `
+      <div class="card question-card" data-qid="${q.id}" id="bank-card-${q.id}">
+        <!-- Card Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
             <span class="badge" style="background: var(--accent); color: #0f172a; font-weight: 800;">#${q.id}</span>
-            <span class="badge" style="background: rgba(255,255,255,0.08); color: var(--text-muted);">${q.module} - ${q.lecture || ''}</span>
+            <span class="badge" style="background: rgba(255,255,255,0.08); color: var(--text-main); font-weight: 700;">
+              ${q.module} - ${q.lecture || ''}
+            </span>
+            ${q.lecture_name ? `<span class="badge" style="background: rgba(255,255,255,0.04); color: var(--text-muted); font-size: 0.78rem;">${q.lecture_name}</span>` : ''}
+            ${q.topic ? `<span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent); font-size: 0.78rem;">${q.topic}</span>` : ''}
           </div>
-          <span class="badge ${q.kind === 'vf' ? 'badge-detail' : (q.kind === 'multiple' ? 'badge-exam' : 'badge-important')}">
-            ${q.kind === 'vf' ? 'Verdadero / Falso' : (q.kind === 'multiple' ? 'Múltiple Selección' : 'Opción Simple')}
-          </span>
+          <div style="display: flex; gap: 0.4rem; align-items: center;">
+            ${isEvaluated ? (isAllCorrect ? `
+              <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; font-weight: 800;">✔ Acertada</span>
+            ` : `
+              <span class="badge" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; font-weight: 800;">✖ No acertada</span>
+            `) : ''}
+            <span class="badge ${q.kind === 'vf' ? 'badge-detail' : (q.kind === 'multiple' ? 'badge-exam' : 'badge-important')}">
+              ${q.kind === 'vf' ? 'Verdadero / Falso' : (q.kind === 'multiple' ? 'Múltiple Selección' : 'Opción Simple')}
+            </span>
+          </div>
         </div>
 
-        <p style="font-size: 1rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">${q.prompt}</p>
+        <!-- Prompt -->
+        <p style="font-size: 1.02rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem; line-height: 1.55;">${q.prompt}</p>
 
-        <div class="options-container" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem;">
-          ${q.options.map(opt => `
-            <div class="bank-option ${opt.is_correct ? 'is-correct-marker' : ''}" style="padding: 0.6rem 0.85rem; border-radius: 6px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); font-size: 0.9rem;">
-              <span>${opt.text}</span>
+        <!-- Options Container -->
+        <div class="options-container" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
+          ${(q.options || []).map(opt => {
+            const isSelected = userSel.includes(opt.index);
+            let optClass = 'bank-option';
+            if (isMultiple) optClass += ' is-checkbox';
+
+            let indicatorContent = isMultiple ? (isSelected ? '☑' : '☐') : (isSelected ? '●' : '○');
+            let badgeHtml = '';
+
+            if (isEvaluated) {
+              if (opt.is_correct && isSelected) {
+                optClass += ' bank-opt-correct';
+                indicatorContent = '✔';
+                badgeHtml = `<span class="badge" style="background: #10b981; color: #ffffff; font-size: 0.75rem; margin-left: auto; font-weight: 700;">✔ Tu Respuesta (Correcta)</span>`;
+              } else if (!opt.is_correct && isSelected) {
+                optClass += ' bank-opt-incorrect';
+                indicatorContent = '✖';
+                badgeHtml = `<span class="badge" style="background: #ef4444; color: #ffffff; font-size: 0.75rem; margin-left: auto; font-weight: 700;">✖ Tu Respuesta (Incorrecta)</span>`;
+              } else if (opt.is_correct && !isSelected) {
+                optClass += ' bank-opt-missed';
+                indicatorContent = '✔';
+                badgeHtml = `<span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; font-size: 0.75rem; margin-left: auto; font-weight: 700;">${isMultiple ? '⚠ Faltó Seleccionar' : '✔ Respuesta Oficial'}</span>`;
+              }
+            } else if (isRevealed && opt.is_correct) {
+              optClass += ' bank-opt-missed';
+              indicatorContent = '✔';
+              badgeHtml = `<span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; font-size: 0.75rem; margin-left: auto; font-weight: 700;">✔ Respuesta Oficial</span>`;
+            } else if (isSelected) {
+              optClass += ' selected';
+            }
+
+            return `
+              <div class="${optClass}" onclick="App.selectBankOption(${q.id}, ${opt.index})">
+                <span class="bank-opt-indicator">${indicatorContent}</span>
+                <span style="flex: 1; line-height: 1.4;">${opt.text}</span>
+                ${badgeHtml}
+              </div>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Multiple Choice Check Button -->
+        ${isMultiple && !isEvaluated ? `
+          <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-sm" onclick="App.checkMultipleBankQuestion(${q.id})" ${userSel.length === 0 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+              ✔ Comprobar Selección (${userSel.length} seleccionada${userSel.length === 1 ? '' : 's'})
+            </button>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">(Selecciona todas las opciones que correspondan y pulsa Comprobar)</span>
+          </div>
+        ` : ''}
+
+        <!-- Interactive Feedback Banner -->
+        ${isEvaluated ? `
+          <div class="bank-feedback" style="padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; ${isAllCorrect ? 'background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399;' : 'background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #f87171;'}">
+            <div style="font-size: 0.9rem;">
+              ${isAllCorrect ? `
+                <span>🎉 <strong>¡Excelente!</strong> Respuesta correcta de acuerdo a los textos oficiales de la Siglo 21.</span>
+              ` : `
+                <span>❌ <strong>Respuesta incorrecta.</strong> ${q.correct_answers ? `La opción correcta establecida es: <strong style="color: #ecfdf5;">${q.correct_answers.join(' • ')}</strong>` : ''}</span>
+              `}
             </div>
-          `).join('')}
+            <button class="btn btn-outline btn-sm" onclick="App.resetBankQuestion(${q.id})" style="padding: 0.25rem 0.65rem; font-size: 0.78rem;">
+              🔄 Reintentar
+            </button>
+          </div>
+        ` : ''}
+
+        <!-- Bottom action buttons: Toggle Explanation & Reset -->
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-outline btn-sm" onclick="App.toggleAnswer(${q.id})">
+            ${isRevealed ? '🙈 Ocultar Justificación' : '👁️ Revelar Justificación y Tip'}
+          </button>
+          ${isEvaluated || userSel.length > 0 ? `
+            <button class="btn btn-outline btn-sm" onclick="App.resetBankQuestion(${q.id})" style="color: var(--text-muted);">
+              🔄 Limpiar Selección
+            </button>
+          ` : ''}
         </div>
 
-        <button class="btn btn-outline btn-sm" onclick="App.toggleAnswer(${q.id})" style="align-self: flex-start;">
-          👁️ Revelar Justificación y Tip
-        </button>
-
-        <div id="answer-box-${q.id}" class="answer-box" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(56, 189, 248, 0.08); border-left: 3px solid var(--accent); border-radius: 6px;">
-          <strong style="color: var(--accent);">Respuesta Correcta:</strong> 
-          <span style="color: var(--text-main);">${q.correct_answers ? q.correct_answers.join(' • ') : ''}</span>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">${q.explanation || ''}</p>
+        <!-- Answer / Explanation Box -->
+        <div id="answer-box-${q.id}" class="answer-box" style="display: ${isRevealed ? 'block' : 'none'}; margin-top: 1rem; padding: 1.1rem; background: rgba(56, 189, 248, 0.08); border-left: 3px solid var(--accent); border-radius: 8px;">
+          <div style="margin-bottom: 0.5rem;">
+            <strong style="color: var(--accent); font-size: 0.9rem;">Respuesta Oficial Siglo 21:</strong> 
+            <span style="color: var(--text-main); font-weight: 700; margin-left: 0.3rem;">${q.correct_answers ? q.correct_answers.join(' • ') : ''}</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-top: 0.4rem;">${q.explanation || ''}</p>
           ${q.exam_tip ? `
-            <div style="margin-top: 0.5rem; color: #fbbf24; font-size: 0.85rem;">
+            <div style="margin-top: 0.75rem; padding: 0.6rem 0.85rem; background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; border-radius: 6px; color: #fbbf24; font-size: 0.85rem;">
               <strong>💡 Tip de Examen:</strong> ${q.exam_tip}
             </div>
           ` : ''}
         </div>
       </div>
-    `).join('');
+    `;
   }
 
-  function toggleAnswer(qid) {
-    const box = document.getElementById(`answer-box-${qid}`);
-    if (box) {
-      box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+  function selectBankOption(qid, optIndex) {
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (!sub || !sub.questions) return;
+    const q = sub.questions.find(item => item.id === qid);
+    if (!q) return;
+
+    if (!state.bankUserSelections[qid]) {
+      state.bankUserSelections[qid] = [];
+    }
+
+    if (q.kind === 'multiple') {
+      const idx = state.bankUserSelections[qid].indexOf(optIndex);
+      if (idx > -1) {
+        state.bankUserSelections[qid].splice(idx, 1);
+      } else {
+        state.bankUserSelections[qid].push(optIndex);
+      }
+      state.bankEvaluated[qid] = false;
+      updateCardDOM(q);
+    } else {
+      // Single or True/False: select and immediately evaluate
+      state.bankUserSelections[qid] = [optIndex];
+      state.bankEvaluated[qid] = true;
+      updateCardDOM(q);
+      updateBankStats(sub.questions);
     }
   }
 
-  function filterQuestions() {
-    const input = document.getElementById('searchQuestionInput');
-    const term = input ? input.value.toLowerCase().trim() : '';
-    const cards = document.querySelectorAll('.question-card');
+  function checkMultipleBankQuestion(qid) {
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (!sub || !sub.questions) return;
+    const q = sub.questions.find(item => item.id === qid);
+    if (!q) return;
 
-    cards.forEach(c => {
-      const text = c.innerText.toLowerCase();
-      if (!term || text.includes(term)) {
-        c.style.display = 'block';
-      } else {
-        c.style.display = 'none';
+    state.bankEvaluated[qid] = true;
+    updateCardDOM(q);
+    updateBankStats(sub.questions);
+  }
+
+  function resetBankQuestion(qid) {
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (!sub || !sub.questions) return;
+    const q = sub.questions.find(item => item.id === qid);
+    if (!q) return;
+
+    delete state.bankUserSelections[qid];
+    delete state.bankEvaluated[qid];
+    delete state.bankRevealed[qid];
+    updateCardDOM(q);
+    updateBankStats(sub.questions);
+  }
+
+  function updateCardDOM(q) {
+    const card = document.getElementById(`bank-card-${q.id}`);
+    if (card) {
+      card.outerHTML = renderSingleBankCard(q);
+    }
+  }
+
+  function updateBankStats(questions) {
+    const answeredBadge = document.getElementById('bankAnsweredCount');
+    const scoreBadge = document.getElementById('bankScoreBadge');
+
+    let totalAnswered = 0;
+    let totalCorrect = 0;
+    questions.forEach(q => {
+      if (state.bankEvaluated[q.id]) {
+        totalAnswered++;
+        const userSel = state.bankUserSelections[q.id] || [];
+        const correctIndices = (q.options || []).filter(o => o.is_correct).map(o => o.index);
+        const isExactMatch = userSel.length === correctIndices.length && userSel.every(idx => correctIndices.includes(idx));
+        if (isExactMatch) totalCorrect++;
       }
     });
+
+    if (answeredBadge) {
+      answeredBadge.innerText = `Practicadas: ${totalAnswered}`;
+    }
+    if (scoreBadge) {
+      if (totalAnswered > 0) {
+        const pct = Math.round((totalCorrect / totalAnswered) * 100);
+        scoreBadge.style.display = 'inline-block';
+        scoreBadge.innerText = `🎯 ${pct}% Aciertos (${totalCorrect}/${totalAnswered})`;
+      } else {
+        scoreBadge.style.display = 'none';
+      }
+    }
+  }
+
+  function toggleAnswer(qid) {
+    state.bankRevealed[qid] = !state.bankRevealed[qid];
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (sub && sub.questions) {
+      const q = sub.questions.find(item => item.id === qid);
+      if (q) updateCardDOM(q);
+    }
+  }
+
+  function toggleAllBankAnswers() {
+    state.bankAllRevealed = !state.bankAllRevealed;
+    const btn = document.getElementById('btnToggleAllAnswers');
+    if (btn) {
+      btn.innerText = state.bankAllRevealed ? '🔒 Ocultar Respuestas' : '👁️ Revelar Respuestas';
+    }
+    applyBankFilters();
+  }
+
+  function resetAllBankAnswers() {
+    state.bankUserSelections = {};
+    state.bankEvaluated = {};
+    state.bankRevealed = {};
+    state.bankAllRevealed = false;
+    const btn = document.getElementById('btnToggleAllAnswers');
+    if (btn) btn.innerText = '👁️ Revelar Respuestas';
+    applyBankFilters();
+  }
+
+  function filterQuestions() {
+    applyBankFilters();
   }
 
   // =========================================================================

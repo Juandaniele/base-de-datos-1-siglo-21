@@ -387,6 +387,27 @@
       color: var(--text-main);
       margin-bottom: 0.5rem;
     }
+    .lecture-card-wide { grid-column: 1 / -1; }
+    .detail-sections { margin-bottom: 1rem; }
+    .detail-section {
+      border-top: 1px solid var(--border);
+      padding: 0.6rem 0;
+    }
+    .detail-section summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.2rem 0;
+    }
+    .detail-section ul {
+      margin: 0.5rem 0 0.25rem;
+      padding-left: 1.2rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+    .detail-section li { margin-bottom: 0.55rem; }
+    .detail-section li b { color: var(--text-main); }
 
     /* 3D CANVAS & VIEWER STYLES */
     .viewer-container {
@@ -530,6 +551,107 @@
     .exam-option.selected {
       background: var(--accent-glow);
       border-color: var(--accent);
+    }
+
+    /* BANK QUESTION OPTIONS & INTERACTION */
+    .bank-option {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
+      position: relative;
+    }
+    .bank-option:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: var(--accent);
+      transform: translateX(2px);
+    }
+    .bank-option .bank-opt-indicator {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      transition: all 0.2s ease;
+      background: rgba(0,0,0,0.25);
+    }
+    .bank-option.is-checkbox .bank-opt-indicator {
+      border-radius: 4px;
+    }
+    .bank-option.selected {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+    }
+    .bank-option.selected .bank-opt-indicator {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #0f172a;
+    }
+    .bank-option.bank-opt-correct {
+      background: rgba(16, 185, 129, 0.16) !important;
+      border-color: #10b981 !important;
+      color: #ecfdf5 !important;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+    }
+    .bank-option.bank-opt-correct .bank-opt-indicator {
+      background: #10b981 !important;
+      border-color: #10b981 !important;
+      color: #ffffff !important;
+    }
+    .bank-option.bank-opt-incorrect {
+      background: rgba(239, 68, 68, 0.16) !important;
+      border-color: #ef4444 !important;
+      color: #fef2f2 !important;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+    }
+    .bank-option.bank-opt-incorrect .bank-opt-indicator {
+      background: #ef4444 !important;
+      border-color: #ef4444 !important;
+      color: #ffffff !important;
+    }
+    .bank-option.bank-opt-missed {
+      background: rgba(16, 185, 129, 0.08) !important;
+      border: 1.5px dashed #10b981 !important;
+      color: #a7f3d0 !important;
+    }
+    .bank-option.bank-opt-missed .bank-opt-indicator {
+      border-color: #10b981 !important;
+      color: #10b981 !important;
+    }
+    .bank-pill-btn {
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .bank-pill-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .bank-pill-btn.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+      font-weight: 800;
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     /* DATA TABLES */
@@ -751,17 +873,110 @@
 
     <!-- TAB 7: BANCO DE PREGUNTAS -->
     <section id="tab-questions" class="tab-content">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+      <!-- Header with info & live stats -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
         <div>
           <h2>Banco de Preguntas de Examen</h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Preguntas de opción simple, múltiple y V/F con fundamentación oficial y tips de examen.</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Preguntas de opción simple, múltiple y V/F con fundamentación oficial, interactividad de respuestas y tips de examen.</p>
         </div>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <span id="bankQuestionsCount" class="badge badge-exam">0 preguntas</span>
-          <input type="text" id="searchQuestionInput" oninput="App.filterQuestions()" placeholder="Filtrar por texto..." style="background: rgba(15,23,42,0.8); border: 1px solid var(--border); color: #f8fafc; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; outline: none;" />
+        <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+          <span id="bankQuestionsCount" class="badge badge-exam" style="font-size: 0.85rem; padding: 0.45rem 0.8rem;">0 preguntas</span>
+          <span id="bankAnsweredCount" class="badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent); border: 1px solid var(--accent); font-size: 0.85rem; padding: 0.45rem 0.8rem;">Practicadas: 0</span>
+          <span id="bankScoreBadge" class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid #10b981; font-size: 0.85rem; padding: 0.45rem 0.8rem; display: none;">0% Aciertos</span>
         </div>
       </div>
 
+      <!-- FILTER & SORT TOOLBAR -->
+      <div class="card" style="padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.25);">
+        
+        <!-- Controls row: Search, Module, Lecture, Sort, Kind -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.85rem; align-items: end;">
+          
+          <!-- Búsqueda -->
+          <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <label for="searchQuestionInput" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700;">🔍 Buscar</label>
+            <input type="text" id="searchQuestionInput" oninput="App.applyBankFilters()" placeholder="Buscar en texto..." style="background: rgba(30, 41, 59, 0.8); border: 1px solid var(--border); color: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 100%;" />
+          </div>
+
+          <!-- Filtro Módulo -->
+          <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <label for="bankModuleSelect" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700;">📂 Módulo</label>
+            <select id="bankModuleSelect" onchange="App.onBankModuleChange()" style="background: rgba(30, 41, 59, 0.8); border: 1px solid var(--border); color: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 100%; cursor: pointer;">
+              <option value="ALL">Todos los Módulos</option>
+              <option value="M1">Módulo 1</option>
+              <option value="M2">Módulo 2</option>
+            </select>
+          </div>
+
+          <!-- Filtro Lectura -->
+          <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <label for="bankLectureSelect" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700;">📖 Lectura</label>
+            <select id="bankLectureSelect" onchange="App.applyBankFilters()" style="background: rgba(30, 41, 59, 0.8); border: 1px solid var(--border); color: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 100%; cursor: pointer;">
+              <option value="ALL">Todas las Lecturas</option>
+              <option value="L1">Lectura 1</option>
+              <option value="L2">Lectura 2</option>
+              <option value="L3">Lectura 3</option>
+              <option value="L4">Lectura 4</option>
+            </select>
+          </div>
+
+          <!-- Ordenar por -->
+          <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <label for="bankSortSelect" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); font-weight: 800;">⚡ Ordenar por</label>
+            <select id="bankSortSelect" onchange="App.applyBankFilters()" style="background: rgba(30, 41, 59, 0.95); border: 1px solid var(--accent); color: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 100%; cursor: pointer; font-weight: 600;">
+              <option value="recent" selected>🆕 Más reciente primero (por fuente)</option>
+              <option value="module-lecture-asc">📚 Módulo 1 Lectura 1 primero (Ascendente)</option>
+              <option value="module-lecture-desc">📚 Módulo y Lectura descendente</option>
+              <option value="id-asc">🔢 ID Original (#1, #2, #3...)</option>
+              <option value="id-desc">🔢 ID descendente (#144 → #1)</option>
+              <option value="kind">📋 Tipo (V/F, Simple, Múltiple)</option>
+            </select>
+          </div>
+
+          <!-- Tipo de pregunta -->
+          <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <label for="bankKindSelect" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700;">🏷️ Tipo de Pregunta</label>
+            <select id="bankKindSelect" onchange="App.applyBankFilters()" style="background: rgba(30, 41, 59, 0.8); border: 1px solid var(--border); color: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 100%; cursor: pointer;">
+              <option value="ALL">Todos los tipos</option>
+              <option value="vf">Verdadero / Falso</option>
+              <option value="single">Opción Simple</option>
+              <option value="multiple">Múltiple Selección</option>
+            </select>
+          </div>
+
+          <!-- Fuente de la pregunta -->
+          <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <label for="bankSourceSelect" style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700;">🗂️ Fuente</label>
+            <select id="bankSourceSelect" onchange="App.applyBankFilters()" style="background: rgba(30, 41, 59, 0.8); border: 1px solid var(--border); color: #f8fafc; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 100%; cursor: pointer;">
+              <option value="ALL">Todas las fuentes</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Quick lecture pills & Action buttons -->
+        <div style="margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+            <span style="font-size: 0.8rem; color: var(--text-muted); margin-right: 0.3rem; font-weight: 600;">Accesos directos:</span>
+            <div id="bankQuickPills" style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+              <!-- Dynamic pills populated by App -->
+            </div>
+          </div>
+
+          <!-- Global Actions -->
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <button class="btn btn-outline btn-sm" id="btnToggleAllAnswers" onclick="App.toggleAllBankAnswers()" title="Muestra u oculta la justificación y solución en todas las preguntas">
+              👁️ Revelar Respuestas
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="App.resetAllBankAnswers()" title="Reinicia todas las respuestas marcadas en el banco">
+              🔄 Limpiar Intentos
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- QUESTIONS LIST CONTAINER -->
       <div id="questionsListContainer" style="display: flex; flex-direction: column; gap: 1rem;"></div>
     </section>
 
@@ -781,8 +996,8 @@
   <!-- SCRIPTS -->
   <script src="js/three.min.js"></script>
   <script src="js/OrbitControls.js"></script>
-  <script src="js/subjects_data.js"></script>
+  <script src="js/subjects_data.js?v=20261030g"></script>
   <script src="js/three_visualizers.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=20261030g"></script>
 </body>
 </html>
