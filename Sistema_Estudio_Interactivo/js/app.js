@@ -643,8 +643,7 @@
     TP2: 'Trabajo Práctico 2',
     REPASO_STUDOCU: 'Studocu · Repaso',
     INTEGRAL_STUDOCU: 'Studocu · Examen integral',
-    ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025 (archivo 1)',
-    ING_PRE2025_B: 'Studocu · Preguntero Ing. SW 2025 (archivo 2, copia)',
+    ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025',
     ING_PARCIAL2023: 'Studocu · Parcial 1 2023',
     OTRAS: 'Banco de lecturas y casos'
   };
