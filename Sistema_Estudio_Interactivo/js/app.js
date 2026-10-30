@@ -645,6 +645,7 @@
     INTEGRAL_STUDOCU: 'Studocu · Examen integral',
     ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025',
     ING_PARCIAL2023: 'Studocu · Parcial 1 2023',
+    DAYPO_IA_P1: 'Daypo · IA Siglo XXI Primer Parcial (2024)',
     OTRAS: 'Banco de lecturas y casos'
   };
 

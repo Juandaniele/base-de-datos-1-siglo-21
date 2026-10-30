@@ -36085,7 +36085,7 @@ window.STUDY_SYSTEM_DATA = {
     "stats": {
       "modules": 2,
       "lectures": 8,
-      "questions": 60,
+      "questions": 160,
       "flashcards": 16,
       "cases": 4,
       "models3d": 3
@@ -40045,6 +40045,3483 @@ window.STUDY_SYSTEM_DATA = {
         "tp_question": 20,
         "lecture_name": "Módulo 2 - Lectura 4: Sistemas expertos y gestión de la incertidumbre",
         "source": "TP2"
+      },
+      {
+        "id": 61,
+        "prompt": "[Daypo] ¿Con que contribuye la Matemática a la IA?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Lógica, calculo y con la teoría de la relatividad",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Lógica, calculo y con la teoría de la probabilidad",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Lógica, calculo y con la teoría de la probabilidad"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Lógica, calculo y con la teoría de la probabilidad. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 1
+      },
+      {
+        "id": 62,
+        "prompt": "[Daypo] Según la bibliografía, ¿Cuáles de estas disciplinas contribuyeron al desarrollo de la IA?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Filosofía, Neurociencia, Psicología, Ingeniería Computacional, Teoría de control y cibernética y Lingüística",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Filosofía, Matemáticas, Economía, Neurociencia, Psicología, Ingeniería Computacional, Teoría de control y cibernética y Lingüística",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Filosofía, Matemáticas, Economía, Neurociencia, Psicología, Ingeniería Computacional, Teoría de control y cibernética y Lingüística"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Filosofía, Matemáticas, Economía, Neurociencia, Psicología, Ingeniería Computacional, Teoría de control y cibernética y Lingüística. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 2
+      },
+      {
+        "id": 63,
+        "prompt": "[Daypo] ¿Cuáles son las tres disciplinas que son consideradas las corrientes que condujeron al nacimiento de la inteligencia artificial?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Ciencia cognitiva, cibernética y robótica",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Ciencia cognitiva, cibernética",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Ciencia cognitiva, cibernética y robótica"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Ciencia cognitiva, cibernética y robótica. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 3
+      },
+      {
+        "id": 64,
+        "prompt": "[Daypo] ¿En qué momento la historia se empezó a trabajar en la Inteligencia Artificial?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Primera Guerra Mundial",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Segunda Guerra Mundial",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Segunda Guerra Mundial"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Segunda Guerra Mundial. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 4
+      },
+      {
+        "id": 65,
+        "prompt": "[Daypo] ¿Qué es la inteligencia?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es la capacidad de pensar, entender, asimilar, elaborar información y utilizarla para resolver problemas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Es la capacidad de pensar, entender, asimilar, elaborar información, utilizarla para resolver problemas y sentir emociones",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Es la capacidad de pensar, entender, asimilar, elaborar información y utilizarla para resolver problemas"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Es la capacidad de pensar, entender, asimilar, elaborar información y utilizarla para resolver problemas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 5
+      },
+      {
+        "id": 66,
+        "prompt": "[Daypo] Ante la necesidad de disponer de un sistema de control automático capaz de ajustar su desempeño ante varia...el objeto controlado, se le debe otorgar autonomía. Para ello se opta por una unidad de control, ¿basada en qué?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Redes nuerologicas",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Redes neuronales",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Redes neuronales"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Redes neuronales. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 6
+      },
+      {
+        "id": 67,
+        "prompt": "[Daypo] El mismo año que nace la Inteligencia Artificial (1956) se presentó un recurso de programación destinado a jugar un rol trascendental en el campo de la computación y de gran utilidad para la propia IA. Se trató de:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El primer lenguaje superior y su compilador",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El primer lenguaje natural y su compilador",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "El primer lenguaje superior y su compilador"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): El primer lenguaje superior y su compilador. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 7
+      },
+      {
+        "id": 68,
+        "prompt": "[Daypo] Indique cuál de las siguientes opciones no corresponde con la Prueba de Turing.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "No se encuentra vigente",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Se encuentra vigente",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "No se encuentra vigente"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): No se encuentra vigente. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 8
+      },
+      {
+        "id": 69,
+        "prompt": "[Daypo] ¿Qué disciplina o disciplinas son necesarias para hacer posible la materialización de resultados concretos en el campo de la robótica?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Inteligencia Artificial mecánica",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Inteligencia Artificial mecatronica",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Inteligencia Artificial mecánica"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Inteligencia Artificial mecánica. Es material de un compañero/comunidad, no oficial de la cátedra. OJO: el test marca «mecánica»; en el material la disciplina que acompaña a la IA en robótica suele nombrarse como mecatrónica. Verificalo con la lectura.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 9
+      },
+      {
+        "id": 70,
+        "prompt": "[Daypo] Indique las corrientes y acontecimientos que mayor impacto tuvieron para estimular la convocatoria que dio nacimiento de la inteligencia artificial. Seleccione 3 respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Los trabajos de Alan Turing",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Congreso de robotica",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Congreso de cibernética",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Congreso de ciencia cognitiva",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "Los trabajos de Alan Turing",
+          "Congreso de cibernética",
+          "Congreso de ciencia cognitiva"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Los trabajos de Alan Turing; Congreso de cibernética; Congreso de ciencia cognitiva. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 10
+      },
+      {
+        "id": 71,
+        "prompt": "[Daypo] La entidad que hace posible la manifestación practica de desempeño inteligente, posibilitando la interacción con los seres humanos en el mundo real, son medios autónomos denominados:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "maquina",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "robot",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "robot"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): robot. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 11
+      },
+      {
+        "id": 72,
+        "prompt": "[Daypo] Seleccione las cuatro opciones correctas referidas a un ordenamiento muy difundido y característico de los atributos de la inteligencia artificial.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Eficiencia humana",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Congruencia",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Conductas",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Racionalidad",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Procesos mentales",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Eficiencia humana",
+          "Conductas",
+          "Racionalidad",
+          "Procesos mentales"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Eficiencia humana; Conductas; Racionalidad; Procesos mentales. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 12
+      },
+      {
+        "id": 73,
+        "prompt": "[Daypo] Ante la necesidad de dictaminar con rigurosidad si un determinado equipo manifiesta alguna forma de inteligencia en su desempeño, el especialista debe considerar:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La interacción del sistema con el entorno",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "La interacción del sistema con el exterior",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "La interacción del sistema con el entorno"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): La interacción del sistema con el entorno. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 13
+      },
+      {
+        "id": 74,
+        "prompt": "[Daypo] ¿A qué hace referencia la doctrina del positivismo lógico?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Sostiene que todo el conocimiento no se puede caracterizar mediante teorías lógicas relacionadas",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Sostiene que todo el conocimiento se puede caracterizar mediante teorías lógicas relacionadas",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Sostiene que todo el conocimiento se puede caracterizar mediante teorías lógicas relacionadas"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Sostiene que todo el conocimiento se puede caracterizar mediante teorías lógicas relacionadas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 14
+      },
+      {
+        "id": 75,
+        "prompt": "[Daypo] ¿En qué consiste la teoría de la confirmación de Camap y Cari Hempel (1905-1997)?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Intenta explicar cómo el razonamiento se obtiene a partir de la experiencia",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Intenta explicar cómo el conocimiento se obtiene a partir de la experiencia",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Intenta explicar cómo el conocimiento se obtiene a partir de la experiencia"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Intenta explicar cómo el conocimiento se obtiene a partir de la experiencia. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 15
+      },
+      {
+        "id": 76,
+        "prompt": "[Daypo] ¿Qué movimiento se caracteriza por el aforismo “Nada existe en la mente que no haya pasado antes por …… sentidos”?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Empírico",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Empatico",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Empírico"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Empírico. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 16
+      },
+      {
+        "id": 77,
+        "prompt": "[Daypo] ¿Qué sostiene el dualismo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "que tenga ruedas duales",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Que hay una parte de la mente que está exenta de la influencia de las leyes físicas",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Que hay una parte de la mente que está exenta de la influencia de las leyes físicas"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Que hay una parte de la mente que está exenta de la influencia de las leyes físicas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 17
+      },
+      {
+        "id": 78,
+        "prompt": "[Daypo] ¿Qué sostiene el materialismo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Que las operaciones del cerebro realizadas de acuerdo a las leyes de la física constituyen la mente",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Que las operaciones del cerebro realizadas de acuerdo a las leyes de la física constituyen una construcción de material",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Que las operaciones del cerebro realizadas de acuerdo a las leyes de la física constituyen la mente"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Que las operaciones del cerebro realizadas de acuerdo a las leyes de la física constituyen la mente. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 18
+      },
+      {
+        "id": 79,
+        "prompt": "[Daypo] ¿Quién proporciona la primera discusión clara sobre la distinción entre la mente y la materia y los problemas que surgen?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "René Descartes",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "René Favaloro",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "René Descartes"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): René Descartes. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 19
+      },
+      {
+        "id": 80,
+        "prompt": "[Daypo] ¿Cuándo surgió la investigación operativa?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Durante la Segunda Guerra Mundial",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Durante la Primera Guerra Mundial",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Durante la Segunda Guerra Mundial"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Durante la Segunda Guerra Mundial. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 20
+      },
+      {
+        "id": 81,
+        "prompt": "[Daypo] ¿En qué tipo de economías es adecuado usar la teoría de la decisión",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Pequeñas economias",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Grandes economías",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Grandes economías"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Grandes economías. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 21
+      },
+      {
+        "id": 82,
+        "prompt": "[Daypo] ¿Por qué es importante la Teoría de la Decisión?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Porque combina la teoría de la probabilidad con la teoría de la utilidad y proporciona un marco completo y formal para la ayuda a la toma de decisiones realizadas sin incertidumbre",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Porque combina la teoría de la probabilidad con la teoría de la utilidad y proporciona un marco completo y formal para la ayuda a la toma de decisiones realizadas bajo incertidumbre",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Porque combina la teoría de la probabilidad con la teoría de la utilidad y proporciona un marco completo y formal para la ayuda a la toma de decisiones realizadas bajo incertidumbre"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Porque combina la teoría de la probabilidad con la teoría de la utilidad y proporciona un marco completo y formal para la ayuda a la toma de decisiones realizadas bajo incertidumbre. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 22
+      },
+      {
+        "id": 83,
+        "prompt": "[Daypo] ¿Quién fue el primero en tratar a la economía como una ciencia?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Adam Smith",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Will Smith",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Adam Smith"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Adam Smith. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 23
+      },
+      {
+        "id": 84,
+        "prompt": "[Daypo] ¿Cómo se denomina al número de fibras que se ramifican a partir del cuerpo de la célula junto con una única fibra larga llamada axón?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Kriptonita",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Dendrita",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Dendrita"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Dendrita. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 24
+      },
+      {
+        "id": 85,
+        "prompt": "[Daypo] ¿Qué es necesario para que sea considerada una ciencia formal?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una formulación pragmatica, desde el punto de vista de la lógica, la computación y la probabilidad",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Una formulación matemática, desde el punto de vista de la lógica, la computación y la probabilidad",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Una formulación matemática, desde el punto de vista de la lógica, la computación y la probabilidad"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Una formulación matemática, desde el punto de vista de la lógica, la computación y la probabilidad. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 25
+      },
+      {
+        "id": 86,
+        "prompt": "[Daypo] Completa. El eminente matemático que anticipo la posibilidad de que replicaran seres no biológicos fue:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Nicole Neumann",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "John Von Neumann",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "John Von Neumann"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): John Von Neumann. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 26
+      },
+      {
+        "id": 87,
+        "prompt": "[Daypo] ¿Cuáles son los tres elementos clave que Kenneth Craik establece para poder diseñar un agente basado en conocimiento?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El estímulo, procesos cognitivos y acciones",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El estímulo, precios cognitivos y acciones",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "El estímulo, procesos cognitivos y acciones"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): El estímulo, procesos cognitivos y acciones. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 27
+      },
+      {
+        "id": 88,
+        "prompt": "[Daypo] ¿Qué atributos deben tener los agentes informáticos que los distingan de los programas convencionales?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Percibir su entorno, tener controles automaticos, persistencia, adaptación a los cambios y alcanzar objetivos diferentes",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Percibir su entorno, tener controles autónomos, persistencia, adaptación a los cambios y alcanzar objetivos diferentes",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Percibir su entorno, tener controles autónomos, persistencia, adaptación a los cambios y alcanzar objetivos diferentes"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Percibir su entorno, tener controles autónomos, persistencia, adaptación a los cambios y alcanzar objetivos diferentes. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 28
+      },
+      {
+        "id": 89,
+        "prompt": "[Daypo] Indique ¿Por qué se dice, según la bibliografía, que una de las ventajas de estudiar la IA del diseño de un agente racional es más afín a la forma en la que se ha producido el avance científico que los enfoques en la conducta o pensamiento humano",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Porque la norma de la racionalidad está claramente definida y es de aplicación general",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Porque la norma de la racionalidad está claramente definida y no es de aplicación general",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Porque la norma de la racionalidad está claramente definida y es de aplicación general"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Porque la norma de la racionalidad está claramente definida y es de aplicación general. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 29
+      },
+      {
+        "id": 90,
+        "prompt": "[Daypo] ¿Cuál fue la primer maquina programable?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un telar",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Una maquina de cafe",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Un telar"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Un telar. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 30
+      },
+      {
+        "id": 91,
+        "prompt": "[Daypo] La cibernética, reconocida como la “Ciencia de los Mecanismos de Control y de las Comunicaciones en los Seres Vivos y en las Maquinas” reconoce un origen en:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Congreso de Inhibición Cerebral, Nueva York, 1942",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Congreso de Inhibición Cerebral, Nueva York, 1842",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Congreso de Inhibición Cerebral, Nueva York, 1942"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Congreso de Inhibición Cerebral, Nueva York, 1942. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 31
+      },
+      {
+        "id": 92,
+        "prompt": "[Daypo] Para que el desempeño de un cierto equipo sea atribuible a un autómata, debe comprobarse que su comportamiento es:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Siempre automático",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Siempre autonomo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Siempre automático"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Siempre automático. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 32
+      },
+      {
+        "id": 93,
+        "prompt": "[Daypo] ¿Cuál es el principal objetivo que persigue la teoría de control moderna?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El diseño de sistemas que maximizan una función objetivo en el tiempo",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El diseño de sistemas que minimizen una función objetivo en el tiempo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "El diseño de sistemas que maximizan una función objetivo en el tiempo"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): El diseño de sistemas que maximizan una función objetivo en el tiempo. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 33
+      },
+      {
+        "id": 94,
+        "prompt": "[Daypo] ¿En qué se centra la teoría de control?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Se centra en el diseño de máquinas o dispositivos que actúan de forma óptima de acuerdo a las variaciones en su entorno",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Se centra en el diseño de máquinas o dispositivos que actúan de forma autonoma de acuerdo a las variaciones en su entorno",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Se centra en el diseño de máquinas o dispositivos que actúan de forma óptima de acuerdo a las variaciones en su entorno"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Se centra en el diseño de máquinas o dispositivos que actúan de forma óptima de acuerdo a las variaciones en su entorno. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 34
+      },
+      {
+        "id": 95,
+        "prompt": "[Daypo] Ktesibios de Alejandría (250 a.C.) construyó la primera máquina auto controlada ¿De qué aparato se trataba?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un reloj de arena",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Un reloj de agua",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Un reloj de agua"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Un reloj de agua. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 35
+      },
+      {
+        "id": 96,
+        "prompt": "[Daypo] El primer congreso de una serie de eventos que condujeron al nacimiento de la inteligencia artificial tuvo lugar en 1942 y estuvo referido a ¿Qué ciencia?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La cibernética",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "La ciencia cognitiva",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "La cibernética"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): La cibernética. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 36
+      },
+      {
+        "id": 97,
+        "prompt": "[Daypo] La lingüística moderna y la IA suelen solaparse en un campo hibrido ¿Cuál es este campo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Lingüística computacional o procesamiento del lenguaje natural",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Lingüística computacional o procesamiento del lenguaje superior",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Lingüística computacional o procesamiento del lenguaje natural"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Lingüística computacional o procesamiento del lenguaje natural. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 37
+      },
+      {
+        "id": 98,
+        "prompt": "[Daypo] Según Noan Chomsky ¿Qué tema no aborda la teoría conductista?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La relatividad en el lenguaje",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "La creatividad en el lenguaje",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "La creatividad en el lenguaje"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): La creatividad en el lenguaje. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 38
+      },
+      {
+        "id": 99,
+        "prompt": "[Daypo] Indique cuál de las siguientes opciones, correspondientes a Warren McCulloch y Walter Pitts, es incorrecta:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Propusieron y demostraron en 1949 una sencilla regla de actualización para modificar las intensidades de las conexiones entre las neuronas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Propusieron y demostraron en 1979 una sencilla regla de actualización para modificar las intensidades de las conexiones entre las neuronas",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Propusieron y demostraron en 1949 una sencilla regla de actualización para modificar las intensidades de las conexiones entre las neuronas"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Propusieron y demostraron en 1949 una sencilla regla de actualización para modificar las intensidades de las conexiones entre las neuronas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 39
+      },
+      {
+        "id": 100,
+        "prompt": "[Daypo] Un referente fundamental que contribuyo con sus ideas a estimular la Inteligencia Artificial y que ya se había destacado por su éxito durante la guerra para descifrar la codificación de la maquina “Enigma” fue:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Alan Turing",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Steve Jobs",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Alan Turing"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Alan Turing. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 40
+      },
+      {
+        "id": 101,
+        "prompt": "[Daypo] En el mismo año que nace la inteligencia artificial (1956) se presentó un aporte inesperado para la programación por provenir de un campo totalmente ajeno a los habitualmente vinculados a la computación y matemáticas. Se trató de:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Las gramáticas generativas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Las gramáticas regenerativas",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Las gramáticas generativas"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Las gramáticas generativas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 41
+      },
+      {
+        "id": 102,
+        "prompt": "[Daypo] ¿Cuál es el nombre del científico que demostró el famoso teorema del Perceptron?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "John Nixon",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Frank Rosenblatt",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Frank Rosenblatt"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Frank Rosenblatt. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 42
+      },
+      {
+        "id": 103,
+        "prompt": "[Daypo] ¿Quién fue el pionero de la IA y autor de un programa de juego de damas capaz de aprender de su propia experiencia? Arthur Samuel.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Arthur Samuel",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Walter Samuel",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Arthur Samuel"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Arthur Samuel. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 43
+      },
+      {
+        "id": 104,
+        "prompt": "[Daypo] Quién propuso y demostró la regla de aprendizaje Hebbiano?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Donald Webb",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Donald Hebb",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Donald Hebb"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Donald Hebb. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 44
+      },
+      {
+        "id": 105,
+        "prompt": "[Daypo] Desde el mismo nacimiento de la inteligencia artificial se establecieron dos corrientes de investigación con diferentes orientaciones, denominadas:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Tradicional y subsimbolica",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Tradicional y simbolica",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Tradicional y subsimbolica"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Tradicional y subsimbolica. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 45
+      },
+      {
+        "id": 106,
+        "prompt": "[Daypo] Indique cuál de las siguientes opciones no corresponde al SRGP",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Significa Sistema de Representación General de Problemas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "(opción en blanco en el test original)",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Significa Sistema de Representación General de Problemas"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Significa Sistema de Representación General de Problemas. Es material de un compañero/comunidad, no oficial de la cátedra. La segunda opción del test original está vacía («.»); se muestra como opción en blanco. SRGP no es «Sistema de Representación General de Problemas» (es el Solucionador General de Problemas), por eso esa es la que NO corresponde.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 46
+      },
+      {
+        "id": 107,
+        "prompt": "[Daypo] El Primer modelo formal destinado a representar el comportamiento de las neuronas, es decir, el primer... neuronal artificial, ¿a quién se debió y en qué año?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Warren McCullock, 1943",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Los Warren McCullock, 1942",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Warren McCullock, 1943"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Warren McCullock, 1943. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 47
+      },
+      {
+        "id": 108,
+        "prompt": "[Daypo] La inteligencia artificial mostro su orientación hacia la resolución de problemas desde el mismo día de su...inspirada en:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Desarrollar maquinas que razonen y aprovechar su mayor rapidez de cálculo",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Desarrollar maquinas que respondan y aprovechar su mayor rapidez de cálculo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Desarrollar maquinas que razonen y aprovechar su mayor rapidez de cálculo"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Desarrollar maquinas que razonen y aprovechar su mayor rapidez de cálculo. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 48
+      },
+      {
+        "id": 109,
+        "prompt": "[Daypo] La robótica presente en la IA la singularidad de reunir en sus aplicaciones la mayor cantidad de disciplinas tradicionales, al incluir en sus aplicaciones a:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Mecánica, electricidad, electrónica, bioingeniería y computación",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Mecánica, electricidad, electrónica y computación",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Mecánica, electricidad, electrónica, bioingeniería y computación"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Mecánica, electricidad, electrónica, bioingeniería y computación. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 49
+      },
+      {
+        "id": 110,
+        "prompt": "[Daypo] Para el estudio del lenguaje a través de las interacciones entre las computadoras y el ser humano el procesamiento del lenguaje natural es un campo compartido por las siguientes disciplinas:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Ciencia de la informacion, inteligencia artificial y lingüística",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Ciencia de la computación, inteligencia artificial y lingüística",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Ciencia de la computación, inteligencia artificial y lingüística"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Ciencia de la computación, inteligencia artificial y lingüística. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 50
+      },
+      {
+        "id": 111,
+        "prompt": "[Daypo] La minería de datos es un campo cuyo objetivo es definir procesos de descubrimiento de patrones en grandes volúmenes de datos y para ello se apoya en:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Inteligencia Artificial y la pared",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Inteligencia Artificial y la estadística",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Inteligencia Artificial y la estadística"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Inteligencia Artificial y la estadística. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 51
+      },
+      {
+        "id": 112,
+        "prompt": "[Daypo] Entre los sistemas de control en general y autónomos en particular se definen como MIMO a aquellos que... ciertas cualidades. ¡Cuales son estas cualidades? Seleccione las 2 opciones correctas:",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Múltiples entradas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Múltiples procesos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Múltiples salidas",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2
+        ],
+        "correct_answers": [
+          "Múltiples entradas",
+          "Múltiples salidas"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Múltiples entradas; Múltiples salidas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 52
+      },
+      {
+        "id": 113,
+        "prompt": "[Daypo] La inteligencia artificial ha tenido fuerte impacto en la logística, posibilitando un cambio radical en el sistema de trabajo al propiciar un enfoque novedoso de comportamiento, que implica:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Pasar de reactivo a pasivo, anticipando la demanda",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Pasar de reactivo a activo, anticipando la demanda",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Pasar de reactivo a activo, anticipando la demanda"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Pasar de reactivo a activo, anticipando la demanda. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 53
+      },
+      {
+        "id": 114,
+        "prompt": "[Daypo] El difundido “Aprendizaje de Maquinas” (Machine Learning) Queda clasificado tal como:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Simulación del mundo virtual, área intermedia o final",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Simulación del mundo real, área intermedia o final",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Simulación del mundo real, área intermedia o final"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Simulación del mundo real, área intermedia o final. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 54
+      },
+      {
+        "id": 115,
+        "prompt": "[Daypo] ¿Cuál de estos conceptos no se encuentra relacionado con Racionalidad?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Obediencia",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Omnisciencia",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Omnisciencia"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Omnisciencia. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 55
+      },
+      {
+        "id": 116,
+        "prompt": "[Daypo] ¿En cuántos componentes conceptuales se puede dividir un agente que aprende?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "2",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "4",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "4"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): 4. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 56
+      },
+      {
+        "id": 117,
+        "prompt": "[Daypo] El agente inteligente más elemental es reconocido como",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Radioactivo simple",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Reactivo simple",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Reactivo simple"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Reactivo simple. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 57
+      },
+      {
+        "id": 118,
+        "prompt": "[Daypo] Indique cuál de los siguientes, no corresponde a un tipo básico de programa para agentes inteligentes:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Agentes basados en coordenadas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Agente reactivo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Agentes basados en coordenadas"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Agentes basados en coordenadas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 58
+      },
+      {
+        "id": 119,
+        "prompt": "[Daypo] Indique cuáles son los componentes conceptuales, en los que se puede dividir un agente que aprende:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Elemento de izaje, elemento de actuación, critica y generador de problemas",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Elemento de aprendizaje, elemento de actuación, critica y generador de problemas",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Elemento de aprendizaje, elemento de actuación, critica y generador de problemas"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Elemento de aprendizaje, elemento de actuación, critica y generador de problemas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 59
+      },
+      {
+        "id": 120,
+        "prompt": "[Daypo] Se han establecido las necesidades de un sistema inteligente haciendo referencia a las aptitudes de los tres… agentes de capacidad más baja en la clasificación de Russell. ¿Cuáles son estos tres?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Reactivo simple",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Basado en objetos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Basado en objetivos",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Basado en modelos",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "Reactivo simple",
+          "Basado en objetivos",
+          "Basado en modelos"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Reactivo simple; Basado en objetivos; Basado en modelos. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 60
+      },
+      {
+        "id": 121,
+        "prompt": "[Daypo] Un entorno de trabajo es totalmente observable si:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Los sensores observan todos los aspectos que son relevantes en la toma de decisiones",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Los sensores detectan todos los aspectos que son relevantes en la toma de decisiones",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Los sensores detectan todos los aspectos que son relevantes en la toma de decisiones"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Los sensores detectan todos los aspectos que son relevantes en la toma de decisiones. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 61
+      },
+      {
+        "id": 122,
+        "prompt": "[Daypo] Se prepara el pliego de un concurso de precios destinados a adquirir un sistema para resolver problemas definidos a partir de un objetivo y las acciones posibles. Para orientar las ofertas es conveniente que la especificación de compra limite el pedido a sistemas basados en:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Búsqueda en el precio de estados",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Búsqueda en el espacio de estados",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Búsqueda en el espacio de estados"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Búsqueda en el espacio de estados. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 62
+      },
+      {
+        "id": 123,
+        "prompt": "[Daypo] ¿Cuál de los siguientes no es un entorno de un agente?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Cuantitativo",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "reactivo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Cuantitativo"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Cuantitativo. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 63
+      },
+      {
+        "id": 124,
+        "prompt": "[Daypo] En el proceso de definición de las especificaciones del Agente Inteligente apropiado para resolver determinado problema el especialista reconoce la importancia de conocer los atributos del entorno en que se desempeñara y sus ran… ellos es indispensable considerar los presentados en la lista. Seleccione las 4:",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Determinismo",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Determinacion",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Observabilidad",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Secuencialidad",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Variabilidad",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Determinismo",
+          "Observabilidad",
+          "Secuencialidad",
+          "Variabilidad"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Determinismo; Observabilidad; Secuencialidad; Variabilidad. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 64
+      },
+      {
+        "id": 125,
+        "prompt": "[Daypo] Para evaluar y comparar metódicamente el desempeño de agentes inteligentes del máximo nivel se recono… uno de los principales recursos es la distinción para agrupar sus capacidades, que son:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Aprendizaje y actuación",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Teatro y actuacion",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Aprendizaje y actuación"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Aprendizaje y actuación. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 65
+      },
+      {
+        "id": 126,
+        "prompt": "[Daypo] Para identificar el motivo que reduce notablemente el desempeño de un vínculo de comunicaciones de alta velocidad se decide utilizar un agente de software, que es inicialmente muy resistido porque estas entidades virtuales, ¿a qué están asociadas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "A virus hospitalarios",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "A virus informáticos",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "A virus informáticos"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): A virus informáticos. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 66
+      },
+      {
+        "id": 127,
+        "prompt": "[Daypo] Se recomienda un Agente Inteligente Reactivo (escala de Nilsson) para operar en cierto escenario de trabajo. Para disponer de esa misma capacidad de trabajo con Agentes calificados en la escala de Russell son necesarios:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un agente simple reactivo y otro basado en modelos",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Un agente simple radioactivo y otro basado en objetos",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Un agente simple reactivo y otro basado en modelos"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Un agente simple reactivo y otro basado en modelos. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 67
+      },
+      {
+        "id": 128,
+        "prompt": "[Daypo] El agente reactivo simple selecciona las acciones en base a sus:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Percepciones futuras",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Percepciones actuales",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Percepciones actuales"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Percepciones actuales. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 68
+      },
+      {
+        "id": 129,
+        "prompt": "[Daypo] Para evaluar y comparar metódicamente el desempeño de agentes inteligentes se reconoce que una distinción principal debe hacerse en base a su estructura, siendo definida como:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Arquitectura + diseño",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Arquitectura + programa",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Arquitectura + programa"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Arquitectura + programa. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 69
+      },
+      {
+        "id": 130,
+        "prompt": "[Daypo] 2. Ante la necesidad de incorporar a un Agente Inteligente para hacerse cardo de determinada tarea el especialista comienza por hacer un cuidadoso relevamiento del:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Mesa de trabajo y capacidades del persolal",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Modelo de trabajo y capacidades requeridas",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Modelo de trabajo y capacidades requeridas"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Modelo de trabajo y capacidades requeridas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 70
+      },
+      {
+        "id": 131,
+        "prompt": "[Daypo] Selecciona una opción correcta. Las entidades a las que se denominan “agentes inteligentes” se caracteriza... otras, por exhibir las siguientes capacidades básicas. Indique cuales son las capacidades básicas.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Percepción y actuacion",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Percepción y acción",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Percepción y acción"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Percepción y acción. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 71
+      },
+      {
+        "id": 132,
+        "prompt": "[Daypo] ¿Cómo se mide la calidad de la solución?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Por la función costo del camino",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Por la función costo minimo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Por la función costo del camino"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Por la función costo del camino. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 72
+      },
+      {
+        "id": 133,
+        "prompt": "[Daypo] Qué componentes de un problema establecen el espacio de estados del mismo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El estado inicial y la función sucesor",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El estado inicial y la funcion final",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "El estado inicial y la función sucesor"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): El estado inicial y la función sucesor. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 73
+      },
+      {
+        "id": 134,
+        "prompt": "[Daypo] La solución de un problema es la secuencia ordenada de operadores que, como resultado de su aplicación a pasa al estado inicial satisface la condición definida en el estado objetivo.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): VERDADERO. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 74
+      },
+      {
+        "id": 135,
+        "prompt": "[Daypo] Al comprobar que será imposible identificar todas las soluciones de un problema por el método primero en a…debido a la demanda de memoria, el especialista recomienda como segunda opción a:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El método primero en anchura garantiza la exploración de la totalidad del espacio de estados",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El método primero en profundidad garantiza la exploración de la totalidad del espacio de estados",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "El método primero en anchura garantiza la exploración de la totalidad del espacio de estados"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): El método primero en anchura garantiza la exploración de la totalidad del espacio de estados. Es material de un compañero/comunidad, no oficial de la cátedra. OJO: el test marca «el método primero en anchura garantiza la exploración de la totalidad del espacio de estados», pero el enunciado pide la segunda opción cuando anchura es inviable por memoria (lo que correspondería a primero en profundidad). Verificalo.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 75
+      },
+      {
+        "id": 136,
+        "prompt": "[Daypo] Indique cuál de las siguientes opciones, no es un tipo de formulación de problemas: Árbol de búsqueda.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Árbol de búsqueda",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Algoritmo de búsqueda",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Árbol de búsqueda"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Árbol de búsqueda. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 76
+      },
+      {
+        "id": 137,
+        "prompt": "[Daypo] Seleccione una respuesta correcta. Para que el proceso de resolución de un problema sea correcto, la formulación de conjunto de reglas que representan todas las acciones disponibles debe reunir, ¿Cuáles características esenciales?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Precisión, consistencia, completitud e independencia",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Precisión, consistencia, completitud y dependencia",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Precisión, consistencia, completitud e independencia"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Precisión, consistencia, completitud e independencia. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 77
+      },
+      {
+        "id": 138,
+        "prompt": "[Daypo] ¿Cuál es una de las principales ventajas del método exhaustivo “Primero en Profundidad?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Requiere memoria moderada ya que solo almacena la rama que está siendo explorada",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Requiere memoria alta ya que solo almacena la rama que está siendo explorada",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Requiere memoria moderada ya que solo almacena la rama que está siendo explorada"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Requiere memoria moderada ya que solo almacena la rama que está siendo explorada. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 78
+      },
+      {
+        "id": 139,
+        "prompt": "[Daypo] ¿Cómo se denomina la variante de la búsqueda primero en profundidad?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Búsqueda hacia atrás",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Búsqueda hacia adelante",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Búsqueda hacia atrás"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Búsqueda hacia atrás. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 79
+      },
+      {
+        "id": 140,
+        "prompt": "[Daypo] ¿Cuándo es óptima la búsqueda bidireccional?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Siempre que los costos sean iguales y se use una búsqueda primero en anchura",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Siempre que los costos sean iguales y se use una búsqueda primero en altura",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Siempre que los costos sean iguales y se use una búsqueda primero en anchura"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Siempre que los costos sean iguales y se use una búsqueda primero en anchura. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 80
+      },
+      {
+        "id": 141,
+        "prompt": "[Daypo] Indique en que se basa la búsqueda bidireccional Ejecutar dos búsquedas simultaneas:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una hacia adelante desde el estado inicial y la otra hacia atrás desde el objetivo, parando cuando las dos búsquedas se encuentren en el centro",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Una hacia atras desde el estado inicial y la otra hacia atrás desde el objetivo, parando cuando las dos búsquedas se encuentren en el centro",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Una hacia adelante desde el estado inicial y la otra hacia atrás desde el objetivo, parando cuando las dos búsquedas se encuentren en el centro"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Una hacia adelante desde el estado inicial y la otra hacia atrás desde el objetivo, parando cuando las dos búsquedas se encuentren en el centro. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 81
+      },
+      {
+        "id": 142,
+        "prompt": "[Daypo] La búsqueda bidireccional es una aplicación ingeniosa de un método exhaustivo, que consiste en realizar dos búsquedas simultaneas: la primera corresponde al proceso tradicional de avanzar desde la raíz hacia el objetivo y en la segunda se avanza desde el objetivo hacia la raíz. ¿Cuál es el método básico?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Primero en anchura",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Primero en profundidad",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Primero en anchura"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Primero en anchura. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 82
+      },
+      {
+        "id": 143,
+        "prompt": "[Daypo] Los dos principales métodos exhaustivos se distinguen por el orden en que exploran el espacio de estados. ¿Cuáles son estos?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Primero en profundidad y Primero en altura",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Primero en profundidad y Primero en anchura",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Primero en profundidad y Primero en anchura"
+        ],
+        "module": "M2",
+        "lecture": "L1",
+        "topic": "Búsqueda en el espacio de estados",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Primero en profundidad y Primero en anchura. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 1: Formulación de problemas y espacios de búsqueda",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 83
+      },
+      {
+        "id": 144,
+        "prompt": "[Daypo] ¿Qué significa el concepto de Poda del algoritmo A*?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Eliminación de posibilidades a considerar sin necesidad de examinarlas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Eliminación de posibilidades a considerar con necesidad de examinarlas",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Eliminación de posibilidades a considerar sin necesidad de examinarlas"
+        ],
+        "module": "M2",
+        "lecture": "L2",
+        "topic": "Búsqueda informada y heurísticas (A*)",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Eliminación de posibilidades a considerar sin necesidad de examinarlas. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 2: Búsquedas heurísticas y optimización",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 84
+      },
+      {
+        "id": 145,
+        "prompt": "[Daypo] Indique cuál de las siguientes búsquedas pertenece a una Búsqueda informada:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Búsqueda primero el mejor",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Búsqueda primero el peor",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Búsqueda primero el mejor"
+        ],
+        "module": "M2",
+        "lecture": "L2",
+        "topic": "Búsqueda informada y heurísticas (A*)",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Búsqueda primero el mejor. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 2: Búsquedas heurísticas y optimización",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 85
+      },
+      {
+        "id": 146,
+        "prompt": "[Daypo] Seleccione las 2 opciones correctas. Según el nivel de conocimiento sobre el problema quedaran dete… los dos grandes tipos de métodos de búsqueda, ¿Cuáles son estos?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Exhaustivos o no informados y Heurísticos o informados",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Exhaustivos o informados y Heurísticos o no informados",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Exhaustivos o no informados y Heurísticos o informados"
+        ],
+        "module": "M2",
+        "lecture": "L2",
+        "topic": "Búsqueda informada y heurísticas (A*)",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Exhaustivos o no informados y Heurísticos o informados. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 2: Búsquedas heurísticas y optimización",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 86
+      },
+      {
+        "id": 147,
+        "prompt": "[Daypo] ¿Por qué a un algoritmo de inferencia se lo denomina “comprobación de modelos”?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Porque enumera todos los modelos posibles y comprueba si la sentencia es verdadera en todos los modelos en los que la Base de Conocimiento es verdadera",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Porque no enumera todos los modelos posibles y comprueba si la sentencia es verdadera en todos los modelos en los que la Base de Conocimiento es verdadera",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Porque enumera todos los modelos posibles y comprueba si la sentencia es verdadera en todos los modelos en los que la Base de Conocimiento es verdadera"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Porque enumera todos los modelos posibles y comprueba si la sentencia es verdadera en todos los modelos en los que la Base de Conocimiento es verdadera. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 87
+      },
+      {
+        "id": 148,
+        "prompt": "[Daypo] ¿Qué es una cláusula de Horn?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es una disyunción de literales de los cuales, como mucho uno es positivo",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Es una disyunción de laterales de los cuales, como mucho uno es positivo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Es una disyunción de literales de los cuales, como mucho uno es positivo"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Es una disyunción de literales de los cuales, como mucho uno es positivo. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 88
+      },
+      {
+        "id": 149,
+        "prompt": "[Daypo] En las cláusulas de Horn, con exactamente un literal positivo, ¿Cómo se denomina éste literal positivo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Pie",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Cabeza",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Cabeza"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Cabeza. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 89
+      },
+      {
+        "id": 150,
+        "prompt": "[Daypo] En lógica, ¿a qué se denomina sintaxis?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es una sentencia mal formada",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Es una sentencia bien formada",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Es una sentencia bien formada"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Es una sentencia bien formada. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 90
+      },
+      {
+        "id": 151,
+        "prompt": "[Daypo] Completa. La teoría de los juegos representa una disciplina matemática cuyo objeto son los métodos de to… decisión en las llamadas ______:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Situaciones de conflicto",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Situaciones de conflicto belico",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Situaciones de conflicto"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Situaciones de conflicto. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 91
+      },
+      {
+        "id": 152,
+        "prompt": "[Daypo] Normalmente es necesario aclarar que la IA dispone de entidades que actúan de acuerdo a reglas previstas, no gozando de la cualidad ya definida como “autonomia2, por lo que estrictamente hablando no son inteligentes. Su finalidad… simulación de la función cognitiva humana, dando la apariencia de que piensan. Se denominan:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Métodos débiles",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Métodos fuertes",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Métodos débiles"
+        ],
+        "module": "M1",
+        "lecture": "L2",
+        "topic": "Agentes inteligentes",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Métodos débiles. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 2: Agentes inteligentes y autonomía",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 92
+      },
+      {
+        "id": 153,
+        "prompt": "[Daypo] Normalmente es necesario recordar que la IA procura ciertas entidades puedan llegar a ser dotadas de todas las funciones cognitivas que un humano pueda tener, es decir que su capacidad y desempeño no sea diferente de una mente humana real, estableciéndose una clara distinción entre genuina inteligencia y alta complejidad. ¿Cómo se denominan estas entidades?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Métodos fuertes",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Métodos debiles",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Métodos fuertes"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Métodos fuertes. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 93
+      },
+      {
+        "id": 154,
+        "prompt": "[Daypo] Suele ser oportuno hacer notar a los interesados en el tema que las herramientas de la IA han dado lugar a numerosos premios nobel. ¿A que campo pertenecen estos reconocimientos?:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Teoría de Juegos aplicada a la filosofia",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Teoría de Juegos aplicada a la economía",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Teoría de Juegos aplicada a la economía"
+        ],
+        "module": "M1",
+        "lecture": "L1",
+        "topic": "Conceptos, historia y disciplinas de la IA",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Teoría de Juegos aplicada a la economía. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 1 - Lectura 1: Conceptos, paradigmas e historia de la IA",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 94
+      },
+      {
+        "id": 155,
+        "prompt": "[Daypo] ¿Qué son las variables en la lógica de predicados?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Son argumentos cuyo valor no varía a lo largo del tiempo",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Son argumentos cuyo valor varía a lo largo del tiempo",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Son argumentos cuyo valor varía a lo largo del tiempo"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Son argumentos cuyo valor varía a lo largo del tiempo. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 95
+      },
+      {
+        "id": 156,
+        "prompt": "[Daypo] La regla de inferencia más importante en programación lógica, llamada “Regla de refutación”, es también denominada:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Principio de resolución de Robinson",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Principio de resolución de Roberson",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Principio de resolución de Robinson"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Principio de resolución de Robinson. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 96
+      },
+      {
+        "id": 157,
+        "prompt": "[Daypo] Buscando mayor claridad y eficiencia en el uso de lenguajes de programación, en muchos casos es conveniente recomendar la orientación declarativa, en particular la denominada Programación Lógica, que usa la lógica matemática como lenguaje de programación. Esta novedosa idea, ¿por quién fue introducida?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Mike Wososky",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Robert Kowalski",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Robert Kowalski"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Robert Kowalski. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 97
+      },
+      {
+        "id": 158,
+        "prompt": "[Daypo] Según la apreciación de Kowalski, en programación lógica en concepto de algoritmo, ¿Cómo queda planteado?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Lógica",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Logistica",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Lógica"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Lógica. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 98
+      },
+      {
+        "id": 159,
+        "prompt": "[Daypo] En la sintaxis de la programación lógica se distingue la siguiente jerarquía de elementos en sentido creciente (de particular a general). Indique cual es la jerarquía correcta:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Inicio, Predicado, Formula y Sentencia",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Termino, Predicado, Formula y Sentencia",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Inicio, Predicado, Formula y Sentencia"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): Inicio, Predicado, Formula y Sentencia. Es material de un compañero/comunidad, no oficial de la cátedra. OJO: el test marca «Inicio, Predicado, Fórmula y Sentencia», pero la jerarquía clásica de la sintaxis lógica empieza por Término (Término, Predicado, Fórmula, Sentencia). Verificalo.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 99
+      },
+      {
+        "id": 160,
+        "prompt": "[Daypo] Indique que expresa la regla de inferencia denominada Eliminación:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "De una conjunción se puede inferir a uno de sus conjuntores",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "De una conjunción se puede inferir cualquiera de sus conjuntores",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "De una conjunción se puede inferir cualquiera de sus conjuntores"
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "topic": "Lógica e inferencia",
+        "priority": "ALTA",
+        "explanation": "Respuesta marcada como correcta en el test de Daypo Daypo «Inteligencia Artificial - Siglo XXI - Primer Parcial» (autor TECH42, 2024): De una conjunción se puede inferir cualquiera de sus conjuntores. Es material de un compañero/comunidad, no oficial de la cátedra.",
+        "exam_tip": "",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "source": "DAYPO_IA_P1",
+        "source_year": 2024,
+        "source_doc": "https://www.daypo.com/inteligencia-artificial-siglo-xxi-primer-parcial.html",
+        "doc_question": 100
       }
     ]
   }
