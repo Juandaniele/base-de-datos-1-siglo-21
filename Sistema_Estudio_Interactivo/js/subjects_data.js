@@ -13,8 +13,8 @@ window.STUDY_SYSTEM_DATA = {
     "stats": {
       "modules": 4,
       "lectures": 16,
-      "questions": 392,
-      "flashcards": 33,
+      "questions": 535,
+      "flashcards": 83,
       "cases": 6,
       "models3d": 4
     },
@@ -1976,6 +1976,306 @@ window.STUDY_SYSTEM_DATA = {
         "front": "Trigger: errores y transacciones",
         "back": "Sin START TRANSACTION/COMMIT/ROLLBACK (sí ROLLBACK TO SAVEPOINT). Si falla BEFORE no se opera la fila; AFTER solo corre si BEFORE y operación fueron exitosos; un error falla toda la sentencia.",
         "detail": "Módulo 4 – L4"
+      },
+      {
+        "cat": "SQL",
+        "front": "Cada valor manipulado en la base de datos Oracle, y en la mayoría de las bases de datos relacionales es similar, tiene un tipo de datos. El tipo de dato de un valor se asocia a un conjunto fijo de ______",
+        "back": "PROPIEDADES",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 3."
+      },
+      {
+        "cat": "PROGRAMACION",
+        "front": "A que categoría del modularidad en PL/SQL hace referencia el siguiente concepto? “Conjunto de sentencias que aceptan y retornan cero o mas variables, que se denominaran parámetros”",
+        "back": "PROCEDIMIENTOS.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 5."
+      },
+      {
+        "cat": "SQL",
+        "front": "Como se denomina la clausula que proporciona una condición en el grupo de tuplas asociado a cada valor de los atributos de agrupamiento?",
+        "back": "HAVING.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 7."
+      },
+      {
+        "cat": "SQL",
+        "front": "Las funciones de grupo (usadas con GROUP BY) pueden aparecer en la lista de columnas del SELECT y en las condiciones de las cláusulas HAVING y WHERE. ¿Verdadero o falso?",
+        "back": "Falso (no pueden usarse en el WHERE).",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 8."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cuales son funciones generales de comparación?",
+        "back": "LEAST Y GREATEST.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 11."
+      },
+      {
+        "cat": "PROGRAMACION",
+        "front": "Que función se usa en PL/SQL para obtener el ultimo valor en la secuencia?",
+        "back": "CURRVAL",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 12."
+      },
+      {
+        "cat": "PROGRAMACION",
+        "front": "A que categoría de la modularidad en PL/SQL hace referencia el siguiente concepto? “Conjunto de sentencias asociadas a una tabla de la base y también a los eventos del sistema”",
+        "back": "TRIGGERS.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 13."
+      },
+      {
+        "cat": "PROGRAMACION",
+        "front": "A que categoría de la modularidad en PL/SQL hace referencia el siguiente concepto? “Conjunto de sentencias que acepta parámetros y que su tarea principal es calcular un valor y devolverlo para finalizar su trabajo; no pueden realizar transacciones mientras son ejecutadas”",
+        "back": "FUNCIONES.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 17."
+      },
+      {
+        "cat": "SQL",
+        "front": "Verdadero o falso: Cuando se incluye una función de grupo en el SELECT junto con columnas simples, es decir, sin funciones de grupo, debemos escribir la clausula GROUP BY con todas las columnas simples del SELECT",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 21."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual de las siguientes opciones nombra correctamente la situación descripta? “En esta situación el optimizador cambia la estrategia y lee la primera fila de la consulta principal, allí conoce el valor que esta necesitando la subconsulta y con esta información ejecuta la subconsulta”",
+        "back": "CONSULTA CON SUB CONSULTAS CORRELACIONADAS.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 22."
+      },
+      {
+        "cat": "SQL",
+        "front": "La sentencia CREATE de DDL crea muchos objetos distintos. ¿Cuál de estas entidades NO se crea con una sentencia CREATE exclusiva para ese tipo de objeto?",
+        "back": "CONSTRAINT (se agrega con ALTER TABLE o dentro del CREATE TABLE).",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 23."
+      },
+      {
+        "cat": "SQL",
+        "front": "¿Cómo se resuelve dentro de un SELECT el requerimiento «saber qué empleado gana más que el sueldo promedio de toda la empresa»?",
+        "back": "Con una subconsulta en el WHERE.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 24."
+      },
+      {
+        "cat": "SQL",
+        "front": "Otro uso de las subconsultas en el SELECT es en la cláusula FROM, donde toman el nombre de ______",
+        "back": "IN LINE VIEWS",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 25."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual de los siguientes tipos de datos propios de MySQL comparte este con ORACLE?",
+        "back": "CHAR.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 26."
+      },
+      {
+        "cat": "SQL",
+        "front": "Escribir subconsultas en el SELECT, permite reemplazar la creación de un objeto en el esquema. ¿Cuál es ese objeto?",
+        "back": "FUNCION.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 27."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual de las siguientes funciones de grupo devuelve el valor mínimo de un grupo de filas?",
+        "back": "MIN(columna)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 28."
+      },
+      {
+        "cat": "SQL",
+        "front": "Un lenguaje declarativo como SQL significa que debe ______",
+        "back": "ESPECIFICARSE EN LAS SENTENCIAS QUE ES LO QUE SE QUIERE OBTENER",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 29."
+      },
+      {
+        "cat": "SQL",
+        "front": "La clausula que permite formar distintos grupos para aplicarle las funciones de grupo discriminadamente es ______",
+        "back": "GROUP BY",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 30."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual de las siguientes NO es una sentencia del lenguaje SQL?",
+        "back": "ALTER TABLA mitabla DISABLE INDEX mitabla_PK;",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 31."
+      },
+      {
+        "cat": "SQL",
+        "front": "¿Qué realiza el comando ALTER TABLE empresa.empleado DROP COLUMN dirección CASCADE?",
+        "back": "Elimina la columna dirección de la tabla empleado y todas las restricciones y vistas que hacen referencia a esa columna.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 32."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual NO es un uso permitido de una subconsulta?",
+        "back": "SER USADA EN EL GROUP BY.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 33."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual contiene el nombre de las subconsultas que devuelven un solo valor?",
+        "back": "ESCALARES.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 34."
+      },
+      {
+        "cat": "SQL",
+        "front": "El operador = ANY es equivalente al operador ______",
+        "back": "IN",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 35."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual de las acciones realiza la sentencia TRUNCATE?",
+        "back": "BORRA LAS FILAS EN BLOQUE Y DEJA LA ESTRUCTURA DE COLUMNAS, INDICES Y CONSTRAINTS SIN MODIFICACIONES.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 36."
+      },
+      {
+        "cat": "SQL",
+        "front": "Las funciones de grupo pueden ______",
+        "back": "ANIDARSE",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 37."
+      },
+      {
+        "cat": "SQL",
+        "front": "Cual es una función de filas simples que se diferencia del resto de funciones de fila simple?",
+        "back": "LOWER",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 38."
+      },
+      {
+        "cat": "SQL",
+        "front": "Escribir subconsultas en el WHERE, permite escribir condiciones basadas en valores ______",
+        "back": "QUE ESTAN ALMACENADOS EN UNA TABLA DE LA BASE DE DATOS",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 39."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "De quien es la tarea de que la vista se encuentre actualizada?",
+        "back": "DBMS",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 40."
+      },
+      {
+        "cat": "SQL",
+        "front": "La única forma de garantizar el orden descendente de las filas en un SELECT es a través de ORDER BY columna ______",
+        "back": "DESC",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 41."
+      },
+      {
+        "cat": "SQL",
+        "front": "En el SELECT, un grupo de filas es seleccionado cuando hay dos condiciones en el HAVING coordinadas con AND y ______",
+        "back": "AMBAS SON VERDADERAS",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 43."
+      },
+      {
+        "cat": "PROGRAMACION",
+        "front": "Colección de procedimientos y funciones que tienen dos partes: una especificación de los procedimientos, funciones que están disponibles o que se ponen como públicas y la otra parte del paquete (denominada cuerpo del paquete), que contiene el código de los procedimientos y de las funciones especificadas.\". ______",
+        "back": "PAQUETES",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 45."
+      },
+      {
+        "cat": "SQL",
+        "front": "¿Cuál es la sentencia en DDL que se utiliza para crear objetos en general?",
+        "back": "CREATE.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 46."
+      },
+      {
+        "cat": "DER",
+        "front": "En un modelo Entidad/Relación es sabido que las entidades poseen \"propiedades\" que permiten su caracterización. ¿Que otro termino suele utilizar al de “propiedad”?",
+        "back": "ATRIBUTO.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 48."
+      },
+      {
+        "cat": "DISENO",
+        "front": "Verdadero o falso: \"La mayoría de las tablas en 3FN están libres de anomalías de actualización, inserción y borrado",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 50."
+      },
+      {
+        "cat": "DER",
+        "front": "Verdadero o falso: El análisis de Entidad-relación (E-R) es uno de los procesos de análisis de los llamados en cascada lo que implica que una frase termina y recien se inicia la siguiente",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 51."
+      },
+      {
+        "cat": "DISENO",
+        "front": "Cuál de las siguientes opciones contiene la definición que corresponde, según el autor Maninno, a la frase de Implementación de sistemas?",
+        "back": "Genera el codigo ejecutable, bases de datos y documentacion para el usuario.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 52."
+      },
+      {
+        "cat": "DER",
+        "front": "Cuál de las siguientes opciones indica el valor previsto en el modelo para un atributo cuando su valor es desconocido?",
+        "back": "NULL.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 53."
+      },
+      {
+        "cat": "SQL",
+        "front": "Verdadero o falso: \"Los modificadores ALL y ANY se aplica a los operadores de comparación =,<,>",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 54."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "En el modelo relacional, la base de datos es una colección de ______",
+        "back": "DATOS RELACIONADOS",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 55."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "¿Cuál de las siguientes opciones contiene el nombre de la regla a la que se corresponde la siguiente definición? \"gobierna las situaciones de representación de interrelaciones en el universo de discursos, de modo que se representan vínculos existentes o inexistentes, pero se eviten referencias no permitidas\"",
+        "back": "REGLA DE INTEGRIDAD REFERENCIAL",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 56."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "Antes de las Bases de Datos, el almacenamiento de datos se hacía en archivos que guardaban toda la información separada en ______",
+        "back": "CAMPOS Y REGISTROS",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 57."
+      },
+      {
+        "cat": "DER",
+        "front": "Verdadero o falso: Los diagramas modelo E-R contienen diversos componentes principales, que son Rectangulos, Elipces, Rombos y Lineas",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 58."
+      },
+      {
+        "cat": "SQL",
+        "front": "¿Cuál de las siguiente funcione de grupo que devuelve el conteo de un conjunto de filas?",
+        "back": "COUNT.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 59."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "Cuál de las siguientes NO corresponde a los componentes grupales de una base de datos?",
+        "back": "LENGUAJE PROCEDIMENTAL.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 60."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "Para distinguir una tupla de otra, es necesario definir el concepto de ______",
+        "back": "CLAVE PRIMARIA",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 61."
+      },
+      {
+        "cat": "DER",
+        "front": "Verdadero o falso: Un argumento a favor del Esquema - Estrella (E-E) es que las tablas desnormalizadas en hechos y dimensiones, al consultarlas tienen un mejor tiempo de repuesta que un modelo Entidad - relación (E-R) con tablas normalizadas",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 62."
+      },
+      {
+        "cat": "SQL",
+        "front": "¿Que debe asignarse al comando CREATE VIEW?",
+        "back": "Un nombre de la vista, una lista de nombres de atributos y una consulta que sirva para especificar al contenido de la vista.",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 63."
+      },
+      {
+        "cat": "DER",
+        "front": "Los atributos compuestos se pueden ______",
+        "back": "DIVIDIR EN SUBPARTES",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 64."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "Verdadero o falso: Todas las vistas que son teóricamente actualizables se pueden actualizar por el sistema. Regla 6: Regla actualización de vistas",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 65."
+      },
+      {
+        "cat": "RELACIONAL",
+        "front": "Verdadero o falso: El uso de vistas simples se justifica por su mayor rapidez en el recupero de las filas que se han almacenado en ella",
+        "back": "Verdadero (figura como afirmación correcta en el preguntero)",
+        "detail": "Preguntero Studocu del segundo parcial (mayo 2025), ítem 66."
       }
     ],
     "questions": [
@@ -18432,6 +18732,5486 @@ window.STUDY_SYSTEM_DATA = {
         "exam_tip": "Restricción propia de funciones y triggers.",
         "tp_number": 4,
         "id": 392
+      },
+      {
+        "id": 393,
+        "prompt": "¿Qué palabra clave se utiliza en la cláusula SELECT para eliminar las tuplas duplicadas del resultado de una consulta?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "ALL",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "DISTINCT",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "EXCEPT",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "DISTINCT"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"DISTINCT\". Para eliminar las tuplas duplicadas del resultado de una consulta SQL, utilizamos la palabra clave DISTINCT en la cláusula SELECT, lo que significa que solo las tuplas distintas deben permanecer en el resultado. Una consulta con SELECT DISTINCT elimina los duplicados, mientras que una consulta con SELECT ALL no lo hace. Especificar SELECT sin ALL ni DISTINCT es equivalente a SELECT ALL.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 394,
+        "prompt": "¿Cómo se denomina la cláusula que proporciona un filtro de grupos a una consulta con funciones de grupos y a veces con la cláusula Group By?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "HAVING",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "ORDER BY",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "GROUP BY",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "HAVING"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"HAVING\". SQL proporciona una cláusula HAVING que suele aparecer en combinación con GROUP BY. HAVING proporciona una condición en el grupo de tuplas asociado a cada valor de los atributos de agrupamiento. En el resultado de la consulta solo aparecen los grupos que satisfacen dicha condición.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 395,
+        "prompt": "¿A qué tipo de base de datos es posible acceder mediante SQL?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Relacionales",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "No relacionales",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Relacionales"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Relacionales\". Una base de datos relacional es una colección de elementos de datos organizados en un conjunto de tablas formalmente descritas desde la que se puede acceder a los datos a través de sentencias SQL.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 396,
+        "prompt": "Completa el Situación seleccionando la palabra que falta en el siguiente concepto: \"SQL es un lenguaje ________ de \"alto nivel\" o \"de no procedimiento\", que gracias a su fuerte base teórica y su orientación al manejo de conjuntos de registros, y no a registros individuales, permite una alta productividad en codificación y la orientación a objetos\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Declarativo",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Procedimental",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Declarativo"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Declarativo\". SQL es un lenguaje declarativo (especifica qué es lo que se quiere y no cómo conseguirlo) que da acceso a un sistema de gestión de bases de datos relacionales que permite especificar diversos tipos de operaciones en ellos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 397,
+        "prompt": "¿Qué devuelve la siguiente sentencia SQL? SELECT UPPER(nombre) FROM alumno;.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Nombre de los alumnos en mayúsculas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Nombre de los alumnos en minúscula",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Nombre de los alumnos ordenados ascendentemente",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Nombre de los alumnos en mayúsculas"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Nombre de los alumnos en mayúsculas\". Las funciones de cadena trabajan con campos char y varchar por lo que los literales que se escriben deben ir entre comillas simples. Se dividen en dos grupos las que devuelven caracteres y las que devuelven valores numéricos. Dentro de las primeras UPPER (cad) convierte la cadena devuelta en mayúsculas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 398,
+        "prompt": "¿Qué devuelve la siguiente sentencia SQL? SELECT LOWER(nombre) FROM alumno;.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Nombre de los alumnos en minúsculas",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Nombre de los alumnos en mayúsculas",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Nombre de los alumnos en minúsculas"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Nombre de los alumnos en minúsculas\". Las funciones de cadena trabajan con campos char y varchar por lo que los literales que se escriben deben ir entre comillas simples. Se dividen en dos grupos las que devuelven caracteres y las que devuelven valores numéricos. Dentro de las primeras LOWER (cad) convierte la cadena devuelta en minúsculas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 399,
+        "prompt": "¿Cuál de las siguientes funciones se usa para completar a la izquierda con un carácter hasta una cantidad de caracteres determinada?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "LTRIM",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "LPAD",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "INITCAP",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "LPAD"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"LPAD\". Las funciones de cadena trabajan con campos char y varchar por lo que los literales que se escriben deben ir entre comillas simples. Se dividen en dos grupos las que devuelven caracteres y las que devuelven valores numéricos. Dentro de las primeras, LPAD añade o completa caracteres a la primera cadena por la izquierda hasta una longitud máxima dada por n.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 400,
+        "prompt": "¿Cuál es el operador que se utiliza en la cláusula SELECT e indica que deben traerse todas las columnas de la o las tablas seleccionadas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "\" * \"",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "\" - \"",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "\" * \""
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: '\" * \"'. La sentencia SELECT se utiliza para recuperar información de la base de datos, y puede proyectar las columnas seleccionadas o como, en este caso, traer todas las columnas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 401,
+        "prompt": "¿Cuál es la sentencia SQL que permite consultar los datos que están en las tablas y en las vistas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "HAVING",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "SELECT",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "GROUP BY",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "SELECT"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"SELECT\". La sentencia SELECT se utiliza para recuperar información de la base de datos. También puede seleccionar o filtrar los registros según varios criterios o realizar reuniones o JOIN que recopilan datos de diferentes tablas a través de una relación entre ellas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 402,
+        "prompt": "¿Cuál es la cláusula obligatoria en la mayoría de las bases de datos para las consultas SELECT?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "ORDER BY",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FROM",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "SELECT",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "SELECT"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"SELECT\". La sentencia SELECT se utiliza para recuperar información de la base de datos, y puede proyectar las columnas seleccionadas, o sea realizar un filtro sobre la tabla y recuperar solamente datos de las columnas filtradas. La cláusula obligatoria en la mayoría de las bases de datos para las consultas SELECT es justamente SELECT, aunque en algunas bases como Oracle, además es obligatoria FROM.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 403,
+        "prompt": "¿Cuál de las siguientes funciones numéricas devuelve un valor numérico, redondeado a la longitud o precisión especificada?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "TRUNC",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "ROUND",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "SIGN",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "ROUND"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"ROUND\". Las funciones numéricas reciben y devuelven valores numéricos y la mayoría retorna valores NUMBER. Las más simples son operadores matemáticos como '*', '/', '+', '-', etc. La función ROUND devuelve un number al que le realizó redondeo numérico a la longitud o precisión especificadas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 404,
+        "prompt": "¿Cómo se denominan las subconsultas que deben devolver un solo valor? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Escalares",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Multicolumna",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Escalares"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Escalares\". Una subconsulta escalar es una sentencia SELECT dentro de una consulta externa que se usa para devolver un solo valor. La misma debe estar escrita dentro de paréntesis, puede tener varios niveles de subconsultas (hasta 32 niveles) y tiene que saber jugar hasta con la devolución de valores NULL.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 405,
+        "prompt": "¿Cuántos valores puede devolver una subconsulta ESCALAR, ubicada en la cláusula SELECT de la consulta principal? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Ninguno",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Uno",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Uno"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Uno\". En la sentencia SELECT se pueden incluir subconsultas en la cláusula SELECT para traer un valor que devolverá por cada fila recuperada por la consulta principal contenedora de la subconsulta. Esto hace que la subconsulta obligatoriamente deba devolver solo un valor. Es decir, que las subconsultas denominadas subconsultas escalares devuelven un valor (y solo uno) para cada fila procesada en la consulta principal.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 406,
+        "prompt": "¿Cuál es la función de SQL que cuenta las filas seleccionadas y filtradas por la consulta y muestra el resultado del conteo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "TRUNC()",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "COUNT()",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "ROUND()",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "COUNT()"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"COUNT()\". La función COUNT() devuelve el número de filas que coinciden con un criterio especificado, es decir, cuenta las filas seleccionadas y filtradas por la consulta y muestra el resultado del conteo.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 407,
+        "prompt": "¿Qué devuelve la siguiente sentencia SQL? \"SELECT SUBSTR(nombre,0,3) FROM alumno;\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El contenido de la columna \"nombre\" con \"0\" reemplazando a los valores \"3\" que contiene esta columna",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Las tres primeras letras de una columna llamada \"nombre\"",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Las tres últimas letras de una columna llamada \"nombre\"",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Las tres primeras letras de una columna llamada \"nombre\""
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Las tres primeras letras de una columna llamada \"nombre\"\". Las funciones de cadena trabajan con campos char y varchar por lo que los literales que se escriben deben ir entre comillas simples. Se dividen en dos grupos, las que devuelven caracteres y las que devuelven valores numéricos. Dentro de las primeras SUBSTR (cad, m[,n]) toma una subcadena de una cantidad de caracteres desde una posición determinada, es decir, devuelve la subcadena de cad que abarca desde m hasta el número de caracteres dados por n.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 408,
+        "prompt": "¿Qué devuelve la siguiente función SQL? \"GREATEST (value1, value2)\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La diferencia de valores entre value1 y value2",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "El menor valor entre value1 y value2",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "El mayor valor entre value1 y value2",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "El mayor valor entre value1 y value2"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"El mayor valor entre value1 y value2\". Las funciones generales de comparación determinan los valores mayores o menores de un conjunto de datos y devuelven nulo si cualquier argumento es nulo. La función greatest (value1, value2) devuelve el mayor de los valores proporcionados.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 409,
+        "prompt": "¿Qué devuelve la siguiente función SQL? \"LEAST (value1, value2)\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El promedio de valores entre value1 y value2",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "El mayor valor entre value1 y value2",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "El menor valor entre value1 y value2",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "El menor valor entre value1 y value2"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"El menor valor entre value1 y value2\". Las funciones generales de comparación determinan los valores mayores o menores de un conjunto de datos y devuelven nulo si cualquier argumento es nulo. La función least (value1, value2) devuelve el menor de los valores proporcionados.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 410,
+        "prompt": "¿Cuál es la cláusula que toma las filas del conjunto de tablas reunidas en el FROM y las separa en grupos con las filas que tienen el mismo valor en la columna nombrada en esta?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "GROUP BY",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "HAVING",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "ORDER BY",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "GROUP BY"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"GROUP BY.\" Las funciones de grupo son usadas en combinación con la cláusula GROUP BY, con la que se divide a las filas seleccionadas porque cumplen con las condiciones de filtro del WHERE, en grupos basados en los distintos valores de las columnas incluidas en el GROUP BY. La cláusula que separa las filas del conjunto, en grupos de filas que tienen el mismo valor en la columna es GROUP BY.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 411,
+        "prompt": "Completa el Situación seleccionando la palabra que falta en el siguiente concepto: \"La forma de nombrar una tabla con una abreviatura en el FROM, para poder luego usar en las otras cláusulas esta abreviatura en vez del nombre completo de la tabla, se denomina _______ de la tabla\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Columna",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Nombre",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Alias",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Alias"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Alias\". Un alias de una tabla se utiliza cuando se desea indicar con una sigla que una columna pertenece a una tabla, que tiene en el FROM asignada esa sigla. Se utilizan para dar un nombre temporal a la tabla haciendo que los nombres de las columnas sean más legibles. Estos solo existen durante la duración de la consulta.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 412,
+        "prompt": "¿Cuál es la cláusula en la que se enumeran las tablas, vistas y subconsultas que deben ser seleccionadas para buscar las columnas que se enumeran en el SELECT?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "WHERE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "ORDER BY",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "FROM",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "FROM"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"FROM\". En una instrucción SELECT, la cláusula FROM especifica las tablas o consultas que contienen los datos que se usarán en la cláusula SELECT, es decir, especifica las tablas, vistas y subconsultas de las que se van a recuperar filas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 413,
+        "prompt": "¿Cuál de las siguientes funciones devuelve un carácter de acuerdo a un solo parámetro?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "SUBSTR",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "CONCAT",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "CHR",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "CHR"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"CHR\". Las funciones de cadena trabajan con campos char y varchar por lo que los literales que se escriben deben ir entre comillas simples. Se dividen en dos grupos, las que devuelven caracteres y las que devuelven valores numéricos. Dentro de las primeras CHR devuelve un carácter de acuerdo a un argumento cuyo valor en binario es n.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 414,
+        "prompt": "Seleccione la opción correcta. En consultas multitablas, las tablas participantes deben obligatoriamente:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Conectarse a través de sus claves primarias",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Conectarse a través de las columnas con el mismo nombre",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Conectarse en la condición de reunión o en la cláusula ON por columnas que tengan el mismo dominio",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Conectarse en la condición de reunión o en la cláusula ON por columnas que tengan el mismo dominio"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Conectarse en la condición de reunión o en la cláusula ON por columnas que tengan el mismo dominio\". La operación JOIN requiere que haya una condición de reunión por cada par de tablas en el WHERE o en el ON de la cláusula JOIN en el FROM.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 415,
+        "prompt": "¿Qué sentencias SQL pueden aplicar un filtro con la sentencia WHERE? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "SELECT, UPDATE, DELETE, CREATE (sin subconsultas)",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "SELECT, UPDATE, DELETE exclusivamente",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "SELECT exclusivamente",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "SELECT, UPDATE, DELETE exclusivamente"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"SELECT, UPDATE, DELETE exclusivamente\". La cláusula WHERE puede ser usada en SELECT, UPDATE y DELETE para filtrar las filas a mostrar, actualizar o borrar.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 416,
+        "prompt": "Completa el Situación seleccionando la opción correcta. Las subconsultas dentro de las sentencias SQL tienen la característica:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "De permitir el uso de valores que no se conocen de antemano y que están en la base de datos",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "De acelerar la ejecución de la sentencia al disminuir los accesos a la base de datos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "De permitir establecer relaciones de referencia externas con otras consultas guardadas en el diccionario",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "De permitir el uso de valores que no se conocen de antemano y que están en la base de datos"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"De permitir el uso de valores que no se conocen de antemano y que están en la base de datos\". Las subconsultas permiten incorporar a una consulta u otra sentencia un valor que se encuentra en otra tabla de la base.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 417,
+        "prompt": "En el momento de escribir una consulta que usa alguna función de grupo, ¿qué se debe tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Ignoran las filas que tengan valores null en la columna en la que se aplican",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Se pueden usar en la cláusula WHERE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "No se pueden usar en la cláusula HAVING",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Ignoran las filas que tengan valores null en la columna en la que se aplican"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Ignoran las filas que tengan valores null en la columna en la que se aplican\". Las funciones de grupo no consideran las filas con las columnas que contiene valores null.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 418,
+        "prompt": "En el momento de escribir una sentencia INSERT, ¿qué debes tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "No puede prescindir de la cláusula VALUES",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Permite ingresar más de una fila con el uso de subconsultas",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Únicamente puede insertar una sola fila por vez",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Permite ingresar más de una fila con el uso de subconsultas"
+        ],
+        "module": "M3",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Sentencias DML Insert, Update y Delete (y sublenguaje TCL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Permite ingresar más de una fila con el uso de subconsultas\". La sentencia INSERT simple permite ingresar solamente una fila, pero si se le agrega una subconsulta puede insertar tantas filas como las que devuelve la misma.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 419,
+        "prompt": "En el momento de escribir una sentencia UPDATE, ¿qué deberás tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "No requiere COMMIT para confirmar el cambio",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Sin la cláusula WHERE, afecta a todas las filas de la tabla",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Permite usar subconsultas solamente en el WHERE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Sin la cláusula WHERE, afecta a todas las filas de la tabla"
+        ],
+        "module": "M3",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Sentencias DML Insert, Update y Delete (y sublenguaje TCL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Sin la cláusula WHERE, afecta a todas las filas de la tabla\". Con DELETE se puede utilizar una cláusula WHERE, como con UPDATE, para limitar el alcance de actualización o borrado solamente a las filas que cumplen con las condiciones del filtro. Vale destacar que, si no se incluye la cláusula WHERE en estas sentencias SQL, al ejecutarse se modifican o borran TODAS las filas de la tabla afectada.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 420,
+        "prompt": "Para evitar crear una vista que no se usará con frecuencia es posible escribir una subconsulta que tenga ese rol en el FROM, ¿Cómo se denomina a estas subconsultas que cumplen el rol de una vista?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Views on line",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "In line views",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "In line views"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"In line views\". Es la denominación de las subconsultas usadas en el from para simular una vista, evitando la necesidad de crearla como objeto permanente.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 421,
+        "prompt": "Analizas una consulta sobre la tabla clientes, con alias \"C\". Encuentras en la subconsulta que en la cláusula WHERE de la misma se compara con una columna con el prefijo \"C.\" ¿Qué es?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una referencia foránea",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Una referencia externa",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Un error de escritura",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Una referencia externa"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Una referencia externa\". La normalización es una técnica para diseñar la estructura lógica de los datos de un sistema de información en el modelo relacional. En el proceso de normalización se debe ir comprobando que cada relación (tabla) cumple una serie de reglas que se basan en la clave primaria y las dependencias funcionales. En la 3FN no puede haber dependencia funcional entre columnas no claves.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 423,
+        "prompt": "Analizas una consulta con subconsultas. ¿Qué debes buscar en la subconsulta para determinar que es una subconsulta correlacionada?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un alias de una tabla del from de la consulta principal",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El operador Outer Join",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "La presencia de un asterisco",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Un alias de una tabla del from de la consulta principal"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Un alias de una tabla del from de la consulta principal\". El hecho de usar un alias de una tabla del from de la consulta principal indica que es una subconsulta correlacionada.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 424,
+        "prompt": "Analizas una situación en la que la consulta debe devolver las filas en un determinado orden. Decides aplicar la cláusula ORDER BY. ¿Cuál de las siguientes afirmaciones es correcta acerca de su uso?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es la última cláusula de la sentencia SELECT",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "El orden de las columnas en la cláusula no tiene ninguna importancia",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Debe tener un modificador ASC para indicar este sentido de ordenación",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Es la última cláusula de la sentencia SELECT"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Es la última cláusula de la sentencia SELECT\". La ubicación de las cláusulas en el SELECT no puede modificarse y la de la cláusula ORDER BY es siempre al último.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 425,
+        "prompt": "Analizas las cláusulas del SELECT. Cuando tomas a HAVING, la debes distinguir de otra cláusula ya que filtran cosas distintas ¿Cuál es la otra cláusula y por qué se distinguen?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Con ORDER BY porque esta ordena filas y WHERE filtra filas",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Con GROUP BY porque aquella filtra filas y esta determina grupos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Con WHERE porque esta filtra filas y HAVING filtra por funciones de grupo",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Con WHERE porque esta filtra filas y HAVING filtra por funciones de grupo"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Con WHERE porque esta filtra filas y HAVING filtra por funciones de grupo\". Una cláusula se diferencia de la otra por filtrar diferentes niveles, WHERE filtra filas y HAVING filtra con funciones de grupo.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 426,
+        "prompt": "Analizas las cláusulas del SELECT. Cuando tomas a EXISTS, se distingue de los otros operadores de comparación por una característica única. ¿Cuál es la característica que distingue a EXISTS del resto de operadores?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Se puede usar en el FROM",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Basta con la expresión EXISTS sin más argumentos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Tiene dos partes, no requiere valor a la izquierda de EXISTS",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Tiene dos partes, no requiere valor a la izquierda de EXISTS"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Tiene dos partes, no requiere valor a la izquierda de EXISTS\". En la cláusula EXISTS no es necesario ningún valor o nombre de columna antes de la palabra EXISTS.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 427,
+        "prompt": "¿Cuáles son las ventajas principales de utilizar SQL? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "La mayoría de los sistemas de administración de base de datos lo usa",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Puede ejecutar operaciones de base de datos sofisticadas y complejas",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Permite su utilización en cualquier tipo de base de datos",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "No es un lenguaje propiedad de un proveedor de base de datos",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Es fácil de aprender",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "La mayoría de los sistemas de administración de base de datos lo usa",
+          "Puede ejecutar operaciones de base de datos sofisticadas y complejas",
+          "No es un lenguaje propiedad de un proveedor de base de datos",
+          "Es fácil de aprender"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"No es un lenguaje propiedad de un proveedor de base de datos\", \"La mayoría de los sistemas de administración de base de datos lo usa\", \"Es fácil de aprender\" y \"Puede ejecutar operaciones de base de datos sofisticadas y complejas\". SQL es un lenguaje declarativo (especifica qué es lo que se quiere y no cómo conseguirlo) que da acceso a un sistema de gestión de bases de datos relacionales que permite especificar diversos tipos de operaciones en ellos. Está diseñado para la comunicación con bases de datos y provee un modo simple y eficiente de leer y escribir datos en una base de datos relacional.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 428,
+        "prompt": "¿Cuáles de las siguientes son las funciones de grupo más usadas en SQL? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "AVG()",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "MOD()",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "VARIANCE()",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "COUNT()",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "STDDEV()",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "AVG()",
+          "VARIANCE()",
+          "COUNT()",
+          "STDDEV()"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"AVG()\", \"COUNT()\", \"STDDEV()\" y \"VARIANCE()\". Son las funciones de grupo más usadas en SQL.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 429,
+        "prompt": "¿Qué opciones son sentencias DML? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "UPDATE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "DELETE",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "WHERE",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "MERGE",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "INSERT",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "UPDATE",
+          "DELETE",
+          "MERGE",
+          "INSERT"
+        ],
+        "module": "M3",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Sentencias DML Insert, Update y Delete (y sublenguaje TCL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"INSERT\", \"UPDATE\", \"MERGE\" y \"DELETE\". La sentencia INSERT de DML permite insertar filas en una tabla, permitiendo ingresar columna a columna los valores de cada una de ellas. La sentencia para cambiar el valor de una o más columnas en una tabla es UPDATE. La sentencia MERGE es una combinación de INSERT y UPDATE, al ejecutarse busca la fila y si la encuentra la modifica y si no existe ninguna fila que cumpla con el criterio del WHERE, la inserta con la sintaxis del INSERT, además si una fila cumple con una condición la puede borrar. Para borrar filas de una tabla, se usa simplemente la sentencia DELETE.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 430,
+        "prompt": "Por ser muy utilizadas las subconsultas, es necesario definir dónde se las puede usar. ¿En qué sentencias y cláusulas se pueden usar las subconsultas? Selecciona las 4 (cuatro) respuestas correctas",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "WHERE de todas las sentencias que lo usan",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "SET del UPDATE",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "INSERT",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "SELECT del SELECT",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "GROUP BY del SELECT",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "WHERE de todas las sentencias que lo usan",
+          "SET del UPDATE",
+          "INSERT",
+          "SELECT del SELECT"
+        ],
+        "module": "M3",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Sentencias DML Insert, Update y Delete (y sublenguaje TCL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"SELECT del SELECT\", \"SET del UPDATE\", \"WHERE de todas las sentencias que lo usan\" e \"INSERT\". En estas cláusulas se pueden usar las subconsultas.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 431,
+        "prompt": "Juliana comenzó el desarrollo de una aplicación. SQL es uno de los lenguajes que se utilizarán. ¿Qué podemos afirmar sobre este lenguaje? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es fácil de aprender",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Es un lenguaje poderoso con posibilidad de realizar operaciones complejas",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Es orientado a objetos",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "No es propiedad de un proveedor de base de datos",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Es usado por la mayoría de los sistemas de administración de bases de datos",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Es fácil de aprender",
+          "Es un lenguaje poderoso con posibilidad de realizar operaciones complejas",
+          "No es propiedad de un proveedor de base de datos",
+          "Es usado por la mayoría de los sistemas de administración de bases de datos"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"No es propiedad de un proveedor de base de datos\", \"Es usado por la mayoría de los sistemas de administración de bases de datos\", \"Es fácil de aprender\" y \"Es un lenguaje poderoso con posibilidad de realizar operaciones complejas\". SQL tiene muchas ventajas y se debe descartar la opción de que es orientado a objetos por que no corresponde.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 432,
+        "prompt": "Estamos por comenzar el desarrollo de una aplicación y estudiamos a SQL como uno de los lenguajes que se utilizarán. ¿Cuáles de las siguientes son características de este lenguaje? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Permite el manejo de errores con las excepciones",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Procesa los datos como grupos y no como unidades individuales",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Provee navegación automática a los datos",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "SQL no tiene sentencias de control de flujo desde su origen",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Sus sentencias son complejas y poderosas individualmente",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Procesa los datos como grupos y no como unidades individuales",
+          "Provee navegación automática a los datos",
+          "SQL no tiene sentencias de control de flujo desde su origen",
+          "Sus sentencias son complejas y poderosas individualmente"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Procesa los datos como grupos y no como unidades individuales\", \"Provee navegación automática a los datos\", \"Sus sentencias son complejas y poderosas individualmente\" y \"SQL no tiene sentencias de control de flujo desde su origen\". SQL tiene múltiples características con más de 50 años de desarrollo.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 433,
+        "prompt": "En una consulta a desarrollar para un reporte tienes que negar un operador de comparación. ¿Qué operadores usan NOT para negar la comparación? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "LIKE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "BETWEEN",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "EXISTS",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "ANY",
+            "is_correct": false
+          },
+          {
+            "index": 4,
+            "text": "IN",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "correct_answers": [
+          "LIKE",
+          "BETWEEN",
+          "EXISTS",
+          "IN"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"BETWEEN\", \"IN\", \"EXISTS\" y \"LIKE\". La negación con NOT es solo posible con estos 4 operadores de comparación.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 434,
+        "prompt": "¿Cuáles son las características principales de la clave primaria? Selecciona las 3 (tres) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Mínima",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Candidata",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Superclave",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Restrictiva",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2
+        ],
+        "correct_answers": [
+          "Mínima",
+          "Candidata",
+          "Superclave"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Mínima\", \"Candidata\" y \"Superclave\". Una clave primaria es una clave candidata que es elegida por el diseñador de la base de datos como el elemento principal que sirve para identificar las entidades dentro de un conjunto de entidades. Una clave para ser primaria debe cumplir con las características de ser mínima, candidata y superclave.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 435,
+        "prompt": "¿Cuáles son las características principales del lenguaje de consultas SQL? Selecciona las 3 (tres) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Interno",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Declarativo",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Orientado a conjuntos",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Orientado a objetos",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2
+        ],
+        "correct_answers": [
+          "Interno",
+          "Declarativo",
+          "Orientado a conjuntos"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Declarativo\", \"Interno\" y \"Orientado a conjuntos\". Las características principales del lenguaje de consulta SQL son que el mismo es de carácter declarativo, lo que significa que no se indica en sus sentencias cómo realizar la tarea, sino que se limita a describir el resultado buscado. Es, además, un lenguaje Interno debido a que la interpretación y ejecución se realiza dentro de la base de datos y orientado a conjuntos lo que significa que la manipulación del conjunto de datos se hace a través de SQL.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 436,
+        "prompt": "¿Cuáles de las siguientes son funciones generales de comparación? Selecciona las 2 (dos) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "LEAST",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "REPLACE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "INITCAP",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "GREATEST",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          3
+        ],
+        "correct_answers": [
+          "LEAST",
+          "GREATEST"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"GREATEST\" y \"LEAST\". Las funciones generales de comparación determinan los valores mayores o menores de un conjunto de datos y devuelven nulo si cualquier argumento es nulo. GREATEST (value1, value2) devuelve el mayor de los valores proporcionados y LEAST (value1, value2) devuelve el mayor de los valores proporcionados.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 437,
+        "prompt": "¿Cuáles son las cláusulas obligatorias en el SQL de Oracle? Selecciona las dos (2) opciones correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "SELECT",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "ANY",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "FROM",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "POWER",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          2
+        ],
+        "correct_answers": [
+          "SELECT",
+          "FROM"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"SELECT\" y \"FROM\". Las cláusulas obligatorias en el SQL de Oracle son SELECT y FROM, pero en otras bases como MySQL solo es obligatoria la cláusula SELECT.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 438,
+        "prompt": "El reporte de un tester indica que la sentencia \"SELECT id, nombre FROM tabla t WHERE EXISTS (SELECT 'x' FROM tabla1 t1 WHERE t1.id = t.id) es incorrecta porque le falta un valor entre WHERE y EXISTS.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". La sintaxis de la sentencia es correcta. EXISTS es el único operador de comparación que no requiere anteponer una columna o valor.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 439,
+        "prompt": "Te encuentras con un reporte que tiene que documentar su funcionamiento. Al revisar la consulta SELECT Nombre, ApellidoFROM Empleados WHERE Sueldo >= 20000\" le han escrito un comentario que dice \"devuelve el nombre y apellido SOLAMENTE de los empleados con un sueldo mayor a 20000\". ¿Es verdadera o falsa esta afirmación del comentario?",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falsa.\" Dentro del SELECT se listan los campos que va a devolver la consulta, es decir, va a devolver el nombre y apellido que encuentre en la tabla empleados a través de la cláusula FROM, pero solamente aquellos que cumplan con la condición de que su sueldo sea mayor o igual a 20000.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 440,
+        "prompt": "SQL contiene sentencias que permiten controlar el flujo de la ejecución de las operaciones.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". SQL no contiene sentencias que permitan controlar el flujo de la ejecución de las operaciones, requiere una extensión procedimental.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 442,
+        "prompt": "Las funciones de grupo pueden aparecer en lista de columnas en el SELECT y en las condiciones dentro de las cláusulas WHERE y HAVING.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". Las funciones de grupo (usadas con la cláusula GROUP BY) devuelven un solo resultado basado en grupos de filas. Pueden aparecer en lista de columnas en el SELECT y en las condiciones dentro de la cláusula HAVING, pero es un error común incluirlas en la cláusula WHERE, ya que retorna un error de ejecución.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 443,
+        "prompt": "Las funciones de fila simple pueden aparecer en lista de columnas en el SELECT y en las condiciones dentro de las cláusulas WHERE.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Verdadero.\" Las funciones de fila simple devuelven un solo resultado por fila seleccionada. Pueden aparecer en lista de columnas en el SELECT y en el WHERE, pero no en el HAVING.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 444,
+        "prompt": "Cuando se escribe una consulta SELECT con una subconsulta sin correlación, es decir, que no contiene referencias a la consulta principal, el compilador ejecuta primero la subconsulta.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Verdadero\". La subconsulta es ejecutada en primer lugar si no tiene referencias a la consulta principal.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 446,
+        "prompt": "¿Cuál es la cláusula en la que se escriben condiciones de filtro que permiten elegir aquellas filas que se quieren mostrar?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "SELECT",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FROM",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "WHERE",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "WHERE"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"WHERE\" Es la cláusula que implementa un filtro de filas en el SELECT.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 447,
+        "prompt": "Analizas las cláusulas de la operación \"a RIGHT JOIN b ON (condición)\". ¿Cuál es el resultado de esta operación?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Devuelve las filas de \"a\" que cumplen, junto con las de \"b\", con la condición ubicada en ON ()",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Devuelve todas las filas de \"b\" junto con las filas de \"a\" que cumplen con la condición ubicada en ON ()",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Devuelve todas las filas de \"a\" junto con todas las filas de \"b\" que cumplen o no, con la condición ubicada en ON ()",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Devuelve todas las filas de \"a\" junto con las filas de \"b\" que cumplen con la condición ubicada en ON ()",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Devuelve todas las filas de \"b\" junto con las filas de \"a\" que cumplen con la condición ubicada en ON ()"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Devuelve todas las filas de \"b\" junto con las filas de \"a\" que cumplen con la condición ubicada en ON ()\". Esta operación es un OUTER JOIN parcial involucrando a todas las filas de la tabla b y un subconjunto de la tabla \"a\".",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 449,
+        "prompt": "¿Cuál es la sentencia en DDL que se utiliza para eliminar los objetos, junto con las filas contenidas, las restricciones e índices relacionados?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "DELETE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "TRUNCATE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "DROP",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "DROP"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"DROP\". La sentencia en DDL que se utiliza para eliminar un objeto es DROP.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 450,
+        "prompt": "Completa el Situación seleccionando la palabra que falta en el siguiente concepto DDL: \"La sentencia _________ borra las filas en bloque y deja la estructura de columnas, índices y constraints sin modificaciones\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "DELETE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "TRUNCATE",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "MODIFY",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "TRUNCATE"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"TRUNCATE\". La sentencia TRUNCATE borra las filas en bloque y deja la estructura de columnas, índices y constraints sin modificaciones. Es un borrado similar al delete, pero mucho más rápido.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 451,
+        "prompt": "¿Cuál es la sentencia en DDL que se utiliza para cambiar estructuras principales como tablas y, por ejemplo, agregarle componentes como columnas y constraints para responder a las necesidades del modelo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "MODIFY",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "DROP",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "ALTER",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "ALTER"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"ALTER\". La sentencia ALTER es usada para agregar, borrar o modificar columnas en una tabla existente dentro de un RDBMS y sirve para cambiar y agregar componentes respondiendo a las necesidades del modelo.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 452,
+        "prompt": "Completa el Situación seleccionando la palabra que falta en el siguiente concepto DDL: \"Las columnas que durante el análisis han sido determinadas como claves candidatas, pueden utilizar la restricción __________ que impide insertar una fila con un valor repetido en esta columna\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "UNIQUE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "CHECK",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "MODIFY",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "UNIQUE"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"UNIQUE\". Las restricciones UNIQUE se utilizan para garantizar que no se escriben valores duplicados en columnas específicas que no forman parte de una clave principal en una tabla dentro del motor de base de datos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 453,
+        "prompt": "¿Cuál es la sentencia DDL completa que se utiliza para agregar constraints en una tabla \"NN\"?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "ALTER TABLE NN ENABLE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "ALTER TABLE NN ADD",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "ALTER TABLE NN CREATE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "ALTER TABLE NN ADD"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"ALTER TABLE NN ADD\". Para implementar las relaciones detectadas en el análisis, una vez creadas las tablas se deben crear las constraints para que el motor de base de datos pueda controlar que una columna clave primaria (por ejemplo) repita valores.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 454,
+        "prompt": "Durante la creación del modelo de datos debemos crear una tabla y nos encontramos con la sentencia \"CREATE TABLE mitabla (id number(8) primary key, micolumna varchar2(40));\" que creará una tabla pero, ¿Con qué característica?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Está relacionada a otra tabla a través de la primary key",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Está definida como del tipo asociativo",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "No está relacionada con ninguna otra tabla",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Tiene una microcolumna como clave primaria",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "No está relacionada con ninguna otra tabla"
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Convenciones acerca de los nombres de tablas y tipos de datos",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"No está relacionada con ninguna otra tabla\". La tabla creada con la sentencia presentada no establece ninguna clave foránea.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 455,
+        "prompt": "Seleccione la opción correcta. Para crear un modelo de datos, tenemos que tener en cuenta que los objetos de la base de datos se agrupan lógicamente en:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Niveles",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Transacciones",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Esquemas",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Esquemas"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Esquemas\". En las bases de datos, los objetos se agrupan en esquemas que los identifican, junto con el nombre de los objetos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 456,
+        "prompt": "En el momento de escribir una sentencia TRUNCATE, ¿qué debes tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "No requiere Commit para confirmar el cambio",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Eliminará la tabla aunque tuviera constraints referenciales a su clave primaria",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Eliminará completamente las filas junto con la estructura de la tabla",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "No requiere Commit para confirmar el cambio"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"No requiere COMMIT para confirmar el cambio\". La sentencia TRUNCATE es DDL y como pasa con este sublenguaje, sus sentencias generan un commit implícito.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 457,
+        "prompt": "Juliana necesita eliminar una tabla. Debe escribir la sentencia \"DROP TABLE mitabla;\". ¿Qué debe tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Eliminará la tabla y las filas, no pudiendo revertir este cambio con ROLLBACK",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Eliminará la tabla y las filas, pudiendo revertir este cambio con ROLLBACK",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Dará error si \"mitabla\" ya existía",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Eliminará la tabla y las filas, no pudiendo revertir este cambio con ROLLBACK"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Eliminará la tabla y las filas, no pudiendo revertir este cambio con ROLLBACK\". Para resolver una relación M:M se debe crear una tercera tabla con las claves foráneas de las dos restantes.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 458,
+        "prompt": "Seleccione la opción correcta. Necesitas eliminar la tabla \"mitabla\". Se debe escribir la sentencia \"DROP TABLE mitabla;\" teniendo en cuenta que:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es correcta y eliminará todas las filas de la tabla \"mitabla\", quedando la estructura intacta",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Es incorrecta porque no tiene la palabra clave FROM",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Es correcta y eliminará todas las filas y la estructura",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Es correcta y eliminará todas las filas y la estructura"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Es correcta y eliminará todas las filas y la estructura\". La sentencia DROP elimina las filas y la estructura.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 459,
+        "prompt": "Seleccione la opción correcta. Si usas DROP TEMPORARY TABLE mitabla:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La tabla es borrada temporalmente",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "No se ejecuta un COMMIT",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Se puede deshacer la operación DROP",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "No se ejecuta un COMMIT"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"No se ejecuta un COMMIT\". La sentencia DROP TEMPORARY TABLE elimina tablas temporales y no produce una confirmación por ser un objeto no usado por otros usuarios.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 460,
+        "prompt": "Carla usa \"DROP TEMPORARY TABLE mitabla\". ¿Qué sucede al usar esta sentencia?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Se elimina la tabla \"mitabla\", pero se puede recuperar con COMMIT",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Se elimina la tabla temporaria \"mitabla\"",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Se borran las filas, pero pueden recuperarse con ROLLBACK",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Se elimina la tabla temporaria \"mitabla\""
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Se elimina la tabla temporaria \"mitabla\". Es el efecto de la sentencia DROP TEMPORARY TABLE, eliminar tablas temporarias.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 461,
+        "prompt": "Para el manejo de transacciones existe el sublenguaje TCL y sus tres sentencias. ¿Cuáles de las siguientes opciones pertenecen a este sublenguaje? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "SAVEPOINT",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "ROLLBACK",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "COMMIT",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "SAVE ALL",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "COMMIT TO SAVEPOINT",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "SAVEPOINT",
+          "ROLLBACK",
+          "COMMIT",
+          "SAVE ALL"
+        ],
+        "module": "M3",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Sentencias DML Insert, Update y Delete (y sublenguaje TCL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"COMMIT\", \"ROLLBACK\", \"SAVEPOINT\", \"SAVE ALL\". La normalización es una técnica para diseñar la estructura lógica de los datos de un sistema de información en el modelo relacional. Con cumplir con la 3FN se considera que la tabla está normalizada.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 462,
+        "prompt": "Cuando el desarrollador necesita insertar una sola fila en una tabla, suele obviar la lista de columnas y solamente completa la cláusula VALUES del INSERT con los valores a cargar. Esto no es recomendable en las sentencias INSERT que se deben incorporar a aplicaciones ya que se pierde la pista de qué columnas se están insertando.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M3",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Sentencias DML Insert, Update y Delete (y sublenguaje TCL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"VERDADERO\". La sentencia INSERT que debe ser auditada o revisada por realizarse en procesos, debe ser completada con las columnas que recibirán los valores que vienen en la cláusula VALUES.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 463,
+        "prompt": "Completa el Situación seleccionando la palabra que falta en el siguiente concepto: \"Cada valor manipulado en la base de datos tiene asociado un tipo de datos. El tipo de dato de un valor se asocia a un conjunto fijo de ________ que este posee\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Valores",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Columnas",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Propiedades",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Propiedades"
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Convenciones acerca de los nombres de tablas y tipos de datos",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Propiedades\". El tipo de datos es un valor que se asocia a un conjunto fijo de propiedades que hacen que el motor de base de datos trate diferente a cada uno de los tipos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 464,
+        "prompt": "¿Cuál de los siguientes tipos de datos se utiliza para almacenar caracteres alfanuméricos de longitud variable?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "VARCHAR",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "CHARACTER",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "CHAR",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VARCHAR"
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Convenciones acerca de los nombres de tablas y tipos de datos",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"VARCHAR\". Las columnas que recibirán cadenas de caracteres alfanuméricos con longitud variable se deben definir con el tipo de datos VARCHAR.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 465,
+        "prompt": "¿Cuál es el tipo de datos más adecuado para asignar a una columna que debe almacenar una fecha?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "INT",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "DATE",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "VARCHAR",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "DATE"
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Convenciones acerca de los nombres de tablas y tipos de datos",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"DATE\". El tipo de datos indicado para una columna que va a almacenar una fecha es DATE.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 466,
+        "prompt": "Completa el Situación seleccionando la palabra que falta en el siguiente concepto: \"La restricción __________ impide insertar una fila con un valor repetido en esta columna\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "UNIQUE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "MODIFY",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "CHECK",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "UNIQUE"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"UNIQUE\". Las restricciones UNIQUE se utilizan para garantizar que no se escriben valores duplicados en columnas específicas que no forman parte de una clave principal en una tabla dentro del motor de base de datos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 467,
+        "prompt": "Necesitas crear la tabla \"miotratabla\". Se presenta la siguiente sentencia \"CREATE TABLE miotratabla (id number(6) primary key, texto varchar2(50), mitabla_id number(6) references mitabla(id))\" ¿Qué resultado se debe esperar?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Creará una tabla 'miotratabla' e insertará una fila en 'mitabla'",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "No creará la tabla por error de compilación",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Creará una tabla 'miotratabla' que referencia a la tabla 'mitabla'",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Creará una tabla 'miotratabla' que referencia a la tabla 'mitabla'"
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Convenciones acerca de los nombres de tablas y tipos de datos",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Creará una tabla 'miotratabla' que referencia a la tabla 'mitabla'\" La sentencia creará la tabla relacionada con otra.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 468,
+        "prompt": "Seleccione la opción correcta. Necesitas crear la tabla \"mitabla\". Se debe escribir la sentencia \"CREATE TABLE mitabla (id number(8) primary key, micolumna varchar2(40));\" que tiene como característica:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "No estar relacionada con ninguna otra tabla",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Estar relacionada a otra tabla a través de una primary key",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Estar definida como del tipo asociativo",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "No estar relacionada con ninguna otra tabla"
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Convenciones acerca de los nombres de tablas y tipos de datos",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"No estar relacionada con ninguna otra tabla\". La sintaxis no crea una clave foránea por lo que no hay relación con otra tabla.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 469,
+        "prompt": "¿Cuáles de las siguientes son funciones de carácter, es decir, funciones que devuelven valores caracteres? Selecciona las 4 (cuatro) respuestas correctas.",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "SUBSTR",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "CHR",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "LPAD",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "EXTRACT",
+            "is_correct": false
+          },
+          {
+            "index": 4,
+            "text": "REPLACE",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "correct_answers": [
+          "SUBSTR",
+          "CHR",
+          "LPAD",
+          "REPLACE"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"LPAD\", \"CHR\", \"REPLACE\" y \"SUBSTR\". Las funciones de cadena trabajan con campos char y varchar por lo que los literales que se escriben deben ir entre comillas simples. Se dividen en dos grupos: las que devuelven caracteres y las que devuelven valores numéricos. Dentro de las primeras podemos encontrar LPAD, CHR, REPLACE y SUBSTR. EXTRACT no es usada para campos de caracteres. Situación: TRABAJO PRÁCTICO 4 CONCEPTOS CLAVES BDD ¿Cómo se llaman las unidades de ejecución que contienen las sentencias ejecutables en la extensión procedimental de SQL? Seleccione la opción correcta.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 470,
+        "prompt": "Completa con la palabra que falta en el siguiente concepto: SQL/PSM es un lenguaje basado en un estándar, por lo que tiene características ______ entre los motores de datos.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Complementarias",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Comunes",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Totalmente diferentes",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Comunes"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Comunes\". SQL/PSM es un lenguaje basado en un estándar, por lo que tiene características comunes entre los motores de datos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 471,
+        "prompt": "Indica la palabra que falta en el siguiente concepto: en PL/SQL la gestión de excepciones es ___________ a la hora de generar las unidades de trabajo.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Obligatoria",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Opcional",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Necesaria",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Opcional"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Opcional\". La unidad de trabajo en PL/SQL es el bloque, constituido por un conjunto de declaraciones, instrucciones y mecanismos de gestión de errores y excepciones, donde la gestión de excepciones es opcional a la hora de generar las unidades de trabajo.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 472,
+        "prompt": "¿Cómo se inicia un bloque PL/SQL que no tiene que declarar ninguna variable?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "DROP",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "BEGIN",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "DECLARE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "BEGIN"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"BEGIN\". PL/SQL trabaja a través de bloques que están constituidos por un conjunto de declaraciones, instrucciones y mecanismos de gestión de errores y excepciones. Dentro de la zona de Instrucciones se especifica lo que se desea realizar y suele ir precedida por la cláusula BEGIN.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 473,
+        "prompt": "Es la colección de procedimientos, funciones y otros componentes que tienen dos partes: una especificación y un cuerpo que contiene el código de los procedimientos y de las funciones especificadas. ¿A qué tipo de construcción disponible en PL/SQL hace referencia dicho concepto?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Paquetes",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Triggers",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Funciones",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Paquetes"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Paquetes\". Los paquetes son un conjunto de procedimientos y funciones que poseen dos partes, una es la especificación y un cuerpo que contiene el código.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 474,
+        "prompt": "Indica la palabra que falta en el siguiente concepto: SQL es un lenguaje ________ a un único propósito de \"alto nivel\" o \"de no procedimiento\", que gracias a su fuerte base teórica y su orientación al manejo de conjuntos de registros, y no a registros individuales, permite una alta productividad en codificación y la orientación a objetos.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Procedimental",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Metódico",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Limitado",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Limitado"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Limitado\". SQL es un lenguaje declarativo (específica qué es lo que se quiere y no cómo conseguirlo) que da acceso a un sistema de gestión de bases de datos relacionales que permite especificar diversos tipos de operaciones en ellos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 475,
+        "prompt": "¿Cuál es el tipo de datos propio de PL/SQL que se usa para almacenar variables con tipos de datos compuestos?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "TABLE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "BOOLEAN",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "RECORD",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "RECORD"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"RECORD\". Los tipos de datos que no son para almacenar datos en una tabla, sino para manipulación de datos dentro de los bloques PL/SQL se denominan propios. Aquellos que almacenar variables con tipos de datos compuestos se denominan RECORD.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 476,
+        "prompt": "¿Con qué operador se expresa la concatenación en PL/SQL?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "**",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": ":=",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "||",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "||"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"||\". El operador de concatenación en PL/SQL se simboliza a través de dos barras paralelas (||). Un ejemplo: SELECT Nombre || ' ' || Apellido FROM Persona WHERE Apellido = 'Perez'; donde el resultado será 'Nombre Pérez'.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 478,
+        "prompt": "¿Cuál es el tipo de datos propio de PL/SQL que se usa para almacenar valores TRUE, FALSE o NULL?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "BOOLEAN",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "INT",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "NUMERIC",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "BOOLEAN"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"BOOLEAN\". Los tipos de datos que no son para almacenar datos en una tabla, sino para manipulación de datos dentro de los bloques PL/SQL se denominan propios. Aquellos que almacenan TRUE, FALSE o NULL se denominan BOOLEAN.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 479,
+        "prompt": "¿Cómo se denomina la sentencia que define el punto de confirmación de una transacción en PL/SQL?.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "COMMIT",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "ROLLBACK",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "SAVEPOINT",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "COMMIT"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"COMMIT\". En PL/SQL el inicio de una transacción lo marca la primera sentencia de modificación de datos y deben ser explícitamente definidos los puntos de confirmación COMMIT o de corrección ROLLBACK y los eventuales puntos de salvaguarda SAVEPOINT, para definir apropiadamente la transacción. Una transacción es un conjunto de operaciones que son tratadas como una única unidad lógica. Para confirmar una transacción y escribir los cambios en la base de datos se utiliza la sentencia COMMIT.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 480,
+        "prompt": "¿Qué cláusula se usa en SQL/PSM para definir a que variable asignar una columna de la lista del SELECT?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "INTO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "DECLARE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "BEGIN",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "INTO"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"INTO\". Las sentencias SELECT en bloques de programación, utilizan la cláusula INTO para definir a qué variable asignar una columna de la lista de Select. Esta cláusula crea una nueva tabla en el grupo de archivos predeterminado e inserta en ella las filas resultantes de la consulta.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 481,
+        "prompt": "¿Para qué se utilizan los cursores en SQL/PSM? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Para realizar consultas INSERT",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Para realizar consultas UPDATE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Para realizar consultas SELECT",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Para realizar consultas SELECT"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Para realizar consultas SELECT\". Los cursores explícitos se emplean para realizar consultas SELECT que pueden devolver cero filas, o más de una fila. Al leer los datos del cursor se deben leer sobre variables del mismo tipo de datos de la tabla (o tablas) que trata el cursor.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 482,
+        "prompt": "¿Qué sentencia de control de flujo se usa para recorrer un cursor?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una bifurcación repetitiva",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Un bucle definido con IF",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Bucle o loop",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Bucle o loop"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Bucle o loop\". Se utiliza un bucle o loop para repetir hasta que ocurra una condición manejada por una variable de control.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 483,
+        "prompt": "¿Qué acción realiza PL/SQL con la siguiente instrucción para cursores explícitos? \"FETCH nombre_cursor INTO lista_variables\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Leer datos del cursor",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Declarar el cursor",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Abrir el cursor",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Leer datos del cursor"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Leer datos del cursor\". Los cursores explícitos se emplean para realizar consultas SELECT que pueden devolver cero filas, o más de una fila. La instrucción FETCH se emplea para leer los datos del cursor.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 484,
+        "prompt": "¿Qué acción realiza la siguiente instrucción? CLOSE nombre_cursor;.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Cierra un cursor",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Cierra un bloque con un cursor definido",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Abre un cursor",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Cierra un cursor"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Cierra un cursor\". La sentencia que cierra un cursor previamente abierto es CLOSE nombre_cursor;.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 485,
+        "prompt": "¿Qué acción realiza la siguiente instrucción? OPEN nombre_cursor;.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Cierra un cursor",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Abre un bloque con un cursor definido",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Abre un cursor",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Abre un cursor"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Abre un cursor\". La sentencia que abre un cursor es OPEN nombre_cursor;.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 486,
+        "prompt": "¿Qué instrucción se utiliza en PL/SQL para liberar los recursos usados por un cursor?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "CLOSE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FETCH",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "END",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "CLOSE"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"CLOSE\". La instrucción CLOSE se emplea para cerrar el cursor y liberar los recursos utilizados.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 488,
+        "prompt": "¿Qué función se usa en SQL/PSM para definir el limitador de cadenas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "END ;",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "end string ;",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "DELIMITER ;",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "DELIMITER ;"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"DELIMITER ;\". En los programas SQL/PSM es necesario en algunas situaciones definir con que caracter finalizan las sentencias de los programas SQL/PSM.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 489,
+        "prompt": "¿Qué función se usa en SQL/PSM para concatenar cadenas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "\"+\"",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "\"||\"",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "CONCAT",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "CONCAT"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"CONCAT\". La función para unir cadenas es CONCAT y entre paréntesis las cadenas o variables a unir.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 490,
+        "prompt": "Indique la palabra que falta en el siguiente concepto: \"Los cursores se emplean para realizar consultas que pueden devolver cero o más de una _________\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Tabla",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Columna",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Fila",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Fila"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Fila\". Los cursores explícitos se emplean para realizar consultas SELECT que pueden devolver cero filas, o más de una fila. Al leer los datos del cursor se deben leer sobre variables del mismo tipo de datos de la tabla (o tablas) que trata el cursor.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 491,
+        "prompt": "¿Cómo se declara un cursor explícito en PL/SQL?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "CURSOR nombre_cursor IS instrucción_SELECT",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "CURSOR nombre_cursor (valor1, valor2,.., valorN)instrucción_SELECT;",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "CURSOR nombre_cursor IS instrucción_SELECT"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"CURSOR nombre_cursor IS instrucción_SELECT\". Los cursores explícitos se emplean para realizar consultas SELECT que pueden devolver cero filas, o más de una fila. Para trabajar con ellos se debe declarar el cursor, abrirlo con la instrucción OPEN, leer los datos del cursor con la instrucción FETCH y cerrar el cursor y liberar los recursos con la instrucción CLOSE.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 492,
+        "prompt": "¿Cuál de las siguientes funciones no puede usarse en un disparador?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "INSERT",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "DELETE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "RETURN",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "RETURN"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"RETURN\". Un disparador no puede devolver un valor a través de la sentencia RETURN.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 493,
+        "prompt": "Seleccione las 3 (tres) respuestas correctas. ¿Cuáles son las zonas en las que se constituyen los bloques en PL/SQL?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Declaraciones",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Instrucciones",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Excepciones",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Inicialización",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2
+        ],
+        "correct_answers": [
+          "Declaraciones",
+          "Instrucciones",
+          "Excepciones"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Declaraciones\", \"Instrucciones\" y \"Excepciones\". PL/SQL es un lenguaje que se desarrolló para solventar la carencia en cuanto al control de las secuencias de ejecución de instrucciones, el uso de variables y la gestión de posibles errores.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 494,
+        "prompt": "Seleccione las 2 (dos) respuestas correctas. ¿Cuáles son las únicas cláusulas obligatorias dentro del lenguaje PL/SQL?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "END",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "DECLARE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "BEGIN",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "EXCEPTION",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          2
+        ],
+        "correct_answers": [
+          "END",
+          "BEGIN"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"BEGIN\" y \"END\". PL/SQL trabaja a través de bloques que están constituidos por un conjunto de declaraciones, instrucciones y mecanismos de gestión de errores y excepciones pero sus únicas cláusulas obligatorias son BEGIN y END, el resto son opcionales.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 495,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. ¿Cuáles son las características distintivas de PL/SQL como lenguaje de programación?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Permite una administración más sencilla de los cambios",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Fácil de leer y posee muchas características para modularizar el manejo de código y de los errores",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Comunicación directa o nativa con otros objetos de la base de datos Oracle",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Centralización de la lógica en la aplicación",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Reglas de negocio descentralizadas a lo largo de la aplicación",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "Permite una administración más sencilla de los cambios",
+          "Fácil de leer y posee muchas características para modularizar el manejo de código y de los errores",
+          "Comunicación directa o nativa con otros objetos de la base de datos Oracle",
+          "Centralización de la lógica en la aplicación"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Centralización de la lógica en la aplicación\", \"Permite una administración más sencilla de los cambios\", \"Comunicación directa o nativa con otros objetos de la base de datos Oracle\" y \"Fácil de leer y posee muchas características para modularizar el manejo de código y de los errores\". La extensión procedimental de SQL (PL/SQL) permite fijar la lógica y las reglas del negocio de las aplicaciones y almacenarlas en un solo lugar, dentro de la base de datos.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 496,
+        "prompt": "Seleccione las 2 (dos) respuestas correctas. ¿Cuáles de las siguientes son sentencias SQL no permitidas en las rutinas almacenadas?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "DELETE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "LOCK TABLES",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "UNLOCK TABLES",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "UPDATE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1,
+          2
+        ],
+        "correct_answers": [
+          "LOCK TABLES",
+          "UNLOCK TABLES"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"LOCK TABLES\" y \"UNLOCK TABLES\". Son sentencias SQL arbitrarias que no son permitidas en rutinas almacenadas de SQL/PSM.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 497,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. ¿Qué debe considerarse al trabajar con cursores explícitos en PL/SQL?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es ilegal tratar de cerrar un cursor que ya está cerrado o no ha sido abierto",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Cuando un cursor está cerrado, no se puede leer",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Cuando leemos un cursor debemos comprobar el resultado de la lectura utilizando los atributos de los cursores",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Cuando un cursor está cerrado, se puede leer",
+            "is_correct": false
+          },
+          {
+            "index": 4,
+            "text": "Cuando se cierra el cursor, es ilegal tratar de usarlo",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "correct_answers": [
+          "Es ilegal tratar de cerrar un cursor que ya está cerrado o no ha sido abierto",
+          "Cuando un cursor está cerrado, no se puede leer",
+          "Cuando leemos un cursor debemos comprobar el resultado de la lectura utilizando los atributos de los cursores",
+          "Cuando se cierra el cursor, es ilegal tratar de usarlo"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Cuando un cursor está cerrado, no se puede leer\", \"Cuando leemos un cursor debemos comprobar el resultado de la lectura utilizando los atributos de los cursores\", \"Cuando se cierra el cursor, es ilegal tratar de usarlo\" y \"Es ilegal tratar de cerrar un cursor que ya está cerrado o no ha sido abierto\". Los cursores explícitos se emplean para realizar consultas SELECT que pueden devolver cero filas, o más de una fila. Al leer los datos del cursor se deben leer sobre variables del mismo tipo de datos de la tabla (o tablas) que trata el cursor. Al trabajar con ellos deben tenerse en cuenta las reglas mencionadas.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 498,
+        "prompt": "SQL contiene sentencias que permiten controlar el flujo de la ejecución de las operaciones, no necesitando ninguna extensión procedimental.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". SQL no contiene sentencias que permiten controlar el flujo de la ejecución de las operaciones, requiere una extensión procedimental.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 499,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. ¿Cuáles de los siguientes son las sentencias que se usan cuando usamos cursores en SQL/PSM?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "DELIMITER",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "OPEN",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "FETCH",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "CLOSE",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "INTO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "OPEN",
+          "FETCH",
+          "CLOSE",
+          "INTO"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuesta correctas son: \"OPEN\", \"CLOSE\", \"FETCH\" e \"INTO\". Son las sentencias que se usan cuando se aplica un cursor para obtener ordenadamente las filas provenientes de una consulta.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 500,
+        "prompt": "Seleccione las 3 (tres) respuestas correctas. \"PL/SQL son las siglas de Procedural Language/Structured Query Language. PL / SQL ofrece un conjunto de comandos de procedimiento, organizados en bloques (explicados a continuación), que complementan y amplían el alcance de SQL\". ¿Cuáles de los siguientes son los comandos mencionados?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Asignaciones",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Sentencias JAVA",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Bucles",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Sentencias IF",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "Asignaciones",
+          "Bucles",
+          "Sentencias IF"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Sentencias IF\", \"Bucles\" y \"Asignaciones\". La definición del lenguaje SQL/PSM indica que este grupo de sentencias son usadas para complementar el lenguaje SQL en aspectos procedimentales.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 501,
+        "prompt": "Las construcciones en PL/SQL, PROCEDIMIENTOS y FUNCIONES pueden devolver valores al entorno que lo llamó.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Verdadero\". PL/SQL tiene a los procedimientos y funciones como estructuras que pueden devolver valores al entorno que los llamó.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 502,
+        "prompt": "La excepción \"invalid_cursor\" ocurre cuando se quiere abrir un cursor que ha sido abierto previamente.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". La excepción \"invalid_cursor\" ocurre cuando se quiere cerrar un cursor que no ha sido abierto, por otro lado la que maneja cuando se quiere abrir un cursor que ha sido abierto previamente se denomina \"cursor_already_open\".",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 504,
+        "prompt": "¿Cuál de las siguientes opciones completa una afirmación correcta? \"En la sentencia CASE la comparación con los valores no coincide con las cláusulas WHEN, se ejecuta lo que está en la cláusula __________\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "ELSE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "WHILE",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "CASE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "ELSE"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"ELSE\". La cláusula ELSE define la acción a seguir cuando la condición múltiple en CASE no se cumple con el valor actual.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 505,
+        "prompt": "¿Cuál es la opción que completa correctamente la siguiente frase? \"Para escribir aplicaciones con acceso a bases de datos con los lenguajes de uso general como Cobol, C o Fortran, sin usar las extensiones procedimentales de SQL, se escriben sentencias de este lenguaje conocido como ________\".",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Embedded SQL o SQL Empotrado",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "SQL/PSM",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "SQL incluido",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Embedded SQL o SQL Empotrado"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Embedded SQL o SQL Empotrado\". Cuando se incluyen sentencias SQL en un lenguaje de uso general, se llama SQL empotrado o Embeded SQL.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 506,
+        "prompt": "En el momento de escribir una consulta que puede devolver una o mas filas, debes tener en cuenta que tienes que usar:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una función",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Un cursor",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Un procedimiento",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Un cursor"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Un cursor\". La construcción que permite tratar las consultas que devuelven una o mas filas es el cursor.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 508,
+        "prompt": "Seleccione la opción correcta. En el momento de escribir en un bloque procedimental una sentencia UPDATE se debe tener en cuenta que:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Permite usar sub consultas solamente en el WHERE",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Sin la cláusula WHERE, afecta a todas las filas de la Tabla",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "No requiere COMMIT para confirmar el cambio",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Sin la cláusula WHERE, afecta a todas las filas de la Tabla"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Sin la cláusula WHERE, afecta a todas las filas de la Tabla\". La sentencia UPDATE sin WHERE afecta a todas las filas de la tabla.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 510,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. Al querer utilizar el lenguaje SQL para el desarrollo de una aplicación cuyos datos están en una base de datos, ¿cuáles de las siguientes son ventajas de este lenguaje?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es fácil de aprender",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Es usado por la mayoría de los sistemas de administración de bases de datos",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Es orientado a objetos",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Es un lenguaje poderoso con posibilidad de realizar operaciones complejas",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "No es propiedad de un proveedor de base de datos",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Es fácil de aprender",
+          "Es usado por la mayoría de los sistemas de administración de bases de datos",
+          "Es un lenguaje poderoso con posibilidad de realizar operaciones complejas",
+          "No es propiedad de un proveedor de base de datos"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"No es propiedad de un proveedor de base de datos\", \"Es usado por la mayoría de los sistemas de administración de bases de datos\", \"Es fácil de aprender\" y \"Es un lenguaje poderoso con posibilidad de realizar operaciones complejas\". Estas son las principales ventajas que se pueden nombrar del lenguaje SQL.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 511,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. Estamos por comenzar el desarrollo de una aplicación y estudiamos a SQL/PSM como uno de los lenguajes que se utilizarán, ¿cuáles de las siguientes son características de este lenguaje?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Provee tratamiento de excepciones",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Tiene sentencias de control de flujo",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Permite el manejo de errores con las excepciones",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Sus sentencias están agrupadas en bloques",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Procesa los datos con SQL",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Provee tratamiento de excepciones",
+          "Tiene sentencias de control de flujo",
+          "Sus sentencias están agrupadas en bloques",
+          "Procesa los datos con SQL"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Procesa los datos con SQL\", \"Provee tratamiento de excepciones\", \"Sus sentencias están agrupadas en bloques\" y \"Tiene sentencias de control de flujo\". SQL/PSM tiene múltiples características y esta definido con un estándar de la industria.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 512,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. Tienes que construir un bloque con una consulta que debe usar varias condiciones, ¿qué operadores de comparación usan NOT para negar la comparación?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "EXISTS",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "IN",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "BETWEEN",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "LIKE",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "ANY",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "EXISTS",
+          "IN",
+          "BETWEEN",
+          "LIKE"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"BETWEEN\", \"IN\", \"EXISTS\" y \"LIKE\". La negación con NOT es solo posible con estos 4 operadores de comparación.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 513,
+        "prompt": "Para construir un bloque que tenga la necesidad de ejecutar distintas operaciones repetitivas dentro de una bifurcación, ¿cómo se las puede definir a estas distintas operaciones? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Anidando un bucle while dentro de cada salida de una bifurcación",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Procesando primero el bucle y luego la bifurcación",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Haciendo dos procedimientos diferentes",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Anidando un bucle while dentro de cada salida de una bifurcación"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Anidando un bucle while dentro de cada salida de una bifurcación\". Es posible anidar sentencias como las de la consigna.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 514,
+        "prompt": "Es necesario tratar con distintas operaciones en caso de que sea verdadera una bifurcación y otra en caso de ser falsa, ¿con qué cláusula del IF puedes tratar esta situación?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "WHEN",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "END IF;",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "ELSE",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "ELSE"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"ELSE\". La sentencia IF permite tratar las dos alternativas de la condición.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 515,
+        "prompt": "Cuando en una aplicación tienes que resolver con una consulta select, que además de las columnas necesitas hacer cálculos en cada fila recuperada, es recomendable usar una Función.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M3",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: El lenguaje SQL (sublenguaje DML y la sentencia SELECT)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Verdadero\". La sentencia SELECT puede usar funciones para realizar cálculos simples y complejos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 516,
+        "prompt": "Cuando en una aplicación tienes que resolver una serie de tareas como parte del proceso de un bloque y estimas que esta serie de tareas las vas a necesitar realizar en otros procesos, ¿qué es recomendable construir?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un bloque para cada situación",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Un procedimiento con esas tareas",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Una consulta compleja",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Un procedimiento con esas tareas"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Un procedimiento con esas tareas\". El procedimiento es la forma de agrupar operaciones para realizar una tarea que debe realizarse en varios procesos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 517,
+        "prompt": "Analizando una aplicación en la que es posible que se den situaciones como que un select no devuelva filas o tenga un comportamiento no esperado. ¿Cuál de las siguientes afirmaciones es correcta acerca de como tratar la situación?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Usar cursores",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Usar el manejo de excepciones",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Usar el manejo de excepciones"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Usar el manejo de excepciones\". La sentencia EXCEPTION trata las situaciones como las descriptas.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 518,
+        "prompt": "Analizando una aplicación encontramos que debemos aplicar una bifurcación múltiple, ¿con qué cláusula trataremos cada valor posible esperado?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Con WHEN valor THEN",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Con IF simple",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Con IF CASE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Con WHEN valor THEN"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Con WHEN valor THEN\". Cada cláusula de esta tratará el caso del que el valor del case coincida con \"valor\" con una lista de sentencias después del THEN.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 519,
+        "prompt": "Analizando en un proceso que la condición para bifurcación no está dada por un valor sino por una condición mas compleja, en el IF podemos usar una cláusula que permita evaluar varias condiciones. ¿Cuál es la cláusula que permite evaluar varias condiciones?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "ELSE condicion THEN",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "ELSEIF condicion THEN",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "CASE valor",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "ELSEIF condicion THEN"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"ELSEIF condicion THEN\". Es la cláusula del IF que permite analizar varias condiciones en un solo IF.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 520,
+        "prompt": "Analizando las partes de un bloque, ¿cuál es la sección donde se define un cursor?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "En la sección ejecutable",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "En la sección declarativa",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "En la sección de tratamiento de excepciones",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "En la sección declarativa"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"En la sección declarativa\". La definición de cursores se da en la sección declarativa.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 521,
+        "prompt": "Analizando el cuerpo de un bloque persistente de SQL/PSM encontramos la sentencia RETURN. ¿Qué tipo de construcción es?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una función",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Un procedimiento o un disparador",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Una función o un disparador",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Una función"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Una función\". Este tipo de programa es el único que tiene permitido el uso de RETURN.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 522,
+        "prompt": "El uso de los disparadores se basa en eventos asociados a procedimientos y funciones.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". Los disparadores se basan en tablas y los eventos que suceden sobre ella.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 523,
+        "prompt": "Te encuentras con una aplicación que usa disparadores y el desarrollador te informa \"que un disparador BEFORE se ejecuta solo si cualquier disparador AFTER y la operación misma de fila se ejecuta correctamente\".",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "FALSO"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Falso\". Porque un disparador AFTER se ejecuta solo si cualquier disparador BEFORE y la operación misma de fila se ejecuta correctamente.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 524,
+        "prompt": "En MySQL y SQL/PSM se encuentran diversas definiciones de bucle, pero algunas otras se encuentran ausentes como, por ejemplo, FOR.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Verdadero\". En MySQL y su SQL/PSM no está admitido el bucle FOR.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 525,
+        "prompt": "¿Cuál es la diferencia principal entre SQL y SQL/PSM?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "SQL le dice a la base de datos qué hacer, no cómo hacerlo y SQL/PSM controla cómo se procesan las sentencias",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "SQL es un motor de base de datos y SQL/PSM un compilador de base de datos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "SQL/PSM ejecuta una declaración a la vez y SQL puede ejecutar varios bloques de código a la vez",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "SQL le dice a la base de datos qué hacer, no cómo hacerlo y SQL/PSM controla cómo se procesan las sentencias"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"SQL le dice a la base de datos qué hacer, no cómo hacerlo y SQL/PSM controla cómo se procesan las sentencias\". La diferencia fundamental entre SQL y SQL/PSM es que mientras el primero es un lenguaje declarativo (Secuence Query Language) SQL/PSM es procedimental (Procedure Language) lo que significa que SQL consiste en sentencias que dicen que hacer a la base de datos para obtener una respuesta o realizar una transacción y SQL/PSM a través de bloques o procedimientos es capaz de realizar procesos que contengan consultas, inserciones, modificaciones o borrado de datos dentro de la base.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 526,
+        "prompt": "¿Cuál es el nombre de la sección en la que se atiende la correspondiente excepción si en algún momento ocurriera un error en el bloque de código?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "BEGIN",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "EXCEPTION",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "INTO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "EXCEPTION"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"EXCEPTION\". Los errores se denominan excepciones y se atienden en la sección EXCEPTION.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 527,
+        "prompt": "Los controladores de áreas de memoria que almacenan los resultados de una sentencia SQL son comúnmente denominados:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Sentencias",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Procedimientos",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Cursores",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Cursores"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Cursores\". Una de las fortalezas de PL/SQL es la habilidad de manejar cursores. Se utilizan para realizar operaciones con cada fila resultante de una sentencia SELECT, ya que, el resultado siempre es tratado como un conjunto de filas y no como que cada una es individual.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 528,
+        "prompt": "Es el conjunto de sentencias que aceptan y retornan cero o más variables exclusivamente a través de los parámetros. ¿A qué tipo de construcción posible de realizar con PL/SQL hace referencia este concepto?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Procedimientos",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Consultas",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Procedimientos"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Procedimientos\". La modularidad mejora la reusabilidad del software y permite esconder la complejidad de la ejecución de una operación específica detrás de un nombre de procedimiento o función utilizando también triggers y paquetes. Un procedimiento es un conjunto de sentencias que aceptan y retornan cero o más variables, que se denominarán parámetros.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 529,
+        "prompt": "Durante la creación de una aplicación debes poder hacer un proceso o un cálculo y para ejecutarlo debes incluir la llamada en un SELECT. ¿Qué tipo de construcción usarías?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un disparador",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Un procedimiento",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Una función almacenada",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Una función almacenada"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Una función almacenada\". La función puede ser llamada en una consulta select.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 530,
+        "prompt": "Durante la creación de una aplicación necesitas que al modificar una fila en una tabla, haya un proceso automático que ejecute cambios en otra tabla. ¿Qué tipo de construcción usarías?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Procedimiento",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Disparador",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Función",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Disparador"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Disparador\". Los disparadores se invocan implícitamente en acciones sobre una tabla como la del requerimiento.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 531,
+        "prompt": "En el momento de escribir una sentencia DELETE, ¿qué se debe tener en cuenta?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Sin la cláusula WHERE, afecta a todas las filas de la tabla",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Eliminará la tabla aunque tuviera constraints referenciales a su clave primaria",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Eliminará completamente las filas junto con la estructura de la tabla",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Sin la cláusula WHERE, afecta a todas las filas de la tabla"
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: Sentencias DDL Create, Alter y Drop",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Sin la cláusula WHERE, afecta a todas las filas de la tabla\". La sentencia DELETE sin WHERE borrará todas las filas de la tabla.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 532,
+        "prompt": "En el momento de ser necesario eliminar una tabla, se debe escribir la sentencia \"DROP TABLE mitabla;\". ¿Qué debes tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "En algunas extensiones procedimentales como PL/SQL no se pueden usar sentencias DDL como DROP TABLE",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Eliminará la tabla y las filas, pudiendo revertir este cambio con ROLLBACK",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Dará error si \"mitabla\" ya existía",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "En algunas extensiones procedimentales como PL/SQL no se pueden usar sentencias DDL como DROP TABLE"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"En algunas extensiones procedimentales como PL/SQL no se pueden usar sentencias DDL como DROP TABLE\" . Se debe utilizar directamente esa sentencia y no como parte de un bloque procedimental.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 533,
+        "prompt": "En el momento de ser necesario definir varias variables en un bloque SQL/PSM, ¿qué debes usar para cada variable la sentencia? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "DELIMITER",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "DECLARE",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "DEFINE",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "DECLARE"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"DECLARE\". La sentencia DECLARE se debe usar para cada variable a definir.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 534,
+        "prompt": "Cuando estás desarrollando un bloque almacenado, las sentencias SQL tienen acceso completo a cualquier variable de programa almacenada.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "VERDADERO",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "FALSO",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "VERDADERO"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Verdadero\". Las sentencias SQL tienen acceso completo a cualquier variable de programa almacenada.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 535,
+        "prompt": "Seleccione las 3 (tres) respuestas correctas. Supongamos que tienes que manejar las transacciones en un bloque SQL/PSM. ¿Cuáles de las siguientes podrías usar?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "SAVE ALL",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "COMMIT",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "ROLLBACK",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "SAVEPOINT",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1,
+          2,
+          3
+        ],
+        "correct_answers": [
+          "COMMIT",
+          "ROLLBACK",
+          "SAVEPOINT"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"COMMIT\", \"ROLLBACK\" y \"SAVEPOINT\". Son las sentencias de control de transacciones en un bloque.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 536,
+        "prompt": "Cuando se quiere modificar un procedimiento ya existente es necesario eliminar el anterior. ¿Con cuál de las siguientes sentencias se puede eliminar un procedimiento?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "DROP nombre_procedimiento",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "DROP PROCEDURE nombre_procedimiento;",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "DROP PROCEDURE nombre_procedimiento;"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Lectura 1: Las extensiones procedimentales de SQL (Oracle PL/SQL)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"DROP PROCEDURE nombre_procedimiento;\". La sentencia para eliminar un procedimiento es DROP PROCEDURE y su nombre.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 537,
+        "prompt": "¿Cuál de las siguientes opciones es correcta cuando se analiza el uso de un disparador?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Si falla un disparador AFTER, no se realiza la operación en la fila correspondiente",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "No es tenido en cuenta el éxito del disparador, la operación que lo dispara se ejecuta siempre",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Si falla un disparador BEFORE, no se realiza la operación en la fila correspondiente",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Si falla un disparador BEFORE, no se realiza la operación en la fila correspondiente"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Si falla un disparador BEFORE, no se realiza la operación en la fila correspondiente\". La ejecución de los disparadores sigue algunas reglas como la indicada como correcta.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 538,
+        "prompt": "Vas a aplicar disparadores en tu aplicación. ¿Cuál de las siguientes opciones es correcta cuando se analiza el uso de un disparador?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Los disparadores son independientes de las tablas",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Los disparadores se asocian siempre a una tabla",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Los disparadores necesitan un procedimiento que los ejecuten explícitamente",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Los disparadores se asocian siempre a una tabla"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Los disparadores se asocian siempre a una tabla\". Es una característica básica de los disparadores.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 539,
+        "prompt": "Es el conjunto de sentencias que aceptan parámetros y que su tarea principal es calcular un valor y devolverlo para finalizar su trabajo. ¿A qué tipo de construcción disponible en SQL/PSM hace referencia dicho concepto?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Sentencias",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Funciones",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Funciones"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Funciones\". Las funciones con un conjunto de sentencias cuya tarea principal es calcular un valor para luego devolverlo.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 540,
+        "prompt": "¿A qué tipo de construcción disponible en PL/SQL hace referencia el siguiente concepto? \"Conjunto de sentencias ejecutables asociadas a una tabla y ejecutado ante la ocurrencia de eventos determinados\"",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Sentencias",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Triggers",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Triggers"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Triggers\". Los triggers (o disparadores) son sentencias que están asociadas a una tabla y disparan un determinado evento como por ejemplo el inicio o apagado de la base de datos.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 541,
+        "prompt": "Teniendo en cuenta la siguiente sintaxis realizada en SQL/PSM, \"DECLARE nombre_cursor CURSOR FOR sentencia_SELECT;\". ¿Qué se crea?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Se usa un cursor",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Se declara un cursor",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Se declara un cursor"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"Se declara un cursor\". En SQL/PSM se declaran los cursores con esta sentencia.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 543,
+        "prompt": "Seleccione las 4 (cuatro) respuestas correctas. ¿Cuáles son las categorías en las que pueden dividirse los módulos en PL/SQL?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Paquetes",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Triggers",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Consultas",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Procedimientos",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Funciones",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Paquetes",
+          "Triggers",
+          "Procedimientos",
+          "Funciones"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Lectura 4: Los triggers o disparadores SQL/PSM en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "Las respuestas correctas son: \"Procedimientos\", \"Funciones\", \"Triggers\" y \"Paquetes\". PL/SQL brinda varias formas de construir programas, desde los diferentes tipos de módulo disponibles a los componentes de un bloque PL/SQL, hasta las construcciones lógicas que manejan el flujo de los procesos. La modularidad mejora la reusabilidad del software y permite esconder la complejidad de la ejecución de una operación específica detrás de un nombre de procedimiento o función utilizando también triggers y paquetes.",
+        "exam_tip": "Selección múltiple: marcá todas las correctas (en Daypo vienen listadas primero).",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 544,
+        "prompt": "En el momento de ser necesario bloquear una tabla, se debe escribir la sentencia \"LOCK TABLE;\". ¿Qué debes tener en cuenta? Seleccione la opción correcta.",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "No creará la tabla por error de compilación",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Creará una tabla 'miotratabla' e insertará una fila en 'mitabla'",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "En algunas extensiones procedimentales como SQL/PSM no se pueden usar sentencias como LOCK TABLE",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "En algunas extensiones procedimentales como SQL/PSM no se pueden usar sentencias como LOCK TABLE"
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Lectura 2: Programas almacenados en MySQL",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"En algunas extensiones procedimentales como SQL/PSM no se pueden usar sentencias como LOCK TABLE\". La sentencia LOCK TABLE no puede ser usada dentro de un bloque SQL/PSM.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
+      },
+      {
+        "id": 545,
+        "prompt": "Seleccione la opción correcta. En el momento de ser necesario en un bloque SQL/PSM recorrer una tabla para procesar una a una las filas, debes considerar usar:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La estructura CURSOR",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "La sentencia SELECT",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "La estructura CURSOR"
+        ],
+        "module": "M4",
+        "lecture": "L3",
+        "lecture_name": "Lectura 3: El uso de SQL en SQL/PSM (SELECT … INTO y cursores)",
+        "topic": "Parcial 2 (Daypo/Studocu)",
+        "priority": "ALTA",
+        "explanation": "La respuesta correcta es: \"La estructura CURSOR\". La estructura cursor permite tratar las filas de a una.",
+        "exam_tip": "Pregunta recurrente del segundo parcial.",
+        "source": "STUDOCU_BD_P2",
+        "source_year": 2024
       }
     ]
   },

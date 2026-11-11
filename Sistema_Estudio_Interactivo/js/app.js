@@ -646,6 +646,7 @@
     LECTURAS: 'Lecturas de los Módulos 3 y 4',
     REPASO_STUDOCU: 'Studocu · Repaso',
     INTEGRAL_STUDOCU: 'Studocu · Examen integral',
+    STUDOCU_BD_P2: 'Studocu/Daypo · BD1 Segundo parcial (2024)',
     ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025',
     ING_PARCIAL2023: 'Studocu · Parcial 1 2023',
     DAYPO_IA_P1: 'Daypo · IA Siglo XXI Primer Parcial (2024)',
