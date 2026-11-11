@@ -516,7 +516,7 @@
       let modHtml = `<option value="ALL">Todos los Módulos (${sub.questions.length})</option>`;
       uniqueMods.forEach(m => {
         const count = sub.questions.filter(q => q.module === m).length;
-        const label = m === 'M1' ? 'Módulo 1' : (m === 'M2' ? 'Módulo 2' : m);
+        const label = /^M[0-9]+$/.test(m) ? 'Módulo ' + m.slice(1) : m;
         modHtml += `<option value="${m}">${label} (${count})</option>`;
       });
       modSelect.innerHTML = modHtml;
@@ -641,6 +641,9 @@
     PARCIAL: 'Parcial (banco de preguntas)',
     TP1: 'Trabajo Práctico 1',
     TP2: 'Trabajo Práctico 2',
+    TP3: 'Trabajo Práctico 3',
+    TP4: 'Trabajo Práctico 4',
+    LECTURAS: 'Lecturas de los Módulos 3 y 4',
     REPASO_STUDOCU: 'Studocu · Repaso',
     INTEGRAL_STUDOCU: 'Studocu · Examen integral',
     ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025',
@@ -662,7 +665,7 @@
     if (!sel) return;
     const counts = {};
     questions.forEach(q => { const s = questionSource(q); counts[s] = (counts[s] || 0) + 1; });
-    const order = ['PARCIAL', 'TP1', 'TP2', 'REPASO_STUDOCU', 'INTEGRAL_STUDOCU', 'OTRAS'];
+    const order = ['PARCIAL', 'TP1', 'TP2', 'TP3', 'TP4', 'LECTURAS', 'REPASO_STUDOCU', 'INTEGRAL_STUDOCU', 'OTRAS'];
     const years = {};
     questions.forEach(q => { const s = questionSource(q); years[s] = Math.max(years[s] || 0, questionYear(q)); });
     const keys = Object.keys(counts).sort((a, b) => {
