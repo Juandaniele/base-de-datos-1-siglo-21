@@ -650,11 +650,18 @@
     ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025',
     ING_PARCIAL2023: 'Studocu · Parcial 1 2023',
     DAYPO_IA_P1: 'Daypo · IA Siglo XXI Primer Parcial (2024)',
+    STUDOCU_IA_P2_NOV2025: 'Studocu · IA Parcial 2 (noviembre 2025)',
+    STUDOCU_IA_P2_EXAMEN: 'Studocu · IA Parcial 2 – examen corregido (4/11/2025)',
     OTRAS: 'Banco de lecturas y casos'
   };
 
+  // Clave de antigüedad: AAAAMMDD si hay fecha exacta, si no AAAA0000 (más grande = más nueva)
   function questionYear(q) {
-    return q.source_year || 0;
+    if (q.source_date) {
+      const n = parseInt(String(q.source_date).replace(/-/g, ''), 10);
+      if (!isNaN(n)) return n;
+    }
+    return (q.source_year || 0) * 10000;
   }
 
   function questionSource(q) {

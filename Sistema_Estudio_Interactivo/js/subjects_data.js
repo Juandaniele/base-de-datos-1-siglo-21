@@ -60127,12 +60127,12 @@ window.STUDY_SYSTEM_DATA = {
     "accentGlow": "rgba(168, 85, 247, 0.25)",
     "university": "Universidad Siglo 21",
     "career": "Lic. en Informática / Inteligencia Artificial",
-    "badge": "Módulos 1 a 4 • 345 Preguntas • AP1–AP4 & TP1–TP4 • 3 Modelos 3D",
+    "badge": "Módulos 1 a 4 • 385 Preguntas • AP1–AP4 & TP1–TP4 • 3 Modelos 3D",
     "description": "Material real del curso: historia y paradigmas de la IA, agentes inteligentes y entornos, modelos fundacionales y LLM (Transformer, prompting, RAG), ecosistema Python y flujo de trabajo de ML, búsqueda en espacios de estados (BFS, DFS, UCS, DLS), heurísticas (voraz y A*), lógica proposicional y de primer orden, sistemas basados en reglas, sistemas expertos, razonamiento probabilístico (Bayes, redes bayesianas), ontologías e IA híbrida. Módulos 3 y 4: ciencia de datos y CRISP-DM, aprendizaje supervisado, no supervisado, redes neuronales, aprendizaje probabilístico y por refuerzo, arquitectura robótica y locomoción, simulación y gemelos digitales, SLAM y planificación de movimiento, visión artificial, sensores y ROS.",
     "stats": {
       "modules": 4,
       "lectures": 16,
-      "questions": 345,
+      "questions": 385,
       "flashcards": 41,
       "cases": 8,
       "models3d": 3
@@ -76014,6 +76014,1823 @@ window.STUDY_SYSTEM_DATA = {
         "exam_tip": "Flujo continuo = tópico.",
         "tp_number": 4,
         "id": 345
+      },
+      {
+        "id": 346,
+        "prompt": "¿Cuál es el principal beneficio de usar una arquitectura de subsunción en entornos dinámicos y no estructurados?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Garantiza un plan global óptimo calculado antes de que el robot comience a moverse.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Elimina la necesidad de sensores, ya que el robot actúa solo según un modelo interno del mundo.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Centraliza todas las decisiones en un único módulo deliberativo.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Permite que el robot se adapte rápidamente a cambios en el entorno mediante la ejecución simultánea de múltiples comportamientos básicos.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Permite que el robot se adapte rápidamente a cambios en el entorno mediante la ejecución simultánea de múltiples comportamientos básicos."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Arquitectura de subsunción",
+        "priority": "ALTA",
+        "explanation": "La subsunción (Brooks) organiza el control en capas de comportamientos simples que reaccionan directamente a los sensores y corren en paralelo; por eso responde rápido en entornos cambiantes sin depender de un modelo global del mundo. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 1. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Subsunción = comportamientos simples en paralelo, reactivos, sin modelo global.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 1
+      },
+      {
+        "id": 347,
+        "prompt": "¿Cuál es una de las principales ventajas de usar bibliotecas predefinidas en el desarrollo de aplicaciones robóticas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Eliminan la necesidad de probar el software en simulación o en el robot real.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Obligan a escribir los algoritmos de control desde cero para cada robot.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Garantizan que el robot funcione sin errores en cualquier entorno.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Facilitan la reutilización de código, permitiendo a los programadores implementar funcionalidades avanzadas sin desarrollar algoritmos desde cero.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Facilitan la reutilización de código, permitiendo a los programadores implementar funcionalidades avanzadas sin desarrollar algoritmos desde cero."
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Bibliotecas en robótica",
+        "priority": "ALTA",
+        "explanation": "Las bibliotecas (por ejemplo, los paquetes de ROS u OpenCV) encapsulan algoritmos ya probados —navegación, visión, control— y permiten reutilizarlos en lugar de reimplementarlos. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 2. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Bibliotecas = reutilizar código probado.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 2
+      },
+      {
+        "id": 348,
+        "prompt": "Seleccioná las 4 (cuatro) opciones correctas. El Dr. Fernández está desarrollando un sistema de inteligencia artificial inspirado en el cerebro humano y necesita mejorar la eficiencia de la transmisión de señales en su red neuronal artificial. Con base en principios de las redes neuronales biológicas, ¿qué mecanismos debe considerar implementar en su sistema para mejorar esta eficiencia?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Mantener fijas todas las conexiones desde el inicio para que la red no cambie con la actividad.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Fortalecer o debilitar las conexiones según la actividad, imitando la plasticidad sináptica.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Incorporar mielina en las conexiones para aumentar la velocidad de transmisión de señales.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Optimizar la red eliminando conexiones inactivas, simulando la poda sináptica.",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Ajustar dinámicamente la fuerza de las conexiones para adaptarse a los cambios en la red.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Fortalecer o debilitar las conexiones según la actividad, imitando la plasticidad sináptica.",
+          "Incorporar mielina en las conexiones para aumentar la velocidad de transmisión de señales.",
+          "Optimizar la red eliminando conexiones inactivas, simulando la poda sináptica.",
+          "Ajustar dinámicamente la fuerza de las conexiones para adaptarse a los cambios en la red."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Redes neuronales biológicas vs. artificiales",
+        "priority": "ALTA",
+        "explanation": "Según la justificación del examen: la mielina acelera la transmisión de las señales; la plasticidad sináptica ajusta la fuerza de las conexiones según la actividad, y la poda sináptica elimina conexiones inactivas para optimizar la red. La opción A no se ve en la captura. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 3. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Mielina = velocidad · plasticidad = ajustar pesos · poda = quitar conexiones inactivas.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 3
+      },
+      {
+        "id": 349,
+        "prompt": "¿Qué hace que los lenguajes de programación visual sean populares en la robótica educativa?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Optimizan el uso de los sensores del robot, mejorando la precisión de las tareas.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Son los únicos lenguajes que pueden ejecutarse en tiempo real.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Reemplazan por completo la necesidad de hardware en el aprendizaje.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Permiten a los principiantes programar robots sin necesidad de conocer sintaxis complejas.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Permiten a los principiantes programar robots sin necesidad de conocer sintaxis complejas."
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Programación visual en robótica educativa",
+        "priority": "ALTA",
+        "explanation": "Los lenguajes visuales (bloques, tipo Scratch) permiten armar programas encastrando piezas, sin escribir sintaxis. Por eso son ideales para enseñar; no tienen que ver con la precisión de los sensores. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 4. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Visual = bloques = sin sintaxis = principiantes.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 4
+      },
+      {
+        "id": 350,
+        "prompt": "El control de retroalimentación permite que un robot ajuste su velocidad y dirección en función de los datos que recibe de su entorno, asegurando un movimiento preciso en tiempo real.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "Verdadero",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Falso",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Verdadero"
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Control de retroalimentación",
+        "priority": "ALTA",
+        "explanation": "Verdadero. El control realimentado (lazo cerrado) mide continuamente el estado con sensores, lo compara con el valor deseado y corrige la velocidad y la dirección. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 5.",
+        "exam_tip": "Retroalimentación = medir → comparar → corregir.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 5
+      },
+      {
+        "id": 351,
+        "prompt": "Martín está diseñando un robot que debe recolectar datos meteorológicos en tiempo real en un campo agrícola. El robot debe ajustar su comportamiento en función de las condiciones del clima. ¿Qué enfoque de programación será más adecuado para garantizar que el robot actúe de manera óptima?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Programación secuencial, ejecutando siempre las mismas instrucciones en el mismo orden.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Programación por lotes, procesando los datos del clima una vez al día.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Programación manual por teleoperación, para que un operador decida cada acción.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Programación basada en eventos, para que el robot reaccione inmediatamente a los cambios en las condiciones climáticas.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Programación basada en eventos, para que el robot reaccione inmediatamente a los cambios en las condiciones climáticas."
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Programación basada en eventos",
+        "priority": "ALTA",
+        "explanation": "La programación basada en eventos permite que el robot ajuste su comportamiento según las condiciones meteorológicas apenas cambian. Los sistemas secuenciales no tienen la flexibilidad necesaria (justificación del examen). Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 6. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Entorno cambiante + reacción inmediata = eventos.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 6
+      },
+      {
+        "id": 352,
+        "prompt": "Laura trabaja en un equipo de desarrollo de software que utiliza redes semánticas para organizar el contenido de una enciclopedia en línea. Se le pide que optimice las búsquedas de información. ¿Qué enfoque debe tomar Laura para mejorar la efectividad de las búsquedas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Eliminar las relaciones entre conceptos para que la red sea más liviana.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Reemplazar la red semántica por una lista alfabética de artículos.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Indexar solo los títulos de los artículos, ignorando su contenido.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Aumentar las conexiones lógicas entre conceptos relacionados dentro de la red semántica.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Aumentar las conexiones lógicas entre conceptos relacionados dentro de la red semántica."
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "topic": "Redes semánticas",
+        "priority": "ALTA",
+        "explanation": "Al enlazar más conceptos relacionados, la red semántica puede ofrecer resultados más precisos y relevantes: la búsqueda recorre las relaciones y no solo coincidencias de texto. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 7. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Red semántica = nodos (conceptos) + arcos (relaciones). Más relaciones útiles = mejores búsquedas.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 7
+      },
+      {
+        "id": 353,
+        "prompt": "Los sensores de fuerza son esenciales en la manipulación robótica porque permiten al robot ajustar la presión ejercida sobre los objetos, evitando así que estos se dañen durante la manipulación.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "Verdadero",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Falso",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Verdadero"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Sensores de fuerza",
+        "priority": "ALTA",
+        "explanation": "Verdadero. Los sensores de fuerza/par dan realimentación sobre la presión que ejerce la pinza, para tomar objetos frágiles sin romperlos. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 8.",
+        "exam_tip": "Fuerza = cuánto aprieto.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 8
+      },
+      {
+        "id": 354,
+        "prompt": "¿Qué ventaja ofrece la simulación de robots en el proceso de desarrollo de software robótico?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Reemplaza definitivamente las pruebas en el robot real, ya que la simulación es exacta.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Permite a los desarrolladores probar algoritmos y sistemas sin necesidad de utilizar hardware físico, reduciendo costos y tiempos de desarrollo.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Solo sirve para generar animaciones de presentación del robot.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Aumenta el costo del proyecto porque exige construir un prototipo físico por cada prueba.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Permite a los desarrolladores probar algoritmos y sistemas sin necesidad de utilizar hardware físico, reduciendo costos y tiempos de desarrollo."
+        ],
+        "module": "M4",
+        "lecture": "L2",
+        "lecture_name": "Módulo 4 - Lectura 2: Simulación y gemelos digitales",
+        "topic": "Simulación robótica",
+        "priority": "ALTA",
+        "explanation": "Simular (Gazebo, Webots, etc.) permite iterar rápido y sin riesgo de romper hardware. Igual queda la «brecha de realidad» (sim-to-real), por eso no reemplaza del todo la prueba física. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 9. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Simulación = probar sin hardware, más barato y rápido.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 9
+      },
+      {
+        "id": 355,
+        "prompt": "Sofía está creando un sistema para una empresa que necesita organizar grandes volúmenes de información sobre productos y clientes. Decide utilizar una red semántica para mejorar la búsqueda de información dentro de la base de datos. ¿Cuál es el principal beneficio de usar una red semántica en este contexto?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Relacionar conceptos como productos y clientes de manera que las conexiones lógicas faciliten las búsquedas.",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Comprimir la base de datos para que ocupe menos espacio en disco.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Eliminar la necesidad de una base de datos, ya que la red guarda solo reglas.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Encriptar la información de los clientes para mayor seguridad.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Relacionar conceptos como productos y clientes de manera que las conexiones lógicas faciliten las búsquedas."
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "topic": "Redes semánticas",
+        "priority": "ALTA",
+        "explanation": "Las redes semánticas organizan información compleja mediante relaciones entre conceptos, lo que facilita acceder a información relacionada en grandes bases de datos (justificación del examen). Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 10. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Beneficio clave de la red semántica = relaciones explícitas entre conceptos.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 10
+      },
+      {
+        "id": 356,
+        "prompt": "En un sistema de programación robótica basado en eventos, el robot no puede realizar múltiples tareas en paralelo, ya que debe completar un evento antes de reaccionar a otro.",
+        "kind": "vf",
+        "options": [
+          {
+            "index": 0,
+            "text": "Verdadero",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Falso",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Falso"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Programación basada en eventos",
+        "priority": "ALTA",
+        "explanation": "Falso. La programación basada en eventos permite atender varios eventos de forma concurrente (callbacks, interrupciones, nodos independientes en ROS). El que ejecuta paso a paso, uno tras otro, es el enfoque secuencial. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 11.",
+        "exam_tip": "Eventos ≠ secuencial: puede reaccionar a varios estímulos.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 11
+      },
+      {
+        "id": 357,
+        "prompt": "Raúl está desarrollando una aplicación de reconocimiento de imágenes utilizando redes neuronales profundas. Durante las pruebas, nota que la precisión del modelo es baja. ¿Qué estrategia debe implementar para mejorar el rendimiento del modelo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Reducir el conjunto de entrenamiento para que el modelo entrene más rápido.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Entrenar con datos de validación únicamente para mejorar la generalización.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Aumentar el conjunto de datos de entrenamiento para evitar el subajuste.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Eliminar las capas ocultas para simplificar la red.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Aumentar el conjunto de datos de entrenamiento para evitar el subajuste."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Subajuste en redes profundas",
+        "priority": "ALTA",
+        "explanation": "Una precisión baja indica que el modelo no aprendió los patrones (subajuste). Con más datos de entrenamiento puede aprenderlos mejor. Entrenar con los datos de validación es un error: esos datos son para evaluar, no para entrenar. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 12. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Validación = evaluar, nunca entrenar.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 12
+      },
+      {
+        "id": 358,
+        "prompt": "¿Qué característica clave ofrece el uso de ROS (Robot Operating System) en la programación de aplicaciones robóticas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Es un sistema operativo que reemplaza a Linux en el robot.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Garantiza el control en tiempo real estricto sin necesidad de configuración.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Minimiza el uso de bibliotecas externas, asegurando que todos los recursos del robot estén optimizados.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Facilita la comunicación entre diferentes módulos del robot a través de una arquitectura distribuida.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Facilita la comunicación entre diferentes módulos del robot a través de una arquitectura distribuida."
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "ROS",
+        "priority": "ALTA",
+        "explanation": "ROS es un middleware: los nodos se comunican por tópicos, servicios y acciones, lo que permite un sistema modular y distribuido. Además fomenta el uso de bibliotecas y paquetes externos, no lo minimiza. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 13. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "ROS = middleware de nodos que se comunican (pub/sub).",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 13
+      },
+      {
+        "id": 359,
+        "prompt": "¿Qué función principal desempeña la arquitectura de tres capas en un sistema robótico?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Separa el hardware en tres robots distintos que trabajan en paralelo.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Elimina la capa reactiva para que todas las decisiones sean deliberativas.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Coordina las capas de control, planificación y ejecución, asegurando que el robot pueda actuar tanto en tiempo real como a largo plazo.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Divide la memoria del robot en tres bancos para acelerar el procesamiento.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Coordina las capas de control, planificación y ejecución, asegurando que el robot pueda actuar tanto en tiempo real como a largo plazo."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Arquitectura de tres capas",
+        "priority": "ALTA",
+        "explanation": "La arquitectura híbrida de tres capas combina una capa reactiva (control en tiempo real), una de ejecución/secuenciación y una deliberativa (planificación a largo plazo). Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 14. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "3 capas = reactiva (rápida) + ejecutiva + deliberativa (largo plazo).",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 14
+      },
+      {
+        "id": 360,
+        "prompt": "Seleccioná las 4 (cuatro) opciones correctas. Alejandro está desarrollando una red neuronal para predecir el rendimiento de estudiantes en base a sus calificaciones anteriores y otros factores. Para mejorar la precisión del modelo, decide implementar varias estrategias. ¿Cuáles de las siguientes acciones deben mejorar el rendimiento de su modelo?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Aplicar técnicas de regularización para evitar que el modelo se ajuste demasiado a los datos de entrenamiento.",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Utilizar técnicas de aumento de datos para mejorar la diversidad del conjunto de entrenamiento.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Limitar el número de neuronas por capa para evitar que la red capture patrones no deseados.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Implementar redes neuronales profundas para capturar relaciones complejas entre las variables.",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Aumentar la cantidad de datos de entrenamiento para captar patrones más generales.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Aplicar técnicas de regularización para evitar que el modelo se ajuste demasiado a los datos de entrenamiento.",
+          "Utilizar técnicas de aumento de datos para mejorar la diversidad del conjunto de entrenamiento.",
+          "Implementar redes neuronales profundas para capturar relaciones complejas entre las variables.",
+          "Aumentar la cantidad de datos de entrenamiento para captar patrones más generales."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Mejorar el rendimiento de una red neuronal",
+        "priority": "ALTA",
+        "explanation": "Regularización (contra el sobreajuste), aumento de datos, más datos de entrenamiento y redes más profundas ayudan al modelo a aprender mejor y generalizar. Limitar neuronas sin criterio puede causar subajuste; era la opción incorrecta del examen. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 15. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Más datos + regularización + aumento de datos + profundidad.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 15
+      },
+      {
+        "id": 361,
+        "prompt": "Pedro está investigando cómo se generan los potenciales de acción en las neuronas sensoriales en respuesta a estímulos externos. Para simular este proceso, ¿qué debe incluir en su modelo?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La liberación continua de neurotransmisores sin importar la intensidad del estímulo.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "La despolarización de la membrana celular cuando un estímulo alcanza el umbral necesario.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "La hiperpolarización permanente de la membrana ante cualquier estímulo.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "La transmisión de la señal solo cuando la neurona está en reposo absoluto.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "La despolarización de la membrana celular cuando un estímulo alcanza el umbral necesario."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Neurona biológica: potencial de acción",
+        "priority": "ALTA",
+        "explanation": "El potencial de acción se dispara cuando un estímulo despolariza la membrana hasta superar el umbral (alrededor de −45 mV). Es un fenómeno de «todo o nada», análogo a la función de activación con umbral de la neurona artificial. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 16. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Estímulo ≥ umbral → despolarización → disparo.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 16
+      },
+      {
+        "id": 362,
+        "prompt": "¿Qué técnica es clave para que un robot pueda mantener una trayectoria constante, ajustándose automáticamente en función de las desviaciones detectadas durante su desplazamiento?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "El control de lazo abierto, que ejecuta los comandos sin medir el resultado.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "El control de lazo cerrado, que utiliza sensores para medir las desviaciones en tiempo real y ajustar el movimiento del robot para corregirlas.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "La teleoperación, en la que un humano corrige cada desviación manualmente.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "El sensor de proximidad, que detecta objetos cercanos, pero no ajusta la trayectoria del robot.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "El control de lazo cerrado, que utiliza sensores para medir las desviaciones en tiempo real y ajustar el movimiento del robot para corregirlas."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Control de lazo cerrado",
+        "priority": "ALTA",
+        "explanation": "El lazo cerrado realimenta el error (posición deseada − posición medida) para corregir el movimiento. El lazo abierto no mide el resultado y un sensor solo, sin controlador, no corrige nada. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 17. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Corregir desviaciones = lazo cerrado.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 17
+      },
+      {
+        "id": 363,
+        "prompt": "Luisa está utilizando redes neuronales para el reconocimiento facial en tiempo real. Sin embargo, ha notado que la red tarda mucho en procesar las imágenes. ¿Qué técnica podría implementar para mejorar la eficiencia del procesamiento?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Aumentar la resolución de las imágenes de entrada para tener más detalle.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Aplicar la técnica de convolución para reducir la dimensionalidad de las imágenes sin perder información relevante.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Usar una red totalmente conectada con una neurona por cada píxel.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Desactivar la función de activación de todas las capas.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Aplicar la técnica de convolución para reducir la dimensionalidad de las imágenes sin perder información relevante."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Redes convolucionales",
+        "priority": "ALTA",
+        "explanation": "Las CNN aplican filtros compartidos (convolución) y pooling, que extraen características y reducen la dimensionalidad. Así procesan imágenes de forma mucho más eficiente que una red densa. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 18. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Imágenes + eficiencia = convolución (CNN).",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 18
+      },
+      {
+        "id": 364,
+        "prompt": "¿Qué componente robótico se encarga de detectar cambios en el entorno y convertirlos en señales eléctricas?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Actuador",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Efector final",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Sensor",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Controlador",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Sensor"
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Sensores",
+        "priority": "ALTA",
+        "explanation": "El sensor transduce una magnitud física (luz, distancia, fuerza) en una señal eléctrica. El actuador hace lo inverso: convierte señales en movimiento. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 19. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Sensor = entrada · actuador = salida.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 19
+      },
+      {
+        "id": 365,
+        "prompt": "En un sistema robótico con arquitectura de tres capas, ¿qué función desempeña la capa de planificación?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Coordina las acciones a largo plazo del robot, basándose en los objetivos globales y las condiciones del entorno.",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Controla directamente los motores en tiempo real, sin considerar objetivos.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Lee los sensores y los convierte en señales eléctricas.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Reacciona por reflejo ante obstáculos inmediatos.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Coordina las acciones a largo plazo del robot, basándose en los objetivos globales y las condiciones del entorno."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Arquitectura de tres capas",
+        "priority": "ALTA",
+        "explanation": "La capa deliberativa (de planificación) razona sobre objetivos globales y genera planes a largo plazo. Las reacciones inmediatas quedan en la capa reactiva. Fuente: Preguntero Parcial 2 IA (Studocu, noviembre 2025), pregunta 20. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Planificación = largo plazo y objetivos globales.",
+        "source": "STUDOCU_IA_P2_NOV2025",
+        "source_year": 2025,
+        "source_date": "2025-11-18",
+        "source_doc": "Studocu · Parcial 2 – Inteligencia Artificial – Siglo XXI – Noviembre 2025",
+        "doc_question": 20
+      },
+      {
+        "id": 366,
+        "prompt": "Ante la necesidad de precisar las especificaciones a cumplir por un manipulador, el especialista en informática destaca las condiciones a cumplir, que son:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Velocidad máxima, consumo eléctrico y peso del robot.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Cumplimiento de trayectorias, coordinación de movimientos, posicionamiento preciso y esfuerzo apropiado.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Cumplimiento de trayectorias y autonomía energética.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Cumplimiento de trayectorias, coordinación de movimientos y posicionamiento preciso.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Cumplimiento de trayectorias, coordinación de movimientos, posicionamiento preciso y esfuerzo apropiado."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Especificaciones de un manipulador",
+        "priority": "ALTA",
+        "explanation": "Las especificaciones de un manipulador son cuatro: cumplimiento de trayectorias, coordinación de movimientos, posicionamiento preciso y esfuerzo apropiado. La trampa del examen era la opción con solo tres, sin el esfuerzo apropiado. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 1. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Son 4: trayectoria, coordinación, posición, esfuerzo.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 1
+      },
+      {
+        "id": 367,
+        "prompt": "Un asesor informático, que es consultado sobre un robot móvil para abastecer una línea de montaje, para comenzar requiere la siguiente información:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Marca del robot, color y precio de lista.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Recorrido único o múltiple, si realiza pesado y detalles de la carga/descarga.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Velocidad máxima y autonomía de la batería únicamente.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Recorrido único o múltiple, exactitud y detalles de la carga/descarga.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Recorrido único o múltiple, si realiza pesado y detalles de la carga/descarga."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Robot móvil en línea de montaje",
+        "priority": "ALTA",
+        "explanation": "Para definir un robot móvil de abastecimiento hay que saber si el recorrido es único o múltiple, si realiza pesado y los detalles de la carga y descarga. La trampa era cambiar «si realiza pesado» por «exactitud». Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 2. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Recorrido + pesado + carga/descarga.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 2
+      },
+      {
+        "id": 368,
+        "prompt": "Al revisarse las variantes en cuanto a arquitecturas en el diseño de un robot, el especialista en el tema cita como ejemplo extremo el caso de los sistemas de control que operan directamente a partir de los datos sensoriales adquiridos por el robot en cada momento. Esta arquitectura se denomina:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Embebido de tiempo real.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Deliberativa.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Híbrida de tres capas.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Subsunción.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Subsunción."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Arquitectura de subsunción",
+        "priority": "ALTA",
+        "explanation": "Brooks (1986) postuló que un sistema puede operar directamente a partir de los datos sensoriales adquiridos en cada momento, sin una representación interna del mundo («el mundo es su mejor modelo»). Esa es la arquitectura de subsunción. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 3. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Datos sensoriales directos, sin modelo = subsunción (Brooks, 1986).",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 3
+      },
+      {
+        "id": 369,
+        "prompt": "En coincidencia con la realidad histórica, el asesor informático considera que la rápida incorporación de la robótica a los procesos productivos es consecuencia de sus virtudes, en particular:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Creatividad, empatía y criterio propio.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Bajo costo inicial y nulo mantenimiento.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Capacidad de trabajo, precisión y repetitividad.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Autonomía total y capacidad de aprender sin datos.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Capacidad de trabajo, precisión y repetitividad."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Virtudes de la robótica industrial",
+        "priority": "ALTA",
+        "explanation": "El crecimiento de la robótica industrial se apoya en la capacidad de trabajo, la precisión y la repetitividad que ofrecen los robots. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 4. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Industria = trabajo + precisión + repetitividad.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 4
+      },
+      {
+        "id": 370,
+        "prompt": "Un modelo básico de aprendizaje por refuerzo debe disponer como componente característico de:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un conjunto de datos etiquetados con la respuesta correcta para cada caso.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Un algoritmo de agrupamiento de datos sin etiquetas.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Reglas que determinen la máxima recompensa de cada acción.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Reglas que determinen la recompensa inmediata de cada acción.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Reglas que determinen la recompensa inmediata de cada acción."
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Módulo 3 - Lectura 4: Aprendizaje probabilístico y por refuerzo",
+        "topic": "Aprendizaje por refuerzo",
+        "priority": "ALTA",
+        "explanation": "El componente característico del aprendizaje por refuerzo son las reglas que establecen la recompensa inmediata de cada acción. El agente aprende a maximizar la recompensa acumulada, pero lo que el entorno le da es la recompensa inmediata. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 5. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Refuerzo = recompensa INMEDIATA por acción (no «máxima»).",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 5
+      },
+      {
+        "id": 371,
+        "prompt": "Al recomendar la aplicación de un clasificador bayesiano simple (CBS) para anticipar el desempeño de un proceso de mecanizado, el asesor informático destaca su ventaja:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Por no requerir ningún dato de entrenamiento.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Por modelar perfectamente la dependencia entre todas las variables.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Por requerir solo una pequeña cantidad de datos de entrenamiento.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Por ser una red neuronal profunda de muchas capas.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Por requerir solo una pequeña cantidad de datos de entrenamiento."
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Módulo 3 - Lectura 4: Aprendizaje probabilístico y por refuerzo",
+        "topic": "Clasificador bayesiano simple",
+        "priority": "ALTA",
+        "explanation": "El CBS (Naive Bayes) solo necesita una pequeña cantidad de datos de entrenamiento para estimar sus parámetros (medias y varianzas de las variables), porque asume que las variables son independientes entre sí. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 6. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Naive Bayes: pocos datos, supone independencia.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 6
+      },
+      {
+        "id": 372,
+        "prompt": "Seleccioná las 3 (tres) opciones correctas. Un asesor informático advierte, ante una consulta, que para poder definir la arquitectura inicial de un modelo neuronal de aprendizaje supervisado, es importante conocer:",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "El lenguaje de programación del sistema operativo.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "La marca del procesador donde se ejecutará.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Cantidad de señales de salida.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Cantidad de señales de entrada.",
+            "is_correct": true
+          },
+          {
+            "index": 4,
+            "text": "Tipo de salidas (digitales o analógicas).",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2,
+          3,
+          4
+        ],
+        "correct_answers": [
+          "Cantidad de señales de salida.",
+          "Cantidad de señales de entrada.",
+          "Tipo de salidas (digitales o analógicas)."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Arquitectura inicial de una red neuronal",
+        "priority": "ALTA",
+        "explanation": "La cantidad de señales de entrada, la cantidad de señales de salida y el tipo de salidas (digitales o analógicas) permiten definir la arquitectura inicial de la red: neuronas de entrada, neuronas de salida y función de activación de salida. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 7. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Entradas, salidas y tipo de salida.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 7
+      },
+      {
+        "id": 373,
+        "prompt": "Una de las ventajas de las redes semánticas es que:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Permiten declarar importantes asociaciones en forma explícita.",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "No requieren definir relaciones entre conceptos.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Garantizan inferencias completas y sin ambigüedad en cualquier dominio.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Solo pueden representar información numérica.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Permiten declarar importantes asociaciones en forma explícita."
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "topic": "Redes semánticas",
+        "priority": "ALTA",
+        "explanation": "Una de las principales ventajas de las redes semánticas es que permiten declarar asociaciones importantes en forma explícita, lo que facilita ver las relaciones presentes en la información almacenada. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 8. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Red semántica = asociaciones explícitas.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 8
+      },
+      {
+        "id": 374,
+        "prompt": "Al problema de conocer el movimiento final de un manipulador a partir de ciertos ángulos girados por las sucesivas articulaciones se lo denomina:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Cinemática directa.",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Dinámica del manipulador.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Planificación de trayectorias.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Cinemática inversa.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Cinemática directa."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Cinemática directa",
+        "priority": "ALTA",
+        "explanation": "Cinemática directa: dados los ángulos de las articulaciones, se calcula la posición final del efector. La inversa es lo contrario: dada la posición deseada, se calculan los ángulos. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 9. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Directa: ángulos → posición · Inversa: posición → ángulos.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 9
+      },
+      {
+        "id": 375,
+        "prompt": "¿Qué puntos pueden alcanzarse si se dispone de un brazo formado por tres segmentos de largo L, articulados en sus extremos, que giran sobre un mismo plano?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Todos los de un círculo de radio 2L.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Solo los puntos de una circunferencia de radio 3L (el borde).",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Todos los de un círculo de radio 3L.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Todos los de una esfera de radio 3L.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Todos los de un círculo de radio 3L."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Espacio de trabajo de un brazo",
+        "priority": "ALTA",
+        "explanation": "Con tres segmentos articulados de largo L se alcanzan todos los puntos del círculo de radio 3L (el alcance máximo es L+L+L). Como giran en un mismo plano, es un círculo y no una esfera. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 10. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Alcance = suma de los largos; en el plano, un círculo.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 10
+      },
+      {
+        "id": 376,
+        "prompt": "En un caso de probabilidades condicionadas, en el que se busca anticipar el desempeño de un proceso de mecanizado, el asesor informático no duda en recomendar un:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Algoritmo k-means.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Árbol de búsqueda A*.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Clasificador bayesiano simple (CBS).",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Sistema de lógica proposicional.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          2
+        ],
+        "correct_answers": [
+          "Clasificador bayesiano simple (CBS)."
+        ],
+        "module": "M3",
+        "lecture": "L4",
+        "lecture_name": "Módulo 3 - Lectura 4: Aprendizaje probabilístico y por refuerzo",
+        "topic": "Clasificador bayesiano simple",
+        "priority": "ALTA",
+        "explanation": "El CBS es un método de clasificación que se basa en el teorema de Bayes sobre probabilidades condicionadas. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 11. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Probabilidades condicionadas → Bayes → CBS.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 11
+      },
+      {
+        "id": 377,
+        "prompt": "Se entiende por razonamiento a la facultad que permite:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Almacenar grandes volúmenes de datos sin procesarlos.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Resolver problemas, extraer conclusiones y aprender de manera consciente.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Percibir el entorno exclusivamente mediante sensores.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Repetir acciones de forma mecánica sin analizar el resultado.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          1
+        ],
+        "correct_answers": [
+          "Resolver problemas, extraer conclusiones y aprender de manera consciente."
+        ],
+        "module": "M2",
+        "lecture": "L3",
+        "lecture_name": "Módulo 2 - Lectura 3: Conocimiento, lógica e inferencia",
+        "topic": "Razonamiento",
+        "priority": "ALTA",
+        "explanation": "El razonamiento es la facultad que permite resolver problemas, extraer conclusiones y aprender de manera consciente, estableciendo conexiones lógicas entre los conocimientos. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 12. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Razonar = resolver, concluir, aprender conscientemente.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 12
+      },
+      {
+        "id": 378,
+        "prompt": "Seleccioná las 2 (dos) opciones correctas. Cada punto (píxel) de una imagen digital incluye dos tipos de información. ¿A qué corresponden?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Velocidad de captura de la cámara.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Profundidad del objeto en metros.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Amplitud (nivel de gris o composición del color).",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Nombre del objeto que aparece en la imagen.",
+            "is_correct": false
+          },
+          {
+            "index": 4,
+            "text": "Posición (fila, columna).",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          2,
+          4
+        ],
+        "correct_answers": [
+          "Amplitud (nivel de gris o composición del color).",
+          "Posición (fila, columna)."
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "Imagen digital: píxel",
+        "priority": "ALTA",
+        "explanation": "Una imagen digital es una matriz: cada píxel tiene una posición (fila, columna) y una amplitud (nivel de gris o composición del color). Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 13. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Píxel = dónde (fila, columna) + cuánto (gris o color).",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 13
+      },
+      {
+        "id": 379,
+        "prompt": "Un proceso de montaje incluye una cinta transportadora y es necesario detectar la llegada de los productos a ciertos puntos e identificarlos. El asesor recomienda que, con el mismo medio, se realicen la detección y la identificación. Propone:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Comunicación con un sensor de radiofrecuencia (RFID).",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Un final de carrera mecánico.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Un sensor de temperatura.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Una barrera óptica.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Comunicación con un sensor de radiofrecuencia (RFID)."
+        ],
+        "module": "M4",
+        "lecture": "L4",
+        "lecture_name": "Módulo 4 - Lectura 4: Visión artificial, sensores y ecosistema ROS",
+        "topic": "RFID",
+        "priority": "ALTA",
+        "explanation": "Con RFID, un solo medio detecta que el producto llegó y además lo identifica (lee su etiqueta). Una barrera óptica detecta la presencia, pero no identifica de qué producto se trata. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 14. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Detectar + identificar con un solo medio = RFID.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 14
+      },
+      {
+        "id": 380,
+        "prompt": "Al tratarse las arquitecturas de robots y en particular la de subsunción, el asesor informático enfatizó que, tal como se ha demostrado en numerosas aplicaciones, un sistema basado en la interacción de muchos elementos simples, interactuando adecuadamente, es capaz de establecer naturalmente:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Un orden a partir del aparente caos.",
+            "is_correct": true
+          },
+          {
+            "index": 1,
+            "text": "Un modelo simbólico completo del mundo.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Una estructura deliberativa.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Un plan óptimo global calculado de antemano.",
+            "is_correct": false
+          }
+        ],
+        "correct_indices": [
+          0
+        ],
+        "correct_answers": [
+          "Un orden a partir del aparente caos."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Arquitectura de subsunción",
+        "priority": "ALTA",
+        "explanation": "Una propiedad básica de la subsunción es que muchos elementos sencillos, interactuando adecuadamente, establecen un orden a partir del aparente caos (comportamiento emergente). No forman una estructura deliberativa. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 15. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Subsunción → comportamiento emergente: orden desde el caos.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 15
+      },
+      {
+        "id": 381,
+        "prompt": "¿Qué se entiende por «grado de libertad»?",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "La cantidad de motores que tiene un robot, sin importar cómo se muevan.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "La velocidad máxima a la que puede girar una articulación.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "El nivel de autonomía de un robot frente al operador.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Cantidad mínima de parámetros independientes para determinar posición y orientación de un objeto.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Cantidad mínima de parámetros independientes para determinar posición y orientación de un objeto."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Grados de libertad",
+        "priority": "ALTA",
+        "explanation": "Para ubicar un punto en el espacio alcanzan tres grados de libertad (la posición). Si además se quiere la orientación, hay que añadir otros tres, en total seis. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 16. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "3 GDL de posición + 3 de orientación = 6 en el espacio.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 16
+      },
+      {
+        "id": 382,
+        "prompt": "Para identificar dígitos a través de códigos de barra «39» (doce barras blancas o negras), el asesor informático debe recomendar un perceptrón con:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Una entrada analógica y doce salidas digitales.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Doce entradas analógicas y doce salidas digitales.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Treinta y nueve entradas digitales y una salida digital.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Doce entradas digitales y una salida analógica.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Doce entradas digitales y una salida analógica."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Perceptrón: entradas y salidas",
+        "priority": "ALTA",
+        "explanation": "Las entradas deben coincidir con las señales a reconocer: 12 barras, cada una blanca o negra, es decir, 12 entradas digitales. La salida es un único valor entre 0 y 9 (el dígito), es decir, una salida analógica. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 17. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Entradas = cantidad de barras (digitales); salida = el dígito (un valor).",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 17
+      },
+      {
+        "id": 383,
+        "prompt": "Para especificar la geometría de un brazo manipulador es necesario definir:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "Alcance, dimensiones de los vínculos rígidos y rotaciones.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Peso, color y material de los vínculos.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "Velocidad de los motores y consumo de energía.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "Formas, dimensiones de los vínculos rígidos y rotaciones.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "Formas, dimensiones de los vínculos rígidos y rotaciones."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Geometría de un brazo manipulador",
+        "priority": "ALTA",
+        "explanation": "La geometría de un brazo manipulador queda definida por las formas y dimensiones de los vínculos rígidos, junto con las rotaciones posibles. El alcance es una consecuencia de la geometría, no parte de su definición. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 18. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Geometría = formas + dimensiones de vínculos + rotaciones.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 18
+      },
+      {
+        "id": 384,
+        "prompt": "Seleccioná las 3 (tres) opciones correctas. Al plantearse la conveniencia de tener en cuenta la clasificación de robots según su desempeño desde el punto de vista de su autonomía, el especialista cita niveles o casos. ¿Cuáles son estos?",
+        "kind": "multiple",
+        "options": [
+          {
+            "index": 0,
+            "text": "Robot planificador.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "Robot con aprendizaje.",
+            "is_correct": true
+          },
+          {
+            "index": 2,
+            "text": "Robot autónomo.",
+            "is_correct": true
+          },
+          {
+            "index": 3,
+            "text": "Robot razonador.",
+            "is_correct": false
+          },
+          {
+            "index": 4,
+            "text": "Robot preprogramado.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          1,
+          2,
+          4
+        ],
+        "correct_answers": [
+          "Robot con aprendizaje.",
+          "Robot autónomo.",
+          "Robot preprogramado."
+        ],
+        "module": "M4",
+        "lecture": "L1",
+        "lecture_name": "Módulo 4 - Lectura 1: Arquitectura robótica y sistemas de locomoción",
+        "topic": "Clasificación de robots por autonomía",
+        "priority": "ALTA",
+        "explanation": "Desde el punto de vista de la autonomía se distinguen los robots preprogramados, con aprendizaje y autónomos. El planificador y el razonador están incluidos en los casos anteriores (justificación del examen). Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 19. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Autonomía: preprogramado → con aprendizaje → autónomo.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 19
+      },
+      {
+        "id": 385,
+        "prompt": "Cuando se hayan producido suficientes excitaciones, el potencial de la neurona puede elevarse por encima del umbral de disparo, que es de:",
+        "kind": "single",
+        "options": [
+          {
+            "index": 0,
+            "text": "−70 mV.",
+            "is_correct": false
+          },
+          {
+            "index": 1,
+            "text": "+30 mV.",
+            "is_correct": false
+          },
+          {
+            "index": 2,
+            "text": "0 mV.",
+            "is_correct": false
+          },
+          {
+            "index": 3,
+            "text": "−45 mV.",
+            "is_correct": true
+          }
+        ],
+        "correct_indices": [
+          3
+        ],
+        "correct_answers": [
+          "−45 mV."
+        ],
+        "module": "M3",
+        "lecture": "L3",
+        "lecture_name": "Módulo 3 - Lectura 3: Redes neuronales y aprendizaje profundo",
+        "topic": "Neurona biológica: umbral de disparo",
+        "priority": "ALTA",
+        "explanation": "Con suficientes excitaciones, el potencial de la neurona supera los −45 mV (umbral de disparo) y se genera el potencial de acción. El potencial de reposo ronda los −70 mV. Fuente: Examen Parcial 2 IA corregido (Studocu, 4/11/2025), pregunta 20. (En la captura del examen no se ven todas las opciones: las que faltaban se completaron para poder practicar.)",
+        "exam_tip": "Reposo ≈ −70 mV · umbral ≈ −45 mV.",
+        "source": "STUDOCU_IA_P2_EXAMEN",
+        "source_year": 2025,
+        "source_date": "2025-11-04",
+        "source_doc": "Studocu · Parcial 2 - Examen de Inteligencia Artificial (IA)",
+        "doc_question": 20
       }
     ]
   }
