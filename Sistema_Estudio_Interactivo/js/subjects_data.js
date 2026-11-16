@@ -61355,50 +61355,103 @@ window.STUDY_SYSTEM_DATA = {
           {
             "id": "L1",
             "title": "Lectura 1: Ciencia de datos y aprendizaje supervisado",
-            "summary": "El proceso CRISP-DM (comprensión del negocio y de los datos, preparación, modelado, evaluación y despliegue), la preparación de datos (limpieza, transformación, ingeniería de features, partición entrenamiento/validación/prueba), clasificación vs. regresión, evaluación con matriz de confusión (accuracy, precisión, recall, F1), sobreajuste/subajuste y compensación sesgo-varianza, validación cruzada, y algoritmos supervisados (regresión lineal, regresión logística, SVM, árboles de decisión, random forest, boosting). Caso: clasificación de malware con Microsoft Defender.",
+            "summary": "Ciencia de datos y aprendizaje automático (reglas explícitas vs. reglas aprendidas de los datos), supervisado vs. no supervisado, el ciclo CRISP-DM en sus seis fases (negocio, datos, preparación, modelado, evaluación, despliegue), calidad de datos (Géron), limpieza, normalización/estandarización, One-Hot e ingeniería de features, división 70/15/15, clasificación vs. regresión, desbalance de clases, matriz de confusión y métricas (accuracy, precision, recall, F1), sobreajuste/subajuste y sesgo-varianza, validación cruzada k-fold, deriva de datos, y los algoritmos supervisados (regresión lineal, SVM, árboles, regresión logística, random forest, k-NN). Caso: Microsoft Defender.",
             "detail": [
               {
-                "title": "1. Ciencia de datos y aprendizaje automático",
+                "title": "1. Caso: clasificación de malware con Microsoft Defender",
                 "points": [
-                  "Los datos son un insumo valioso de los sistemas inteligentes; su valor surge cuando se usan en modelos que <b>generalizan</b> y deciden sobre casos nuevos. Un modelo solo aprende lo que está representado en sus datos de entrenamiento (Burkov, 2025): <b>calidad y representatividad</b> son críticas.",
-                  "El valor no es solo la precisión técnica sino la <b>integración en sistemas reales</b> que apoyen decisiones. Diferencia con la programación tradicional: en lugar de que el programador escriba las reglas, <b>el sistema aprende</b> las reglas a partir de los datos.",
-                  "<b>Caso Microsoft Defender:</b> clasificación de malware entrenada con millones de muestras etiquetadas como benignas o maliciosas (clasificación supervisada). Desafíos: representar bien el problema (el comportamiento en ejecución es más robusto que firmas), la interpretabilidad y la evolución de las amenazas."
+                  "Defender evalúa en forma continua <b>archivos, comportamiento de procesos y tráfico de red</b> de dispositivos de todo el mundo. Detrás de cada alerta hay un modelo entrenado con <b>millones de muestras etiquetadas como benignas o maliciosas</b>: es un problema clásico de <b>clasificación supervisada</b> (asignar la clase o estimar la probabilidad de amenaza).",
+                  "Combina <b>modelos de características estáticas</b> (estructura del ejecutable, cadenas de texto, funciones importadas) con <b>modelos de comportamiento dinámico</b> (qué hace el proceso mientras se ejecuta).",
+                  "<b>Tres desafíos de todo proyecto de ML:</b> (1) <b>representación del problema y selección de variables</b> (un clasificador que solo mira el nombre del archivo se engaña fácil; uno que mira el comportamiento es más robusto); (2) <b>gestión de la complejidad</b> (con millones de muestras diarias, la eficiencia computacional es un requisito, no un detalle); (3) <b>elección del modelo</b> (árbol interpretable vs. red profunda más precisa: depende del contexto).",
+                  "<b>Aplicación al caso:</b> el objetivo de negocio se traduce en un clasificador que prioriza <b>alto recall</b> (un falso negativo —amenaza no detectada— es mucho más grave que una falsa alarma). Como los atacantes cambian sus técnicas, aparece la <b>deriva de datos</b>: se detecta al monitorear que <b>baja el recall y suben los falsos negativos</b>. La solución no es solo reentrenar: también hay que revisar si las features siguen sirviendo. Es el carácter <b>iterativo</b> de CRISP-DM."
                 ]
               },
               {
-                "title": "2. Organización de un proyecto de datos: CRISP-DM",
+                "title": "2. Ciencia de datos y aprendizaje automático",
                 "points": [
-                  "<b>CRISP-DM:</b> metodología iterativa de claridad y aplicabilidad amplia; las fases se conectan entre sí y se vuelve a etapas anteriores. Fases: <b>comprensión del negocio</b> → <b>comprensión de los datos</b> → <b>preparación de los datos</b> → <b>modelado</b> → <b>evaluación</b> → <b>despliegue</b>.",
-                  "<b>Comprensión del negocio:</b> qué decisión se quiere mejorar, quién usará los resultados, presupuesto y plazo, qué nivel de error es tolerable según el costo de equivocarse. <b>Comprensión de los datos:</b> evaluar <b>relevancia, completitud, consistencia y exactitud</b>; visualizar distribuciones, mapear nulos y revisar la coherencia lógica.",
-                  "<b>Preparación de datos</b> (≈ <b>70 %</b> del tiempo total): <b>limpieza</b> (valores faltantes, duplicados, atípicos; imputación, incluso con un modelo auxiliar), <b>transformación</b> (normalización/estandarización: media 0 y desviación 1, para que una variable no domine solo por su magnitud) e <b>ingeniería de features</b> (crear atributos derivados; decisión tan importante como el algoritmo).",
-                  "<b>Estructura del dataset:</b> filas = instancias/ejemplos; columnas = atributos (features) y la etiqueta. <b>Partición:</b> <b>entrenamiento ≈ 70 %</b>, <b>validación 15 %</b> (ajustar hiperparámetros) y <b>prueba 15 %</b> (evaluación final, que no debe usarse para decidir). Evita la «memoria sin valor predictivo» (sobreajuste)."
+                  "La <b>ciencia de datos</b> organiza la extracción de valor a partir de los datos: comprensión del problema, preparación, análisis exploratorio, modelado, validación y despliegue. El <b>aprendizaje automático</b> aporta los métodos para construir modelos que aprenden relaciones de los datos y predicen automáticamente.",
+                  "<b>Burkov (2025):</b> un modelo solo puede aprender lo que está representado en sus datos de entrenamiento → la <b>calidad y representatividad</b> de los datos son críticas.",
+                  "El valor no viene solo de la precisión técnica: un modelo con métricas excelentes que <b>no responde a una necesidad real o no se integra</b> al sistema tiene impacto nulo.",
+                  "<b>Reglas vs. aprendizaje:</b> la programación basada en reglas describe explícitamente qué hacer en cada caso (p. ej., «si contiene <i>oferta</i> o <i>descuento</i> → publicidad»), pero no escala ante sinónimos o variantes. El ML <b>infiere las reglas a partir de datos</b> (miles de correos ya clasificados). <b>Russell y Norvig (2016):</b> un sistema aprende cuando <b>mejora su rendimiento en una tarea a través de la experiencia</b>.",
+                  "<b>Supervisado vs. no supervisado (detección de intrusiones):</b> el supervisado se entrena con registros ya etiquetados (normal/ataque) y reconoce <b>amenazas conocidas</b> con alta precisión; el no supervisado no tiene etiquetas y busca <b>anomalías</b>, lo que permite descubrir <b>ataques emergentes</b>. En la práctica se complementan."
                 ]
               },
               {
-                "title": "3. Modelado: clasificación y regresión",
+                "title": "3. CRISP-DM: organización de un proyecto de datos",
                 "points": [
-                  "<b>Clasificación:</b> predecir una <b>categoría</b> (legítimo/ataque). <b>Regresión:</b> predecir un <b>valor numérico continuo</b> (precio, concentración de un biomarcador).",
-                  "<b>Transparencia e interpretabilidad:</b> un árbol de decisión muestra paso a paso las reglas; los modelos complejos (ensembles, redes) ganan capacidad pero pierden interpretabilidad: se debe equilibrar según el contexto (auditoría, regulación)."
+                  "<b>CRISP-DM</b> (<i>Cross-Industry Standard Process for Data Mining</i>), de <b>mediados de los 90</b>, describe las fases desde que se define un problema hasta que la solución corre en producción. Sigue vigente por su flexibilidad y es <b>cíclico e iterativo</b>, no una secuencia rígida: si en el modelado faltan datos, se vuelve a la comprensión del negocio; si en la evaluación aparece un sesgo de preparación, se retrocede.",
+                  "<b>Las seis fases:</b> (1) comprensión del negocio, (2) comprensión de los datos, (3) preparación de los datos, (4) modelado, (5) evaluación y (6) despliegue. Cada una tiene sus preguntas y entregables, y todas se conectan.",
+                  "<b>Comprensión del negocio:</b> entender qué problema se resuelve y por qué importa <b>antes de mirar datos</b>. Hay que traducir un objetivo de negocio («reducir la pérdida de clientes un 10 %») a un problema de datos («clasificador binario que prediga con al menos 80 % de recall si un cliente abandona en 30 días»). Preguntas guía: ¿qué decisión se mejora?, ¿quién usará los resultados?, ¿presupuesto y plazo?, ¿qué error es tolerable según el costo de equivocarse? Ej.: un sistema de créditos con 95 % de aciertos puede ser catastrófico si los errores caen en clientes de alto riesgo.",
+                  "<b>Comprensión de los datos:</b> reunir y explorar sin transformar todavía. <b>Géron (2019)</b> propone cuatro dimensiones de calidad: <b>relevancia</b> (¿captan el fenómeno?), <b>completitud</b> (¿faltantes?), <b>consistencia</b> (¿registros coherentes entre sí?) y <b>exactitud</b> (¿corresponden a la realidad?). <b>Raschka y Mirjalili (2017)</b>: estadísticas descriptivas, visualizar distribuciones para detectar atípicos, mapear nulos por columna y revisar la coherencia lógica.",
+                  "Ejemplos de problemas: edades imposibles por fechas mal cargadas, glucosas duplicadas, pesos faltantes, diagnósticos codificados distinto por cada médico; en seguridad, flows duplicados o incompletos y etiquetas incorrectas; en robótica, lecturas LIDAR erróneas por reflejos; en bioinformática, artefactos de plataforma que simulan variantes."
                 ]
               },
               {
-                "title": "4. Evaluación",
+                "title": "4. Preparación de los datos",
                 "points": [
-                  "<b>Matriz de confusión:</b> verdaderos positivos (TP), falsos positivos (FP), verdaderos negativos (TN), falsos negativos (FN). Métricas: <b>accuracy</b> = (TP+TN)/total (engañosa con clases desbalanceadas); <b>precisión</b> = TP/(TP+FP) (de lo que el modelo marcó positivo, cuánto era realmente positivo); <b>recall (sensibilidad)</b> = TP/(TP+FN) (cuántos positivos reales detectó); <b>F1</b> = media armónica de precisión y recall.",
-                  "La métrica prioritaria depende del <b>dominio</b>: en detección de amenazas o diagnóstico, el <b>recall</b> suele ser prioritario porque un falso negativo es muy costoso. Subir el umbral (modelo más exigente) <b>sube la precisión pero baja el recall</b> (más falsos negativos).",
-                  "<b>Sobreajuste (overfitting):</b> error bajo en entrenamiento y mucho mayor en validación/prueba (el modelo memoriza; alta <b>varianza</b>). <b>Subajuste (underfitting):</b> error alto en entrenamiento y prueba (modelo demasiado simple; alto <b>sesgo</b>). Compensación <b>sesgo-varianza</b>. Remedios del sobreajuste: más datos, regularización, simplificar el modelo, promediar modelos (ensembles).",
-                  "<b>Validación cruzada (k-fold):</b> se divide el dataset en k pliegues; se entrena con k−1 y se valida con el restante, rotando k veces y promediando; útil cuando el dataset es pequeño.",
-                  "<b>Despliegue y mantenimiento:</b> monitoreo del desempeño en producción, <b>detección de deriva de datos</b> (data drift), actualización de features y reentrenamiento periódico; refleja el carácter iterativo de CRISP-DM. En malware, la caída del recall y el aumento de los falsos negativos señalan que las amenazas evolucionaron."
+                  "Es la fase que históricamente más tiempo insume: <b>Finlay (2018)</b> destaca el esfuerzo de preparación y en la práctica se estima en <b>~70 % del tiempo</b> del proyecto (hoy menos gracias a la IA). Tiene tres componentes: <b>limpieza, transformación e ingeniería de features</b>.",
+                  "<b>Limpieza (Murphy, 2022):</b> desde eliminar registros incompletos (solo si son pocos y el dataset es grande) hasta la <b>imputación múltiple</b> o predecir faltantes con un modelo auxiliar.",
+                  "<b>Outliers:</b> la decisión depende del dominio. En ciberseguridad, un pico de tráfico atípico puede ser <b>justamente el ataque DoS</b> buscado (eliminarlo sería contraproducente); en valuación inmobiliaria, una mansión de diez millones puede sesgar una regresión lineal.",
+                  "<b>Inconsistencias:</b> «masculino», «M», «Male» y «1» como la misma categoría. Estandarizar categorías es crítico con varias fuentes, porque los modelos no interpretan significados, solo valores.",
+                  "<b>Transformación:</b> <b>normalización</b> = llevar al rango <b>[0, 1]</b>; <b>estandarización</b> = <b>media 0 y desviación estándar 1</b>. Los algoritmos basados en <b>distancias</b> son sensibles a la escala (los ingresos en miles dominarían a la edad en decenas). <b>One-Hot</b> convierte una variable con k categorías en <b>k variables binarias</b>, sin ordenamientos artificiales.",
+                  "<b>Ingeniería de features:</b> crear variables nuevas que capturen mejor el problema. Géron: «habitaciones por persona» (hacinamiento) es más informativa que habitaciones y personas por separado; en seguridad, «paquetes por segundo» discrimina mejor un DoS. Es donde <b>el experto del dominio agrega más valor</b>. Russell y Norvig: qué información incluir y cómo representarla es una decisión <b>tan importante como el algoritmo</b>."
                 ]
               },
               {
-                "title": "5. Algoritmos de aprendizaje supervisado",
+                "title": "5. Estructura del dataset y división de los datos",
                 "points": [
-                  "<b>Aprendizaje supervisado:</b> aprende una función a partir de pares entrada-salida etiquetados para predecir sobre casos nuevos (Russell y Norvig, 2016). Dos categorías: clasificación y regresión.",
-                  "<b>Regresión lineal:</b> modela una relación lineal entre variables y valor continuo (ej. cada kilómetro suma 1,50 pesos); es simple e interpretable pero ajusta una recta y subestima en curvas. <b>Regresión logística:</b> pese al nombre es de <b>clasificación binaria</b>; estima una <b>probabilidad</b> (con función sigmoide) y se decide por un umbral (ej. revisión humana solo por encima del 90 %).",
-                  "<b>SVM (máquinas de soporte vectorial):</b> busca el hiperplano de <b>máximo margen</b> entre clases; con el <b>truco del kernel</b> separa datos no lineales proyectándolos a un espacio de mayor dimensión sin calcular esa proyección explícitamente.",
-                  "<b>Árboles de decisión:</b> particiones sucesivas hasta una hoja con la predicción; criterios de pureza (Gini, entropía); interpretables pero propensos al <b>sobreajuste</b>.",
-                  "<b>Ensembles:</b> <b>random forest</b> (bagging: entrena muchos árboles con muestras aleatorias y promedia o vota; reduce la <b>varianza</b>) y <b>boosting</b> (secuencial: cada modelo corrige los errores del anterior; ataca el <b>sesgo</b>). Ejemplo: detección de intrusiones con paquetes, frecuencia y duración de la conexión."
+                  "Un <b>dataset</b> es una tabla: <b>filas = instancias/registros</b> (un cliente, una transacción, una imagen) y <b>columnas = características/features</b> (edad, monto, precio).",
+                  "<b>Murphy (2022):</b> el aprendizaje supervisado busca una función <b>f tal que f(x) ≈ y para ejemplos no vistos</b>; si no generaliza, es una memoria sin valor predictivo.",
+                  "<b>División estándar:</b> <b>entrenamiento ~70 %</b> (lo que el modelo ve al aprender), <b>validación 15 %</b> (ajustar hiperparámetros y comparar variantes sin contaminar la evaluación final) y <b>prueba 15 %</b> (evaluación definitiva, <b>se usa una sola vez</b>). Con pocos datos se usa además <b>validación cruzada</b>."
+                ]
+              },
+              {
+                "title": "6. Modelado: clasificación, regresión, desbalance e interpretabilidad",
+                "points": [
+                  "<b>Aprendizaje supervisado:</b> el modelo aprende a mapear entradas a salidas a partir de <b>ejemplos etiquetados</b> (entrada y salida conocidas) para generalizar a casos nuevos.",
+                  "<b>Clasificación:</b> salida <b>categórica discreta</b> (spam/no spam, benigno/maligno, legítimo/ataque); suele entregar una etiqueta y una medida de confianza. <b>Regresión:</b> salida <b>numérica continua</b> (precio, temperatura, tiempo hasta la falla, ancho de banda).",
+                  "<b>Desbalance de clases:</b> el fraude puede ser <b>menos del 0,1 %</b> de las transacciones. Raschka y Mirjalili: un clasificador entrenado así puede predecir <b>siempre la clase mayoritaria</b>, tener una exactitud altísima y ser <b>inútil</b> para lo que importa detectar.",
+                  "<b>Transparencia:</b> poder entender cómo el modelo llega al resultado. Un <b>árbol de decisión es transparente</b> (se siguen sus reglas); una <b>red profunda es opaca</b>. En salud, justicia, finanzas o infraestructura crítica la transparencia es un <b>requisito</b>: permite auditar, detectar sesgos y asignar responsabilidades."
+                ]
+              },
+              {
+                "title": "7. Evaluación: matriz de confusión y métricas",
+                "points": [
+                  "En CRISP-DM evaluar es calcular métricas <b>y</b> verificar que se resuelve el problema planteado (Finlay, 2018).",
+                  "<b>Matriz de confusión:</b> <b>TP</b> (positivos bien detectados), <b>TN</b> (negativos bien detectados), <b>FP</b> (negativos clasificados como positivos: <b>falsa alarma</b>) y <b>FN</b> (positivos clasificados como negativos: <b>caso no detectado</b>).",
+                  "<b>Exactitud (accuracy)</b> = aciertos / total; intuitiva pero <b>engañosa con clases desbalanceadas</b>. <b>Precisión</b> = TP / (TP + FP): de lo que marqué positivo, cuánto lo era. <b>Recall (sensibilidad)</b> = TP / (TP + FN): de los positivos reales, cuántos detecté. <b>F1</b> = <b>media armónica</b> de precisión y recall.",
+                  "<b>Tensión precisión–recall:</b> si se baja el umbral para marcar más positivos, <b>sube el recall y cae la precisión</b>; si se sube el umbral (modelo más exigente), <b>sube la precisión y cae el recall</b>. Qué priorizar lo decide el <b>dominio</b>, no la técnica.",
+                  "<b>Ejemplos:</b> enfermedades graves → priorizar <b>recall</b> (un FN puede ser fatal); spam → priorizar <b>precisión</b> (perder un correo importante es caro); seguridad → normalmente <b>recall</b> (dejar pasar un ataque es peor que una falsa alarma)."
+                ]
+              },
+              {
+                "title": "8. Sobreajuste, subajuste, sesgo-varianza y validación cruzada",
+                "points": [
+                  "<b>Sobreajuste (overfitting)</b> (Murphy, 2022): el modelo aprende los patrones específicos del entrenamiento, <b>incluido el ruido</b>, en vez de la estructura real → error de entrenamiento muy bajo y error de validación/prueba mucho mayor. Un árbol sin restricciones memoriza: <b>alta varianza</b> (cambia mucho ante pequeñas variaciones de los datos).",
+                  "<b>Subajuste (underfitting):</b> modelo <b>demasiado simple</b> (p. ej., una recta para una relación no lineal) → error alto <b>tanto en entrenamiento como en prueba</b>: <b>alto sesgo</b>.",
+                  "<b>Compensación sesgo-varianza</b> (Russell y Norvig): elegir la complejidad adecuada al problema y a los datos.",
+                  "<b>Contra el sobreajuste:</b> regularización <b>L1 y L2</b>, <b>early stopping</b>, <b>dropout</b> (redes) y <b>ensembles</b> como random forest (promedian modelos y reducen varianza).",
+                  "<b>Validación cruzada k-fold</b> (Géron, 2019): útil con pocos datos (50 pacientes y 30.000 genes; incidentes de seguridad escasos). Se divide en <b>k partes</b>, se entrena <b>k veces</b> con k−1 partes y se valida con la restante; se <b>promedia el error</b> y cada instancia se usa <b>exactamente una vez</b> para validar. Si los resultados no alcanzan: ajuste de hiperparámetros, selección de features y regularización."
+                ]
+              },
+              {
+                "title": "9. Despliegue y deriva de los datos",
+                "points": [
+                  "Un modelo en la computadora del científico de datos <b>no genera valor</b>. Desplegar = integrarlo para que se consuman sus predicciones: <b>API</b>, app móvil, reporte interactivo, módulo de un CRM, tableros con alertas automáticas.",
+                  "<b>Deriva de los datos:</b> los datos cambian con el tiempo (fraude, demografía de pacientes, tráfico de red) y el modelo <b>pierde precisión</b>. <b>Burkov (2025):</b> son esenciales el <b>monitoreo continuo y el reentrenamiento periódico</b>.",
+                  "Un modelo muy bueno en laboratorio puede no servir en producción: demasiado lento, difícil de mantener o demasiado específico del dataset de entrenamiento."
+                ]
+              },
+              {
+                "title": "10. Algoritmos de aprendizaje supervisado",
+                "points": [
+                  "<b>Regresión lineal:</b> la salida es una <b>suma ponderada de los predictores</b>; se entrenan los pesos que <b>minimizan el error cuadrático medio</b>. Ej. Uber: precio = base + 1,5·km + 0,2·min + 5·tarifa dinámica; cada coeficiente dice el impacto de su variable (<b>muy transparente</b> y fácil de ajustar). Limitación: relaciones <b>no lineales</b> (subestima picos). <b>Burkov:</b> es el <b>punto de partida</b> antes de algo más complejo.",
+                  "<b>SVM (máquinas de soporte vectorial):</b> enfoque <b>geométrico</b>; busca el plano que separa las clases con el <b>mayor margen</b> respecto de los puntos más cercanos (mejor generalización). Si no son separables, los <b>kernels</b> (p. ej., <b>RBF</b>) proyectan a un espacio de mayor dimensión <b>sin calcular explícitamente</b> las nuevas coordenadas. Funciona bien con <b>pocos datos y muchas variables</b> (pocos cientos de ataques etiquetados descritos por decenas de atributos). Contra: elegir kernel y regularización exige experimentar.",
+                  "<b>Árboles de decisión:</b> secuencia de preguntas («¿la variable supera este umbral?») hasta una hoja con la predicción; cada nodo elige la división que deja <b>grupos más puros</b>. Sus decisiones <b>se pueden leer y auditar</b> (ej.: más de 50 conexiones salientes por segundo + acceso a directorios del sistema + horario nocturno → malicioso). Árbol <b>superficial = alto sesgo</b>; <b>profundo = alta varianza</b>. Se controla limitando la profundidad o exigiendo un mínimo de muestras por hoja.",
+                  "<b>Ensambles:</b> <b>bagging</b> (random forest) entrena árboles <b>en paralelo</b> sobre muestras distintas y promedia → <b>reduce la varianza</b>; <b>boosting</b> (XGBoost, AdaBoost) entrena árboles <b>en secuencia</b>, cada uno corrige errores del anterior → <b>ataca el sesgo</b>.",
+                  "<b>Regresión logística:</b> pese al nombre, es de <b>clasificación</b>. Combinación lineal de las variables pasada por la <b>función sigmoide</b> → valor entre 0 y 1 interpretable como <b>probabilidad</b> («91 % de probabilidad de acceso no autorizado»). Permite <b>calibrar umbrales</b> según el contexto (bloquear desde 70 % o revisar desde 90 %) y sus <b>coeficientes son interpretables</b>. Limitación: fronteras <b>no lineales</b>. Burkov: referencia para clasificación binaria.",
+                  "<b>Random forest:</b> un árbol solo es inestable (dos muestras parecidas dan árboles muy distintos). Se entrena un bosque: cada árbol con una muestra <b>con reposición</b> (bagging) y en cada nodo solo un <b>subconjunto aleatorio de variables</b>; se promedia (regresión) o se vota (clasificación). Es más estable, tolera variables ruidosas y estima la <b>importancia de cada variable</b>. Contra: <b>pierde interpretabilidad</b>.",
+                  "<b>k-NN (k vecinos más cercanos):</b> «casos similares, resultados similares». Busca los k ejemplos más parecidos y vota la clase (o promedia, en regresión). <b>No construye ningún modelo al entrenar</b>: guarda los datos, por lo que <b>predecir es lento</b> con datasets grandes. <b>k = 1</b> es sensible al ruido; <b>k grande</b> suaviza pero puede borrar diferencias entre clases; k se elige con validación. Es <b>trazable</b> (se muestran los vecinos). Falla en <b>alta dimensionalidad</b>: las distancias se vuelven parecidas y «similar» deja de informar → reducir dimensionalidad antes."
                 ]
               }
             ],
@@ -61442,6 +61495,58 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Deriva de datos",
                 "def": "Cambio en la distribución de los datos que degrada el modelo en producción."
+              },
+              {
+                "term": "Calidad de datos (Géron)",
+                "def": "Relevancia, completitud, consistencia y exactitud."
+              },
+              {
+                "term": "Normalización vs. estandarización",
+                "def": "Rango [0, 1] vs. media 0 y desviación estándar 1."
+              },
+              {
+                "term": "One-Hot",
+                "def": "Variable de k categorías → k variables binarias, sin orden artificial."
+              },
+              {
+                "term": "Ingeniería de features",
+                "def": "Crear variables nuevas que capturan mejor el problema (habitaciones por persona, paquetes por segundo)."
+              },
+              {
+                "term": "División 70/15/15",
+                "def": "Entrenamiento / validación (hiperparámetros) / prueba (una sola vez, evaluación final)."
+              },
+              {
+                "term": "Desbalance de clases",
+                "def": "Una clase muy minoritaria (fraude < 0,1 %): la exactitud engaña."
+              },
+              {
+                "term": "Precisión",
+                "def": "TP/(TP+FP): de lo marcado positivo, cuánto lo era."
+              },
+              {
+                "term": "Recall",
+                "def": "TP/(TP+FN): de los positivos reales, cuántos se detectaron."
+              },
+              {
+                "term": "F1-score",
+                "def": "Media armónica de precisión y recall."
+              },
+              {
+                "term": "Sesgo-varianza",
+                "def": "Modelo simple = alto sesgo (subajuste); complejo = alta varianza (sobreajuste)."
+              },
+              {
+                "term": "Deriva de los datos",
+                "def": "Los datos cambian con el tiempo y el modelo pierde precisión: monitorear y reentrenar."
+              },
+              {
+                "term": "Bagging vs. boosting",
+                "def": "Paralelo y promedia (reduce varianza) vs. secuencial y corrige errores (reduce sesgo)."
+              },
+              {
+                "term": "Kernel (SVM)",
+                "def": "Proyecta a mayor dimensión sin calcular coordenadas explícitas (p. ej., RBF)."
               }
             ],
             "exam_traps": [
@@ -61451,44 +61556,123 @@ window.STUDY_SYSTEM_DATA = {
               "El conjunto de <b>prueba</b> no se usa para ajustar el modelo (para eso está la validación).",
               "Random forest reduce la <b>varianza</b>; boosting ataca principalmente el <b>sesgo</b>.",
               "Los árboles de decisión son interpretables pero tienden al <b>sobreajuste</b>.",
-              "Tras el despliegue hay que monitorear la <b>deriva</b>: CRISP-DM es iterativo."
+              "Tras el despliegue hay que monitorear la <b>deriva</b>: CRISP-DM es iterativo.",
+              "«Subir el umbral para reducir falsos positivos también sube el recall» → <b>FALSO</b>: el modelo marca menos positivos, <b>suben los FN y cae el recall</b>.",
+              "La <b>regresión logística es de clasificación</b>, no de regresión: devuelve una probabilidad vía sigmoide.",
+              "Validación ≠ prueba: la <b>validación</b> ajusta hiperparámetros; la <b>prueba</b> se usa <b>una sola vez</b> al final.",
+              "<b>k-NN no entrena un modelo</b>: guarda los datos y es lento al predecir; falla en alta dimensionalidad.",
+              "Árbol <b>profundo = sobreajuste (varianza)</b>; <b>superficial = subajuste (sesgo)</b>.",
+              "<b>Bagging reduce varianza</b> (random forest); <b>boosting reduce sesgo</b> (XGBoost, AdaBoost).",
+              "Con clases desbalanceadas, una <b>exactitud alta no garantiza</b> que el modelo sirva.",
+              "Un outlier <b>no siempre se elimina</b>: en seguridad puede ser el ataque buscado.",
+              "CRISP-DM <b>no es lineal</b>: es cíclico e iterativo.",
+              "Seguridad y salud priorizan <b>recall</b>; spam prioriza <b>precisión</b>."
             ]
           },
           {
             "id": "L2",
             "title": "Lectura 2: Aprendizaje no supervisado",
-            "summary": "Descubrimiento de patrones sin etiquetas: medidas de similitud (euclidiana, coseno, Manhattan, Hamming), segmentación y algoritmos de clustering (K-Means, jerárquico, DBSCAN), maldición de la dimensionalidad, reducción de dimensiones con PCA y visualización con t-SNE/UMAP, evaluación sin etiquetas (índice de silueta) y la necesidad del conocimiento del dominio.",
+            "summary": "Aprendizaje sin etiquetas: aprender la distribución p(x) (Murphy) y descubrir estructura (grupos, relaciones, representaciones compactas, anomalías). Cómo se evalúa según el objetivo, métricas de similitud (euclidiana, coseno, Manhattan, Hamming), segmentación, clustering con K-Means (inercia, codo, silueta), jerárquico (aglomerativo/divisivo, dendrograma) y DBSCAN (ε, MinPts, core/border/noise), maldición de la dimensionalidad, PCA (componentes, varianza explicada, regla del 95 %), t-SNE y UMAP, detección de anomalías (Isolation Forest, métodos estadísticos, 3σ), NIDS y análisis de comportamiento, y evaluación interna, externa y cualitativa. Caso: Microsoft Defender ante variantes nuevas.",
             "detail": [
               {
-                "title": "1. Descubrimiento de patrones",
+                "title": "1. Qué es el aprendizaje no supervisado",
                 "points": [
-                  "En el aprendizaje <b>no supervisado</b> no hay etiquetas: el objetivo es descubrir <b>estructura</b> en los datos. Tareas típicas: <b>agrupar</b> (clustering), <b>reducir dimensiones</b>, y detectar <b>instancias inusuales (anomalías)</b>. Se usa cuando no existen ejemplos previos etiquetados con los que entrenar un clasificador.",
-                  "Cómo saber si funcionó depende del objetivo: en clustering se mide cohesión y separación; en reducción de dimensiones, cuánta <b>varianza</b> se conserva; en anomalías, qué tan inusuales son. Exige más <b>conocimiento del dominio</b> que el supervisado. Los clusters pueden convertirse en <b>pseudo-etiquetas</b> que alimenten luego un clasificador.",
-                  "Aplicaciones: <b>segmentación de clientes</b>, <b>tráfico de red</b> (detectar ataques sin haber visto antes ese tipo de ataque), reducción de dimensiones y <b>robótica</b> (mapas discretos del mundo)."
+                  "Los datos <b>no traen respuestas</b>: el algoritmo no tiene con qué corregirse y debe encontrar estructura que nadie marcó: <b>grupos naturales</b>, <b>relaciones entre variables</b>, <b>representaciones compactas</b> o <b>instancias que no encajan</b>.",
+                  "Formalmente parte de X = {x₁, …, xₙ} <b>sin vector de etiquetas y</b>. <b>Murphy (2022)</b>: es aprender la <b>distribución conjunta p(x)</b>, lo que permite entender cómo se organizan los datos y generar instancias plausibles.",
+                  "Sin etiquetas <b>no hay una función de pérdida obvia</b>; la evaluación depende del objetivo: <b>agrupar</b> → cohesión interna y separación entre grupos; <b>reducir dimensiones</b> → cuánta <b>varianza</b> se conserva; <b>detectar anomalías</b> → qué tan bien se separan normales de inusuales. Por eso exige <b>más intuición y conocimiento del dominio</b>.",
+                  "<b>Raschka y Mirjalili (2017):</b> muchas veces <b>precede al supervisado</b>: explorar, formular hipótesis, reducir complejidad o generar <b>pseudo-etiquetas</b> para un clasificador.",
+                  "Es imprescindible donde <b>no existen ejemplos etiquetados</b> (malware nuevo, enfermedades emergentes). <b>Aplicaciones:</b> segmentación de clientes, anomalías en tráfico de red, reducción de dimensionalidad, mapas discretos del entorno en robótica."
                 ]
               },
               {
-                "title": "2. Similitud y distancia",
+                "title": "2. Caso: Microsoft Defender y las variantes nunca vistas",
                 "points": [
-                  "Las métricas de similitud deben <b>preservar las relaciones</b> entre instancias. <b>Distancia euclidiana:</b> d = √Σ(xᵢₖ − xⱼₖ)² (instancias parecidas → distancia pequeña). <b>Similitud coseno:</b> mide el ángulo entre vectores (útil en texto/alta dimensión; no depende de la magnitud). <b>Distancia de Manhattan:</b> Σ|xᵢₖ − xⱼₖ| (más estable ante valores extremos). <b>Distancia de Hamming:</b> número de posiciones en que difieren (datos categóricos/binarios, sin codificaciones numéricas artificiales)."
+                  "Defender clasifica con modelos supervisados entrenados con millones de muestras etiquetadas, pero una parte importante de las amenazas son <b>variantes que nunca se observaron</b>: no hay etiquetas para ellas.",
+                  "<b>Similitud:</b> los perfiles de comportamiento mezclan variables <b>numéricas</b> (volumen transferido, frecuencia de conexiones, tiempo de ejecución) y <b>binarias</b> (¿accedió a directorios del sistema?, ¿usó tal protocolo?). La euclidiana no sirve sola: conviene combinar <b>distancias normalizadas</b> para las numéricas y <b>Hamming</b> para las binarias.",
+                  "<b>Algoritmo:</b> K-Means no conviene porque los ataques <b>no forman grupos esféricos</b> y K-Means <b>asigna todo punto a algún grupo</b>. <b>DBSCAN</b> marca como <b>ruido</b> los puntos fuera de regiones densas, que son justamente las anomalías buscadas.",
+                  "<b>PCA antes de agrupar:</b> cientos de variables muy correlacionadas → se reducen dimensiones redundantes y se mitiga la <b>maldición de la dimensionalidad</b>.",
+                  "<b>Evaluación:</b> la silueta mide cohesión y separación, pero <b>no dice si los grupos tienen sentido para la seguridad</b>: hace falta la <b>validación de analistas expertos</b>."
                 ]
               },
               {
-                "title": "3. Segmentación y clustering",
+                "title": "3. Similitud y medidas de distancia",
                 "points": [
-                  "La segmentación no es solo una técnica: es una forma de <b>comprensión</b>; hay que verificar que las etiquetas asignadas realmente correspondan a cada grupo y decidir qué hacer con los grupos una vez encontrados. Los resultados pueden llevar a conclusiones incorrectas si no se validan.",
-                  "<b>K-Means:</b> requiere fijar <b>k</b>. Cuatro pasos: (1) inicializar k centroides; (2) asignar cada punto al centroide más cercano; (3) recalcular cada centroide como el promedio de sus puntos; (4) repetir hasta que el cambio sea menor que un umbral. Limitaciones: debe especificarse k, asume clusters esféricos, es sensible a la inicialización y a los <b>valores extremos</b>, y asigna <b>todo</b> punto a algún grupo (no detecta anomalías por sí solo).",
-                  "<b>Clustering jerárquico:</b> construye un <b>dendrograma</b>. Enfoques: <b>aglomerativo</b> (de abajo arriba: cada punto es un cluster y se fusionan) y <b>divisivo</b> (de arriba abajo: un cluster que contiene todo, que se divide recursivamente). Ventajas sobre K-Means: <b>no requiere especificar el número de clusters</b>, no asume formas esféricas y ofrece distintos niveles de resolución. Es costoso con muchos datos.",
-                  "<b>DBSCAN:</b> define los clusters por <b>densidad</b>. Parámetros: radio <b>ε</b> y <b>MinPts</b>. Un punto puede ser <b>core</b> (al menos MinPts vecinos en ε), <b>border</b> (en el vecindario de un core pero con pocos vecinos propios) o <b>noise</b> (ninguna de las dos). Detecta <b>formas arbitrarias</b>, no requiere k y etiqueta como <b>ruido/anomalías</b> los puntos de baja densidad: natural para <b>detección de intrusiones</b>."
+                  "La <b>similitud</b> atraviesa todo el no supervisado: agrupar (qué se parece), detectar anomalías (qué es distinto de lo normal) y reducir dimensiones (preservar relaciones de similitud).",
+                  "<b>Euclidiana:</b> d = √Σ(xᵢₖ − xⱼₖ)². Sirve cuando las variables tienen <b>escalas comparables</b> e importa la diferencia numérica directa (p. ej., comparar nubes de puntos <b>LIDAR</b>). Es <b>sensible a la escala</b>: hay que normalizar antes (Murphy).",
+                  "<b>Similitud coseno:</b> cos = (xᵢ·xⱼ)/(‖xᵢ‖‖xⱼ‖). Mide el <b>ángulo</b> (dirección), no la magnitud. Ideal en <b>sistemas de recomendación</b>: dos usuarios con el mismo perfil son parecidos aunque uno use la plataforma diez veces más (la euclidiana los separaría por volumen).",
+                  "<b>Manhattan:</b> d = Σ|xᵢₖ − xⱼₖ|. Al no elevar al cuadrado es <b>más tolerante a valores extremos</b>; en tráfico de red con picos (ráfagas de conexiones) da clusters de comportamiento normal más estables.",
+                  "<b>Hamming:</b> cuenta <b>en cuántas posiciones difieren</b> dos vectores; para variables <b>categóricas o binarias</b> (¿usó el protocolo X?, ¿intentó el puerto Y?) sin codificaciones numéricas artificiales."
                 ]
               },
               {
-                "title": "4. Reducción de dimensionalidad",
+                "title": "4. Segmentación y clustering",
                 "points": [
-                  "<b>Maldición de la dimensionalidad</b> (Murphy, 2022): en alta dimensión se necesitan exponencialmente más datos, las distancias pierden significado (todos los puntos parecen equidistantes) y muchos algoritmos se vuelven intratables. Se busca la estructura de menor dimensión en que viven los datos.",
-                  "<b>PCA (análisis de componentes principales):</b> encuentra las direcciones (componentes) de <b>máxima varianza</b>, las ordena de mayor a menor varianza explicada y se descartan las de menor varianza (se proyecta a K dimensiones). Es sensible a las <b>diferencias de escala</b> (hay que estandarizar). Reduce redundancia, ruido y riesgo de sobreajuste.",
-                  "<b>t-SNE y UMAP:</b> técnicas no lineales para <b>visualización</b> (2D/3D) que preservan la estructura local; sirven para explorar, no para evaluar cuantitativamente.",
-                  "<b>Evaluación sin etiquetas:</b> el <b>índice de silueta</b> mide la cohesión interna y la separación entre clusters, pero <b>no indica si los grupos tienen significado operativo</b>: se requiere validación por expertos del dominio."
+                  "<b>Segmentación:</b> dividir los datos en grupos con características comunes. Es una forma de <b>comprensión</b>: el médico agrupa pacientes que responderán parecido a un tratamiento; la empresa agrupa clientes para estrategias específicas.",
+                  "<b>Russell y Norvig (2016)</b> la enmarcan en la <b>representación del conocimiento</b>: al agrupar se <b>construyen conceptos</b>, como cuando los humanos categorizan el mundo.",
+                  "<b>Clustering:</b> particionar datos sin etiquetas en <b>clusters</b> de modo que las instancias de un grupo sean <b>más similares entre sí que con las de otros grupos</b>. No hay respuesta correcta predefinida.",
+                  "Aplicaciones: usuarios por comportamiento de compra (ciencia de datos), patrones de tráfico normal para detectar desvíos (seguridad), lecturas sensoriales para representar el entorno (robótica), necesidades distintas de usuarios (innovación). El problema matemático es el mismo; cambia qué es «similar» y qué se hace con los grupos.",
+                  "Cada algoritmo asume algo distinto sobre qué es un grupo: <b>elegir el equivocado lleva a conclusiones incorrectas</b>."
+                ]
+              },
+              {
+                "title": "5. K-Means",
+                "points": [
+                  "El más usado por su <b>simplicidad y eficiencia</b>. Define <b>k centroides</b>, asigna cada punto al más cercano, recalcula cada centroide como el <b>promedio</b> de sus puntos y repite. Minimiza la suma de distancias cuadradas internas: la <b>inercia</b> (Raschka y Mirjalili).",
+                  "<b>Cuatro pasos:</b> (1) inicializar k centroides (distribuidos con criterio para evitar malas inicializaciones); (2) asignar cada punto al centroide más cercano; (3) recalcular centroides; (4) repetir 2 y 3 hasta que las asignaciones no cambien o el cambio sea menor que un umbral.",
+                  "<b>Murphy (2022):</b> converge a un <b>mínimo local</b> de la inercia, <b>no necesariamente global</b>.",
+                  "Funciona bien con clusters <b>convexos (aprox. esféricos)</b>, de <b>tamaño similar</b> y variables <b>normalizadas</b>. Falla con <b>formas irregulares</b>, <b>densidades variables</b> o <b>muchos outliers</b> (los centroides son muy sensibles a extremos).",
+                  "<b>Hay que fijar k de antemano</b>: se elige con el <b>método del codo</b> o el <b>índice de silueta</b>.",
+                  "Usos: segmentación de clientes por <b>frecuencia, recencia y monto</b> (frecuentes de alto valor, ocasionales, en riesgo de abandono); <b>cuantización</b> de lecturas LIDAR en robots; caracterizar tráfico normal en un IDS para marcar conexiones que no encajan."
+                ]
+              },
+              {
+                "title": "6. Clustering jerárquico y DBSCAN",
+                "points": [
+                  "<b>Jerárquico:</b> los datos forman una <b>jerarquía anidada</b> (clusters grandes con subclusters), como la taxonomía biológica. <b>Aglomerativo (bottom-up):</b> cada punto empieza solo y se fusionan los más cercanos hasta un único cluster; es el <b>más usado por su menor costo</b>. <b>Divisivo (top-down):</b> empieza con todo junto y divide recursivamente.",
+                  "Se representa con un <b>dendrograma</b>: árbol que muestra el orden de fusión; la <b>altura</b> de cada fusión es la distancia entre los clusters. Ventajas: <b>no requiere fijar k</b>, <b>no asume formas esféricas</b> y muestra relaciones a <b>varias escalas</b> (categorías y subcategorías de contenido). Limitación: costo <b>O(n² log n)</b>, impracticable con datasets muy grandes.",
+                  "<b>DBSCAN</b> (<i>Density-Based Spatial Clustering of Applications with Noise</i>): define clusters por <b>densidad</b>; las zonas poco densas son límites y los puntos aislados se etiquetan como <b>ruido/anomalías</b>. A diferencia de K-Means, reconoce que <b>algunos puntos no pertenecen a ningún grupo</b>.",
+                  "Parámetros: <b>ε (epsilon)</b> = radio de vecindad y <b>MinPts</b> = mínimo de puntos para que una región sea densa. <b>Core point:</b> tiene ≥ MinPts vecinos dentro de ε. <b>Border point:</b> está en el vecindario de un core pero no tiene suficientes vecinos propios. <b>Noise point:</b> ninguna de las dos.",
+                  "Encuentra clusters de <b>forma arbitraria</b> (hotspots urbanos que siguen calles y edificios), tolera outliers y no requiere k. Usos: <b>detección de intrusiones</b> (los ataques quedan como puntos aislados = ruido), análisis espacial y <b>segmentación de nubes de puntos LIDAR</b> (qué puntos forman un auto, un peatón o un árbol)."
+                ]
+              },
+              {
+                "title": "7. Reducción de dimensionalidad: maldición de la dimensionalidad y PCA",
+                "points": [
+                  "Ejemplos de alta dimensión: 20.000 variables genéticas por paciente, imágenes de 786.432 píxeles, transacciones con cientos de atributos.",
+                  "<b>Maldición de la dimensionalidad (Murphy):</b> los datos se vuelven <b>escasos</b>, las <b>distancias convergen</b> (todos los puntos quedan igual de lejos y la similitud pierde sentido), la optimización enfrenta paisajes complejos y el costo de muchos algoritmos crece <b>exponencialmente</b>.",
+                  "Idea clave: las dimensiones no son igual de informativas ni independientes; existe una estructura de baja dimensión (<b>variedad o manifold</b>) que explica la mayor parte de la variación.",
+                  "<b>PCA</b> (<i>Principal Component Analysis</i>): encuentra las direcciones de <b>máxima varianza</b> (componentes principales) y proyecta los datos sobre ellas. Son los <b>vectores propios de la matriz de covarianza</b>, ordenados por valor propio.",
+                  "<b>Proceso:</b> (1) <b>estandarizar</b> (media 0, varianza 1; PCA es sensible a la escala); (2) calcular la <b>matriz de covarianza</b>; (3) extraer <b>vectores propios</b> (nuevas direcciones) y <b>valores propios</b> (varianza que captura cada una); (4) proyectar sobre los primeros k componentes. <b>PC1</b> = máxima varianza; los componentes son <b>ortogonales</b> entre sí.",
+                  "<b>Varianza explicada:</b> regla práctica de retener componentes hasta explicar el <b>95 %</b> (Raschka y Mirjalili). Si PC1 y PC2 explican, p. ej., el 85 %, se puede visualizar en 2D sin perder mucho.",
+                  "Usos: <b>preprocesamiento</b> antes de un supervisado (menos ruido, más eficiencia y <b>menos sobreajuste</b>); en seguridad, reducir logs de red y separar visualmente flujos anómalos del tráfico normal."
+                ]
+              },
+              {
+                "title": "8. t-SNE y UMAP (visualización no lineal)",
+                "points": [
+                  "PCA es <b>lineal</b>: no capta bien estructuras no lineales. Para visualizar en 2 o 3 dimensiones preservando la estructura local se usan <b>t-SNE</b> y <b>UMAP</b>.",
+                  "<b>t-SNE</b> (<i>t-distributed Stochastic Neighbor Embedding</i>): modela similitudes como <b>distribuciones de probabilidad</b> y busca una proyección donde se parezcan. Bueno para ver clusters, pero <b>no preserva distancias globales (solo locales)</b>, es <b>costoso</b> en datasets grandes y difícil de interpretar cuantitativamente (Murphy).",
+                  "<b>UMAP</b> (<i>Uniform Manifold Approximation and Projection</i>): más reciente, <b>más rápido</b>, preserva mejor la estructura <b>global y local</b> y es más interpretable. Es el <b>estándar</b> en datos genómicos e imágenes médicas."
+                ]
+              },
+              {
+                "title": "9. Detección de anomalías",
+                "points": [
+                  "Busca observaciones que se alejan del comportamiento esperado: fraude, fallas de sensores, transacciones inusuales, control de calidad.",
+                  "<b>Desequilibrio extremo:</b> si el fraude es el 0,1 %, un modelo que diga «todo normal» acierta el 99,9 % y no sirve. Por eso los supervisados suelen fallar y conviene <b>modelar la distribución de lo normal</b> sin referencia explícita a las anomalías (Murphy). Además, las anomalías <b>cambian</b> (el atacante muta su método): el mejor detector modela lo normal con flexibilidad.",
+                  "<b>Isolation Forest:</b> los outliers son <b>más fáciles de aislar</b>; con árboles aleatorios que particionan el espacio, un punto anómalo queda solo con <b>menos particiones</b> (está en zonas de baja densidad). Escala bien en alta dimensión y tiene <b>pocos hiperparámetros</b>.",
+                  "<b>Métodos estadísticos:</b> más interpretables. Regla de las <b>tres desviaciones estándar</b>: en una normal, ~<b>99,7 %</b> de los datos cae en ±3σ; lo que queda fuera es sospechoso. En varias dimensiones, una <b>gaussiana multivariada</b> (media y covarianza) marca puntos de baja probabilidad, incluidas <b>combinaciones inusuales</b> de variables. Ambos enfoques dan un <b>puntaje de 0 a 1</b> (cerca de 1 = más anómalo).",
+                  "<b>Seguridad:</b> los sistemas de reglas o firmas solo detectan ataques conocidos (Russell y Norvig). Los <b>NIDS</b> caracterizan el tráfico normal (p. ej., con sus primeras componentes principales) y miden la distancia de flujos nuevos a ese subespacio: detectan <b>DDoS o escaneos de puertos sin firma</b>. El <b>análisis de comportamiento de usuarios</b> arma un perfil normal (horarios, dispositivos, recursos, volumen) y marca desvíos (descargar diez veces más o conectarse a las 3 AM desde otro país); el desafío es que lo normal <b>evoluciona legítimamente</b>.",
+                  "<b>Robótica:</b> la percepción es ruidosa (lecturas fantasma del LIDAR, reflejos en cámaras, deriva de la IMU); detectar y descartar lecturas anómalas es parte del procesamiento de percepción."
+                ]
+              },
+              {
+                "title": "10. Evaluación de modelos no supervisados",
+                "points": [
+                  "Sin etiquetas, evaluar es una de las mayores dificultades.",
+                  "<b>Métricas internas</b> (solo con los datos): <b>índice de silueta</b> (qué tan bien encaja cada punto en su cluster vs. el más cercano: <b>cerca de 1 = bueno</b>, <b>cerca de 0 = superposición</b>, <b>negativo = mal asignado</b>); <b>inercia</b> (compacidad, pero <b>no mide separación</b>); <b>Davies-Bouldin</b> (combina compacidad y separación: <b>mejor cuanto más bajo</b>).",
+                  "<b>Métricas externas:</b> cuando hay etiquetas de referencia (en investigación) para ver cuánto coincide el clustering.",
+                  "<b>Evaluación cualitativa:</b> mostrar los clusters a <b>expertos del dominio</b> (médicos, analistas de seguridad, marketing). Russell y Norvig: captura conocimiento que ninguna métrica formaliza. La silueta <b>no alcanza sola</b> para saber si los grupos tienen valor operativo."
                 ]
               }
             ],
@@ -61528,6 +61712,54 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "t-SNE / UMAP",
                 "def": "Visualización no lineal de datos de alta dimensión."
+              },
+              {
+                "term": "p(x)",
+                "def": "El no supervisado aprende la distribución conjunta de los datos (Murphy, 2022)."
+              },
+              {
+                "term": "Similitud coseno",
+                "def": "Compara la dirección (ángulo), no la magnitud; útil en recomendación."
+              },
+              {
+                "term": "Manhattan",
+                "def": "Suma de diferencias absolutas; más tolerante a valores extremos que la euclidiana."
+              },
+              {
+                "term": "Hamming",
+                "def": "Cantidad de posiciones distintas; para variables binarias o categóricas."
+              },
+              {
+                "term": "Inercia",
+                "def": "Suma de distancias cuadradas internas que minimiza K-Means; mide compacidad."
+              },
+              {
+                "term": "Método del codo / silueta",
+                "def": "Formas de elegir k en K-Means."
+              },
+              {
+                "term": "Dendrograma",
+                "def": "Árbol de fusiones del clustering jerárquico; la altura es la distancia."
+              },
+              {
+                "term": "Varianza explicada",
+                "def": "Porcentaje de varianza que captura cada componente; regla del 95 %."
+              },
+              {
+                "term": "t-SNE vs. UMAP",
+                "def": "t-SNE preserva solo lo local y es costoso; UMAP es más rápido y preserva también lo global."
+              },
+              {
+                "term": "Isolation Forest",
+                "def": "Las anomalías se aíslan con menos particiones aleatorias."
+              },
+              {
+                "term": "Regla 3σ",
+                "def": "~99,7 % de los datos normales cae en ±3 desviaciones estándar."
+              },
+              {
+                "term": "Davies-Bouldin",
+                "def": "Combina compacidad y separación; cuanto más bajo, mejor."
               }
             ],
             "exam_traps": [
@@ -61536,49 +61768,115 @@ window.STUDY_SYSTEM_DATA = {
               "DBSCAN etiqueta <b>ruido</b>; por eso se adapta mejor a detectar anomalías que K-Means.",
               "PCA es sensible a la <b>escala</b>: estandarizar antes.",
               "La distancia de Hamming se usa con datos <b>categóricos/binarios</b>.",
-              "No supervisado ≠ sin evaluación: se evalúa con métricas internas y conocimiento del dominio."
+              "No supervisado ≠ sin evaluación: se evalúa con métricas internas y conocimiento del dominio.",
+              "«La silueta alcanza sola para saber si el clustering sirve en seguridad» → <b>FALSO</b>: es interna; hace falta <b>validación experta</b>.",
+              "<b>K-Means asigna todos los puntos</b> a algún cluster; <b>DBSCAN</b> puede marcar puntos como <b>ruido</b>.",
+              "K-Means <b>requiere k</b>; jerárquico y DBSCAN <b>no</b>.",
+              "K-Means converge a un <b>mínimo local</b>, no necesariamente global.",
+              "PCA es <b>lineal</b> y requiere <b>estandarizar</b> antes; t-SNE/UMAP son no lineales.",
+              "t-SNE <b>no preserva distancias globales</b>; UMAP sí las preserva mejor.",
+              "Silueta: <b>1 = bueno, 0 = superposición, negativo = mal asignado</b>. Davies-Bouldin: <b>menor es mejor</b>.",
+              "La <b>inercia</b> mide compacidad pero <b>no separación</b>.",
+              "Para perfiles con <b>mucho volumen distinto pero igual patrón</b> → <b>coseno</b>, no euclidiana.",
+              "Jerárquico aglomerativo cuesta <b>O(n² log n)</b>: no escala a datasets enormes."
             ]
           },
           {
             "id": "L3",
             "title": "Lectura 3: Redes neuronales y aprendizaje profundo",
-            "summary": "Neurona artificial y perceptrón multicapa (MLP), funciones de activación (ReLU, GELU, sigmoide), proceso de aprendizaje (propagación hacia adelante, función de pérdida, backpropagation y descenso del gradiente), regularización (L1/L2, dropout, early stopping, data augmentation), CNN (convolución), RNN y LSTM, y Transformers (atención, embeddings, codificación posicional, encoder/decoder). Caso: moderación de contenido en redes sociales.",
+            "summary": "De la neurona biológica a los Transformers: McCulloch y Pitts (1943), perceptrón de Rosenblatt (1958), límite de XOR y el libro Perceptrons (Minsky y Papert, 1969), perceptrón multicapa y teorema de aproximación universal, funciones de activación (sigmoide, tanh, ReLU, softmax, GELU), feedforward, funciones de pérdida (entropía cruzada, MSE, MAE, focal), backpropagation y descenso por gradiente (tasa de aprendizaje, Adam, RMSProp, SGD con momentum), desvanecimiento y explosión del gradiente, regularización (L1, L2, dropout, batch norm, early stopping, data augmentation), CNN (convolución, invarianza traslacional, pooling), RNN, LSTM y GRU, y Transformers (embeddings, posición, atención Q-K-V, multicabeza, encoder/decoder). Caso: moderación de contenido en redes sociales.",
             "detail": [
               {
-                "title": "1. Neuronas y perceptrón multicapa",
+                "title": "1. Caso: moderación de contenido en una red social",
                 "points": [
-                  "Las <b>redes neuronales artificiales</b> son la base del <b>aprendizaje profundo</b> (McCulloch y Pitts, 1943). Una neurona calcula una <b>suma ponderada</b> de sus entradas más un sesgo y aplica una <b>función de activación</b> no lineal.",
-                  "<b>Perceptrón simple:</b> solo resuelve problemas linealmente separables (no puede resolver XOR). <b>Perceptrón multicapa (MLP):</b> capas de entrada, <b>ocultas</b> y de salida, totalmente conectadas; con activaciones no lineales y capas ocultas es un <b>aproximador universal</b> de funciones. «Profundo» = muchas capas ocultas.",
-                  "<b>Funciones de activación:</b> <b>ReLU</b> (max(0,x); eficiente, mitiga el gradiente desvanecido; limitación: «neuronas muertas»), <b>GELU</b> (suave; usada en Transformers; más costosa), <b>sigmoide</b> (salida en (0,1), probabilidades en clasificación binaria; sufre gradiente desvanecido), <b>tanh</b> (−1,1) y <b>softmax</b> (distribución de probabilidad en clasificación multiclase). Sin no linealidad, varias capas equivaldrían a una sola transformación lineal."
+                  "Millones de usuarios publican imágenes, videos, comentarios y transmisiones; una fracción es dañina (<b>discurso de odio, desinformación, imágenes inadecuadas, incitación a la violencia, spam coordinado</b>). Hay que detectarla <b>antes de que se propague</b>.",
+                  "El contenido es <b>multimodal y contextual</b>: una imagen inofensiva puede ser dañina con cierto texto; el discurso de odio varía por idioma, país y cultura; un video puede ser periodismo o propaganda. Las palabras clave o reglas simples son <b>insuficientes</b>.",
+                  "<b>Moderación en capas:</b> (1) detección automática en tiempo real antes de que sea visible; (2) revisión de casos ambiguos; (3) revisores humanos para lo más complejo. La IA sostiene la primera capa y prioriza las siguientes.",
+                  "<b>Tres desafíos:</b> <b>representación</b> (texto en vectores semánticos en cientos de idiomas, imágenes, dimensión temporal del video); <b>desbalance de clases</b> (predecir siempre «seguro» daría precisión alta e inutilidad operativa); <b>latencia</b> (milisegundos, lo que limita el tamaño del modelo).",
+                  "<b>Aplicación al caso:</b> el texto se procesa con <b>embeddings</b> y <b>atención</b> (Transformers), porque la misma palabra cambia de sentido según el contexto; la atención multicabeza capta sintaxis, ironía o referencias implícitas. Las imágenes van por una <b>CNN</b>. Ambas representaciones se <b>concatenan</b> y pasan por un <b>MLP</b> que aprende a combinarlas. Contra el desbalance, <b>pérdida focal</b>; contra el sobreajuste, <b>dropout, normalización por capas y ajuste fino</b>."
                 ]
               },
               {
-                "title": "2. Proceso de aprendizaje",
+                "title": "2. De la neurona biológica a la artificial",
                 "points": [
-                  "<b>Propagación hacia adelante (forward):</b> las entradas atraviesan las capas y producen una predicción; la <b>función de pérdida</b> mide el error (MSE en regresión; entropía cruzada en clasificación; <b>pérdida focal</b> para clases desbalanceadas, que reduce el peso de los ejemplos fáciles).",
-                  "<b>Backpropagation:</b> aplica la <b>regla de la cadena</b> para propagar el gradiente <b>desde la capa de salida hacia atrás</b>, calculando cada derivada parcial una sola vez y reutilizándola; por eso es eficiente con millones de parámetros. <b>No</b> evalúa cada peso de forma independiente.",
-                  "<b>Descenso del gradiente:</b> los pesos se actualizan en dirección opuesta al gradiente: w ← w − η·∇L, con <b>tasa de aprendizaje η</b> (muy alta diverge; muy baja es lenta). Variantes: SGD, mini-batch, Adam. Un <b>epoch</b> es una pasada completa por el dataset.",
-                  "<b>Problemas:</b> gradiente desvanecido/explosivo, sobreajuste y necesidad de muchos datos y cómputo."
+                  "La neurona biológica recibe estímulos por las <b>dendritas</b>, los integra en el <b>soma</b> y, si la señal supera un <b>umbral de activación</b>, envía un impulso por el <b>axón</b> a otras neuronas mediante <b>sinapsis</b> (Géron, 2019).",
+                  "<b>McCulloch y Pitts (1943):</b> primer modelo formal de neurona artificial. Entradas <b>binarias</b>, suma ponderada y comparación con un <b>umbral</b>: si lo supera, salida activa. Demostraron que redes de estas unidades implementan <b>AND, OR y NOT</b>. Limitación: <b>pesos fijos definidos a mano</b>, sin aprendizaje.",
+                  "<b>Rosenblatt (1958): perceptrón</b>, primer algoritmo de <b>aprendizaje supervisado</b> con neurona artificial. Introdujo <b>pesos ajustables</b> y una regla que los corrige según el error, presentando ejemplos etiquetados hasta hallar una frontera de decisión. Cambio de paradigma: <b>aprender las reglas de los datos</b> en vez de programarlas.",
+                  "<b>Limitación del perceptrón simple:</b> solo resuelve problemas <b>linealmente separables</b> (una recta o hiperplano separa las clases). El ejemplo clásico es <b>XOR</b>: ninguna recta separa sus clases, así que nunca converge.",
+                  "<b>Minsky y Papert, «Perceptrons» (1969):</b> demostraron formalmente los límites del perceptrón de una capa; su conclusión, correcta para ese modelo, se interpretó durante años como un límite de todas las redes neuronales."
                 ]
               },
               {
-                "title": "3. Regularización y generalización",
+                "title": "3. Perceptrón multicapa (MLP)",
                 "points": [
-                  "<b>Regularización L1</b> (suma de valores absolutos; promueve pesos exactamente cero → selección de features) y <b>L2</b> (suma de cuadrados; pesos pequeños, «weight decay»). <b>Dropout:</b> durante el entrenamiento apaga neuronas al azar con cierta probabilidad para evitar coadaptaciones. <b>Early stopping:</b> detener el entrenamiento cuando el error de validación empieza a subir. <b>Data augmentation:</b> ampliar los datos con transformaciones (giros, recortes, ruido). También la normalización por capas y el ajuste fino (fine-tuning) de modelos preentrenados."
+                  "Agrega <b>una o más capas ocultas</b> entre entrada y salida. Cada neurona recibe todas las salidas de la capa anterior, las pondera y aplica una <b>activación no lineal</b>: así aprende <b>representaciones intermedias</b> cada vez más abstractas.",
+                  "<b>Teorema de aproximación universal</b> (Aggarwal, 2018): un MLP con <b>una sola capa oculta suficientemente ancha</b> puede aproximar <b>cualquier función continua</b>.",
+                  "<b>Feedforward:</b> la información fluye en una sola dirección (entrada → ocultas → salida). Cada neurona calcula <b>y = f(w·x + b)</b> (pesos w, entradas x, sesgo b, activación f); pesos y sesgos son lo que se entrena.",
+                  "Resuelve <b>XOR</b> porque la capa oculta construye una representación donde las clases sí son linealmente separables. Es el punto de partida para <b>datos tabulares</b> (variables sin relación espacial ni temporal) en clasificación o regresión.",
+                  "<b>Evolución:</b> McCulloch-Pitts <b>1943</b> (sin aprendizaje, lógica básica) → perceptrón <b>1958</b> (pesos ajustables, solo linealmente separables) → MLP con backpropagation <b>1986</b> (problemas no lineales; más costo y riesgo de sobreajuste)."
                 ]
               },
               {
-                "title": "4. Arquitecturas especializadas",
+                "title": "4. Funciones de activación",
                 "points": [
-                  "<b>CNN (redes convolucionales):</b> para datos con estructura espacial (imágenes). La <b>convolución</b> desliza filtros (kernels) que detectan patrones locales (bordes → texturas → objetos); comparten pesos (menos parámetros) y usan <b>pooling</b> para reducir resolución. Jerarquía de características aprendidas automáticamente.",
-                  "<b>RNN:</b> procesan secuencias con una <b>memoria a corto plazo</b> (estado oculto); sufren gradiente desvanecido en secuencias largas. <b>LSTM:</b> añade una celda de memoria con <b>compuertas</b> (entrada, olvido, salida) para recordar selectivamente a <b>largo plazo</b>.",
-                  "<b>Transformers</b> (Vaswani et al., 2017, «Attention is all you need»): basados en el mecanismo de <b>autoatención</b>, que pondera la relevancia de cada elemento respecto de los demás; procesan la secuencia <b>en paralelo</b> (a diferencia de las RNN). Usan <b>embeddings</b> (representaciones vectoriales) y <b>codificación posicional</b> (para conservar el orden). Arquitectura <b>encoder-decoder</b> y variantes: solo encoder (tipo BERT, comprensión), solo decoder (tipo GPT, generación). Base de los <b>modelos fundacionales</b> (Bommasani et al., 2021)."
+                  "Introducen la <b>no linealidad</b>: sin ellas, apilar capas lineales sigue siendo lineal (como una regresión múltiple). Afectan la velocidad, la estabilidad y la calidad del entrenamiento.",
+                  "<b>Sigmoide</b> σ(x) = 1/(1+e⁻ˣ): salida <b>(0, 1)</b>, se interpreta como probabilidad; se usa en la <b>salida de clasificación binaria</b>. <b>Tanh:</b> salida <b>(−1, 1)</b>, centrada en cero; capas ocultas en modelos clásicos. Ambas <b>saturan</b> (derivada ≈ 0 en los extremos) y causan <b>desvanecimiento del gradiente</b> en redes profundas (Nielsen, 2015).",
+                  "<b>ReLU</b> f(x) = max(0, x): salida <b>[0, ∞)</b>; derivada <b>1 en positivos</b> (no se desvanece), barata y de convergencia rápida → <b>estándar en capas ocultas</b> (Géron). Problema: <b>neuronas muertas</b> (salida siempre 0), que atacan variantes como GELU.",
+                  "<b>Softmax:</b> convierte un vector en una <b>distribución de probabilidad que suma 1</b>; <b>salida de clasificación multiclase</b> (Goodfellow, Bengio y Courville, 2016). <b>GELU:</b> suaviza la ReLU; es la nativa de <b>Transformers (BERT, GPT)</b>, algo más costosa.",
+                  "<b>Regla para la salida:</b> binaria → sigmoide; multiclase → softmax; <b>regresión → lineal</b> (sin activación). En robótica, control continuo con salida lineal o tanh (rango acotado) y ReLU en capas ocultas; en IDS que clasifican el tipo de ataque, softmax."
                 ]
               },
               {
-                "title": "5. Caso: moderación de contenido",
+                "title": "5. Proceso de aprendizaje: pérdida, backpropagation y optimización",
                 "points": [
-                  "Dos problemas: <b>desbalance de clases</b> (el contenido dañino es minoría): se usa <b>pérdida focal</b> y métricas como recall/F1; y <b>sobreajuste</b> (miles de categorías, lenguaje cambiante): se mitiga con <b>dropout, normalización por capas y ajuste fino</b>, para generalizar a formas de contenido dañino no vistas."
+                  "<b>Propagación hacia adelante</b> → salida → se compara con la etiqueta mediante la <b>función de pérdida</b>, un número que el optimizador intenta reducir. Su elección <b>define qué error se castiga más</b>.",
+                  "<b>Pérdidas:</b> <b>entropía cruzada</b> (clasificación; castiga logarítmicamente la baja confianza en la clase correcta); <b>MSE</b> (regresión; castiga el cuadrado del error, sensible a extremos); <b>MAE</b> (más robusta a outliers); <b>pérdida focal</b> (datasets muy desbalanceados: resta peso a los ejemplos fáciles). Las <b>pérdidas asimétricas o con pesos de clase</b> castigan más los falsos negativos (no ver un peatón, no detectar un ataque, clientes que abandonan).",
+                  "<b>Backpropagation</b> (difundido a mediados de los <b>80</b>): calcular cuánto aporta cada peso al error evaluando uno por uno sería imposible; se usa la <b>regla de la cadena</b>. Dos etapas: <b>forward pass</b> (predicción, pérdida y se guardan las activaciones intermedias) y <b>backward pass</b> (el gradiente va de la salida hacia atrás usando esas activaciones). Cada derivada parcial se calcula <b>una sola vez y se reutiliza</b>.",
+                  "<b>Descenso por gradiente:</b> w ← w − η·∇L(w) por minilote. Metáfora de Burkov (2025): un caminante en una montaña con niebla que siente la pendiente y baja. La <b>tasa de aprendizaje η</b> es el hiperparámetro más delicado: <b>alta → oscila sin converger</b>; <b>baja → lento y puede quedar en mínimos locales</b>.",
+                  "<b>Optimizadores:</b> <b>Adam</b> combina <b>momentum</b> (acumula gradientes pasados) con tasas por parámetro: es el <b>optimizador por defecto</b>; <b>RMSProp</b> va mejor en contextos no estacionarios (ajuste fino); <b>SGD con momentum y scheduling</b> puede ganar en visión con entrenamientos largos (Murphy, 2022).",
+                  "<b>Gradiente que se desvanece</b> (señales cada vez más chicas: las primeras capas casi no aprenden) y <b>gradiente que explota</b> (actualizaciones descontroladas). Se resolvieron con <b>ReLU, conexiones residuales y normalización</b>; sumado a <b>grandes datos y GPU</b>, dieron el deep learning moderno."
+                ]
+              },
+              {
+                "title": "6. Regularización y generalización",
+                "points": [
+                  "Una red con suficientes parámetros puede <b>memorizar</b> el entrenamiento, ruido incluido (<b>sobreajuste</b>). La regularización empuja hacia soluciones más generales sin reducir necesariamente la capacidad.",
+                  "<b>L2 (Ridge):</b> penaliza el <b>cuadrado</b> de los pesos → pesos chicos, menos varianza; es la más usada en deep learning. <b>L1 (Lasso):</b> penaliza el <b>valor absoluto</b> → lleva pesos irrelevantes <b>a cero</b> (selección implícita de features). <b>Elastic Net</b> combina ambas (Aggarwal, 2018).",
+                  "<b>Dropout:</b> en entrenamiento, cada neurona se apaga con probabilidad <b>p (0,2 a 0,5)</b>; la red no depende de ninguna neurona y reparte la representación. En inferencia todas están activas y se escalan. Géron: equivale a entrenar un <b>ensamble de millones de redes</b>.",
+                  "<b>Normalización por lotes (BatchNorm):</b> normaliza las activaciones de cada mini-batch (media 0, varianza 1) y las reescala con parámetros aprendibles; combate el <b>covariate shift interno</b>, estabiliza gradientes y permite tasas más altas. En Transformers se usa <b>Layer Normalization</b>.",
+                  "<b>Early stopping:</b> se corta cuando el error de <b>validación empieza a subir</b> aunque el de entrenamiento siga bajando. <b>Data augmentation:</b> variaciones artificiales (rotar, recortar, brillo en imágenes; sinónimos en texto; ruido y time-warping en series); clave con datasets chicos."
+                ]
+              },
+              {
+                "title": "7. Redes neuronales convolucionales (CNN)",
+                "points": [
+                  "Un MLP con imágenes no escala: 224×224 en color son <b>más de 150.000 entradas</b>; con 512 neuronas serían <b>más de 75 millones de parámetros</b> en una capa, y además <b>ignora la estructura espacial</b> (los píxeles vecinos forman bordes y texturas).",
+                  "<b>Convolución:</b> un <b>filtro (kernel)</b> chico, típicamente <b>3×3 o 5×5</b>, se desliza por la imagen, hace el producto punto con cada parche y produce un <b>mapa de características</b>. Los <b>mismos pesos se aplican en todas las posiciones</b>: un filtro 3×3 tiene solo <b>9 parámetros</b> sin importar el tamaño de la imagen.",
+                  "Esa <b>compartición de parámetros</b> implementa la <b>invarianza traslacional</b>: un patrón es el mismo esté donde esté (un peatón a la izquierda o a la derecha, una célula maligna en cualquier parte de la biopsia).",
+                  "Cada capa aplica decenas o cientos de filtros en paralelo. El <b>pooling</b> (p. ej., <b>max-pooling</b>: el máximo de una ventana) reduce las dimensiones espaciales y da robustez a pequeñas traslaciones. Se forma una <b>jerarquía</b>: bordes y color → texturas y partes → conceptos de alto nivel (Szeliski, 2010).",
+                  "<b>Usos:</b> detección de objetos en tiempo real con <b>YOLO y SSD</b> (menos de 50 ms por fotograma), <b>segmentación semántica</b> (etiquetar cada píxel: suelo, pared, persona, obstáculo), estimación de <b>pose 3D</b> para brazos robóticos, y clasificar <b>malware como imagen</b> (cada byte del binario = un píxel gris)."
+                ]
+              },
+              {
+                "title": "8. Redes recurrentes (RNN), LSTM y GRU",
+                "points": [
+                  "Muchos datos son <b>secuenciales</b>: texto, logs de red, secuencias genéticas, trayectorias de robots. Las RNN tienen <b>ciclos</b> que conservan información de pasos anteriores.",
+                  "<b>RNN:</b> en cada paso t recibe xₜ y el estado oculto anterior hₜ₋₁ y produce hₜ = f(Wₕₕ·hₜ₋₁ + Wₓₕ·xₜ + b). El estado oculto es una <b>memoria comprimida</b> de la secuencia. Problema: <b>desvanecimiento del gradiente a través del tiempo</b> (si los valores propios de la matriz recurrente son menores que 1 decrece exponencialmente) → solo aprende <b>dependencias cortas</b>.",
+                  "<b>LSTM</b> (<b>Hochreiter y Schmidhuber, 1997</b>): agrega un <b>estado de celda</b> que fluye con cambios mínimos y crea un camino de gradiente casi directo. <b>Tres puertas:</b> <b>olvido</b> (qué descartar; sigmoide de 0 a 1), <b>entrada</b> (qué información nueva agregar) y <b>salida</b> (qué parte exponer como estado oculto). Aprende cuándo recordar y cuándo olvidar por gradiente, sin programarlo.",
+                  "<b>GRU:</b> variante más simple y eficiente; une olvido y entrada en una <b>puerta de actualización</b>, con rendimiento comparable.",
+                  "<b>Usos:</b> predicción de movimiento humano y gestos en robots, contexto de conversación, series temporales (finanzas, demanda, energía). Los Transformers las superan con muchos datos, pero las LSTM siguen siendo competitivas en <b>datasets chicos o medianos</b> y donde la <b>latencia</b> es crítica con secuencias cortas (autocompletado del teclado, filtros de spam livianos)."
+                ]
+              },
+              {
+                "title": "9. Transformers",
+                "points": [
+                  "<b>«Attention Is All You Need»</b> (Vaswani et al., Google, <b>2017</b>): procesamiento de secuencias basado <b>solo en atención</b>, sin recurrencia. En menos de ocho años domina la IA de frontera.",
+                  "Resolvió los dos problemas de las RNN/LSTM: (1) <b>dependencias lejanas</b> difíciles de capturar y (2) <b>imposibilidad de paralelizar</b> (el paso t depende del t−1). El Transformer procesa <b>toda la secuencia en paralelo</b> en GPU.",
+                  "<b>Embeddings:</b> cada token (palabra, subpalabra o carácter) se proyecta en un vector de <b>512 a 4.096 dimensiones</b> donde conceptos relacionados quedan cerca. Como procesa todo a la vez, suma un <b>embedding posicional</b> (sinusoidal en el original; aprendido en los modernos). Hay embeddings de usuarios y productos, de estados y acciones de robots y de instrucciones de malware.",
+                  "<b>Atención:</b> para cada token se calculan <b>Query (Q), Key (K) y Value (V)</b>. <b>Attention(Q, K, V) = softmax(QKᵀ / √dₖ)·V</b>: se compara la Q de un token con la K de los demás, se divide por √dₖ para estabilizar gradientes, se normaliza con softmax y se usan esos pesos para combinar los V. Es <b>aprendida y depende del contenido</b> (no fija como en una CNN ni secuencial como en una RNN).",
+                  "<b>Atención multicabeza:</b> entre <b>8 y 32 cabezas</b> en paralelo, cada una especializada (sintaxis, correferencias, dependencias semánticas lejanas); se concatenan y proyectan (Murphy, 2022).",
+                  "<b>Encoder-decoder:</b> el encoder genera representaciones contextuales de la entrada; el decoder genera la salida token a token atendiendo a sí mismo y al encoder. Cada bloque tiene atención multicabeza, feedforward, normalización de capas y <b>conexiones residuales</b> (permiten gran profundidad).",
+                  "<b>Variantes:</b> <b>solo-encoder</b> (BERT, RoBERTa) → <b>comprensión</b> (clasificar, extraer información); <b>solo-decoder</b> (GPT-4, Claude, LLaMA) → <b>generación</b> (texto, código, diálogo); <b>encoder-decoder</b> (T5, BART) → <b>transformar secuencias</b> (traducción, resumen, preguntas y respuestas)."
                 ]
               }
             ],
@@ -61622,6 +61920,58 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Pérdida focal",
                 "def": "Reduce el peso de ejemplos fáciles; útil con clases desbalanceadas."
+              },
+              {
+                "term": "McCulloch y Pitts (1943)",
+                "def": "Primera neurona artificial: entradas binarias, umbral, pesos fijos; implementa AND, OR y NOT."
+              },
+              {
+                "term": "Perceptrón (Rosenblatt, 1958)",
+                "def": "Primer aprendizaje supervisado con pesos ajustables; solo problemas linealmente separables."
+              },
+              {
+                "term": "XOR",
+                "def": "Problema no linealmente separable que el perceptrón simple no resuelve y el MLP sí."
+              },
+              {
+                "term": "Aproximación universal",
+                "def": "Un MLP con una capa oculta suficientemente ancha aproxima cualquier función continua."
+              },
+              {
+                "term": "ReLU",
+                "def": "max(0, x); estándar en capas ocultas; riesgo de neuronas muertas."
+              },
+              {
+                "term": "Softmax",
+                "def": "Distribución de probabilidad que suma 1; salida multiclase."
+              },
+              {
+                "term": "Tasa de aprendizaje η",
+                "def": "Tamaño del paso: alta oscila, baja es lenta."
+              },
+              {
+                "term": "Dropout",
+                "def": "Apaga neuronas con probabilidad p (0,2–0,5) al entrenar; como un ensamble."
+              },
+              {
+                "term": "Invarianza traslacional",
+                "def": "El mismo filtro detecta el patrón en cualquier posición (CNN)."
+              },
+              {
+                "term": "Pooling",
+                "def": "Reduce dimensiones espaciales (max-pooling)."
+              },
+              {
+                "term": "LSTM (1997)",
+                "def": "Estado de celda + puertas de olvido, entrada y salida; dependencias largas."
+              },
+              {
+                "term": "Atención Q-K-V",
+                "def": "softmax(QKᵀ/√dₖ)·V: cada token decide a qué otros prestar atención."
+              },
+              {
+                "term": "Solo-encoder / solo-decoder",
+                "def": "BERT para comprensión; GPT, Claude o LLaMA para generación."
               }
             ],
             "exam_traps": [
@@ -61630,33 +61980,112 @@ window.STUDY_SYSTEM_DATA = {
               "L1 puede llevar pesos a <b>cero</b> (selección de variables); L2 los reduce sin anularlos.",
               "Los Transformers procesan en <b>paralelo</b> y necesitan codificación posicional; las RNN son secuenciales.",
               "La LSTM resuelve parcialmente el gradiente desvanecido de las RNN con <b>compuertas</b>.",
-              "Early stopping usa el <b>error de validación</b>, no el de entrenamiento."
+              "Early stopping usa el <b>error de validación</b>, no el de entrenamiento.",
+              "«Backpropagation evalúa cada peso por separado» → <b>FALSO</b>: usa la <b>regla de la cadena</b> y reutiliza cada derivada.",
+              "El perceptrón simple <b>no resuelve XOR</b>; el MLP sí, gracias a la capa oculta.",
+              "McCulloch-Pitts <b>no aprende</b> (pesos fijos); el <b>perceptrón</b> (1958) es el primero que aprende.",
+              "Salida: binaria → <b>sigmoide</b>; multiclase → <b>softmax</b>; regresión → <b>lineal</b>. Capas ocultas → <b>ReLU</b>.",
+              "Sigmoide y tanh causan <b>desvanecimiento del gradiente</b>; ReLU lo evita en positivos.",
+              "<b>L1</b> lleva pesos a <b>cero</b> (selección); <b>L2</b> los achica.",
+              "Early stopping se dispara cuando sube el error de <b>validación</b>, no el de entrenamiento.",
+              "Un filtro 3×3 tiene <b>9 parámetros</b> sin importar el tamaño de la imagen.",
+              "Transformers: <b>2017</b>, sin recurrencia, <b>procesan en paralelo</b>; LSTM: <b>1997</b>.",
+              "BERT es <b>solo-encoder</b> (comprensión); GPT es <b>solo-decoder</b> (generación); T5 es encoder-decoder."
             ]
           },
           {
             "id": "L4",
             "title": "Lectura 4: Aprendizaje probabilístico y por refuerzo",
-            "summary": "Modelos probabilísticos (afirman «X con probabilidad 0,87»), teorema de Bayes y razonamiento bayesiano, modelos generativos vs. discriminativos, y aprendizaje por refuerzo: agente, entorno, estado, acción, recompensa y política, proceso de decisión de Markov (MDP) y factor de descuento γ, familias de algoritmos (Q-Learning, SARSA, DQN, policy gradient), dilema exploración-explotación (ε-greedy). Caso AlphaZero y aplicaciones en robótica y seguridad.",
+            "summary": "Decidir con incertidumbre: enfoque determinista vs. probabilístico («X con probabilidad 0,87»), modelos discriminativos P(Y|X) (regresión logística) vs. generativos P(X,Y) (Naive Bayes), GMM, VAE, difusión y LLM, distribuciones (binomial, Poisson, normal), teorema de Bayes con el ejemplo de intrusión (15,4 %), variables ocultas y modelos ocultos de Markov; aprendizaje por refuerzo: agente, entorno, estado, acción, recompensa, política y función de valor, MDP de cinco elementos y factor de descuento γ, propiedad de Markov y entornos parcialmente observables, reward hacking, Q-Learning, SARSA, DQN y policy gradient (PPO/RLHF), exploración vs. explotación (ε-greedy, UCB, curiosidad, fronteras) y aplicaciones. Caso: AlphaZero.",
             "detail": [
               {
-                "title": "1. Aprendizaje probabilístico",
+                "title": "1. Caso: AlphaZero, una máquina que aprende sola",
                 "points": [
-                  "En lugar de afirmar «esto es X», los modelos probabilísticos afirman «esto es X con probabilidad 0,87». Murphy (2022): el razonamiento probabilístico es la columna vertebral de la IA moderna porque permite operar cuando la información es parcial o contradictoria. Russell y Norvig (2016): <b>racionalidad no implica certeza</b> sino tomar la mejor decisión posible con el conocimiento disponible.",
-                  "<b>Clasificación:</b> <b>modelos generativos</b> (aprenden la distribución conjunta P(x, y); pueden <b>generar</b> datos nuevos; ej. Naive Bayes, modelos de mezcla, redes generativas) y <b>modelos discriminativos</b> (aprenden directamente P(y | x) o la frontera entre clases; ej. regresión logística, SVM, redes para clasificación).",
-                  "<b>Teorema de Bayes:</b> P(H | E) = P(E | H)·P(H) / P(E). <b>Probabilidad a priori</b> P(H) (prevalencia), <b>verosimilitud</b> P(E | H) y <b>posterior</b> P(H | E). Es clave no confundir la <b>tasa de detección</b> P(alerta | ataque) con P(ataque | alerta).",
-                  "<b>Ejemplo:</b> prevalencia de ataques 1 %, detección 90 % y falsos positivos 5 % → P(ataque | alerta) ≈ <b>15,4 %</b>. Aunque el sistema detecte el 90 % de los ataques, una alerta no significa 90 % de probabilidad de ataque: depende de la prevalencia y de los falsos positivos (<b>falacia de la tasa base</b>)."
+                  "<b>DeepMind, diciembre de 2018:</b> AlphaZero aprendió ajedrez y Go <b>desde cero, solo con las reglas</b>. Con <b>cuatro horas</b> de entrenamiento superó al mejor programa de ajedrez: <b>28 victorias, 72 empates y 0 derrotas</b> en 100 partidas (Silver et al., 2018).",
+                  "No usó bases de partidas maestras ni heurísticas hechas a mano: aprendió con <b>autopartidas</b> (millones de partidas contra sí mismo), recibiendo una <b>recompensa</b> al ganar, perder o empatar y ajustando su <b>política</b>. Ese bucle de interacción, experiencia y optimización es la esencia del <b>aprendizaje por refuerzo</b>.",
+                  "No decidía de forma determinista: sus redes profundas generaban <b>distribuciones de probabilidad</b> sobre los movimientos (p. ej., 42 % para un movimiento del alfil, 31 % para avanzar un peón).",
+                  "Combinaba <b>búsqueda en árboles de Monte Carlo (MCTS)</b> con redes que estiman <b>a la vez la función de valor y la política</b>. Lo que parecía intuición era una función de probabilidad refinada con cientos de millones de experiencias.",
+                  "<b>Aplicación al caso:</b> el ajedrez es un <b>MDP</b> (estados = tableros, acciones = movimientos legales, transición = reglas, recompensa = ganar/perder/empatar, γ). La distribución sobre acciones dado el tablero es un modelo <b>discriminativo P(Y|X)</b>. En las autopartidas resolvía el dilema <b>exploración-explotación</b>. La misma lógica se usa en enrutamiento, diseño de moléculas, robots y detección de intrusiones."
                 ]
               },
               {
-                "title": "2. Aprendizaje por refuerzo (RL)",
+                "title": "2. Del determinismo a la probabilidad",
                 "points": [
-                  "Un <b>agente</b> aprende por <b>experiencia directa</b>, interactuando con un <b>entorno</b>: en cada paso observa un <b>estado</b>, elige una <b>acción</b>, recibe una <b>recompensa</b> y pasa a un nuevo estado. La <b>política (π)</b> es la estrategia que mapea estados a acciones; el objetivo es <b>maximizar la recompensa acumulada</b> a largo plazo. Nadie indica la regla exacta para cada situación: se aprende por <b>prueba y error</b>.",
-                  "<b>Función de valor:</b> recompensa esperada acumulada desde un estado (V) o de ejecutar una acción en un estado (Q), siguiendo una política.",
-                  "<b>Proceso de decisión de Markov (MDP):</b> formaliza el problema con estados, acciones, <b>probabilidades de transición</b>, función de recompensa y <b>factor de descuento γ</b> (0 ≤ γ ≤ 1; pondera la importancia de las recompensas futuras frente a las inmediatas). Supone la <b>propiedad de Markov</b>: el siguiente estado depende solo del estado y la acción actuales.",
-                  "<b>Familias de algoritmos:</b> <b>Q-Learning</b> (basado en valores; <b>off-policy</b>: aprende la política óptima aunque actúe con otra; se apoya en la ecuación de Bellman), <b>SARSA</b> (<b>on-policy</b>: aprende el valor de la política que realmente sigue; más prudente donde explorar de más es peligroso), <b>DQN</b> (DeepMind, 2015: Q-Learning con redes neuronales profundas) y métodos de <b>gradiente de política / actor-crítico</b> (aprenden la política directamente).",
-                  "<b>Exploración vs. explotación:</b> explorar (probar acciones nuevas) frente a explotar (usar lo que ya se sabe que funciona). <b>ε-greedy:</b> con probabilidad 1−ε se elige la mejor acción conocida y con probabilidad ε una aleatoria; ε suele decrecer. Otra estrategia: <b>exploración por curiosidad</b> (recompensa intrínseca). En robótica: exploración basada en fronteras.",
-                  "<b>Caso AlphaZero</b> (DeepMind, 2018): aprendió ajedrez y Go desde cero, solo con las reglas, mediante <b>autopartidas</b>; en 4 horas superó al mejor programa de ajedrez (28 victorias, 72 empates, 0 derrotas en 100 partidas). Usa redes profundas que estiman a la vez la <b>función de valor y la política</b> y genera <b>distribuciones de probabilidad</b> sobre los movimientos.",
-                  "<b>Aplicaciones:</b> robótica (se entrena en <b>simulación</b> y se transfiere al robot físico, p. ej. mano robótica que resuelve el cubo de Rubik), videojuegos, asignación de recursos (camas hospitalarias, dosis de medicamentos con recompensa ligada a la estabilidad del paciente), RLHF en modelos de lenguaje. Se combina con la probabilidad: se estiman distribuciones de los estados y el RL define la política."
+                  "<b>Murphy (2022):</b> el razonamiento probabilístico es la <b>columna vertebral de la IA moderna</b>; permite operar racionalmente con información parcial o contradictoria. <b>Russell y Norvig (2016):</b> la <b>racionalidad no implica certeza</b>, sino tomar la mejor decisión con lo que se sabe; un agente racional no es omnisciente, sabe lidiar con lo que no sabe.",
+                  "<b>IA clásica:</b> los sistemas expertos de los 80 codificaban reglas rígidas («SI fiebre Y tos → gripe»). Fallan porque los síntomas se solapan, los sensores tienen ruido y la variabilidad no entra en un condicional binario: ante un dato incompleto, el sistema <b>se rompe</b>.",
+                  "<b>Enfoque determinista o geométrico:</b> traza fronteras rígidas (p. ej., una <b>SVM</b> con un hiperplano: izquierda clase A, derecha clase B), aproxima y = f(x) sin cuestionar la calidad del dato.",
+                  "<b>Enfoque probabilístico:</b> los datos son <b>muestras ruidosas de una distribución</b> que no se ve. El modelo calcula probabilidades y <b>comunica su incertidumbre</b> («91 % intrusión, 9 % tráfico legítimo anómalo»). Influye en cómo se evalúa el riesgo en la función de pérdida, en la generalización y evita la <b>sobreconfianza</b> en casos atípicos.",
+                  "No es una rama aparte: <b>complementa y redefine</b> el supervisado, el no supervisado y el generativo."
+                ]
+              },
+              {
+                "title": "3. Modelos discriminativos, generativos y modelos generativos modernos",
+                "points": [
+                  "<b>Discriminativos — P(Y | X):</b> aprenden directamente la <b>frontera de decisión</b> (probabilidad de la etiqueta dadas las características). Ej.: un robot que solo necesita decidir si lo que ve es obstáculo. Caso típico: <b>regresión logística</b> (clasificador probabilístico con sigmoide).",
+                  "<b>Generativos — P(X, Y):</b> modelan <b>cómo se generaron los datos</b> de cada clase (probabilidad conjunta de que ambas cosas coincidan) y clasifican con <b>Bayes</b>. Ej.: <b>Naive Bayes</b>, que supone <b>independencia condicional</b> de las características dada la clase; casi nunca es cierto, pero es robusto, eficiente y muy bueno con <b>pocos datos</b>.",
+                  "<b>Diferencia ante un objeto redondo:</b> discriminativo = «ya vi que es redondo, ¿qué tan probable es que sea una pelota?»; generativo = «de todas las combinaciones (forma, clase), ¿qué tan frecuente es redondo + pelota?».",
+                  "<b>No supervisado probabilístico — GMM (mezclas gaussianas):</b> a diferencia de K-Means (cada dato en un solo grupo), supone grupos superpuestos con su propia forma y dispersión, y un dato pertenece <b>«un poco a cada grupo»</b> (una lectura LIDAR: 70 % piso, 30 % caja).",
+                  "<b>Generativo moderno</b> (crear datos nuevos realistas): <b>VAE</b> (comprime en un <b>rango de resúmenes</b> en vez de uno fijo y permite generar variaciones, p. ej., imaginar otro ángulo de un objeto); <b>modelos de difusión</b> (aprenden a agregar ruido hasta destruir la imagen y luego el proceso inverso, de ruido a imagen: texto a imagen); <b>LLM</b> (predicen el <b>token más probable</b> que sigue; a gran escala muestran capacidades que parecen razonamiento)."
+                ]
+              },
+              {
+                "title": "4. Distribuciones, teorema de Bayes y falacia de la tasa base",
+                "points": [
+                  "<b>Distribución de probabilidad:</b> qué valores puede tomar algo y con qué frecuencia. <b>Discretas:</b> <b>binomial</b> (sí/no: spam, malware) y <b>Poisson</b> (cuántas veces ocurre algo en un intervalo: intentos de conexión sospechosos por minuto). <b>Continuas:</b> <b>normal</b> (campana: la mayoría cerca del promedio, pocos extremos; p. ej., tiempos de respuesta de un servidor).",
+                  "<b>Teorema de Bayes:</b> <b>P(H | E) = P(E | H)·P(H) / P(E)</b>. <b>P(H)</b> = <b>a priori</b> (lo que se creía antes); <b>P(E | H)</b> = <b>verosimilitud</b> (qué tan esperable es la evidencia si H es cierta); <b>P(H | E)</b> = <b>a posteriori</b> (creencia actualizada); <b>P(E)</b> = probabilidad total de la evidencia (normaliza).",
+                  "<b>Ejemplo de intrusión:</b> P(atacante) = 0,01; P(alerta | atacante) = 0,90; P(alerta | legítimo) = 0,05. P(alerta) = 0,90·0,01 + 0,05·0,99 = <b>0,0585</b>. P(atacante | alerta) = 0,009 / 0,0585 ≈ <b>15,4 %</b> (no 90 %).",
+                  "<b>Por qué:</b> los ataques son raros, entonces los empleados que disparan falsas alarmas son <b>más en números absolutos</b> que los atacantes detectados. Ignorar el prior es la <b>falacia de la tasa base</b>: no basta un buen detector, hay que considerar <b>qué tan frecuente es lo que se busca</b>.",
+                  "<b>Variables ocultas y modelos ocultos de Markov (HMM):</b> lo que interesa no se mide directamente, solo sus señales. Un chatbot no ve el enojo, pero sí mayúsculas, exclamaciones, mensajes secos o preguntas repetidas, e infiere el estado (tranquilo, confundido, frustrado); como el estado no cambia de golpe, usa la secuencia y actualiza con Bayes. Usos: identificar genes en ADN y modelar <b>secuencias de llamadas al sistema</b> (las del malware difieren de las legítimas)."
+                ]
+              },
+              {
+                "title": "5. Aprendizaje por refuerzo: conceptos básicos",
+                "points": [
+                  "Aprender como los seres vivos: <b>probar, recibir una consecuencia y ajustar</b> (como andar en bicicleta). Russell y Norvig lo ubican en la idea de <b>agente racional</b>: no recibe ejemplos etiquetados; actúa, observa y descubre qué le conviene.",
+                  "<b>Agente:</b> quien decide (robot, programa de bolsa, sistema de seguridad, personaje de videojuego): percibe, decide y actúa. <b>Entorno:</b> lo que lo rodea; ante cada acción devuelve un <b>nuevo estado y una recompensa</b>. Puede ser <b>completamente</b> o <b>parcialmente observable</b>.",
+                  "<b>Estado:</b> la «foto» actual (posición y sensores del robot; eventos, tráfico y procesos en seguridad). <b>Acción:</b> lo que puede hacer el agente; <b>discreta</b> (izquierda, derecha, frenar) o <b>continua</b> (tanta fuerza en tal dirección).",
+                  "<b>Recompensa:</b> número (positivo, negativo o cero) que devuelve el entorno tras cada acción. Murphy: una recompensa mal diseñada lleva a <b>atajos</b> que suben el número sin cumplir el objetivo.",
+                  "<b>Política (π):</b> regla que, dado un estado, indica qué acción tomar; <b>determinista</b> (siempre la misma) o <b>estocástica</b> (probabilidades, deja lugar para explorar).",
+                  "<b>Función de valor:</b> recompensa <b>acumulada esperada a largo plazo</b> desde un estado siguiendo la política. Clave: una acción con poca recompensa inmediata puede dejar al agente <b>mucho mejor para el futuro</b>."
+                ]
+              },
+              {
+                "title": "6. Proceso de decisión de Markov (MDP)",
+                "points": [
+                  "<b>Cinco elementos</b> (Sutton y Barto, 2018): (1) conjunto de <b>estados</b>, (2) conjunto de <b>acciones</b>, (3) <b>función de transición</b> (probabilidad de pasar de un estado a otro con una acción), (4) <b>función de recompensa</b> y (5) <b>factor de descuento γ</b>.",
+                  "<b>γ (gamma)</b> responde «¿cuánto importa el futuro frente al presente?». <b>γ = 0</b>: totalmente cortoplacista (solo recompensa inmediata). <b>γ = 1</b>: el futuro pesa igual que el presente. En la práctica <b>≈ 0,99</b>: valora el largo plazo, pesa algo más el presente y ayuda a que los cálculos converjan.",
+                  "<b>Ejemplo IDS:</b> estados normal / sospechoso / bajo ataque; acciones monitorear / investigar / bloquear; recompensas positivas si se mantiene seguro o detecta a tiempo y <b>−50 si el ataque tiene éxito</b>. El agente aprende la acción que maximiza la recompensa <b>acumulada</b>.",
+                  "<b>Propiedad de Markov:</b> el <b>estado actual contiene toda la información relevante del pasado</b>; no hace falta recordar la historia. Rara vez se cumple del todo: los problemas <b>parcialmente observables</b> son más difíciles (un robot con sensores imperfectos nunca sabe exactamente dónde está; un IDS no ve la intención del atacante, solo sus acciones).",
+                  "<b>Reward hacking:</b> el agente maximiza la recompensa definida sin cumplir el objetivo real (robots que en vez de caminar más rápido se tiraban hacia atrás y rodaban; agentes que explotaban bugs para sumar puntos). En seguridad, medir «ataques bloqueados» podría llevar a <b>bloquear tráfico legítimo masivamente</b>."
+                ]
+              },
+              {
+                "title": "7. Familias de algoritmos de RL",
+                "points": [
+                  "<b>Q-Learning:</b> aprende Q(estado, acción), el valor de hacer esa acción y luego actuar óptimamente. Es <b>off-policy</b>: aprende la política óptima <b>aunque ejecute otra</b> más exploratoria. Se apoya en la <b>ecuación de Bellman</b>: valor = recompensa inmediata + valor <b>descontado</b> del mejor estado siguiente.",
+                  "<b>SARSA:</b> aprende el valor de la política <b>que realmente sigue</b> (<b>on-policy</b>). Es más <b>conservador</b>: conviene donde explorar de más es peligroso, como en <b>robótica física</b> (un error es un robot que se cae o rompe algo).",
+                  "<b>DQN (Deep Q-Networks, DeepMind 2015):</b> Q-Learning + <b>redes profundas</b> para espacios de estados enormes; aprendió juegos de <b>Atari</b> directamente de los píxeles (Mnih et al., 2015).",
+                  "<b>Policy Gradient:</b> aprende la <b>política directamente</b> en vez de derivarla de una función de valor. Su variante <b>PPO</b> (<i>Proximal Policy Optimization</i>) se usa para entrenar LLM con <b>RLHF</b> (refuerzo con retroalimentación humana), como GPT o Claude (Kaufmann et al., 2023)."
+                ]
+              },
+              {
+                "title": "8. Exploración vs. explotación",
+                "points": [
+                  "<b>Explotar:</b> usar las acciones que ya se sabe que funcionan. <b>Explorar:</b> probar otras que podrían ser mejores. Mucha explotación → <b>estancarse</b> en una solución no óptima; mucha exploración → <b>desperdiciar</b> tiempo y recursos. El balance depende del contexto y cambia con el tiempo.",
+                  "<b>ε-greedy:</b> con probabilidad <b>1 − ε</b> elige la mejor acción conocida (explota) y con probabilidad <b>ε</b> una al azar (explora). ε empieza <b>alto y se reduce</b>. Limitación: explora <b>completamente al azar</b>, sin priorizar zonas prometedoras.",
+                  "<b>UCB (Upper Confidence Bound):</b> considera también la <b>incertidumbre</b> de la estimación; las acciones poco probadas son más atractivas. Russell y Norvig: <b>optimismo frente a la incertidumbre</b>.",
+                  "<b>Exploración por curiosidad:</b> recompensa <b>interna</b> por situaciones que el propio modelo predijo mal (que lo sorprendieron). Pathak et al. (2017): se puede explorar entornos complejos <b>sin recompensa externa</b>.",
+                  "<b>Otros dominios:</b> en robótica (ROS), la <b>exploración basada en fronteras</b> lleva al robot al límite entre lo conocido y lo desconocido; en ciencia de datos, la búsqueda de hiperparámetros; en innovación, seguir con el producto que da ingresos o apostar a lo nuevo."
+                ]
+              },
+              {
+                "title": "9. Aplicaciones y combinación con lo probabilístico",
+                "points": [
+                  "<b>Robótica:</b> el encaje más natural (entornos físicos, dinámicos, parcialmente observables). <b>OpenAI (2019):</b> una mano robótica resolvió el <b>cubo de Rubik</b> entrenada en <b>simulación</b> y transferida al robot real; el desafío es que la física del simulador nunca es igual a la real. La locomoción en terrenos irregulares se aprendió en gran parte con RL.",
+                  "<b>Centros de datos de Google:</b> RL ajustó cientos de parámetros de climatización y redujo un <b>40 %</b> la energía de refrigeración. También: espectro <b>5G</b>, <b>semáforos</b> en redes viales, videojuegos (entornos seguros y reproducibles), <b>vehículos autónomos end-to-end</b> entrenados en simuladores y un <b>dron</b> de la Universidad de Zúrich que superó a campeones humanos de carreras.",
+                  "<b>Diseño de moléculas:</b> estado = molécula en construcción (grafo); acciones = agregar átomos o enlaces, quitar grupos; recompensa = afinidad, solubilidad y similitud con fármacos conocidos, menos toxicidad.",
+                  "<b>Ciberseguridad:</b> los modelos probabilísticos aprenden lo «normal» y marcan lo improbable como anomalía; los <b>HMM</b> modelan secuencias de llamadas al sistema. Un agente de RL decide entre monitorear, investigar o bloquear.",
+                  "<b>Mantenimiento predictivo:</b> un modelo probabilístico estima la <b>función de supervivencia</b> (distribución del tiempo hasta la próxima falla) y el RL define la <b>política óptima</b> de cuándo intervenir, ponderando el costo preventivo, el de reparar tras una falla y la producción perdida. Es más eficiente que los calendarios fijos."
                 ]
               }
             ],
@@ -61700,6 +62129,54 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "ε-greedy",
                 "def": "Explora con probabilidad ε y explota con 1−ε."
+              },
+              {
+                "term": "Discriminativo P(Y|X)",
+                "def": "Aprende la frontera de decisión; ej. regresión logística."
+              },
+              {
+                "term": "Generativo P(X,Y)",
+                "def": "Modela cómo se generan los datos y clasifica con Bayes; ej. Naive Bayes."
+              },
+              {
+                "term": "Naive Bayes",
+                "def": "Supone independencia condicional de las variables; funciona bien con pocos datos."
+              },
+              {
+                "term": "GMM",
+                "def": "Mezcla de gaussianas: cada dato pertenece en parte a varios grupos (asignación blanda)."
+              },
+              {
+                "term": "Modelo oculto de Markov",
+                "def": "Infiere un estado no observable a partir de señales en secuencia."
+              },
+              {
+                "term": "Política π",
+                "def": "Regla estado → acción; determinista o estocástica."
+              },
+              {
+                "term": "Función de valor",
+                "def": "Recompensa acumulada esperada a largo plazo desde un estado."
+              },
+              {
+                "term": "Propiedad de Markov",
+                "def": "El estado actual resume todo el pasado relevante."
+              },
+              {
+                "term": "Reward hacking",
+                "def": "Maximizar la recompensa sin cumplir el objetivo real."
+              },
+              {
+                "term": "Off-policy vs. on-policy",
+                "def": "Q-Learning aprende la óptima aunque actúe con otra; SARSA aprende la que sigue."
+              },
+              {
+                "term": "UCB",
+                "def": "Explora según la incertidumbre: optimismo frente a lo desconocido."
+              },
+              {
+                "term": "PPO / RLHF",
+                "def": "Policy gradient usado para ajustar LLM con retroalimentación humana."
               }
             ],
             "exam_traps": [
@@ -61708,7 +62185,17 @@ window.STUDY_SYSTEM_DATA = {
               "En RL <b>no hay etiquetas</b>: hay recompensas (posiblemente demoradas).",
               "Un γ cercano a 0 prioriza lo inmediato; cercano a 1, el largo plazo.",
               "Probabilístico ≠ determinista: el modelo entrega una distribución de probabilidad, no una única salida rígida.",
-              "La simulación acelera el RL (paralelización), no solo reduce el desgaste del hardware."
+              "La simulación acelera el RL (paralelización), no solo reduce el desgaste del hardware.",
+              "«Si el detector acierta el 90 % de los ataques, cada alerta es 90 % ataque» → <b>FALSO</b>: con 1 % de prevalencia y 5 % de FP da <b>≈ 15,4 %</b>.",
+              "<b>Q-Learning es off-policy</b>; <b>SARSA es on-policy</b> (más prudente en robótica física).",
+              "Naive Bayes es <b>generativo</b>; la regresión logística es <b>discriminativa</b>.",
+              "<b>γ = 0</b> → agente cortoplacista; <b>γ = 1</b> → futuro igual que el presente.",
+              "El MDP tiene <b>cinco</b> elementos: estados, acciones, transición, recompensa y γ.",
+              "La recompensa es <b>inmediata</b>; la función de valor es <b>a largo plazo</b>.",
+              "ε-greedy: con <b>probabilidad ε explora</b> (al azar) y con 1 − ε explota.",
+              "DQN es de <b>DeepMind (2015)</b> y aprendió Atari desde píxeles; AlphaZero es de <b>2018</b>.",
+              "AlphaZero: <b>28 victorias, 72 empates, 0 derrotas</b>, en <b>4 horas</b>, combinando MCTS con redes de valor y política.",
+              "K-Means asigna cada punto a un grupo; <b>GMM</b> da probabilidades de pertenencia."
             ]
           }
         ]
@@ -61720,39 +62207,97 @@ window.STUDY_SYSTEM_DATA = {
           {
             "id": "L1",
             "title": "Lectura 1: Arquitectura robótica y sistemas de locomoción",
-            "summary": "Percepción, autonomía y actuación; arquitectura de un sistema robótico (sensores, actuadores, controladores y procesamiento); modalidades de locomoción (ruedas, patas, drones y manipuladores) y su comparación; cinemática, posición, orientación y grados de libertad (6 DoF); y aplicaciones como la robótica médica y quirúrgica. Caso: Spot de Boston Dynamics.",
+            "summary": "Qué es un robot (Čapek, 1920; Russell y Norvig: agente físico con sensores y actuadores), percepción, autonomía como espectro y actuación; arquitectura: sensores (LIDAR, cámaras estéreo, IMU, fusión con filtro de Kalman), actuadores (hidráulicos vs. eléctricos, control de impedancia, Da Vinci) y jerarquía de controladores (reactivo, planificación de movimiento, tareas); locomoción con ruedas, patas, drones y manipuladores (cobots); cinemática: 6 grados de libertad (posición + orientación pitch/roll/yaw), cuaterniones, redundancia, cinemática directa vs. inversa (KDL, TRAC-IK); aplicaciones en industria (Unimate 1961, mantenimiento predictivo), medicina, logística (Kiva, Starship) y entornos extremos (rovers). Caso: Spot de Boston Dynamics. Incluye un complemento con lo que preguntan los parciales (subsunción, tres capas, manipuladores).",
             "detail": [
               {
-                "title": "1. Percepción, autonomía y actuación",
+                "title": "1. Caso: Spot y el problema de moverse en el mundo real",
                 "points": [
-                  "<b>Percepción:</b> proceso por el cual el robot adquiere información del mundo mediante <b>sensores</b>: visuales (cámaras RGB, estéreo, de profundidad), <b>táctiles</b> (fuerza, piel artificial), <b>propioceptivos</b> (encoders que miden el ángulo de cada articulación) y de <b>rango</b> (LIDAR, radar, sonar). Produce flujos masivos, heterogéneos y correlacionados en el tiempo (gigabytes por hora). Riesgo: <b>ataques adversariales a sensores</b> (patrones que hacen ver objetos inexistentes o ignorar obstáculos).",
-                  "<b>Autonomía:</b> no es binaria sino un <b>espectro</b>, desde brazos que repiten secuencias preprogramadas hasta vehículos autónomos. Russell y Norvig (2016): capacidad de un agente de actuar según su <b>propia percepción y razonamiento</b>, lo que exige un <b>modelo interno del mundo</b>.",
-                  "<b>ROS (Robot Operating System):</b> no es un sistema operativo sino un <b>conjunto de herramientas, bibliotecas y convenciones</b> sobre un SO existente (típicamente Linux). Arquitectura de <b>nodos</b> que se comunican por <b>publicación/suscripción a tópicos</b> (percepción, planificación y control semi independientes).",
-                  "<b>Actuación:</b> cómo el robot «escribe» en el mundo; los <b>actuadores</b> convierten comandos en movimiento o fuerza (eléctricos, hidráulicos, neumáticos, cables de tracción, materiales inteligentes). Los <b>hidráulicos</b> dan gran relación fuerza-peso pero requieren tuberías y sellado; los <b>eléctricos</b> son más controlables y silenciosos pero con menos fuerza por kilogramo. No existe el actuador perfecto: se optimiza un parámetro a costa de otro."
+                  "En <b>2020</b> Boston Dynamics empezó a vender <b>Spot</b>, un cuadrúpedo de unos <b>USD 74.500</b>. Usos: inspección de plataformas de petróleo y gas, hospitales durante el COVID-19, zonas sísmicas, reconocimiento policial y hasta danza.",
+                  "Lo interesante es el problema técnico: <b>moverse con estabilidad en entornos no estructurados</b> (escaleras, rampas, tropiezos, superficies inesperadas), a diferencia de un robot industrial en un entorno controlado.",
+                  "<b>Componentes:</b> cámaras y sensores de profundidad (percepción 3D); <b>doce articulaciones motorizadas (tres por pata)</b> como actuadores, ajustadas <b>miles de veces por segundo</b>; un procesador central que decide la locomoción en tiempo real <b>sin intervención humana directa</b>.",
+                  "Genera muchos datos (nubes de puntos, imágenes, telemetría, contactos con el suelo) y expone <b>superficies de ataque</b> (API de control, comunicaciones inalámbricas, acceso a espacios físicos). Su locomoción sirve de referencia para <b>prótesis y exoesqueletos</b>.",
+                  "<b>Aplicación al caso:</b> <b>percepción</b> (cámaras + IMU fusionadas con <b>filtro de Kalman</b>); <b>actuación</b> con <b>control de impedancia</b> (mide la resistencia de cada pata) y un <b>controlador reactivo</b> de cientos o miles de Hz que corrige el equilibrio como un reflejo; <b>cinemática inversa</b> cada vez que decide dónde apoyar una pata (los ángulos de sus tres articulaciones), para las cuatro patas y miles de veces por segundo."
                 ]
               },
               {
-                "title": "2. Arquitectura de un sistema robótico",
+                "title": "2. Robot, percepción, autonomía y actuación",
                 "points": [
-                  "Componentes: <b>sensores</b> (percepción), <b>actuadores</b> (actuación) y <b>controladores y procesamiento</b> (computación embebida que procesa los datos, decide y envía comandos). El ciclo es <b>percibir → decidir → actuar</b>.",
-                  "<b>Evolución:</b> de brazos industriales de la década de 1960 (secuencias fijas en entornos controlados) a la robótica autónoma, impulsada por la miniaturización y abaratamiento de sensores, mayor capacidad de procesamiento embebido y algoritmos de control y <b>aprendizaje por refuerzo</b>."
+                  "La palabra <b>robot</b> la introdujo <b>Karel Čapek en 1920</b>, del eslavo <i>robota</i> (<b>trabajo forzado</b>). <b>Russell y Norvig (2016):</b> un robot es un <b>agente que opera en el mundo físico</b>, que percibe con <b>sensores</b> y actúa con <b>actuadores</b>; es la interfaz entre la inteligencia computacional y el mundo físico.",
+                  "<b>Evolución:</b> de brazos que repetían secuencias fijas en líneas de montaje (<b>años 60</b>, solo en condiciones predecibles) a robots que perciben y se ajustan en tiempo real. Impulsores: sensores más chicos y baratos, más cómputo embebido y algoritmos de control y de <b>aprendizaje por refuerzo</b>. Desde la <b>década de 2010</b>, cuadrúpedos con marcha natural.",
+                  "<b>Percepción:</b> adquirir información del mundo con sensores <b>visuales</b> (RGB, estéreo, profundidad), <b>táctiles</b> (fuerza, piel artificial), <b>propioceptivos</b> (encoders que miden el ángulo de cada articulación) o <b>de rango</b> (LIDAR, radar, sonar). Genera flujos masivos, heterogéneos y correlacionados en el tiempo (gigabytes por hora). Riesgo: <b>ataques adversariales a sensores</b> (patrones que hacen ver objetos inexistentes o ignorar obstáculos), con consecuencias <b>físicas</b>.",
+                  "<b>Autonomía:</b> <b>no es binaria sino un espectro</b>, desde brazos preprogramados hasta vehículos autónomos que toman miles de decisiones por segundo. Russell y Norvig: capacidad de actuar según la <b>propia percepción y razonamiento</b>, no por instrucciones externas directas; implica un <b>modelo interno del mundo</b>.",
+                  "<b>ROS</b> no es un sistema operativo en sentido estricto: es un conjunto de herramientas, bibliotecas y convenciones que corre sobre uno existente (típicamente <b>Linux</b>). Implementa la autonomía con <b>nodos</b> que <b>publican y se suscriben a tópicos</b>; percepción, planificación y control operan de forma semiindependiente.",
+                  "<b>Actuación:</b> los actuadores convierten comandos en movimiento o fuerza (motores eléctricos, hidráulicos, neumáticos, cables, materiales inteligentes). <b>Hidráulicos:</b> enorme relación fuerza-peso, pero tuberías y difícil sellado. <b>Eléctricos:</b> más controlables y silenciosos, menos fuerza por kilo. <b>No existe el actuador perfecto</b>, sino el adecuado para cada aplicación."
                 ]
               },
               {
-                "title": "3. Locomoción",
+                "title": "3. Arquitectura: sensores, actuadores y controladores",
                 "points": [
-                  "<b>Ruedas:</b> simples y de <b>alta eficiencia energética en superficies planas y estructuradas</b>, baja complejidad de control; pierden ventaja en terreno irregular. Ej. robots de almacén (Amazon).",
-                  "<b>Patas:</b> se adaptan a <b>terrenos irregulares y no estructurados</b> imitando la locomoción biológica; mayor complejidad de control y menor eficiencia energética. Ej. <b>Spot</b> (Boston Dynamics, comercializado desde 2020 por ≈ USD 74.500; usado en inspección de plataformas de petróleo y gas y en hospitales durante el COVID-19).",
-                  "<b>Drones (UAV):</b> movilidad aérea, en espacio abierto; eficiencia baja-media. Ej. DJI Matrice 300. <b>Manipuladores (brazos robóticos):</b> estación fija, alta precisión y muy alta complejidad de control. Ej. KUKA KR, da Vinci.",
-                  "La elección depende del <b>entorno</b>: ninguna modalidad es superior en todos los casos."
+                  "<b>Sensores:</b> transductores que convierten magnitudes físicas en <b>señales eléctricas</b>. Russell y Norvig los clasifican en <b>de rango</b>, <b>de imagen</b>, <b>de fuerza y torque</b> y <b>propioceptivos</b>.",
+                  "<b>LIDAR:</b> emite pulsos láser y mide el tiempo de rebote para armar mapas 3D con precisión de centímetros (vehículos autónomos, inspección, algunos celulares). <b>Cámara estéreo:</b> dos o más lentes separadas; estima la profundidad <b>triangulando</b>. <b>IMU:</b> acelerómetros + giroscopios; estima orientación y movimiento aun sin visión (polvo, humo, poca luz).",
+                  "<b>Fusión sensorial:</b> integrar flujos con distinta frecuencia, resolución, latencia y ruido. Murphy (2022): el <b>filtro de Kalman</b> combina estimaciones ruidosas de varias fuentes en una más precisa.",
+                  "<b>Actuadores:</b> <b>servomotores</b> en la industria (precisión de décimas de milímetro, repetibilidad); <b>tracción diferencial</b> en robots móviles (dos ruedas independientes; gira variando sus velocidades); en Spot, <b>motores de articulación</b> con <b>retroalimentación de fuerza</b>: el <b>control de impedancia</b> sabe cuánto se movió y <b>cuánta resistencia encontró</b> (detecta un piso resbaladizo). El <b>Da Vinci</b> escala los movimientos del cirujano, elimina el temblor y da <b>retroalimentación háptica</b>.",
+                  "<b>Controladores en jerarquía:</b> (1) <b>reactivo o de tiempo real</b>: cientos o miles de Hz, ajusta cada articulación; son <b>reflejos</b> que actúan antes que el razonamiento (Spot recupera el equilibrio al ser empujado); (2) <b>planificación de movimiento</b>: trayectorias factibles evitando obstáculos (ROS ofrece frameworks en el espacio de configuraciones); (3) <b>razonamiento y planificación de tareas</b>: decide <b>qué</b> hacer y deja el <b>cómo</b> a los niveles inferiores. Russell y Norvig la vinculan con las arquitecturas de <b>agentes deliberativos</b>."
                 ]
               },
               {
-                "title": "4. Cinemática y grados de libertad",
+                "title": "4. Comparación de modalidades de locomoción",
                 "points": [
-                  "<b>Cinemática:</b> rama de la mecánica que estudia el movimiento <b>sin considerar las fuerzas</b> que lo causan (la <b>dinámica</b> sí considera fuerzas y torques). En robótica: dónde queda el <b>efector final</b> (herramienta o pinza) según las articulaciones.",
-                  "<b>Grados de libertad (DoF):</b> un cuerpo rígido en el espacio necesita <b>6 DoF</b>: <b>posición (3)</b> —coordenadas x, y, z— y <b>orientación (3)</b> —ángulos <b>pitch, roll y yaw</b>—. Un robot que suelda necesita ambas: dónde y hacia dónde apunta la antorcha. Cinemática directa (de ángulos articulares a posición del efector) e inversa (de posición deseada a ángulos).",
-                  "<b>Robótica médica y quirúrgica:</b> precisión y reducción del temblor (sistema da Vinci), cirugía mínimamente invasiva; requiere alta fiabilidad, seguridad y supervisión humana."
+                  "<b>Ruedas:</b> terreno plano y estructurado; eficiencia energética <b>alta</b>; control de complejidad <b>baja-media</b>; costo <b>bajo</b>. Ej.: robots de almacén de Amazon.",
+                  "<b>Patas:</b> terreno irregular y no estructurado; eficiencia <b>media-baja</b>; control de complejidad <b>alta</b>; costo <b>alto</b>. Ej.: Spot.",
+                  "<b>Drones:</b> espacio aéreo abierto; eficiencia <b>baja-media</b>; complejidad <b>media-alta</b>; costo <b>medio</b>. Ej.: DJI Matrice 300.",
+                  "<b>Manipuladores:</b> estación fija; precisión <b>muy alta</b>; costo <b>medio-alto</b>. Ej.: KUKA KR, Da Vinci.",
+                  "La locomoción elegida determina dónde puede operar el robot, qué tan rápido va, cuánta energía consume y qué tan complejo es controlarlo."
+                ]
+              },
+              {
+                "title": "5. Locomoción: ruedas, patas, drones y manipuladores",
+                "points": [
+                  "<b>Ruedas:</b> las más usadas en industria y servicios por su eficiencia en superficies planas, simplicidad mecánica y control directo. El <b>robot diferencial</b> (dos ruedas motrices independientes + una rueda libre) es barato y fácil de controlar. Fallan con escalones, piedras grandes, barro o desniveles. En logística (Amazon Robotics) mueven estanterías a las estaciones de empaque; coordinar cientos de agentes es un problema de optimización y RL.",
+                  "<b>Patas:</b> la solución de la evolución para terrenos irregulares: <b>no necesitan contacto continuo</b> y eligen dónde apoyar cada extremidad (saltar obstáculos, cruzar huecos). Costo: controlar 4 patas × 3 articulaciones = <b>12 variables</b> manteniendo el <b>equilibrio dinámico</b>. Estuvo fuera de alcance por décadas hasta el <b>RL profundo</b> y el hardware actual. Sirven como modelos de locomoción biológica (prótesis, exoesqueletos).",
+                  "<b>Drones (UAV):</b> el <b>cuadricóptero</b> usa cuatro rotores y, variando la velocidad de cada uno, despega, aterriza, gira y se desplaza en 3D. Ventaja: <b>perspectiva</b> (cubre grandes áreas, llega a zonas inaccesibles). Agricultura de precisión con cámaras <b>multiespectrales</b> (estrés hídrico, plagas, nutrientes). Riesgos: vigilancia no autorizada, intercepción de comunicaciones, interferencia con infraestructura crítica; detección con radar, visión y contramedidas de radiofrecuencia.",
+                  "<b>Manipuladores:</b> fijos; se mueven sus extremidades: <b>eslabones rígidos</b> unidos por <b>articulaciones</b> que terminan en un <b>efector final</b>. Varían en precisión, carga útil, velocidad y entorno (soldadura: rápido, decenas de kilos, tolerancia de milímetros; quirúrgico: lento, gramos, décimas de milímetro, entorno estéril).",
+                  "<b>Cobots</b> (robots colaborativos): diseñados para <b>trabajar junto a personas</b> sin vallas de seguridad; acercan la robótica a las pymes porque no requieren ingenieros especializados para configurarlos."
+                ]
+              },
+              {
+                "title": "6. Cinemática: grados de libertad y orientación",
+                "points": [
+                  "<b>Cinemática:</b> estudia el <b>movimiento sin considerar las fuerzas</b> que lo causan (dónde queda el efector si se mueven las articulaciones). Los torques necesarios son tema de la <b>dinámica</b>.",
+                  "Un objeto rígido en el espacio necesita <b>6 grados de libertad (DoF)</b>: <b>3 de posición</b> (x, y, z) y <b>3 de orientación</b> (<b>pitch, roll y yaw</b>). Ej.: el soldador necesita la posición del punto y además la orientación de la antorcha. Una articulación simple como un codo tiene <b>1 DoF</b>.",
+                  "Con los ángulos tradicionales, en ciertas posiciones <b>dos ejes se alinean y se pierde temporalmente un grado de libertad</b> (Murphy, 2022). Alternativas: <b>matrices de rotación</b> (sin ambigüedad pero usan <b>9 números</b> para 3 DoF) y <b>cuaterniones</b> (<b>4 números</b>, eficientes, interpolan trayectorias suaves: <b>estándar de la industria</b>).",
+                  "<b>Menos de 6 DoF:</b> limitaciones para algunas posiciones u orientaciones. <b>Exactamente 6:</b> en principio cualquier posición y orientación dentro de su rango. <b>Más de 6:</b> <b>redundante</b> (varias formas de llegar al mismo punto); útil para esquivar obstáculos y para que una IA elija la mejor (menos energía, más suavidad, menos desgaste).",
+                  "La descripción posición + orientación es la base del seguimiento de trayectorias y del <b>mantenimiento predictivo</b> (si una articulación empieza a desviarse de lo esperado, alerta antes de la falla)."
+                ]
+              },
+              {
+                "title": "7. Cinemática directa e inversa",
+                "points": [
+                  "<b>Directa:</b> dados los <b>ángulos de las articulaciones</b>, ¿<b>dónde queda el efector final</b>? Tiene <b>siempre una única solución</b> y es fácil: se encadenan transformaciones geométricas (<b>matrices de transformación homogénea</b>) desde la base hasta el efector.",
+                  "<b>Inversa:</b> dada la <b>posición deseada del efector</b>, ¿<b>qué ángulos</b> necesita cada articulación? Mucho más compleja: puede <b>no tener solución</b> (fuera de alcance), tener <b>múltiples</b> (brazo redundante; con 7 DoF, infinitas) y, en general, <b>no hay fórmula cerrada</b> para 6 o más DoF → <b>métodos numéricos iterativos</b>.",
+                  "ROS incorpora bibliotecas de cinemática inversa como <b>KDL</b> (<i>Kinematics and Dynamics Library</i>) y <b>TRAC-IK</b>, para no resolverla desde cero.",
+                  "<b>Espacio de trabajo</b> (pregunta de parcial): un brazo de <b>tres segmentos de largo L</b> articulados en un mismo plano alcanza <b>todos los puntos de un círculo de radio 3L</b> (alcance = suma de los largos)."
+                ]
+              },
+              {
+                "title": "8. Aplicaciones de la robótica",
+                "points": [
+                  "<b>Industria:</b> el primer sector masivo. El <b>Unimate</b> se instaló en <b>General Motors en 1961</b>. Brazos de soldadura (FANUC, KUKA) repiten millones de veces con precisión de décimas de milímetro; su aporte central es la <b>calidad constante</b> (precisión y repetitividad). Los <b>datos de proceso</b> (temperaturas, corrientes, vibraciones, torques) permiten el <b>mantenimiento predictivo</b>: intervenir solo cuando hay evidencia de una falla próxima (a diferencia del <b>preventivo</b>, con calendario fijo), usando Random Forest o Gradient Boosting (Raschka y Mirjalili).",
+                  "<b>Medicina:</b> el <b>Da Vinci</b> permite cirugía mínimamente invasiva <b>sin ser autónomo</b>: el cirujano controla todo y el robot escala movimientos, elimina el temblor y permite maniobras de menos de un milímetro. Los datos de cada operación sirven para evaluar habilidades y asistir al cirujano.",
+                  "<b>Logística:</b> los robots <b>Kiva</b> (hoy Amazon Robotics) llevan estanterías a las estaciones de pedidos; requieren planificación de rutas, coordinación multiagente y optimización combinatoria. Robots de <b>última milla</b> (<b>Starship Technologies</b>) circulan entre peatones y bicicletas.",
+                  "<b>Entornos extremos:</b> <b>rover</b> = vehículo robótico, generalmente con ruedas, para explorar donde no puede ir una persona. De <b>Sojourner (1997)</b> a <b>Perseverance</b>; con <b>más de 20 minutos</b> de demora de comunicación, el control remoto permanente es inviable y deben decidir de forma <b>autónoma</b>. También ROV y AUV submarinos, robots en reactores nucleares dañados y drones térmicos de rescate.",
+                  "Al ser parte de infraestructuras críticas, la <b>ciberseguridad</b> del robot (datos, control y comunicaciones) es parte del diseño."
+                ]
+              },
+              {
+                "title": "9. Complemento: lo que preguntan los parciales (no está desarrollado en la lectura)",
+                "points": [
+                  "<b>Arquitectura de subsunción (Brooks, 1986):</b> control en <b>capas de comportamientos simples</b> que reaccionan <b>directamente a los datos sensoriales</b> de cada momento, sin modelo global del mundo («el mundo es su mejor modelo»). Es el ejemplo extremo de arquitectura reactiva; muchos elementos simples interactuando establecen <b>un orden a partir del aparente caos</b> (comportamiento emergente). Ventaja: adaptación rápida en entornos dinámicos.",
+                  "<b>Arquitectura de tres capas (híbrida):</b> capa <b>reactiva</b> (control en tiempo real), capa <b>ejecutiva</b> o de secuenciación y capa <b>deliberativa</b> o de <b>planificación</b> (acciones a largo plazo según objetivos globales). Permite actuar en tiempo real y a largo plazo.",
+                  "<b>Clasificación por autonomía:</b> robot <b>preprogramado</b>, robot <b>con aprendizaje</b> y robot <b>autónomo</b>. El «planificador» y el «razonador» quedan incluidos en estos casos.",
+                  "<b>Especificaciones de un manipulador:</b> cumplimiento de trayectorias, coordinación de movimientos, posicionamiento preciso y <b>esfuerzo apropiado</b> (son cuatro). <b>Geometría de un brazo:</b> <b>formas</b> y dimensiones de los vínculos rígidos y rotaciones posibles.",
+                  "<b>Robot móvil para abastecer una línea de montaje:</b> hay que saber si el recorrido es único o múltiple, si realiza pesado y los detalles de carga y descarga. <b>Virtudes de la robótica industrial:</b> capacidad de trabajo, precisión y repetitividad.",
+                  "<b>Control:</b> <b>lazo cerrado</b> = mide con sensores y corrige desviaciones (retroalimentación); <b>lazo abierto</b> = ejecuta sin medir el resultado."
                 ]
               }
             ],
@@ -61788,6 +62333,66 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Propioceptivo",
                 "def": "Sensores internos como los encoders de ángulo de las articulaciones."
+              },
+              {
+                "term": "Robot (Russell y Norvig)",
+                "def": "Agente en el mundo físico que percibe con sensores y actúa con actuadores."
+              },
+              {
+                "term": "Sensor propioceptivo",
+                "def": "Mide el estado interno del robot (encoders de articulaciones)."
+              },
+              {
+                "term": "LIDAR",
+                "def": "Pulsos láser y tiempo de rebote para mapas 3D con precisión de centímetros."
+              },
+              {
+                "term": "IMU",
+                "def": "Acelerómetros + giroscopios: orientación y movimiento sin visión."
+              },
+              {
+                "term": "Filtro de Kalman",
+                "def": "Fusiona estimaciones ruidosas de varios sensores en una más precisa."
+              },
+              {
+                "term": "Control de impedancia",
+                "def": "El actuador mide cuánto se movió y cuánta resistencia encontró."
+              },
+              {
+                "term": "Controlador reactivo",
+                "def": "Nivel más bajo, cientos o miles de Hz; reflejos sin razonar."
+              },
+              {
+                "term": "Grados de libertad",
+                "def": "6 para un objeto rígido: 3 de posición + 3 de orientación (pitch, roll, yaw)."
+              },
+              {
+                "term": "Cuaterniones",
+                "def": "4 números para la orientación; estándar de la industria."
+              },
+              {
+                "term": "Redundancia",
+                "def": "Más de 6 DoF: varias configuraciones para la misma posición final."
+              },
+              {
+                "term": "Cinemática directa",
+                "def": "Ángulos → posición del efector; solución única."
+              },
+              {
+                "term": "Cinemática inversa",
+                "def": "Posición deseada → ángulos; puede haber 0, varias o infinitas soluciones."
+              },
+              {
+                "term": "Cobot",
+                "def": "Robot colaborativo diseñado para trabajar junto a personas."
+              },
+              {
+                "term": "Subsunción",
+                "def": "Capas de comportamientos simples reactivos, sin modelo del mundo (Brooks, 1986)."
+              },
+              {
+                "term": "Mantenimiento predictivo",
+                "def": "Intervenir cuando los datos anticipan una falla, no por calendario."
               }
             ],
             "exam_traps": [
@@ -61796,44 +62401,106 @@ window.STUDY_SYSTEM_DATA = {
               "ROS <b>no</b> es un sistema operativo en sentido estricto.",
               "La cinemática <b>ignora fuerzas</b>; la dinámica las incluye.",
               "Un cuerpo rígido en el espacio tiene <b>6</b> grados de libertad (3 + 3).",
-              "Los actuadores hidráulicos: mucha fuerza/peso pero difícil de sellar; los eléctricos: más controlables, menos fuerza."
+              "Los actuadores hidráulicos: mucha fuerza/peso pero difícil de sellar; los eléctricos: más controlables, menos fuerza.",
+              "Ruedas: más eficientes y fáciles de controlar en lo plano, pero <b>pierden la ventaja</b> en terreno irregular → <b>VERDADERO</b>.",
+              "La autonomía <b>no es binaria</b>: es un espectro.",
+              "<b>ROS no es un sistema operativo</b>: es middleware que corre sobre Linux.",
+              "<b>Directa</b>: ángulos → posición (única). <b>Inversa</b>: posición → ángulos (más difícil, puede no tener solución o tener varias).",
+              "6 DoF = <b>3 de posición + 3 de orientación</b>. Un codo tiene 1 DoF.",
+              "La cinemática estudia el movimiento <b>sin las fuerzas</b>; las fuerzas son de la <b>dinámica</b>.",
+              "El <b>Da Vinci no es autónomo</b>: lo controla el cirujano.",
+              "<b>Unimate</b>: General Motors, <b>1961</b>. La palabra robot: <b>Čapek, 1920</b>.",
+              "Brazo de 3 segmentos de largo L en un plano: alcanza el <b>círculo de radio 3L</b>.",
+              "Subsunción ≠ deliberativa: actúa sobre los <b>datos sensoriales directos</b>, sin modelo del mundo.",
+              "Especificaciones de un manipulador: son <b>cuatro</b>, incluido el <b>esfuerzo apropiado</b>."
             ]
           },
           {
             "id": "L2",
             "title": "Lectura 2: Simulación y gemelos digitales",
-            "summary": "Simulación física y fidelidad, ventajas de la simulación (costos, seguridad y velocidad de iteración), simulación en aprendizaje automático (paralelización), gemelos digitales (Grieves, 2014), sus tres pilares (representación virtual, flujo de datos, sincronización bidireccional), su arquitectura por capas, riesgos de seguridad y el desajuste Sim2Real con sus estrategias de mitigación. Caso: entrenar en la Tierra para operar en Marte (rover Perseverance).",
+            "summary": "Simulación física y su fidelidad (compromiso entre precisión y costo computacional; simulación cinemática vs. dinámica), la simulación como generadora de datos, sus tres ventajas (costos y paralelización, seguridad y datos sintéticos, velocidad de iteración), su papel en RL, visión artificial y ciberseguridad; gemelo digital (Grieves, 2014) vs. simulación, sus tres pilares (representación virtual, monitoreo continuo con sensores, sincronización bidireccional), arquitectura en capas (física, conectividad con OPC-UA/MQTT/ROS, procesamiento con cloud/HPC/edge, aplicación) y seguridad; desajuste Sim2Real y estrategias (domain randomization, system identification, transfer learning, domain adaptation). Caso: el rover Perseverance.",
             "detail": [
               {
-                "title": "1. Simulación física y fidelidad",
+                "title": "1. Caso: entrenar en la Tierra para operar en Marte",
                 "points": [
-                  "<b>Simulación física:</b> modelo computacional que reproduce el comportamiento de un sistema respetando las leyes del mundo real (cuerpos rígidos, fricción, colisiones, deformación, fluidos...). No busca solo mostrar sino <b>anticipar</b> la respuesta ante distintas condiciones. Russell y Norvig (2016): entorno de experimentación donde un agente puede interactuar, decidir y aprender <b>sin los riesgos del mundo físico</b>.",
-                  "<b>Fidelidad:</b> a más detalle, <b>mayor costo computacional</b> (una computadora puede tardar horas en simular segundos). Lo importante es una fidelidad <b>suficiente para responder la pregunta de ingeniería</b>, no la simulación más compleja posible (ej. para verificar que un brazo no choque basta una simulación <b>cinemática</b>).",
-                  "<b>Caso Perseverance:</b> aterrizó en Marte el 18/02/2021 tras 203 días y 472 millones de km; opera con un retraso de comunicación de 3 a 22 minutos, por lo que debe decidir de forma semi-autónoma; su navegación se entrenó y validó en simulación antes del lanzamiento."
+                  "El <b>18 de febrero de 2021</b> el rover <b>Perseverance</b> aterrizó en Marte tras <b>203 días</b> y <b>472 millones de km</b>. Navega terreno desconocido, toma muestras, desplegó un helicóptero y decide de forma <b>semiautónoma</b> con un retraso de comunicación de <b>3 a 22 minutos</b>. Costó unos <b>USD 2.700 millones</b> y un error en Marte <b>no se puede corregir físicamente</b>.",
+                  "La NASA simuló la superficie marciana con datos de orbitadores: <b>gravedad reducida</b>, <b>suelo basáltico</b>, iluminación solar más débil y temperaturas de <b>−73 °C a 20 °C</b>. Corrió <b>miles de escenarios</b> (obstáculos, superficies inestables, fallas parciales de sensores) que retroalimentaban el diseño.",
+                  "El problema central no era robótico sino de <b>transferencia de conocimiento</b> del entorno modelado al real: habría grietas, polvo y comportamientos del terreno que el modelo no captaría.",
+                  "<b>Aplicación al caso:</b> <b>fidelidad suficiente</b> (solo las variables críticas, no cada grano de arena); escenarios <b>en paralelo</b> (costos y velocidad); <b>seguridad</b> (fallar miles de veces en simulación, nunca en Marte); la <b>brecha Sim2Real</b> mantuvo siempre un margen de incertidumbre; y en operación la telemetría alimenta un <b>gemelo digital</b> en la Tierra, aunque la demora impide una sincronización bidireccional inmediata."
                 ]
               },
               {
-                "title": "2. Ventajas de la simulación",
+                "title": "2. Simulación física y fidelidad",
                 "points": [
-                  "Tres ventajas: <b>reducción de costos</b> (energía, desgaste, instalaciones, tiempo de ingenieros, piezas dañadas), <b>incremento de la seguridad</b> (se cometen errores sin riesgo) y <b>aceleración de los ciclos de desarrollo</b>.",
-                  "<b>En aprendizaje automático / por refuerzo:</b> un agente puede requerir <b>millones de episodios</b> (Raschka y Mirjalili, 2017). La simulación permite ejecutar <b>cientos o miles de instancias en paralelo</b> sobre servidores con CPU/GPU, reduciendo el entrenamiento de meses a días u horas; un robot físico solo genera una experiencia a la vez. La ventaja no es solo reducir el desgaste mecánico."
+                  "<b>Simulación física:</b> modelo computacional que reproduce el comportamiento de un sistema <b>respetando las leyes físicas</b> (cuerpos rígidos, fricción, colisiones, deformaciones, fluidos, electromagnetismo). El objetivo no es solo mostrarlo sino <b>anticipar cómo responderá</b>.",
+                  "<b>Russell y Norvig (2016):</b> es un <b>entorno de experimentación</b> donde un agente interactúa, decide y aprende <b>sin los riesgos del mundo físico</b>: ensayar, equivocarse, cambiar parámetros y repetir sin dañar equipos ni personas.",
+                  "<b>Fidelidad vs. costo:</b> cuanto más detalle (contactos, deformación, disipación, efectos térmicos), mayor costo computacional; puede tardar <b>horas en simular segundos</b>. El objetivo es la fidelidad <b>suficiente para responder la pregunta de ingeniería</b>, no la máxima posible.",
+                  "<b>Ejemplo:</b> verificar que un brazo no choque en su recorrido → alcanza una <b>simulación cinemática</b> (posiciones, orientaciones, trayectorias). Manipular piezas delicadas o deformables → hace falta una <b>simulación dinámica</b> (fuerzas, contactos, aceleraciones).",
+                  "<b>Principio:</b> toda simulación es un <b>compromiso entre precisión y eficiencia</b>."
                 ]
               },
               {
-                "title": "3. Gemelos digitales",
+                "title": "3. La simulación como generadora de datos",
                 "points": [
-                  "Propuesto por <b>Michael Grieves (2014)</b> en la gestión del ciclo de vida de productos. Un <b>gemelo digital</b> es una representación virtual de un sistema físico que se mantiene <b>conectada de forma permanente</b> con él mediante sensores y flujos de datos en tiempo real. A diferencia de una simulación tradicional (estática), sirve para <b>monitoreo, predicción y optimización</b> durante todo el ciclo de vida y evoluciona con el sistema real.",
-                  "<b>Tres pilares:</b> (1) <b>representación virtual</b> del sistema (modelos físicos basados en ecuaciones, modelos entrenados con datos, o <b>enfoque híbrido</b> (Murphy, 2022)); (2) <b>flujo continuo de datos</b> desde sensores (temperatura, presión, vibración, LIDAR, etc.) con infraestructura de comunicaciones confiable y de baja latencia (OPC-UA, MQTT, ROS, Wi-Fi, Bluetooth, LoRaWAN, 5G); (3) <b>sincronización bidireccional</b>: el gemelo analiza, predice, evalúa escenarios y puede <b>enviar instrucciones de regreso</b> al activo físico (ciclo percepción-análisis-decisión-acción).",
-                  "Si falta alguno, se trata de una simulación convencional, una plataforma de monitoreo o un sistema de visualización, pero no de un gemelo digital en sentido estricto. Los datos del gemelo describen la <b>evolución completa</b> del sistema (no una «fotografía»), lo que permite detectar anomalías, estimar degradación y anticipar fallos.",
-                  "<b>Arquitectura por capas:</b> <b>capa física</b> (activos instrumentados con sensores), capa de <b>comunicación/adquisición de datos</b>, capa de <b>modelado y análisis</b> (modelos físicos, de ML, predicción y simulación de escenarios) y capa de <b>aplicación/visualización y decisión</b> (paneles, alertas, y envío de decisiones al sistema físico). La organización por capas permite que cada componente evolucione de manera independiente.",
-                  "<b>Seguridad:</b> cada sensor, protocolo, API y servicio en la nube <b>amplía la superficie de ataque</b>; un atacante podría alterar los datos que recibe el gemelo (sensor manipulado que informa temperaturas inexistentes, cámara que oculta defectos, inyección de datos falsos), de modo que las decisiones basadas en él serían erróneas."
+                  "Murphy (2022): los algoritmos modernos necesitan <b>enormes cantidades de ejemplos</b>; obtenerlos con experimentos reales suele ser lento, caro o inviable.",
+                  "<b>Visión en un depósito:</b> el modelo debe reconocer objetos con distintas iluminaciones, sombras, posiciones, distancias, oclusiones y fondos. Juntar esas fotos a mano lleva semanas; un simulador genera <b>cientos de miles de escenas en horas</b>, controlando cada variable.",
+                  "Ventaja doble: <b>más datos</b> y <b>control exacto</b> de las condiciones → datasets más variados y modelos más robustos.",
+                  "<b>Otras disciplinas:</b> <b>dinámica molecular</b> en bioinformática (cómo se pliegan proteínas o interactúan átomos antes del laboratorio) y <b>redes virtuales</b> en seguridad para simular ransomware, phishing, intrusiones o malware que aún no existe.",
+                  "Idea común: <b>aprender sin pagar el costo del error</b> (repetir miles de experimentos, provocar fallos a propósito). La simulación no reemplaza al mundo físico: permite llegar a él con <b>más confianza</b>."
                 ]
               },
               {
-                "title": "4. Desajuste Sim2Real",
+                "title": "4. Ventajas de la simulación",
                 "points": [
-                  "<b>Sim2Real gap:</b> un modelo con excelentes resultados en simulación comete errores inesperados en el mundo real. Causa: el simulador es un entorno <b>completamente conocido</b> (Russell y Norvig, 2016) donde las hipótesis (fricción constante, masas exactas, ruido caracterizado, iluminación ideal) rara vez se cumplen; la realidad siempre tiene incertidumbre. Ejemplos: un robot que agarra un objeto con la fuerza justa pero que lo deja resbalar por diferencias de fricción, o un detector de objetos entrenado con imágenes sintéticas que pierde rendimiento con ruido, reflejos y suciedad en la lente.",
-                  "<b>Estrategias de mitigación</b> (se suelen combinar): <b>Domain Randomization</b> (variar al azar física y gráficos durante el entrenamiento para obtener un modelo ultrarrobusto), <b>System Identification</b> (medir el hardware real —masas, fricción, retrasos— para calibrar el simulador), <b>Transfer Learning</b> (entrenar a fondo en simulación y hacer un ajuste fino con pocos datos reales) y <b>Domain Adaptation</b> (alinear matemáticamente los datos simulados con los reales)."
+                  "<b>Reducción de costos:</b> cada prueba física consume energía, desgasta piezas, ocupa instalaciones y tiempo de ingenieros, y puede romper componentes. Un agente de RL puede requerir <b>millones de episodios</b> (Raschka y Mirjalili): en un robot real serían meses o años. En simulación se corren <b>miles de instancias en paralelo</b> en servidores con CPU y GPU: de meses a <b>días u horas</b>. La <b>paralelización</b> es una de las razones principales de su centralidad.",
+                  "<b>Seguridad:</b> hay escenarios donde entrenar sobre el sistema real es inaceptable (un auto autónomo no aprende a reaccionar a choques chocando; un robot desminador no puede equivocarse; no se provocan fallos en un reactor). En simulación el robot puede chocar o caerse cuantas veces haga falta.",
+                  "<b>Datos sintéticos:</b> con datos sensibles (historias clínicas, finanzas, datos personales) se generan datos que <b>reproducen las características estadísticas</b> de los reales <b>sin exponer identidades</b> (Murphy, 2022).",
+                  "<b>Velocidad de iteración:</b> el ciclo tradicional (fabricar prototipo, ensayar, analizar, rediseñar, volver a fabricar) se reduce a <b>minutos</b> al cambiar un parámetro, una pieza, un sensor o una estrategia de control. Se exploran <b>cientos o miles de alternativas</b> y situaciones límite antes del primer prototipo."
+                ]
+              },
+              {
+                "title": "5. Simulación en el aprendizaje automático",
+                "points": [
+                  "De validar diseños pasó a ser uno de los principales mecanismos para <b>entrenar modelos</b>.",
+                  "<b>RL:</b> los algoritmos exploran <b>millones de estados</b> para estimar funciones de valor y aprender políticas que generalicen (Murphy). En paralelo, distintas instancias exploran estrategias, obstáculos o parámetros distintos, y toda esa experiencia alimenta el entrenamiento: <b>meses → días</b>.",
+                  "<b>Visión artificial:</b> el entorno virtual genera escenas variadas y, como conoce la posición y geometría exactas de cada objeto, produce <b>automáticamente las etiquetas</b> para detección, segmentación o estimación de profundidad.",
+                  "<b>Ciberseguridad:</b> infraestructuras virtuales con redes, servicios, usuarios y atacantes simulados para entrenar agentes que detectan y responden. Incluso <b>dos agentes compitiendo</b> (uno defiende, otro ataca) generan escenarios cada vez más complejos.",
+                  "La simulación aporta lo que el mundo físico no: <b>experiencia prácticamente ilimitada</b>, repetible y con escenarios extremos. Hoy es común <b>aprender primero en simulación y luego transferir</b> al mundo físico para la validación final."
+                ]
+              },
+              {
+                "title": "6. Gemelos digitales",
+                "points": [
+                  "<b>Simulación ≠ gemelo digital:</b> la simulación representa el comportamiento bajo ciertas condiciones; el gemelo digital mantiene una <b>conexión permanente</b> con el sistema físico.",
+                  "Concepto propuesto por <b>Michael Grieves (2014)</b> en la gestión del ciclo de vida de productos; se masificó con el <b>IoT</b>, la <b>nube</b> y el procesamiento en tiempo real.",
+                  "<b>Definición:</b> representación virtual de un sistema físico que <b>se mantiene actualizada</b> con datos del propio sistema. No es estático: <b>evoluciona junto con el objeto</b>. Sirve para <b>monitorear, analizar, predecir y optimizar</b>, y permite evaluar decisiones antes de ejecutarlas.",
+                  "Desde la IA, <b>reduce la incertidumbre</b> sobre el estado del sistema: Russell y Norvig distinguen entornos completamente y <b>parcialmente observables</b>; en los reales siempre hay variables no medibles, sensores con error o datos con retraso. El gemelo integra múltiples fuentes, aunque nunca elimina toda la incertidumbre.",
+                  "<b>Analogía:</b> una simulación es un <b>mapa impreso</b> de la ciudad; un gemelo digital es un <b>mapa que se actualiza</b> con tránsito, calles cortadas, obras y accidentes.",
+                  "Acompaña al activo <b>durante toda su vida útil</b> (del diseño al mantenimiento). Ejemplos: líneas de producción que anticipan fallos, parques eólicos que optimizan cada turbina, hospitales con equipos críticos, ciudades que integran tránsito, energía y transporte."
+                ]
+              },
+              {
+                "title": "7. Pilares y arquitectura de un gemelo digital",
+                "points": [
+                  "<b>Tres pilares</b> (si falta uno es una simulación, una plataforma de monitoreo o una visualización, pero no un gemelo digital): (1) <b>representación virtual</b>, (2) <b>flujo continuo de datos</b> del mundo físico y (3) <b>sincronización</b> que mantiene ambos alineados.",
+                  "<b>Representación virtual:</b> no solo la geometría, también cómo responde y evoluciona. Puede ser un <b>modelo físico</b> (ecuaciones), uno de <b>aprendizaje automático</b> (datos históricos) o un <b>enfoque híbrido</b> (Murphy), más robusto. El detalle depende del objetivo: monitorear la energía de un edificio no requiere cada tornillo; el análisis estructural de un puente, sí.",
+                  "<b>Monitoreo continuo:</b> sensores de temperatura, presión, vibración, posición, consumo, cámaras, LIDAR… transmitidos con <b>OPC-UA o MQTT</b> (industria), <b>ROS</b> (robótica) o Wi-Fi, Bluetooth, <b>LoRaWAN</b> o 5G (IoT). Importa la información <b>confiable y oportuna</b>, no el protocolo. Para ciencia de datos es valioso porque describe la <b>evolución completa</b> del sistema, no una foto.",
+                  "<b>Sincronización bidireccional</b> (nivel más avanzado): el físico envía datos y el gemelo analiza, predice, evalúa escenarios y <b>devuelve instrucciones</b> al activo (ciclo percepción → análisis → decisión → acción). Ej.: un motor que vibra de más → el gemelo lo compara con modelos de degradación → recomienda mantenimiento o <b>baja la velocidad</b> automáticamente.",
+                  "<b>Arquitectura en capas:</b> <b>física</b> (activos con sensores: robots, edificios, vehículos; en robótica, cámaras, LIDAR, IMU, GPS, encoders); <b>conectividad</b> (OPC-UA en industria; MQTT, AMQP o CoAP en IoT; tópicos, servicios y acciones de ROS; API REST, WebSockets o eventos); <b>procesamiento</b> (modelos físicos, ML, estadísticos y de optimización que sincronizan y <b>anticipan</b>: ¿qué pasa si sube la carga?, ¿qué componente fallará primero?; en <b>nube</b>, <b>HPC</b> o <b>edge computing</b> cuando se necesita baja latencia); <b>aplicación</b> (tableros, visualización 3D, o <b>control automático</b> sin intervención humana, como ajustar una cinta transportadora o redistribuir la carga de servidores).",
+                  "<b>Seguridad:</b> cada sensor, protocolo, API o servicio en la nube <b>amplía la superficie de ataque</b>. Un atacante puede alterar los datos y hacer que el gemelo deje de reflejar la realidad: temperaturas inexistentes, una cámara que oculta defectos o datos falsos para manipular el sistema físico. Hay que incorporar desde el diseño autenticación, cifrado, control de acceso, verificación de integridad, detección de anomalías y monitoreo continuo."
+                ]
+              },
+              {
+                "title": "8. Desajuste entre simulación y realidad (Sim2Real gap)",
+                "points": [
+                  "<b>Paradoja:</b> cuanto más realista parece la simulación, más confianza se le tiene, pero un modelo excelente en simulación puede fallar al enfrentar el mundo físico.",
+                  "<b>Origen:</b> supuestos que facilitan el modelo pero rara vez se cumplen: <b>fricción constante</b>, masa e inercia <b>perfectamente conocidas</b>, ruido de sensores caracterizado, iluminación exacta. Russell y Norvig: el simulador es un entorno <b>completamente conocido</b>; la realidad <b>nunca se conoce por completo</b>.",
+                  "<b>Consecuencias:</b> un robot que aprendió a sujetar con la fuerza justa puede dejar resbalar, deformar o romper el objeto real por diferencias de masa, textura o fricción. Un detector entrenado con imágenes sintéticas pierde rendimiento ante ruido electrónico, compresión, reflejos, iluminación variable o una lente sucia: cambia la <b>distribución de los datos de entrada</b>.",
+                  "<b>Domain randomization:</b> variar <b>al azar</b> la física y los gráficos del simulador al entrenar para que el modelo sea robusto ante cualquier imprevisto.",
+                  "<b>System identification:</b> <b>medir el hardware real</b> (masas, fricción, retrasos) y <b>calibrar el simulador</b> para que se parezca lo más posible a la realidad.",
+                  "<b>Transfer learning:</b> entrenar a fondo en simulación (barato) y hacer un <b>ajuste fino con pocos datos reales</b>.",
+                  "<b>Domain adaptation:</b> algoritmos que <b>alinean matemáticamente</b> los datos simulados con los reales para que el modelo no note la diferencia.",
+                  "Ninguna es universal; los proyectos exitosos <b>combinan varias</b>."
                 ]
               }
             ],
@@ -61873,6 +62540,46 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Domain adaptation / transfer learning",
                 "def": "Alinear datos simulados con reales / ajuste fino con pocos datos reales."
+              },
+              {
+                "term": "Fidelidad suficiente",
+                "def": "El detalle justo para responder la pregunta de ingeniería; más detalle = más costo."
+              },
+              {
+                "term": "Simulación cinemática vs. dinámica",
+                "def": "Solo trayectorias y posiciones vs. también fuerzas, contactos y aceleraciones."
+              },
+              {
+                "term": "Paralelización",
+                "def": "Miles de instancias simuladas a la vez: el RL pasa de meses a días u horas."
+              },
+              {
+                "term": "Datos sintéticos",
+                "def": "Reproducen la estadística de los datos reales sin exponer identidades."
+              },
+              {
+                "term": "Tres pilares",
+                "def": "Representación virtual, flujo continuo de datos y sincronización."
+              },
+              {
+                "term": "Sincronización bidireccional",
+                "def": "El gemelo también envía instrucciones al activo físico."
+              },
+              {
+                "term": "Capas del gemelo",
+                "def": "Física, conectividad, procesamiento y aplicación."
+              },
+              {
+                "term": "OPC-UA / MQTT",
+                "def": "Protocolos de comunicación industrial e IoT."
+              },
+              {
+                "term": "Edge computing",
+                "def": "Procesar cerca de donde se generan los datos para reducir la latencia."
+              },
+              {
+                "term": "Domain adaptation",
+                "def": "Alinear matemáticamente datos simulados y reales."
               }
             ],
             "exam_traps": [
@@ -61881,46 +62588,115 @@ window.STUDY_SYSTEM_DATA = {
               "La fidelidad máxima <b>no</b> es el objetivo: debe ser suficiente para la pregunta.",
               "La conectividad del gemelo digital <b>amplía la superficie de ataque</b>.",
               "El simulador es un entorno <b>completamente conocido</b>; la realidad nunca lo es: de ahí el Sim2Real gap.",
-              "Ninguna estrategia Sim2Real es universal; se combinan."
+              "Ninguna estrategia Sim2Real es universal; se combinan.",
+              "«Simular solo reduce el desgaste; los episodios necesarios no cambian» → <b>FALSO</b>: la ventaja clave es la <b>paralelización</b>.",
+              "Simulación ≠ gemelo digital: el gemelo tiene <b>conexión permanente</b> con el sistema físico.",
+              "El gemelo digital lo propuso <b>Grieves (2014)</b>.",
+              "Sin uno de los <b>tres pilares</b> no hay gemelo digital (sería una simulación, un monitoreo o una visualización).",
+              "No se busca la máxima fidelidad sino la <b>suficiente</b>: más detalle = más costo computacional.",
+              "<b>System identification</b> calibra el simulador con mediciones reales; <b>domain randomization</b> varía el simulador al azar.",
+              "<b>Transfer learning</b>: entrenar en simulación + ajuste fino con pocos datos reales.",
+              "El simulador es un entorno <b>completamente conocido</b>; la realidad no: de ahí la brecha Sim2Real.",
+              "Perseverance: aterrizó el <b>18/2/2021</b>; demora de <b>3 a 22 minutos</b>; temperaturas de −73 °C a 20 °C.",
+              "La conectividad de un gemelo <b>amplía la superficie de ataque</b>: datos falsos pueden provocar acciones físicas peligrosas."
             ]
           },
           {
             "id": "L3",
             "title": "Lectura 3: SLAM y planificación de movimiento",
-            "summary": "Localización (seguimiento local, global y robot reubicado), estimación probabilística de la posición, sensores, mapeo (mapas métricos y topológicos), SLAM (online vs. Full SLAM, cierre de bucle), planificación de movimiento (A*, Dijkstra, RRT y PRM, planificación local con campos de potencial) y el caso de conducción autónoma de Waymo.",
+            "summary": "Las tres preguntas de la navegación (¿dónde estoy?, ¿cómo es el entorno?, ¿cómo llego?): odometría y deriva, filtro de Kalman (1960) y el origen de SLAM (Smith y Cheeseman, 1986); localización como estimación de estado, tipos (seguimiento, global, robot reubicado), sensores (LIDAR, cámaras, odometría, IMU, robot_localization), estimación probabilística con filtro de Bayes recursivo (predicción y corrección), Kalman, EKF y filtros de partículas (AMCL); mapas métricos (ocupación por celdas, nubes de puntos, características) y topológicos; SLAM online vs. Full SLAM y loop closure; planificación en el espacio de configuración (C-space), Dijkstra (1959) y A*, RRT (probabilísticamente completo), planificador global vs. local, campo de potencial virtual y Navigation Stack de ROS. Caso: Waymo.",
             "detail": [
               {
-                "title": "1. Contexto histórico",
+                "title": "1. Las tres preguntas y la historia del problema",
                 "points": [
-                  "La navegación inicial se basaba en <b>odometría</b> (integrar el movimiento), pero los pequeños errores se acumulaban dando lugar a la <b>deriva</b>. Se incorporó el <b>filtro de Kalman</b> (Kalman, 1960; originado en aplicaciones aeroespaciales) para combinar mediciones imperfectas con un modelo de movimiento.",
-                  "En los años 80 se formuló <b>SLAM (Simultaneous Localization and Mapping)</b> (Smith y Cheeseman, 1986; Durrant-Whyte y Bailey, 2006). Evolución impulsada por sensores LIDAR más baratos y precisos, más cómputo a bordo y algoritmos probabilísticos (filtros de partículas, SLAM basado en grafos con <b>loop closure</b>). La planificación pasó de <b>Dijkstra (1959)</b> y <b>A*</b> a métodos de muestreo como <b>RRT</b>.",
-                  "<b>Caso Waymo:</b> en octubre de 2020 abrió al público en Phoenix su servicio de transporte completamente autónomo, sin conductor a bordo (Krafcik, 2020); combina localización, mapeo, planificación y percepción."
+                  "Para moverse de forma autónoma un robot responde: <b>¿dónde estoy?</b> (<b>localización</b>), <b>¿cómo es el entorno?</b> (<b>mapeo</b>) y <b>¿cómo llego a destino?</b> (<b>planificación de movimiento</b>). Aplica a vehículos autónomos, robots de servicio, drones, exploración espacial y submarina y realidad aumentada.",
+                  "<b>Odometría:</b> estimar el desplazamiento a partir del giro de las ruedas. Los pequeños errores <b>se acumulan</b> → <b>deriva</b>.",
+                  "<b>Filtro de Kalman</b> (aeroespacial, años 60; Kalman, 1960): combina mediciones imperfectas con un modelo de movimiento para estimar la posición de forma mucho más confiable.",
+                  "<b>SLAM</b> (<i>Simultaneous Localization and Mapping</i>) se formuló a <b>mediados de los 80</b> (Smith y Cheeseman, 1986): localización y mapa son <b>interdependientes</b>. Avanzó con LIDAR más baratos y precisos, más cómputo a bordo y algoritmos probabilísticos (<b>filtros de partículas</b>, <b>SLAM basado en grafos</b> con <b>loop closure</b>).",
+                  "La planificación evolucionó de la búsqueda en grafos (<b>Dijkstra, 1959</b>, y <b>A*</b>) a métodos de <b>muestreo aleatorio</b> (<b>RRT</b>) para espacios de alta dimensión (brazos, humanoides)."
                 ]
               },
               {
-                "title": "2. Localización",
+                "title": "2. Caso: conducción autónoma con Waymo",
                 "points": [
-                  "<b>Tres tipos:</b> <b>seguimiento local</b> (posición inicial conocida; distribución unimodal/gaussiana; complejidad baja; se resuelve con odometría corregida por observaciones; es un problema de <b>filtrado</b>), <b>localización global</b> (sin información previa; distribución inicial <b>uniforme</b> que puede ser <b>multimodal</b>; complejidad alta; el robot activado en posición desconocida) y <b>robot reubicado</b> («problema del secuestro»: conocía su posición y es movido abruptamente; complejidad muy alta; prueba de robustez).",
-                  "<b>Estimación probabilística:</b> el robot nunca conoce su posición con certeza; mantiene una <b>distribución de probabilidad</b> sobre las posiciones posibles (creencia) en lugar de un único punto. Un enfoque <b>determinístico puntual</b> supone movimiento y sensores perfectos: si las ruedas patinan acumula error sin saberlo. Se usan filtros de Kalman, filtros de partículas (localización de Monte Carlo) y filtros bayesianos; en cada paso se hace <b>predicción</b> (movimiento) y <b>corrección</b> (observación).",
-                  "<b>Sensores:</b> odometría (encoders), IMU, GPS (no disponible en interiores o minas), cámaras y <b>LIDAR</b>; la fusión de sensores reduce la incertidumbre."
+                  "En <b>octubre de 2020</b> Waymo (Alphabet, surgida del proyecto de Google) abrió en <b>Phoenix, Arizona</b>, un servicio de transporte <b>sin conductor humano</b>: recoge pasajeros, comparte calles con peatones, ciclistas y autos y respeta semáforos y señales.",
+                  "No dependía de un algoritmo único sino de una <b>arquitectura coordinada</b> de localización, percepción, mapeo y planificación en tiempo real, con precisión de <b>centímetros</b>.",
+                  "<b>Sensores:</b> LIDAR (nubes de puntos 3D), cámaras de alta resolución, <b>radares</b> (funcionan con lluvia o niebla) y <b>GPS diferencial</b>. Ninguno alcanza solo: la fuerza está en la <b>fusión</b>.",
+                  "<b>Mapa HD</b> hecho de antemano con muchas recorridas: ubicación centimétrica de señales, marcas en la calzada, cordones y postes. El SLAM compara lo observado con ese mapa para corregir la posición y distinguir lo que cambia (vehículos, peatones, obras).",
+                  "<b>Aplicación al caso:</b> es <b>seguimiento</b>, no localización global (parte del GPS y la última posición); ciclo de <b>predicción</b> (odometría + IMU, sube la incertidumbre) y <b>corrección</b> (LIDAR y cámaras contra el mapa HD). El mapa HD lleva el <b>mapeo offline</b> y rompe la circularidad de SLAM: más precisión, pero <b>depende de que el mapa esté vigente</b> (obras o calles cerradas pueden confundirse con errores). Planificación en dos niveles: <b>global</b> sobre el grafo vial (tipo Dijkstra/A*) y <b>local</b> varias veces por segundo. El C-space de un auto es de baja dimensión, así que <b>no necesita RRT</b>."
                 ]
               },
               {
-                "title": "3. Mapeo y SLAM",
+                "title": "3. Localización: problema de estimación de estado",
                 "points": [
-                  "<b>Mapas métricos</b> (rejillas de ocupación, nubes de puntos: representan geometría con coordenadas) y <b>mapas topológicos</b> (grafos de lugares y conexiones: más compactos, útiles para planificar rutas de alto nivel).",
-                  "<b>SLAM</b> resuelve el círculo de dependencia: <b>se necesita el mapa para localizarse y localizarse para construir el mapa</b>. Permite construir un mapa de un entorno desconocido mientras se determina la propia ubicación en él, sin información previa. Es inferencia probabilística sobre un modelo gráfico (posiciones y características como variables latentes acopladas); un error inicial puede propagarse; la complejidad escala con el tamaño del entorno.",
-                  "<b>Dos filosofías (Murphy, 2022):</b> <b>SLAM online</b> (mantiene solo la posición actual y el mapa; eficiente en tiempo real) y <b>Full SLAM</b> (conserva la trayectoria completa; más costoso, pero permite el <b>cierre de bucle</b>: al reconocer un lugar ya visitado se corrige la ubicación actual y se reajusta retrospectivamente todo el camino, dando coherencia global al mapa).",
-                  "<b>Impacto interdisciplinario:</b> robótica, seguridad (relocalizar un atacante en el espacio de eventos), medicina, minería y realidad aumentada."
+                  "<b>Russell y Norvig (2016):</b> dadas observaciones sensoriales y un modelo de movimiento, inferir el <b>estado más probable</b>. Difícil porque los sensores tienen ruido, el movimiento nunca es exacto y el entorno cambia.",
+                  "Análogos: <b>seguimiento de objetos</b> en video, activos financieros o señales biológicas (Kalman como estándar); ubicar un dispositivo intruso por <b>triangulación WiFi/Bluetooth</b>; ubicar estructuras moleculares en microscopía de fluorescencia.",
+                  "<b>Seguimiento local (de posición):</b> posición inicial conocida aproximadamente; distribución <b>unimodal gaussiana</b>; complejidad <b>baja</b>; odometría corregida con observaciones. Murphy lo plantea como un problema de <b>filtrado</b>.",
+                  "<b>Localización global:</b> sin información previa; distribución <b>uniforme → multimodal → unimodal</b> (varias hipótesis que se resuelven con más observaciones); complejidad <b>alta</b>; robot encendido en lugar desconocido.",
+                  "<b>Robot reubicado</b> (<i>kidnapped</i>): conocía su posición pero lo movieron abruptamente; distribución unimodal → uniforme → reconstruida; complejidad <b>muy alta</b>; sirve para probar robustez (análogo: un IDS que pierde el rastro de un atacante)."
                 ]
               },
               {
-                "title": "4. Planificación de movimiento",
+                "title": "4. Sensores para la localización",
                 "points": [
-                  "<b>Planificación global:</b> calcula la ruta general; <b>planificación local:</b> adapta la trayectoria a un entorno cambiante (personas, vehículos, otros robots).",
-                  "<b>Dijkstra (1959):</b> encuentra el camino más corto desde el nodo inicial a todos los alcanzables, expandiendo por <b>costo acumulado</b> sin información sobre el destino; puede ser menos eficiente. <b>A*:</b> añade una <b>heurística</b> h(n) hacia la meta (f = g + h), expande menos nodos y es óptimo si la heurística es admisible.",
-                  "<b>RRT (Rapidly-exploring Random Tree):</b> árbol que se expande con muestras aleatorias del espacio de configuración (respetando restricciones cinemáticas y evitando colisiones); útil en <b>espacios de alta dimensión</b> (brazos, humanoides) donde discretizar es imposible; <b>no garantiza optimalidad</b> pero es <b>probabilísticamente completo</b>. <b>PRM:</b> construye un mapa probabilístico (hoja de ruta) con muestras y luego consulta caminos.",
-                  "<b>Campo de potencial virtual (VPF):</b> la meta ejerce una fuerza atractiva y los obstáculos fuerzas repulsivas; simple y rápido, pero puede quedar atrapado en <b>mínimos locales</b>. Otros planificadores locales evalúan alternativas con puntuaciones (progreso hacia el objetivo, distancia a obstáculos, suavidad)."
+                  "<b>LIDAR:</b> pulsos láser y tiempo de regreso → nube de puntos 3D con error de <b>pocos centímetros a más de 100 m</b>. Antes muy caro, hoy mucho más accesible. Su ruido es <b>aditivo y bien caracterizado</b>, fácil de incorporar a algoritmos probabilísticos (Murphy).",
+                  "<b>Cámaras:</b> aportan color, textura y formas para reconocer objetos, pero pasar de imagen a geometría exige algoritmos más complejos. La <b>localización visual</b> compara características de la imagen con un mapa u observaciones previas: celulares en interiores sin GPS, realidad aumentada, microdispositivos en tejidos.",
+                  "<b>Odometría:</b> encoders en ruedas o articulaciones; no necesita referencias externas, pero <b>deriva</b>. Casi nunca se usa sola: se combina con GPS, cámaras, LIDAR o balizas. En ROS, el paquete <b>robot_localization</b> fusiona fuentes con <b>filtros de Kalman extendidos</b>.",
+                  "<b>IMU:</b> acelerómetros y giroscopios (aceleraciones lineales y velocidades angulares); frecuencia muy alta (<b>miles de mediciones por segundo</b>); sin referencias externas pero también <b>deriva</b> al integrar → se fusiona con GPS, cámaras o LIDAR."
+                ]
+              },
+              {
+                "title": "5. Estimación probabilística: Bayes, Kalman y partículas",
+                "points": [
+                  "<b>Determinística puntual:</b> «estoy exactamente en (x, y)»; supone movimiento y sensores perfectos. Si las ruedas patinan, se desvía y <b>se pierde sin saberlo</b> porque no representa la incertidumbre.",
+                  "<b>Probabilística:</b> mantiene una <b>distribución de probabilidad</b> sobre todas las posiciones posibles y la actualiza con cada movimiento y observación.",
+                  "<b>Filtro de Bayes recursivo</b> (Murphy, 2022): <b>predicción</b> (al moverse <b>aumenta</b> la incertidumbre por la imprecisión de actuadores y modelo) y <b>corrección o actualización</b> (al observar <b>se reduce</b>, descartando posiciones incompatibles). La alternancia mantiene la estimación consistente.",
+                  "<b>Filtro de Kalman:</b> implementación óptima cuando el sistema es <b>lineal</b> y el ruido <b>gaussiano</b>. <b>EKF</b> (Kalman extendido): para sistemas <b>no lineales</b>, mediante <b>linealizaciones locales</b>; fue base de muchos SLAM y sigue usándose en la industria. Ambos son casos particulares del filtro de Bayes bajo hipótesis gaussianas.",
+                  "<b>Filtros de partículas:</b> cuando la incertidumbre no es una sola gaussiana (localización global con varias posiciones igual de probables). Representan la distribución con <b>partículas</b> (cada una, una hipótesis de posición) que cambian de peso, desaparecen o se generan y se concentran en la ubicación más probable. <b>AMCL</b> (<i>Adaptive Monte Carlo Localization</i>) es el estándar en robots de servicio y viene en el stack de navegación de ROS."
+                ]
+              },
+              {
+                "title": "6. Mapeo robótico: mapas métricos y topológicos",
+                "points": [
+                  "Para el robot, un mapa es una <b>estructura de datos</b> para entender el entorno, localizarse y planificar. Russell y Norvig: <b>métricos</b> (coordenadas y distancias, geometría precisa) y <b>topológicos</b> (lugares conectados por vecindad). Muchos sistemas usan <b>híbridos</b>.",
+                  "<b>Mapa de ocupación por celdas:</b> grilla regular donde cada celda guarda la <b>probabilidad de estar ocupada</b>, actualizada por inferencia bayesiana. Es simple, incorpora la incertidumbre y sirve directo para planificar (ocupada = obstáculo, libre = navegable). Contra: con entornos grandes o alta resolución, la <b>memoria crece mucho</b>.",
+                  "<b>Nubes de puntos:</b> guardan las mediciones del LIDAR; muchísimo detalle, pero sin estructura regular → <b>menos aptas para planificar</b> directamente.",
+                  "<b>Mapas de características:</b> solo elementos distintivos (esquinas, bordes, objetos reconocibles); <b>bajo costo</b> pero pierden geometría; base de la localización visual y la realidad aumentada.",
+                  "<b>Topológicos:</b> un <b>grafo</b>: nodos = lugares significativos (habitación, intersección), arcos = se puede ir de uno a otro. Pierden precisión métrica pero son <b>compactos</b>: una ruta entre habitaciones evalúa pocos nodos en vez de millones de celdas. Uso combinado: el topológico decide la <b>secuencia de lugares</b> y un métrico local resuelve <b>cómo moverse</b> en cada zona.",
+                  "Análogos: mapas de conectividad neuronal, grafos de topología de red (movimientos de un atacante), <b>grafos de conocimiento</b> de Google o Amazon."
+                ]
+              },
+              {
+                "title": "7. SLAM: localización y mapeo simultáneos",
+                "points": [
+                  "<b>El dilema:</b> para un mapa preciso hay que saber <b>desde dónde</b> se midió, y para estimar la posición hace falta <b>un mapa</b>. El robot necesita el mapa para localizarse y localizarse para hacer el mapa.",
+                  "<b>SLAM</b> construye el mapa de un entorno <b>desconocido</b> mientras determina la ubicación del robot en él, <b>sin información previa</b>. Russell y Norvig: uno de los problemas clásicos y avances más importantes de la robótica móvil. Su complejidad crece con el entorno (miles de puntos de referencia acoplados; un error inicial se propaga).",
+                  "Es <b>inferencia probabilística sobre un modelo gráfico</b>: posiciones y características del entorno son <b>variables latentes acopladas</b>. No busca un mapa perfecto sino la <b>distribución conjunta</b> de mapas y trayectorias compatibles con las mediciones.",
+                  "<b>SLAM online:</b> guarda solo la <b>posición actual y el mapa</b>, descarta el historial; eficiente en tiempo real. <b>Full SLAM:</b> conserva <b>toda la trayectoria</b>; más costoso, pero permite el <b>loop closure</b>.",
+                  "<b>Loop closure (cierre de bucle):</b> al reconocer un lugar ya visitado, corrige la posición actual y <b>reajusta retrospectivamente todo el camino</b>, dando coherencia global al mapa.",
+                  "<b>Impacto:</b> realidad aumentada y mixta (<b>HoloLens, Apple Vision Pro</b>) para alinear objetos virtuales con el mundo; integra filtros bayesianos, optimización no lineal, estructuras de búsqueda espacial y deep learning para reconocer lugares.",
+                  "<b>Dilema práctico:</b> un robot con plano previo se localiza rápido, pero si el edificio cambió (terremoto) el mapa lo engaña; uno sin mapa no depende de información vieja pero tarda más en explorar."
+                ]
+              },
+              {
+                "title": "8. Planificación de movimiento",
+                "points": [
+                  "Russell y Norvig la ubican en la <b>búsqueda en espacios de estados</b>: estado inicial, acciones y una secuencia que llegue al objetivo respetando restricciones (obstáculos, límites cinemáticos) y minimizando tiempo, distancia o energía.",
+                  "<b>Espacio de configuración (C-space):</b> todas las configuraciones posibles del robot. Vehículo en el plano: 2 dimensiones (3 con orientación); brazo de 6 articulaciones: <b>6 dimensiones</b>; humanoide: decenas. Con muchas dimensiones, <b>explorar todo es inviable</b>.",
+                  "<b>Dijkstra (1959):</b> sobre un grafo (celdas libres = nodos, adyacencias = arcos), expande primero los caminos de <b>menor costo acumulado</b>; con cola de prioridad cuesta <b>O((V + E) log V)</b>. Garantiza el camino más corto, pero <b>no sabe dónde está el objetivo</b> y explora regiones inútiles.",
+                  "<b>A*:</b> suma al costo acumulado una <b>heurística h(n)</b> que estima lo que falta y orienta la búsqueda hacia la meta. Con heurística <b>admisible</b> (nunca sobreestima) <b>sigue siendo óptimo</b>; en robótica móvil suele usarse la <b>distancia euclidiana</b>. Russell y Norvig: el algoritmo informado más eficiente para una heurística dada.",
+                  "<b>Muestreo — RRT</b> (<i>Rapidly-exploring Random Tree</i>): para C-spaces de muchas dimensiones; genera una configuración al azar, busca el nodo más cercano del árbol y lo extiende hacia ella (sin colisiones y respetando la cinemática) hasta llegar al objetivo. <b>No garantiza el óptimo</b>, pero es <b>probabilísticamente completo</b>: si hay solución, con tiempo suficiente la probabilidad de encontrarla tiende a 1. (PRM, <i>Probabilistic Roadmap</i>, es otro método de muestreo.)",
+                  "<b>Planificador global vs. local:</b> el global calcula la ruta general sobre el mapa; el local la adapta a lo que cambia (personas, vehículos, otros robots).",
+                  "<b>Campo de potencial virtual (VPF):</b> el objetivo <b>atrae</b> y los obstáculos <b>repelen</b>; el robot sigue la fuerza resultante. Es simple y rápido, pero puede quedar <b>atrapado en mínimos locales</b> donde las fuerzas se equilibran.",
+                  "<b>Planificador local basado en costos (estándar de ROS):</b> evalúa velocidades candidatas puntuando el progreso hacia el objetivo, la distancia a obstáculos y la suavidad, y elige la mejor."
+                ]
+              },
+              {
+                "title": "9. Navegación autónoma completa: Navigation Stack de ROS",
+                "points": [
+                  "La navegación real combina varios componentes. ROS los organiza en el <b>Navigation Stack</b>.",
+                  "<b>Cadena:</b> entra el mapa, los sensores, la odometría y las transformaciones entre sistemas de coordenadas → la <b>localización</b> estima la pose → el <b>planificador global</b> (p. ej., A*) calcula la ruta → el <b>planificador local</b> la convierte en <b>comandos de velocidad</b> que evitan obstáculos en tiempo real. Todo sobre una representación dinámica que combina el mapa original con las observaciones recientes.",
+                  "Murphy (2022): la dificultad no está en cada algoritmo por separado sino en <b>coordinarlos en tiempo real</b>, gestionando la incertidumbre, los cambios inesperados y la seguridad."
                 ]
               }
             ],
@@ -61964,6 +62740,50 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Campo de potencial virtual",
                 "def": "Meta atrae, obstáculos repelen; riesgo de mínimos locales."
+              },
+              {
+                "term": "Odometría y deriva",
+                "def": "Estimar el movimiento con encoders; el error se acumula con el tiempo."
+              },
+              {
+                "term": "Seguimiento vs. localización global",
+                "def": "Posición inicial conocida (unimodal) vs. desconocida (uniforme → multimodal)."
+              },
+              {
+                "term": "Robot reubicado",
+                "def": "Sabía dónde estaba y lo movieron; complejidad muy alta."
+              },
+              {
+                "term": "Filtro de Bayes recursivo",
+                "def": "Predicción (sube la incertidumbre) y corrección (baja con la observación)."
+              },
+              {
+                "term": "Kalman / EKF",
+                "def": "Óptimo en sistemas lineales con ruido gaussiano; EKF linealiza localmente."
+              },
+              {
+                "term": "Filtro de partículas / AMCL",
+                "def": "Cada partícula es una hipótesis de posición; sirve para distribuciones multimodales."
+              },
+              {
+                "term": "Mapa de ocupación",
+                "def": "Grilla con la probabilidad de ocupación de cada celda; ideal para planificar."
+              },
+              {
+                "term": "Mapa topológico",
+                "def": "Grafo de lugares conectados; compacto pero sin precisión métrica."
+              },
+              {
+                "term": "Online vs. Full SLAM",
+                "def": "Solo la pose actual vs. toda la trayectoria (permite loop closure)."
+              },
+              {
+                "term": "C-space",
+                "def": "Espacio de configuraciones; su dimensión crece con los grados de libertad."
+              },
+              {
+                "term": "RRT",
+                "def": "Árbol por muestreo aleatorio; probabilísticamente completo, no óptimo."
               }
             ],
             "exam_traps": [
@@ -61973,45 +62793,114 @@ window.STUDY_SYSTEM_DATA = {
               "SLAM: se necesita el mapa para localizarse y localizarse para hacer el mapa (<b>dependencia circular</b>).",
               "El <b>cierre de bucle</b> pertenece a Full SLAM/SLAM basado en grafos; reajusta toda la trayectoria.",
               "Los campos de potencial pueden quedar atrapados en <b>mínimos locales</b>.",
-              "Un enfoque determinístico puntual no representa la incertidumbre acumulada."
+              "Un enfoque determinístico puntual no representa la incertidumbre acumulada.",
+              "Dijkstra garantiza el camino más corto pero es <b>menos eficiente que A*</b> porque no usa heurística → <b>VERDADERO</b>.",
+              "<b>RRT no garantiza el óptimo</b>; es <b>probabilísticamente completo</b>.",
+              "En el filtro de Bayes, la <b>predicción aumenta</b> la incertidumbre y la <b>corrección la reduce</b>.",
+              "Kalman exige <b>linealidad y ruido gaussiano</b>; para no lineales se usa <b>EKF</b>; para multimodal, <b>partículas</b>.",
+              "Localización global = distribución inicial <b>uniforme</b>; seguimiento = <b>unimodal</b>.",
+              "Solo <b>Full SLAM</b> permite el <b>loop closure</b>; el online descarta el historial.",
+              "El campo de potencial puede quedar en un <b>mínimo local</b>.",
+              "Waymo resuelve un problema de <b>seguimiento</b> contra un <b>mapa HD offline</b>, no un SLAM completo en línea.",
+              "Odometría e IMU <b>derivan</b>: se fusionan con referencias absolutas (GPS, LIDAR, cámaras).",
+              "Para un brazo de muchos grados de libertad conviene <b>RRT</b>; para un auto (C-space chico), búsqueda en grafo."
             ]
           },
           {
             "id": "L4",
             "title": "Lectura 4: Visión artificial, sensores y ecosistema ROS",
-            "summary": "Visión artificial (captura, procesamiento, CNN), LiDAR, IMU, integración (fusión) de sensores como inferencia probabilística (Bayes), y el ecosistema ROS como middleware: nodos, tópicos (publicación/suscripción asíncrona), servicios (cliente-servidor síncrono), actions, ROS Master (ROS 1) y DDS (ROS 2). Caso: tractor autónomo 8R de John Deere (visión + LiDAR).",
+            "summary": "Cómo ve y percibe un robot: visión artificial (de píxeles a conceptos), captura (focal, apertura, exposición, ISO; infrarrojas, RGB-D, hiperespectrales), procesamiento clásico (histograma, filtros, Sobel/Canny, puntos clave) y CNN (AlexNet en ImageNet 2012), reconocimiento (clasificación, detección, segmentación semántica y de instancias; YOLO, SSD, R-CNN); sensores pasivos y activos: cámaras monoculares, estéreo, RGB-D y de eventos, calibración, LiDAR, IMU y ultrasónicos; integración de sensores como inferencia bayesiana; ROS como middleware: nodos, tópicos (pub/sub asíncrono, mensajes estándar), servicios (cliente-servidor síncrono), actions (tareas largas con progreso y cancelación), ROS Master vs. DDS en ROS 2, y el ciclo percepción-acción. Caso: tractor autónomo de John Deere.",
             "detail": [
               {
-                "title": "1. Caso John Deere y visión artificial",
+                "title": "1. Caso: John Deere y la cosecha autónoma",
                 "points": [
-                  "<b>Caso:</b> en CES 2022 John Deere presentó el tractor autónomo <b>8R</b> (tras comprar Bear Flag Robotics). Usa <b>seis pares de cámaras estéreo</b> (vista de 360°), con enfoque casi exclusivamente de <b>visión</b>, procesada con redes neuronales que distinguen suelo, cultivo, piedras y obstáculos. En huertos y viñedos, los árboles bloqueaban el <b>GPS</b> y la luz era tenue, por lo que sumaron <b>LiDAR</b> (emite su propia luz).",
-                  "<b>Visión artificial</b> (Russell y Norvig, 2016): extraer información útil de imágenes; una imagen es una <b>matriz de números</b> (intensidades de luz) y el desafío es pasar de píxeles a conceptos.",
-                  "<b>Captura:</b> la cámara convierte luz en señales eléctricas; la <b>resolución</b> determina el detalle; influyen longitud focal, apertura (poca profundidad de campo), exposición (desenfoque por movimiento) e ISO (ruido). Cámaras especiales (Géron, 2019): <b>infrarrojas</b> (nocturnas, termografía), <b>RGB-D</b> (color + profundidad por píxel) e <b>hiperespectrales</b> (decenas de bandas).",
-                  "<b>Procesamiento:</b> pasó de reglas y <b>características diseñadas a mano</b> al <b>aprendizaje profundo</b> (las <b>CNN</b> aprenden los patrones directamente de millones de imágenes). Una cámara, sin embargo, no mide distancias con precisión, no funciona igual de noche y puede engañarse con sombras y reflejos."
+                  "En <b>enero de 2022</b>, en el <b>CES de Las Vegas</b>, John Deere presentó un tractor <b>8R</b> que ara un campo <b>sin nadie al volante</b>, supervisado desde el celular. El núcleo técnico vino de <b>Bear Flag Robotics</b>, comprada el año anterior.",
+                  "Usa <b>seis pares de cámaras estéreo</b> con vista de <b>360°</b>. La primera versión se apoyó <b>casi solo en visión, sin LiDAR</b>, porque la cámara es más útil para identificar malezas. Redes neuronales clasifican <b>suelo, cultivo, piedras y obstáculos</b> y deciden decenas de veces por segundo si sigue, frena o esquiva.",
+                  "En <b>huertos y viñedos</b> aparecieron árboles de hasta <b>nueve metros</b> que bloquean el GPS y poca luz entre hileras: se <b>sumó LiDAR</b> (menos cámaras + LiDAR) para reconstruir los árboles en 3D y dosificar fitosanitarios.",
+                  "Combina cámaras, LiDAR y <b>radar</b> con <b>fusión sensorial</b>, más <b>GPS de precisión submétrica</b>. Cada tractor es una fuente de datos geoespaciales (semillas, agua, agroquímicos) y, como recibe órdenes remotas y envía telemetría, es un <b>dispositivo IoT industrial</b> que requiere autenticación, cifrado y control de acceso.",
+                  "<b>Aplicación al caso:</b> cámaras estéreo (profundidad por triangulación) + <b>CNN</b> que clasifica cada píxel (segmentación); LiDAR para cuando la cámara no alcanza (poca luz), aunque pierde rendimiento con lluvia o polvo; <b>fusión probabilística</b> con GPS; y una arquitectura de componentes tipo ROS (nodos que capturan, procesan, fusionan y mandan comandos), que permite actualizar el detector de malezas sin rediseñar todo."
                 ]
               },
               {
-                "title": "2. LiDAR e IMU",
+                "title": "2. Visión artificial: captura y procesamiento",
                 "points": [
-                  "<b>LiDAR (Light Detection and Ranging):</b> emite pulsos láser (típicamente infrarrojos) y mide el tiempo que tardan en volver (<b>tiempo de vuelo</b>); como la velocidad de la luz es conocida, calcula distancias con resolución milimétrica. Los LiDAR rotativos generan <b>nubes de puntos 3D</b> (millones de coordenadas) a 10-20 Hz. <b>Ventajas:</b> funciona en oscuridad total, rango de decenas a cientos de metros, precisión estable con la distancia. <b>Limitaciones:</b> costo (aunque bajó), materiales absorbentes o transparentes y degradación con <b>lluvia o niebla</b> densa.",
-                  "<b>IMU (Unidad de Medición Inercial):</b> combina <b>acelerómetros</b>, <b>giroscopios</b> y a menudo <b>magnetómetros</b> para medir aceleración lineal en 3 ejes, velocidad angular y orientación respecto del campo magnético terrestre. Su integración acumula <b>deriva</b>, por lo que se fusiona con otros sensores."
+                  "El cerebro humano dedica cerca del <b>30 % de la corteza</b> al procesamiento visual. <b>Russell y Norvig (2016):</b> la visión computacional es el problema de <b>extraer información útil de imágenes</b>; una imagen es una <b>matriz de números</b> (intensidades) y el desafío es pasar <b>de píxeles a conceptos</b>.",
+                  "Por mucho tiempo fue el cuello de botella de la robótica: reglas hechas a mano y condiciones de laboratorio; un cambio de luz bastaba para fallar.",
+                  "<b>Captura:</b> el sensor convierte la luz en señales eléctricas; cada celda fotosensible es un <b>píxel</b> y la <b>resolución</b> define el detalle. Influyen la <b>longitud focal</b>, la <b>apertura</b> (amplia → poca profundidad de campo), el <b>tiempo de exposición</b> (largo → desenfoque por movimiento) y el <b>ISO</b> (poca luz → ruido).",
+                  "Más allá del visible (Géron, 2019): cámaras <b>infrarrojas</b> (noche, termografía médica), <b>RGB-D</b> (color + distancia por píxel) e <b>hiperespectrales</b> (decenas de bandas a la vez).",
+                  "<b>Preprocesamiento clásico:</b> normalización del <b>histograma</b> (compensar iluminación), reducción de ruido con filtros <b>gaussianos o de mediana</b>, detección de bordes con <b>Sobel o Canny</b> y cambio de espacio de color. Sigue siendo relevante: la calidad del input condiciona el output.",
+                  "<b>Extracción de características:</b> se detectan <b>puntos clave</b> (esquinas, bordes, cambios de textura) y se describen con vectores <b>estables ante escala, rotación e iluminación</b>, para reconocer una silla de frente o de costado.",
+                  "<b>CNN:</b> en lugar de diseñar las características a mano, <b>las aprenden de los datos</b>; filtros convolucionales detectan bordes, texturas y formas, y las capas profundas arman representaciones complejas. <b>Hito: ImageNet 2012</b>, <b>AlexNet</b> (Krizhevsky, Sutskever y Hinton) bajó el error de clasificación de <b>~26 % a 16 %</b> y disparó el deep learning en visión."
                 ]
               },
               {
-                "title": "3. Integración de sensores",
+                "title": "3. Reconocimiento de objetos",
                 "points": [
-                  "Ningún sensor alcanza por sí solo: todos tienen <b>zonas ciegas</b>, condiciones de falla, incertidumbre propia y frecuencias limitadas. La <b>fusión de sensores</b> combina información (de tipos complementarios) para una percepción más completa y confiable.",
-                  "Es un problema de <b>inferencia probabilística</b> (Russell y Norvig, 2016): cada sensor aporta evidencia parcial e incierta; fusionarlas de forma estadísticamente óptima da la mejor estimación. Murphy (2022): bajo independencia condicional, combinar observaciones se deriva de la <b>regla de Bayes</b> (cada observación actualiza la creencia). Técnicas: filtro de Kalman, filtros de partículas."
+                  "Saber <b>qué hay y dónde</b>. Subproblemas: <b>clasificación de imagen</b> (qué categoría), <b>detección de objetos</b> (qué objetos y dónde, con <b>cajas delimitadoras</b>), <b>segmentación semántica</b> (categoría de <b>cada píxel</b>) y <b>segmentación de instancias</b> (qué píxeles pertenecen a <b>cada objeto individual</b>).",
+                  "Russell y Norvig: en el fondo es un problema de <b>clasificación</b> (asignar una etiqueta a un parche o a la imagen).",
+                  "Detectores modernos: <b>YOLO, SSD y la familia R-CNN</b>, precisos y en tiempo real. <b>YOLO</b> predice <b>todas las cajas y clases en una sola pasada</b> por la red (en vez de región por región); YOLOv8 y YOLOv9 detectan decenas de objetos en tiempo real con hardware común.",
+                  "<b>Usos:</b> robots de hospital que reconocen puertas, personas y obstáculos; cámaras inteligentes de seguridad (comportamientos anómalos, vehículos robados, reconocimiento facial); bioinformática (contar células, estructuras en radiografías, lesiones en tejidos)."
                 ]
               },
               {
-                "title": "4. El ecosistema ROS",
+                "title": "4. Sensores: cámaras",
                 "points": [
-                  "<b>ROS</b> no es un sistema operativo: es un <b>middleware</b> (capa de software) de <b>código abierto</b> que proporciona herramientas y mecanismos para que los componentes de un robot se comuniquen e integren. No implementa algoritmos de IA o control: ofrece una <b>arquitectura común</b> que permite reutilizar un algoritmo de visión con distintos sistemas de navegación o un controlador en distintas plataformas. Los componentes pueden ejecutarse en distintas computadoras y lenguajes.",
-                  "<b>Nodo:</b> unidad básica de ejecución; un <b>proceso independiente</b> que realiza una tarea específica (cámara, LiDAR, IMU, odometría, planificación, control). Responde a la <b>separación de responsabilidades</b>: si un nodo falla o se reemplaza, el resto puede seguir si se mantienen las interfaces. El comportamiento inteligente emerge de la interacción entre nodos.",
-                  "<b>Tópicos:</b> canales con nombre y <b>tipo de mensaje</b> definido; uno o varios nodos <b>publican</b> y otros se <b>suscriben</b> (comunicación <b>asíncrona</b> de publicación-suscripción, desacoplada). Ideales para <b>flujos continuos</b> (imágenes, LiDAR, odometría). Ej. /camera/image_raw.",
-                  "<b>Servicios:</b> modelo <b>cliente-servidor síncrono</b>: un nodo ofrece una funcionalidad, otro envía una solicitud y recibe una respuesta; para <b>solicitudes puntuales</b> que requieren respuesta antes de continuar (ej. pedir el cálculo de una trayectoria). Analogía: tópico = estación de radio; servicio = llamada telefónica. <b>Actions:</b> para tareas de larga duración con <b>retroalimentación (feedback)</b> y posibilidad de <b>cancelación</b> (ej. navegar a un punto).",
-                  "<b>Descubrimiento:</b> en <b>ROS 1</b> el <b>ROS Master</b> era un nodo central que registraba nodos, tópicos y servicios (directorio); en <b>ROS 2</b> se basa en <b>DDS (Data Distribution Service)</b>, sin nodo central (más robusto y distribuido). Cada sensor suele ser un nodo independiente que publica en tópicos."
+                  "Un sensor convierte una magnitud física (luz, temperatura, distancia, aceleración, campo magnético) en una <b>señal eléctrica</b>. Russell y Norvig distinguen <b>sensores pasivos</b> (solo reciben energía del entorno, como una cámara) y <b>activos</b> (emiten una señal y miden lo que vuelve, como el LiDAR o el ultrasonido).",
+                  "<b>Monocular:</b> la más común; imagen 2D desde un solo punto; <b>no estima directamente la profundidad</b> (algunas técnicas recuperan 3D parcial).",
+                  "<b>Estéreo:</b> dos cámaras calibradas separadas por una distancia conocida (<b>baseline</b>); con la <b>disparidad</b> entre imágenes <b>triangula la profundidad</b>. Da 3D denso <b>sin luz activa</b>.",
+                  "<b>RGB-D:</b> color + sensor de profundidad integrado; cada píxel tiene color y distancia (Intel RealSense, Microsoft Azure Kinect).",
+                  "<b>De eventos:</b> registran <b>cambios de luminosidad píxel a píxel de forma asíncrona</b> en vez de fotogramas completos; latencias de <b>microsegundos</b>; ideales para movimiento rápido (insectos, cámaras industriales, drones ágiles).",
+                  "<b>Calibración:</b> parámetros <b>intrínsecos</b> (distancia focal, centro óptico, distorsión) y <b>extrínsecos</b> (posición y orientación respecto de otros sensores o del mundo). Determina la calidad de todo el procesamiento posterior."
+                ]
+              },
+              {
+                "title": "5. Sensores: LiDAR, IMU y ultrasónicos",
+                "points": [
+                  "<b>LiDAR:</b> pulsos láser (típicamente infrarrojos); mide el tiempo de ida y vuelta y, con la velocidad de la luz, calcula la distancia con <b>resolución milimétrica</b>. Los <b>rotativos</b> (conocidos desde el DARPA Urban Challenge) giran 360° con varios haces y generan <b>nubes de puntos</b> (millones de coordenadas 3D) a <b>10–20 Hz</b>.",
+                  "LiDAR — ventajas: funciona en <b>oscuridad total</b> (emite su propia luz), alcance de decenas a cientos de metros y precisión estable en su rango. Limitaciones: costo históricamente alto (hoy menor), problemas con materiales <b>muy absorbentes o transparentes</b> y pérdida de rendimiento con <b>lluvia o niebla</b> (el agua dispersa los pulsos).",
+                  "<b>IMU:</b> acelerómetros, giroscopios y a menudo <b>magnetómetros</b>. Los <b>acelerómetros</b> miden la aceleración específica (incluida la gravedad: movimiento lineal y orientación respecto de la vertical); los <b>giroscopios</b> miden la velocidad angular (precisos a corto plazo pero <b>derivan</b>). Combinados con un <b>EKF o un filtro complementario</b> dan una orientación mucho más confiable. En ROS: el mensaje <b>sensor_msgs/Imu</b> con aceleración, velocidad angular, orientación y <b>matrices de covarianza</b> (incertidumbre). Drones (estabilidad a cientos de Hz), brazos (posición del efector).",
+                  "<b>Ultrasónicos:</b> como los murciélagos; pulso de sonido de <b>20 a 200 kHz</b>; distancia = <b>velocidad del sonido × la mitad del tiempo de ida y vuelta</b>. Simples, baratos y fáciles de integrar; obstáculos a <b>corta distancia</b> (sensores de estacionamiento, nivel de tanques, robots en entornos estructurados). Limitaciones: alcance corto, materiales absorbentes (espuma, telas gruesas) y la velocidad del sonido depende de la <b>temperatura</b>. Ventaja: <b>independientes de la iluminación</b>, buen complemento de los ópticos."
+                ]
+              },
+              {
+                "title": "6. Integración de sensores",
+                "points": [
+                  "Ningún sensor alcanza solo: todos tienen <b>zonas ciegas</b>, condiciones de falla, incertidumbre y frecuencias limitadas. La cámara no mide bien distancias, rinde peor de noche y se engaña con sombras o reflejos; el LiDAR sufre con lluvia; la IMU deriva.",
+                  "La <b>integración (fusión)</b> combina varios sensores —a veces iguales, más seguido complementarios— para una percepción <b>más completa y confiable</b> que la de cualquiera por separado.",
+                  "<b>Russell y Norvig:</b> es un problema de <b>inferencia probabilística</b>: cada sensor aporta evidencia parcial e incierta, y se combinan de forma estadísticamente óptima. <b>Murphy (2022):</b> con independencia condicional, se deriva de la <b>regla de Bayes</b>; cada observación nueva actualiza la creencia sobre el estado."
+                ]
+              },
+              {
+                "title": "7. ROS: middleware, nodos y tópicos",
+                "points": [
+                  "Integrar algoritmos en un robot real (cámaras, LiDAR, IMU, motores, planificadores, interfaces, en distintas computadoras y lenguajes) suele ser más difícil que el algoritmo en sí.",
+                  "<b>ROS no es un sistema operativo</b>: es un <b>middleware</b>, una capa de software con bibliotecas y herramientas de <b>código abierto</b> para que los componentes se comuniquen. Su aporte no es implementar IA o control, sino una <b>arquitectura común</b> para desarrollar, integrar y <b>reutilizar</b> algoritmos en distintas plataformas. Tiene miles de paquetes mantenidos por la comunidad.",
+                  "<b>Nodo:</b> unidad básica de ejecución; un <b>proceso independiente</b> con una tarea específica (cámara, LiDAR, IMU, odometría, localización, SLAM, planificación, detección, comandos de velocidad). Aplica la <b>separación de responsabilidades</b>: si un nodo falla o se reemplaza, el resto sigue si se respetan las interfaces. El comportamiento inteligente <b>emerge de la interacción</b> entre nodos y facilita el trabajo en equipos.",
+                  "<b>Tópico:</b> canal con <b>nombre</b> y <b>tipo de mensaje</b>; unos nodos <b>publican</b> y otros se <b>suscriben</b>. Comunicación <b>asíncrona</b>: el emisor no sabe quién recibe ni el receptor de dónde viene. Ej.: la cámara publica en <b>/camera/image_raw</b> y varios nodos (personas, profundidad, señales) usan las mismas imágenes.",
+                  "Este <b>desacoplamiento</b> permite cambiar la cámara o el detector sin tocar el resto, siempre que se publique el mismo mensaje en el mismo tópico.",
+                  "<b>Mensajes estándar:</b> <b>sensor_msgs/Image</b> (imágenes), <b>sensor_msgs/PointCloud2</b> (nubes de puntos), <b>sensor_msgs/Imu</b>, <b>geometry_msgs/Twist</b> (comandos de velocidad), <b>geometry_msgs/PoseStamped</b> (poses) y <b>nav_msgs/OccupancyGrid</b> (mapas de ocupación). Permiten interoperar entre fabricantes y reutilizar software."
+                ]
+              },
+              {
+                "title": "8. ROS: servicios, actions y sistemas distribuidos",
+                "points": [
+                  "<b>Servicios:</b> modelo <b>cliente-servidor</b>, <b>puntual y síncrono</b>: el cliente pide y <b>espera</b> la respuesta. Para operaciones que condicionan el paso siguiente: pedir el cálculo de una trayectoria, identificar objetos en una imagen o consultar si la pinza sujetó la pieza.",
+                  "<b>Analogía:</b> un tópico es una <b>estación de radio</b> (transmite siempre y cualquiera escucha); un servicio es una <b>llamada telefónica</b> (pregunta concreta y se espera la respuesta). Pedir con un servicio cada una de 30 imágenes por segundo sería absurdo; esperar una trayectoria puntual en un tópico, también.",
+                  "<b>Actions</b> (ROS 2): tareas <b>largas</b> (segundos o minutos) que deben informar <b>progreso</b> y poder <b>cancelarse</b>. El cliente envía la meta, recibe <b>feedback periódico</b> y al final el <b>resultado</b>, sin bloquear el sistema. Ej.: ir al otro extremo de una planta, manipular objetos, inspección autónoma.",
+                  "<b>Resumen:</b> <b>tópicos</b> = flujos continuos (imágenes, sensores, estados); <b>servicios</b> = solicitudes puntuales con respuesta inmediata; <b>actions</b> = tareas largas con progreso y cancelación. Elegir bien es una de las decisiones de diseño más importantes.",
+                  "<b>Distribuido:</b> los nodos pueden correr en distintos equipos (computadora del robot, servidor con <b>GPU</b> para visión, microcontroladores para control de bajo nivel en milisegundos) como si fueran un solo sistema.",
+                  "<b>ROS 1:</b> el <b>ROS Master</b> era un directorio central donde los nodos se registraban y se descubrían. <b>ROS 2:</b> descubrimiento <b>distribuido con DDS</b> (<i>Data Distribution Service</i>): sin nodo central, más escalable y <b>sin punto único de falla</b>, mejor para la industria."
+                ]
+              },
+              {
+                "title": "9. Ciclo completo percepción-acción",
+                "points": [
+                  "<b>Percepción:</b> cámaras (imágenes), LiDAR (distancias), IMU (aceleraciones y velocidades angulares) y encoders (desplazamiento de las ruedas); cada uno con su nodo publicando en su tópico.",
+                  "<b>Percepción inteligente:</b> modelos de visión detectan personas, señales u objetos; otros algoritmos procesan la nube del LiDAR para obstáculos y geometría.",
+                  "<b>Localización:</b> combina sensores con estimación probabilística; el resultado es una <b>distribución</b> (pose con incertidumbre), no una posición exacta. En entornos desconocidos, <b>SLAM</b> construye el mapa a la vez.",
+                  "<b>Planificación:</b> trayectoria hacia el destino evitando obstáculos y respetando las restricciones de la plataforma, considerando seguridad, estabilidad, obstáculos dinámicos y cambios del entorno (no solo el camino más corto).",
+                  "<b>Control:</b> el controlador convierte la trayectoria en órdenes a los actuadores (en un robot diferencial, la velocidad de cada rueda). Los sensores siguen informando para corregir.",
+                  "Es un <b>ciclo permanente</b> de <b>percepción, estimación, decisión y acción</b>, no pasos aislados. En ROS cada función es un nodo que coopera por tópicos, servicios y actions. ROS <b>no reemplaza</b> los algoritmos: da la <b>infraestructura para integrarlos</b>."
                 ]
               }
             ],
@@ -62055,6 +62944,50 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "ROS Master vs. DDS",
                 "def": "ROS 1 usaba un nodo maestro; ROS 2 usa DDS sin nodo central."
+              },
+              {
+                "term": "Visión computacional",
+                "def": "Extraer información útil de imágenes: de píxeles a conceptos (Russell y Norvig)."
+              },
+              {
+                "term": "AlexNet / ImageNet 2012",
+                "def": "CNN que bajó el error de ~26 % a 16 % e inició la era del deep learning en visión."
+              },
+              {
+                "term": "Segmentación semántica vs. de instancias",
+                "def": "Categoría de cada píxel vs. qué píxeles son de cada objeto individual."
+              },
+              {
+                "term": "YOLO",
+                "def": "Detecta todas las cajas y clases en una sola pasada: tiempo real."
+              },
+              {
+                "term": "Sensor pasivo vs. activo",
+                "def": "Solo recibe energía (cámara) vs. emite y mide el retorno (LiDAR, ultrasonido)."
+              },
+              {
+                "term": "Cámara estéreo",
+                "def": "Dos cámaras con baseline conocido; profundidad por disparidad y triangulación."
+              },
+              {
+                "term": "Cámara RGB-D",
+                "def": "Color + distancia por píxel (RealSense, Azure Kinect)."
+              },
+              {
+                "term": "Cámara de eventos",
+                "def": "Registra cambios de luminosidad por píxel en forma asíncrona; microsegundos."
+              },
+              {
+                "term": "Calibración",
+                "def": "Parámetros intrínsecos (focal, centro, distorsión) y extrínsecos (pose)."
+              },
+              {
+                "term": "Ultrasónico",
+                "def": "Distancia = velocidad del sonido × mitad del tiempo de ida y vuelta; 20–200 kHz."
+              },
+              {
+                "term": "DDS",
+                "def": "Descubrimiento distribuido de ROS 2; reemplaza al ROS Master sin punto único de falla."
               }
             ],
             "exam_traps": [
@@ -62063,7 +62996,18 @@ window.STUDY_SYSTEM_DATA = {
               "El LiDAR funciona <b>sin luz</b>, pero se degrada con lluvia o niebla densa.",
               "Una cámara sola no mide distancias con precisión ni funciona igual de noche: por eso se fusionan sensores.",
               "Las <b>actions</b> se usan para tareas largas con feedback y cancelación.",
-              "En ROS 2 desaparece el ROS Master: se usa <b>DDS</b>."
+              "En ROS 2 desaparece el ROS Master: se usa <b>DDS</b>.",
+              "Tópicos para flujos continuos y servicios para solicitudes puntuales → <b>VERDADERO</b>; no son intercambiables.",
+              "<b>ROS no es un sistema operativo</b>: es middleware.",
+              "Las imágenes continuas de una cámara van por <b>tópicos</b>, no por servicios.",
+              "Una tarea larga que informa progreso y se puede cancelar → <b>Action</b>.",
+              "ROS 1 usa <b>ROS Master</b> (central); ROS 2 usa <b>DDS</b> (distribuido, sin punto único de falla).",
+              "La cámara <b>monocular no mide profundidad</b> directamente; la <b>estéreo</b> sí, por triangulación.",
+              "El LiDAR funciona en <b>oscuridad</b> pero se degrada con <b>lluvia o niebla</b>.",
+              "Los ultrasónicos no dependen de la luz, pero sí de la <b>temperatura</b> (velocidad del sonido).",
+              "El giroscopio <b>deriva</b>; se combina con el acelerómetro mediante EKF o filtro complementario.",
+              "La primera versión del tractor de John Deere usaba <b>casi solo cámaras</b>; en huertos <b>sumó LiDAR</b>.",
+              "AlexNet: <b>2012</b>, error de ~26 % a <b>16 %</b>."
             ]
           }
         ]
