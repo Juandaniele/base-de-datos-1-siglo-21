@@ -4,7 +4,7 @@
     {
       "name": "study-os",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "Sistema_Estudio_Interactivo"],
+      "runtimeArgs": ["servidor_local.py", "8080"],
       "port": 8080
     }
   ]

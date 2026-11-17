@@ -61095,6 +61095,15 @@ window.STUDY_SYSTEM_DATA = {
                   "<b>TP2 · P9:</b> En la fórmula ∀p [Piloto(p) ∧ HorasUltimos30Dias(p) &gt; 100] → NoAsignable(p), ¿qué tipo de elemento lógico es el símbolo ∀? <br><b>Respuesta correcta:</b> Un cuantificador universal, que expresa que la condición aplica a todos los pilotos que la satisfacen.",
                   "<b>TP2 · P10:</b> El sistema recibe que un piloto acumuló 110 horas, aplica la regla general y concluye que no puede ser asignado. ¿Qué estrategia de inferencia es? <br><b>Respuesta correcta:</b> Encadenamiento hacia adelante, ya que parte de los hechos disponibles y los usa para derivar conclusiones nuevas."
                 ]
+              },
+              {
+                "title": "Complemento: lo que preguntan los parciales (razonamiento y redes semánticas)",
+                "points": [
+                  "<b>Razonamiento:</b> es la facultad que permite <b>resolver problemas, extraer conclusiones y aprender de manera consciente</b>, estableciendo conexiones lógicas entre los conocimientos. No es almacenar datos ni repetir acciones mecánicamente.",
+                  "<b>Ventaja típica de las redes semánticas:</b> permiten <b>declarar importantes asociaciones en forma explícita</b>; las relaciones entre conceptos quedan a la vista en el grafo (nodos = conceptos, arcos = relaciones como es-un o parte-de).",
+                  "<b>Mejorar búsquedas con una red semántica</b> (caso de la enciclopedia en línea): <b>aumentar las conexiones lógicas entre conceptos relacionados</b>. Así la búsqueda recorre relaciones y devuelve resultados más precisos y relevantes, no solo coincidencias de texto.",
+                  "<b>Principal beneficio en una empresa con productos y clientes:</b> <b>relacionar conceptos</b> (productos, clientes) de modo que las conexiones lógicas faciliten las búsquedas en grandes bases de datos. Distractores típicos: comprimir la base, encriptar datos o reemplazar la base de datos (no son funciones de una red semántica)."
+                ]
               }
             ],
             "key_concepts": [
@@ -61161,6 +61170,10 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Encadenamiento hacia adelante / atrás",
                 "def": "Desde los hechos hacia conclusiones / desde una hipótesis hacia los hechos necesarios."
+              },
+              {
+                "term": "Razonamiento",
+                "def": "Facultad de resolver problemas, extraer conclusiones y aprender de manera consciente."
               }
             ],
             "exam_traps": [
@@ -61173,7 +61186,8 @@ window.STUDY_SYSTEM_DATA = {
               "Encadenamiento <b>hacia atrás</b> (hipótesis → hechos) es el eficiente en diagnóstico y el que usaba MYCIN.",
               "La inferencia es un proceso <b>sintáctico</b>; la lógica proposicional es <b>decidible</b>; SAT crece exponencialmente.",
               "Los tres tipos de conocimiento de un SBR: <b>declarativo, procedimental y de control</b>.",
-              "MYCIN: 1972, ≈600 reglas, 65 % vs. 42,5 % (1979), factor de certeza 0,85 en la regla de E. coli."
+              "MYCIN: 1972, ≈600 reglas, 65 % vs. 42,5 % (1979), factor de certeza 0,85 en la regla de E. coli.",
+              "Redes semánticas: su ventaja es <b>declarar asociaciones en forma explícita</b>; para mejorar búsquedas se <b>aumentan las conexiones lógicas</b> entre conceptos."
             ]
           },
           {
@@ -61878,6 +61892,17 @@ window.STUDY_SYSTEM_DATA = {
                   "<b>Encoder-decoder:</b> el encoder genera representaciones contextuales de la entrada; el decoder genera la salida token a token atendiendo a sí mismo y al encoder. Cada bloque tiene atención multicabeza, feedforward, normalización de capas y <b>conexiones residuales</b> (permiten gran profundidad).",
                   "<b>Variantes:</b> <b>solo-encoder</b> (BERT, RoBERTa) → <b>comprensión</b> (clasificar, extraer información); <b>solo-decoder</b> (GPT-4, Claude, LLaMA) → <b>generación</b> (texto, código, diálogo); <b>encoder-decoder</b> (T5, BART) → <b>transformar secuencias</b> (traducción, resumen, preguntas y respuestas)."
                 ]
+              },
+              {
+                "title": "Complemento: lo que preguntan los parciales (neurona biológica y diseño de un perceptrón)",
+                "points": [
+                  "<b>Potencial de reposo y umbral de disparo:</b> la neurona en reposo está polarizada (alrededor de <b>−70 mV</b>). Cuando se producen <b>suficientes excitaciones</b>, el potencial sube por encima del <b>umbral de disparo, que es de −45 mV</b>, y se genera el impulso.",
+                  "<b>Potencial de acción:</b> se dispara por la <b>despolarización de la membrana celular cuando un estímulo alcanza el umbral necesario</b>. Es «todo o nada»: si no llega al umbral, no hay impulso. Es el equivalente biológico de la función de activación con umbral de una neurona artificial.",
+                  "<b>Mecanismos biológicos que mejoran la transmisión</b> (y su análogo artificial): <b>mielina</b> = recubrimiento del axón que <b>aumenta la velocidad de transmisión</b> de las señales; <b>plasticidad sináptica</b> = <b>fortalecer o debilitar conexiones según la actividad</b> (≈ ajustar los pesos); <b>poda sináptica</b> = <b>eliminar conexiones inactivas</b> para optimizar la red; y <b>ajustar dinámicamente la fuerza de las conexiones</b> para adaptarse a los cambios.",
+                  "<b>Qué hay que conocer para definir la arquitectura inicial</b> de una red de aprendizaje supervisado: <b>cantidad de señales de entrada</b>, <b>cantidad de señales de salida</b> y <b>tipo de salidas (digitales o analógicas)</b>. Con eso se fija cuántas neuronas de entrada y de salida tiene y qué activación usa la salida. No importan el lenguaje ni el procesador.",
+                  "<b>Ejemplo: perceptrón para leer dígitos de un código de barras «39»</b> (doce barras blancas o negras): las entradas deben coincidir con las señales a reconocer → <b>12 entradas digitales</b> (cada barra es blanca o negra); la salida es <b>un único valor entre 0 y 9</b> (el dígito) → <b>una salida analógica</b>.",
+                  "<b>Más datos y regularización:</b> si la precisión es baja (<b>subajuste</b>), conviene <b>aumentar los datos de entrenamiento</b>; los datos de <b>validación no se usan para entrenar</b>. Para mejorar en general: regularización, aumento de datos, más datos y redes más profundas para relaciones complejas. Limitar neuronas sin criterio puede empeorar el modelo."
+                ]
               }
             ],
             "key_concepts": [
@@ -61972,6 +61997,22 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "Solo-encoder / solo-decoder",
                 "def": "BERT para comprensión; GPT, Claude o LLaMA para generación."
+              },
+              {
+                "term": "Umbral de disparo",
+                "def": "−45 mV; el reposo ronda los −70 mV."
+              },
+              {
+                "term": "Despolarización",
+                "def": "Cambio de potencial de la membrana que, al superar el umbral, dispara el potencial de acción."
+              },
+              {
+                "term": "Mielina / plasticidad / poda",
+                "def": "Más velocidad / ajustar la fuerza de las conexiones / eliminar conexiones inactivas."
+              },
+              {
+                "term": "Arquitectura inicial de una red",
+                "def": "Se define con la cantidad de entradas, la cantidad de salidas y el tipo de salida."
               }
             ],
             "exam_traps": [
@@ -61990,7 +62031,10 @@ window.STUDY_SYSTEM_DATA = {
               "Early stopping se dispara cuando sube el error de <b>validación</b>, no el de entrenamiento.",
               "Un filtro 3×3 tiene <b>9 parámetros</b> sin importar el tamaño de la imagen.",
               "Transformers: <b>2017</b>, sin recurrencia, <b>procesan en paralelo</b>; LSTM: <b>1997</b>.",
-              "BERT es <b>solo-encoder</b> (comprensión); GPT es <b>solo-decoder</b> (generación); T5 es encoder-decoder."
+              "BERT es <b>solo-encoder</b> (comprensión); GPT es <b>solo-decoder</b> (generación); T5 es encoder-decoder.",
+              "Umbral de disparo = <b>−45 mV</b> (no −70 mV, que es el reposo).",
+              "Código de barras «39» con 12 barras → <b>12 entradas digitales y 1 salida analógica</b>.",
+              "Mielina = <b>velocidad</b>; plasticidad = <b>fortalecer o debilitar</b>; poda = <b>eliminar inactivas</b>."
             ]
           },
           {
@@ -62902,6 +62946,19 @@ window.STUDY_SYSTEM_DATA = {
                   "<b>Control:</b> el controlador convierte la trayectoria en órdenes a los actuadores (en un robot diferencial, la velocidad de cada rueda). Los sensores siguen informando para corregir.",
                   "Es un <b>ciclo permanente</b> de <b>percepción, estimación, decisión y acción</b>, no pasos aislados. En ROS cada función es un nodo que coopera por tópicos, servicios y actions. ROS <b>no reemplaza</b> los algoritmos: da la <b>infraestructura para integrarlos</b>."
                 ]
+              },
+              {
+                "title": "Complemento: lo que preguntan los parciales (programación de robots, sensores e imagen)",
+                "points": [
+                  "<b>Programación visual</b> (bloques, tipo Scratch): es popular en la robótica educativa porque <b>permite a los principiantes programar robots sin conocer sintaxis complejas</b>. No mejora la precisión de los sensores.",
+                  "<b>Programación basada en eventos:</b> el robot <b>reacciona inmediatamente</b> a los cambios del entorno (p. ej., un robot meteorológico que ajusta su comportamiento según el clima). La <b>secuencial</b> ejecuta siempre las mismas instrucciones en orden y no tiene esa flexibilidad.",
+                  "<b>Eventos y paralelismo:</b> es <b>FALSO</b> que un sistema basado en eventos no pueda hacer varias tareas en paralelo: puede atender varios eventos de forma concurrente (callbacks, nodos independientes en ROS). El que ejecuta un paso por vez es el enfoque secuencial.",
+                  "<b>Bibliotecas predefinidas:</b> su ventaja es <b>reutilizar código</b> y así implementar funcionalidades avanzadas <b>sin desarrollar los algoritmos desde cero</b> (por ejemplo, paquetes de ROS u OpenCV).",
+                  "<b>Sensores de fuerza:</b> son esenciales en la manipulación porque permiten <b>ajustar la presión</b> sobre los objetos y <b>evitar dañarlos</b> (VERDADERO).",
+                  "<b>RFID (radiofrecuencia):</b> en una cinta transportadora permite <b>detectar la llegada del producto e identificarlo con el mismo medio</b> (lee su etiqueta). Una barrera óptica detecta presencia pero <b>no identifica</b>.",
+                  "<b>Imagen digital:</b> es una matriz; cada <b>píxel</b> tiene dos tipos de información: <b>posición (fila, columna)</b> y <b>amplitud (nivel de gris o composición del color)</b>.",
+                  "<b>Sensor vs. actuador:</b> el <b>sensor</b> detecta cambios del entorno y los convierte en <b>señales eléctricas</b>; el actuador hace lo inverso (convierte comandos en movimiento)."
+                ]
               }
             ],
             "key_concepts": [
@@ -62988,6 +63045,18 @@ window.STUDY_SYSTEM_DATA = {
               {
                 "term": "DDS",
                 "def": "Descubrimiento distribuido de ROS 2; reemplaza al ROS Master sin punto único de falla."
+              },
+              {
+                "term": "Programación basada en eventos",
+                "def": "Reacciona de inmediato a cambios del entorno; puede atender eventos en paralelo."
+              },
+              {
+                "term": "RFID",
+                "def": "Detecta e identifica un objeto con el mismo medio (etiqueta de radiofrecuencia)."
+              },
+              {
+                "term": "Píxel",
+                "def": "Posición (fila, columna) + amplitud (nivel de gris o color)."
               }
             ],
             "exam_traps": [
@@ -63007,7 +63076,10 @@ window.STUDY_SYSTEM_DATA = {
               "Los ultrasónicos no dependen de la luz, pero sí de la <b>temperatura</b> (velocidad del sonido).",
               "El giroscopio <b>deriva</b>; se combina con el acelerómetro mediante EKF o filtro complementario.",
               "La primera versión del tractor de John Deere usaba <b>casi solo cámaras</b>; en huertos <b>sumó LiDAR</b>.",
-              "AlexNet: <b>2012</b>, error de ~26 % a <b>16 %</b>."
+              "AlexNet: <b>2012</b>, error de ~26 % a <b>16 %</b>.",
+              "Programación visual → <b>principiantes sin sintaxis compleja</b> (no mejora sensores).",
+              "«Basada en eventos no puede hacer tareas en paralelo» → <b>FALSO</b>.",
+              "Detectar <b>e identificar</b> con un solo medio → <b>RFID</b>, no barrera óptica."
             ]
           }
         ]

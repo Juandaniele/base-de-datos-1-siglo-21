@@ -36,7 +36,10 @@
     bankUserSelections: {}, // qid -> array of selected opt indices
     bankEvaluated: {},      // qid -> boolean
     bankRevealed: {},       // qid -> boolean
-    bankAllRevealed: false
+    bankAllRevealed: false,
+    // Temario state
+    theoryModule: 'ALL',
+    theoryLecture: 'ALL'
   };
 
   window.App = {
@@ -64,6 +67,8 @@
     applyBankFilters: applyBankFilters,
     onBankModuleChange: onBankModuleChange,
     setQuickPillFilter: setQuickPillFilter,
+    // Temario
+    setTheoryFilter: setTheoryFilter,
     selectBankOption: selectBankOption,
     checkMultipleBankQuestion: checkMultipleBankQuestion,
     resetBankQuestion: resetBankQuestion,
@@ -109,6 +114,7 @@
   // =========================================================================
   function switchSubject(subjectId, update3D = true) {
     if (!window.STUDY_SYSTEM_DATA || !window.STUDY_SYSTEM_DATA[subjectId]) return;
+    if (state.currentSubject !== subjectId) { state.theoryModule = 'ALL'; state.theoryLecture = 'ALL'; }
     state.currentSubject = subjectId;
     localStorage.setItem('study_subject', subjectId);
 
@@ -297,12 +303,49 @@
   // =========================================================================
   // RENDERERS: THEME & RESÚMENES
   // =========================================================================
+  function setTheoryFilter(mod, lec) {
+    state.theoryModule = mod || 'ALL';
+    state.theoryLecture = lec || 'ALL';
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    if (sub) renderTheory(sub);
+    const el = document.getElementById('theoryContent');
+    if (el) el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   function renderTheory(sub) {
     const el = document.getElementById('theoryContent');
     if (!el) return;
 
-    let html = '';
-    sub.modules.forEach(mod => {
+    // Si el módulo/lectura elegidos no existen en esta materia, volver a "Todos"
+    const selMod = sub.modules.find(m => m.id === state.theoryModule);
+    if (!selMod) { state.theoryModule = 'ALL'; state.theoryLecture = 'ALL'; }
+    else if (!selMod.lectures.some(l => l.id === state.theoryLecture)) state.theoryLecture = 'ALL';
+
+    const shortName = name => String(name).replace(/^Módulo\s*\d+\s*:\s*/i, '').split(',')[0].trim();
+    let html = `
+      <div class="theory-filter" style="background: var(--bg-primary); padding: 0.75rem 0 1rem; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); font-weight: 800; margin-bottom: 0.5rem;">📚 Elegí el módulo</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          <button type="button" class="bank-pill-btn ${state.theoryModule === 'ALL' ? 'active' : ''}" onclick="App.setTheoryFilter('ALL', 'ALL')">Todos</button>
+          ${sub.modules.map(m => `
+            <button type="button" class="bank-pill-btn ${state.theoryModule === m.id ? 'active' : ''}" onclick="App.setTheoryFilter('${m.id}', 'ALL')" title="${m.name.replace(/"/g, '&quot;')}">
+              ${m.id} · ${shortName(m.name)}
+            </button>`).join('')}
+        </div>
+        ${selMod && state.theoryModule !== 'ALL' ? `
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem;">
+            <button type="button" class="bank-pill-btn ${state.theoryLecture === 'ALL' ? 'active' : ''}" onclick="App.setTheoryFilter('${selMod.id}', 'ALL')">Todas las lecturas</button>
+            ${selMod.lectures.map(l => `
+              <button type="button" class="bank-pill-btn ${state.theoryLecture === l.id ? 'active' : ''}" onclick="App.setTheoryFilter('${selMod.id}', '${l.id}')" title="${l.title.replace(/"/g, '&quot;')}">
+                ${l.id} · ${l.title.replace(/^Lectura\s*\d+\s*:\s*/i, '').replace(/\s*\(.*\)\s*$/, '')}
+              </button>`).join('')}
+          </div>` : ''}
+      </div>`;
+
+    const modules = state.theoryModule === 'ALL' ? sub.modules : sub.modules.filter(m => m.id === state.theoryModule);
+    modules.forEach(mod => {
+      const lectures = state.theoryLecture === 'ALL' ? mod.lectures : mod.lectures.filter(l => l.id === state.theoryLecture);
+      mod = Object.assign({}, mod, { lectures: lectures });
       html += `
         <div class="module-section" style="margin-bottom: 2.5rem;">
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">

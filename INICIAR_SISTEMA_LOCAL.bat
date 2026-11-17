@@ -8,5 +8,5 @@ echo.
 echo Servidor local corriendo en: http://localhost:8080
 echo.
 start http://localhost:8080
-python -m http.server 8080 --directory "%~dp0Sistema_Estudio_Interactivo"
+python "%~dp0servidor_local.py" 8080
 pause
