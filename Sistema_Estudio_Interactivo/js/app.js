@@ -856,10 +856,17 @@
     container.innerHTML = filtered.map(q => renderSingleBankCard(q)).join('');
   }
 
+  // La justificación se muestra si el usuario la abrió/cerró a mano; si no, se abre sola
+  // al responder en las preguntas que tienen material de refuerzo (q.material).
+  function isCardRevealed(q) {
+    if (state.bankRevealed[q.id] !== undefined) return !!state.bankRevealed[q.id];
+    return state.bankAllRevealed || (!!state.bankEvaluated[q.id] && !!q.material);
+  }
+
   function renderSingleBankCard(q) {
     const userSel = state.bankUserSelections[q.id] || [];
     const isEvaluated = !!state.bankEvaluated[q.id];
-    const isRevealed = !!state.bankRevealed[q.id] || state.bankAllRevealed;
+    const isRevealed = isCardRevealed(q);
     const isMultiple = q.kind === 'multiple';
 
     // Check correctness if evaluated
@@ -925,10 +932,15 @@
               optClass += ' selected';
             }
 
+            // "Por qué no": visible en las opciones incorrectas cuando la justificación está abierta
+            const whyNot = (opt.why_not && !opt.is_correct && (isRevealed || (isEvaluated && isSelected)))
+              ? `<span style="display: block; margin-top: 0.35rem; font-size: 0.82rem; font-weight: 500; color: ${isSelected && isEvaluated ? '#fca5a5' : 'var(--text-muted)'};">✖ Por qué no: ${opt.why_not}</span>`
+              : '';
+
             return `
               <div class="${optClass}" onclick="App.selectBankOption(${q.id}, ${opt.index})">
                 <span class="bank-opt-indicator">${indicatorContent}</span>
-                <span style="flex: 1; line-height: 1.4;">${opt.text}</span>
+                <span style="flex: 1; line-height: 1.4;">${opt.text}${whyNot}</span>
                 ${badgeHtml}
               </div>
             `;
@@ -979,7 +991,14 @@
             <strong style="color: var(--accent); font-size: 0.9rem;">Respuesta Oficial Siglo 21:</strong> 
             <span style="color: var(--text-main); font-weight: 700; margin-left: 0.3rem;">${q.correct_answers ? q.correct_answers.join(' • ') : ''}</span>
           </div>
+          ${q.material ? `<strong style="color: var(--accent); font-size: 0.85rem; display: block; margin-top: 0.6rem;">✔ Por qué es correcta:</strong>` : ''}
           <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-top: 0.4rem;">${q.explanation || ''}</p>
+          ${q.material ? `
+            <div style="margin-top: 0.75rem; padding: 0.6rem 0.85rem; background: rgba(168, 85, 247, 0.10); border-left: 3px solid #a855f7; border-radius: 6px; font-size: 0.85rem; line-height: 1.5;">
+              <strong style="color: #c084fc;">📖 Del material:</strong>
+              <span style="color: var(--text-main);">${q.material}</span>
+            </div>
+          ` : ''}
           ${q.exam_tip ? `
             <div style="margin-top: 0.75rem; padding: 0.6rem 0.85rem; background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; border-radius: 6px; color: #fbbf24; font-size: 0.85rem;">
               <strong>💡 Tip de Examen:</strong> ${q.exam_tip}
@@ -1080,12 +1099,10 @@
   }
 
   function toggleAnswer(qid) {
-    state.bankRevealed[qid] = !state.bankRevealed[qid];
     const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
-    if (sub && sub.questions) {
-      const q = sub.questions.find(item => item.id === qid);
-      if (q) updateCardDOM(q);
-    }
+    const q = sub && sub.questions ? sub.questions.find(item => item.id === qid) : null;
+    state.bankRevealed[qid] = q ? !isCardRevealed(q) : !state.bankRevealed[qid];
+    if (q) updateCardDOM(q);
   }
 
   function toggleAllBankAnswers() {
