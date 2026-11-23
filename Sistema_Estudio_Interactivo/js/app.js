@@ -693,6 +693,8 @@
     ING_PRE2025_A: 'Studocu · Preguntero Ing. SW 2025',
     ING_PARCIAL2023: 'Studocu · Parcial 1 2023',
     DAYPO_IA_P1: 'Daypo · IA Siglo XXI Primer Parcial (2024)',
+    DAYPO_ING_P2: 'Daypo · Ing. SW 2do Parcial (recopilación 2023–2026)',
+    STUDOCU_ING_P2_2024: 'Studocu · Ing. SW Parcial 2 (2024)',
     STUDOCU_IA_P2_NOV2025: 'Studocu · IA Parcial 2 (noviembre 2025)',
     STUDOCU_IA_P2_EXAMEN: 'Studocu · IA Parcial 2 – examen corregido (4/11/2025)',
     OTRAS: 'Banco de lecturas y casos'
@@ -725,11 +727,17 @@
       return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
     });
     let html = '<option value="ALL">Todas las fuentes (' + questions.length + ')</option>';
+    const viejas = questions.filter(q => q.off_syllabus).length;
+    if (viejas) {
+      html += '<option value="EN_MATERIAL">Solo temas del material (' + (questions.length - viejas) + ')</option>';
+      html += '<option value="VIEJAS">Posibles preguntas viejas, fuera del material (' + viejas + ')</option>';
+    }
     keys.forEach(k => {
       html += '<option value="' + k + '">' + (SOURCE_LABELS[k] || k) + ' (' + counts[k] + ')</option>';
     });
     sel.innerHTML = html;
-    if (state.bankSourceFilter !== 'ALL' && !counts[state.bankSourceFilter]) state.bankSourceFilter = 'ALL';
+    const special = state.bankSourceFilter === 'EN_MATERIAL' || state.bankSourceFilter === 'VIEJAS';
+    if (state.bankSourceFilter !== 'ALL' && !counts[state.bankSourceFilter] && !(special && viejas)) state.bankSourceFilter = 'ALL';
     sel.value = state.bankSourceFilter || 'ALL';
   }
 
@@ -786,7 +794,9 @@
       // Kind filter
       if (kindVal !== 'ALL' && q.kind !== kindVal) return false;
       // Source filter
-      if (sourceVal !== 'ALL' && questionSource(q) !== sourceVal) return false;
+      if (sourceVal === 'EN_MATERIAL') { if (q.off_syllabus) return false; }
+      else if (sourceVal === 'VIEJAS') { if (!q.off_syllabus) return false; }
+      else if (sourceVal !== 'ALL' && questionSource(q) !== sourceVal) return false;
 
       return true;
     });
@@ -884,6 +894,7 @@
             </span>
             ${q.lecture_name ? `<span class="badge" style="background: rgba(255,255,255,0.04); color: var(--text-muted); font-size: 0.78rem;">${q.lecture_name}</span>` : ''}
             ${q.topic ? `<span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent); font-size: 0.78rem;">${q.topic}</span>` : ''}
+            ${q.off_syllabus ? `<span class="badge" title="El tema no está en las lecturas actuales: puede ser una pregunta de una versión anterior del curso. No se incluye en el simulador." style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.5); font-size: 0.78rem;">⚠ Posible pregunta vieja (fuera del material)</span>` : ''}
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center;">
             ${isEvaluated ? (isAllCorrect ? `
@@ -1133,7 +1144,8 @@
   // =========================================================================
   function startExam(count = 20) {
     const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
-    const pool = [...(sub.questions || [])];
+    // El simulador solo usa preguntas de temas que están en el material actual
+    const pool = (sub.questions || []).filter(q => !q.off_syllabus);
 
     if (pool.length === 0) {
       alert('No hay preguntas disponibles para esta materia.');
