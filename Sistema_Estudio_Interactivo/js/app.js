@@ -839,6 +839,8 @@
     } else if (sortVal === 'kind') {
       filtered.sort((a, b) => (a.kind || '').localeCompare(b.kind || '') || (a.id || 0) - (b.id || 0));
     }
+    // Las posibles preguntas viejas (fuera del material) siempre van al final, manteniendo el orden elegido
+    filtered = filtered.filter(q => !q.off_syllabus).concat(filtered.filter(q => q.off_syllabus));
 
     // Update count badge
     if (countBadge) {
