@@ -57,6 +57,7 @@
     filterFlashcards: filterFlashcards,
     // Exam
     startExam: startExam,
+    startPracticeExam: startPracticeExam,
     selectExamOption: selectExamOption,
     nextExamQuestion: nextExamQuestion,
     prevExamQuestion: prevExamQuestion,
@@ -148,6 +149,7 @@
     renderQuestionsBank(sub);
     setupSubject3D(sub);
     renderInteractiveLabs(sub);
+    renderPracticeExams(sub);
 
     // Update 3D Visualizer
     if (update3D && window.StudyVisualizer) {
@@ -1156,7 +1158,49 @@
 
     // Shuffle questions
     pool.sort(() => Math.random() - 0.5);
-    state.examQuestions = pool.slice(0, Math.min(count, pool.length));
+    state.examPracticeId = null;
+    launchExam(pool.slice(0, Math.min(count, pool.length)));
+  }
+
+  // Exámenes armados de antemano (p. ej. M3 + M4 con prioridad a las preguntas más nuevas)
+  function practiceScoreKey(id) { return 'practice_exam_' + id; }
+
+  function renderPracticeExams(sub) {
+    const box = document.getElementById('practiceExamsBox');
+    if (!box) return;
+    const exams = (sub && sub.practice_exams) || [];
+    if (!exams.length) { box.innerHTML = ''; return; }
+    const buttons = exams.map((ex, i) => {
+      let last = null;
+      try { last = JSON.parse(localStorage.getItem(practiceScoreKey(ex.id)) || 'null'); } catch (e) { last = null; }
+      const scoreTxt = last ? `<span style="font-size: 0.75rem; color: ${last.pct >= 60 ? '#34d399' : '#f87171'};">Último: ${last.pct}% · Mejor: ${last.best}%</span>`
+                            : '<span style="font-size: 0.75rem; color: var(--text-muted);">Sin hacer</span>';
+      return `<button class="btn btn-outline" onclick="App.startPracticeExam(${i})" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.15rem; padding: 0.6rem 0.8rem; text-align: left;">
+                <span style="font-weight: 700;">${ex.title}</span>${scoreTxt}
+              </button>`;
+    }).join('');
+    box.innerHTML = `
+      <div style="font-weight: 800; color: var(--accent); margin-bottom: 0.35rem;">📝 Exámenes de práctica M3 + M4 (2.º parcial)</div>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">
+        ${exams.length} exámenes de 20 preguntas, sin repetir preguntas entre ellos. Mezclan las 8 lecturas de los módulos 3 y 4 y priorizan las preguntas más nuevas (Daypo 2023–2026, después el preguntero 2025). No incluyen las posibles preguntas viejas.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.5rem;">${buttons}</div>`;
+  }
+
+  function startPracticeExam(i) {
+    const sub = window.STUDY_SYSTEM_DATA[state.currentSubject];
+    const ex = (sub.practice_exams || [])[i];
+    if (!ex) return;
+    const byId = {};
+    (sub.questions || []).forEach(q => { byId[q.id] = q; });
+    const qs = ex.question_ids.map(id => byId[id]).filter(Boolean);
+    if (!qs.length) return;
+    state.examPracticeId = ex.id;
+    launchExam(qs);
+  }
+
+  function launchExam(questions) {
+    state.examQuestions = questions;
     state.currentExamIndex = 0;
     state.userAnswers = {};
     state.examActive = true;
@@ -1260,17 +1304,43 @@
 
     // Calculate score
     let correctCount = 0;
-    state.examQuestions.forEach(q => {
+    const wrong = [];
+    state.examQuestions.forEach((q, idx) => {
       const user = (state.userAnswers[q.id] || []).slice().sort();
       const actual = (q.correct_indices || []).slice().sort();
       if (JSON.stringify(user) === JSON.stringify(actual)) {
         correctCount++;
+      } else {
+        wrong.push({ q, idx, user });
       }
     });
 
     const total = state.examQuestions.length;
     const scorePct = Math.round((correctCount / total) * 100);
     const passed = scorePct >= 60;
+
+    if (state.examPracticeId) {
+      try {
+        const key = practiceScoreKey(state.examPracticeId);
+        const prev = JSON.parse(localStorage.getItem(key) || 'null');
+        localStorage.setItem(key, JSON.stringify({ pct: scorePct, best: Math.max(scorePct, prev ? prev.best : 0) }));
+      } catch (e) { /* sin almacenamiento: no se guarda la nota */ }
+      renderPracticeExams(window.STUDY_SYSTEM_DATA[state.currentSubject]);
+    }
+
+    const review = document.getElementById('examReviewBox');
+    if (review) {
+      const optText = (q, list) => list.length ? list.map(i => ((q.options.find(o => o.index === i) || {}).text || '')).join(' / ') : '(sin responder)';
+      review.innerHTML = !wrong.length ? '' : `
+        <h3 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 0.75rem;">❌ Para repasar (${wrong.length})</h3>
+        ${wrong.map(w => `
+          <div style="border-top: 1px solid var(--border); padding: 0.75rem 0; font-size: 0.88rem;">
+            <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem;">${w.idx + 1}. ${w.q.prompt} <span style="font-size: 0.72rem; color: var(--text-muted);">(#${w.q.id} · ${w.q.module} ${w.q.lecture})</span></div>
+            <div style="color: #f87171;">✖ Tu respuesta: ${optText(w.q, w.user)}</div>
+            <div style="color: #34d399;">✔ Correcta: ${optText(w.q, w.q.correct_indices || [])}</div>
+            ${w.q.explanation ? `<div style="color: var(--text-muted); margin-top: 0.3rem;">${w.q.explanation}</div>` : ''}
+          </div>`).join('')}`;
+    }
 
     // Show Results
     document.getElementById('examRunnerCard').style.display = 'none';
