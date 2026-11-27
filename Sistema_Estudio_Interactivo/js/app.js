@@ -58,6 +58,8 @@
     // Exam
     startExam: startExam,
     startPracticeExam: startPracticeExam,
+    checkExamQuestion: checkExamQuestion,
+    setExamInstant: setExamInstant,
     selectExamOption: selectExamOption,
     nextExamQuestion: nextExamQuestion,
     prevExamQuestion: prevExamQuestion,
@@ -1166,6 +1168,8 @@
   function practiceScoreKey(id) { return 'practice_exam_' + id; }
 
   function renderPracticeExams(sub) {
+    const tgl = document.getElementById('examInstantToggle');
+    if (tgl) tgl.checked = examInstantPref();
     const box = document.getElementById('practiceExamsBox');
     if (!box) return;
     const exams = (sub && sub.practice_exams) || [];
@@ -1199,8 +1203,32 @@
     launchExam(qs);
   }
 
+  function examInstantPref() {
+    try { return localStorage.getItem('exam_instant') !== '0'; } catch (e) { return true; }
+  }
+
+  function setExamInstant(on) {
+    try { localStorage.setItem('exam_instant', on ? '1' : '0'); } catch (e) { /* sin almacenamiento */ }
+  }
+
+  function isAnswerCorrect(q, answer) {
+    const user = (answer || []).slice().sort();
+    const actual = (q.correct_indices || []).slice().sort();
+    return JSON.stringify(user) === JSON.stringify(actual);
+  }
+
+  function checkExamQuestion() {
+    const q = state.examQuestions[state.currentExamIndex];
+    if (!q || !(state.userAnswers[q.id] || []).length) return;
+    state.examChecked[q.id] = true;
+    renderCurrentExamQuestion();
+  }
+
   function launchExam(questions) {
     state.examQuestions = questions;
+    const tgl = document.getElementById('examInstantToggle');
+    state.examInstant = tgl ? tgl.checked : examInstantPref();
+    state.examChecked = {};
     state.currentExamIndex = 0;
     state.userAnswers = {};
     state.examActive = true;
@@ -1246,16 +1274,62 @@
       kindBadge.innerText = q.kind === 'vf' ? 'Verdadero o Falso' : (q.kind === 'multiple' ? 'Selección Múltiple' : 'Opción Simple');
     }
 
+    const checked = !!(state.examInstant && state.examChecked && state.examChecked[q.id]);
+    const answer = state.userAnswers[q.id] || [];
     const optionsContainer = document.getElementById('examOptionsContainer');
     optionsContainer.innerHTML = q.options.map(opt => {
-      const selected = (state.userAnswers[q.id] || []).includes(opt.index);
+      const selected = answer.includes(opt.index);
+      let cls = selected ? 'selected' : '';
+      let mark = '';
+      if (checked) {
+        cls = 'locked';
+        if (opt.is_correct) { cls += ' is-correct'; mark = ' ✔'; }
+        else if (selected) { cls += ' is-wrong'; mark = ' ✖'; }
+      }
       return `
-        <div class="exam-option ${selected ? 'selected' : ''}" onclick="App.selectExamOption(${opt.index})">
-          <input type="${q.kind === 'multiple' ? 'checkbox' : 'radio'}" name="examOpt" ${selected ? 'checked' : ''} />
-          <span>${opt.text}</span>
+        <div class="exam-option ${cls}" onclick="App.selectExamOption(${opt.index})">
+          <input type="${q.kind === 'multiple' ? 'checkbox' : 'radio'}" name="examOpt" ${selected ? 'checked' : ''} ${checked ? 'disabled' : ''} />
+          <span>${opt.text}<b>${mark}</b></span>
         </div>
       `;
     }).join('');
+
+    // Corrección inmediata: botón para múltiples y caja de justificación
+    const checkRow = document.getElementById('examCheckRow');
+    if (checkRow) checkRow.style.display = (state.examInstant && !checked && q.kind === 'multiple') ? 'block' : 'none';
+    const fb = document.getElementById('examFeedback');
+    if (fb) {
+      if (checked) {
+        const ok = isAnswerCorrect(q, answer);
+        const correctTxt = q.options.filter(o => o.is_correct).map(o => o.text).join(' / ');
+        const whyNot = q.options.filter(o => !o.is_correct && answer.includes(o.index) && o.why_not)
+          .map(o => `<div class="why-not">✖ <b>Por qué no «${o.text}»:</b> ${o.why_not}</div>`).join('');
+        fb.className = 'exam-feedback ' + (ok ? 'ok' : 'bad');
+        fb.innerHTML = `
+          <div style="font-weight: 800; font-size: 1rem; color: ${ok ? '#34d399' : '#f87171'}; margin-bottom: 0.35rem;">${ok ? '✔ ¡Correcta!' : '✖ Incorrecta'}</div>
+          ${ok ? '' : `<div style="margin-bottom: 0.35rem;"><b>Respuesta correcta:</b> ${correctTxt}</div>`}
+          ${q.explanation ? `<div><b>Justificación:</b> ${q.explanation}</div>` : ''}
+          ${whyNot}
+          ${q.exam_tip ? `<div class="why-not">💡 ${q.exam_tip}</div>` : ''}
+          <div class="why-not" style="opacity: 0.75;">#${q.id} · ${q.module || ''} ${q.lecture || ''}${q.lecture_name ? ' · ' + q.lecture_name : ''}</div>`;
+        fb.style.display = 'block';
+      } else {
+        fb.style.display = 'none';
+        fb.innerHTML = '';
+      }
+    }
+
+    // Marcador en vivo
+    const live = document.getElementById('examLiveScore');
+    if (live) {
+      if (state.examInstant) {
+        const ids = Object.keys(state.examChecked || {});
+        const good = state.examQuestions.filter(x => state.examChecked[x.id] && isAnswerCorrect(x, state.userAnswers[x.id])).length;
+        live.innerHTML = `<span style="color: #34d399; font-weight: 700;">✔ ${good}</span> · <span style="color: #f87171; font-weight: 700;">✖ ${ids.length - good}</span>`;
+      } else {
+        live.innerHTML = '';
+      }
+    }
 
     // Update buttons
     document.getElementById('btnExamPrev').disabled = state.currentExamIndex === 0;
@@ -1264,6 +1338,7 @@
 
   function selectExamOption(optIndex) {
     const q = state.examQuestions[state.currentExamIndex];
+    if (state.examInstant && state.examChecked && state.examChecked[q.id]) return; // ya corregida
     if (!state.userAnswers[q.id]) {
       state.userAnswers[q.id] = [];
     }
@@ -1277,6 +1352,7 @@
       }
     } else {
       state.userAnswers[q.id] = [optIndex];
+      if (state.examInstant) state.examChecked[q.id] = true; // opción simple / V-F: se corrige al elegir
     }
 
     renderCurrentExamQuestion();

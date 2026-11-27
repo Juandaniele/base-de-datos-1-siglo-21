@@ -563,6 +563,15 @@
       background: var(--accent-glow);
       border-color: var(--accent);
     }
+    .exam-option.locked { cursor: default; }
+    .exam-option.locked:hover { background: rgba(255, 255, 255, 0.03); border-color: var(--border); }
+    .exam-option.is-correct, .exam-option.is-correct:hover { background: rgba(16, 185, 129, 0.16); border-color: #10b981; }
+    .exam-option.is-wrong, .exam-option.is-wrong:hover { background: rgba(239, 68, 68, 0.16); border-color: #ef4444; }
+    .exam-feedback { border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); }
+    .exam-feedback.ok { background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.45); }
+    .exam-feedback.bad { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.45); }
+    .exam-feedback b { color: var(--text-main); }
+    .exam-feedback .why-not { margin-top: 0.5rem; font-size: 0.85rem; }
 
     /* BANK QUESTION OPTIONS & INTERACTION */
     .bank-option {
@@ -836,6 +845,11 @@
           <button class="btn btn-primary" onclick="App.startExam(20)">Examen Oficial (20 Preguntas)</button>
         </div>
 
+        <label style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem; cursor: pointer;">
+          <input type="checkbox" id="examInstantToggle" checked onchange="App.setExamInstant(this.checked)" />
+          <span>Corregir cada pregunta al responder (muestra si está bien y la justificación)</span>
+        </label>
+
         <div id="practiceExamsBox" style="text-align: left; margin-bottom: 1.5rem;"></div>
 
         <div class="alert-box alert-tip" style="text-align: left; font-size: 0.85rem;">
@@ -854,6 +868,7 @@
           <div>
             <span id="examKindBadge" class="badge" style="background: var(--accent); color: #0f172a;">TIPO</span>
             <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 0.5rem;">Pregunta <strong id="examCurrentNum">1 de 20</strong></span>
+            <span id="examLiveScore" style="font-size: 0.85rem; margin-left: 0.75rem;"></span>
           </div>
           <div style="font-size: 1.1rem; font-weight: 800; color: #fbbf24; font-family: monospace;">
             ⏳ <span id="examTimerDisplay">45:00</span>
@@ -862,7 +877,11 @@
 
         <h3 id="examQuestionText" style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.5;">Enunciado...</h3>
 
-        <div id="examOptionsContainer" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;"></div>
+        <div id="examOptionsContainer" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;"></div>
+        <div id="examCheckRow" style="display: none; margin-bottom: 1.25rem;">
+          <button class="btn btn-primary" onclick="App.checkExamQuestion()">✔ Comprobar respuesta</button>
+        </div>
+        <div id="examFeedback" class="exam-feedback" style="display: none;"></div>
 
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <button id="btnExamPrev" class="btn btn-outline" onclick="App.prevExamQuestion()">⬅️ Anterior</button>
@@ -1012,8 +1031,8 @@
   <!-- SCRIPTS -->
   <script src="js/three.min.js"></script>
   <script src="js/OrbitControls.js"></script>
-  <script src="js/subjects_data.js?v=20261119a"></script>
+  <script src="js/subjects_data.js?v=20261127a"></script>
   <script src="js/three_visualizers.js"></script>
-  <script src="js/app.js?v=20261119a"></script>
+  <script src="js/app.js?v=20261127a"></script>
 </body>
 </html>
