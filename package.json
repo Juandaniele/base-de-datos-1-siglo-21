@@ -1,0 +1,13 @@
+{
+  "name": "study-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "STUDY OS: plataforma de estudio para Base de Datos 1, Ingeniería de Software e Inteligencia Artificial (Universidad Siglo 21).",
+  "scripts": {
+    "dev": "http-server app -p 8080 -c-1 -o",
+    "start": "http-server app -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -91,39 +91,42 @@ Al seleccionar una materia, toda la plataforma se adapta de forma inmediata: pal
 
 ## 🚀 Cómo Ejecutar la Plataforma
 
-### Opción 1: Con el Lanzador Local Automático (Windows)
-Haz doble clic en:
-```bash
-INICIAR_SISTEMA_LOCAL.bat
-```
-El script levantará el servidor local en el puerto 8080 y abrirá automáticamente tu navegador en `http://localhost:8080`.
+Requisito: tener instalado [Node.js](https://nodejs.org) (cualquier versión LTS).
 
-### Opción 2: Modo 100% Offline (Sin Servidor)
-Puedes abrir directamente el archivo:
+```bash
+npm install     # solo la primera vez
+npm run dev     # levanta la web en http://localhost:8080 y abre el navegador
 ```
-Sistema_Estudio_Interactivo/index.html
-```
-en cualquier navegador moderno (Chrome, Edge, Brave, Firefox). Todo el código JavaScript, Three.js y OrbitControls está empaquetado de forma 100% local sin dependencias externas ni conexión a internet requerida.
+
+Es un servidor web común: queda andando hasta que lo cierres con `Ctrl + C` en la terminal, no se apaga por inactividad. En Windows también podés hacer doble clic en `INICIAR.bat`, que instala lo necesario la primera vez y levanta el sistema.
+
+El servidor no usa caché, así que si se actualizan las preguntas o los resúmenes alcanza con recargar la página (F5).
 
 ---
 
 ## 📦 Estructura del Proyecto
 
 ```
-├── Sistema_Estudio_Interactivo/
-│   ├── index.html                   # Shell SPA unificada con Hub Multi-Materia
-│   ├── js/
-│   │   ├── three.min.js             # Motor Three.js local
-│   │   ├── OrbitControls.js         # Controles orbitales de cámara 360°
-│   │   ├── subjects_data.js         # Base de datos global de las 3 materias (teoría, casos, preguntas)
-│   │   ├── three_visualizers.js     # Motor de 10 escenas 3D interactivas con raycasting
-│   │   └── app.js                   # Controlador de estado, simulador, flashcards y labs
-│   └── preguntas_parcial_1_siglo21.json # Dataset de 144 preguntas de BD
-├── Ingenieria/                      # PDFs oficiales de Ingeniería de Software (M1, M2, AP1, AP2, TP1, TP2)
-├── IA/                              # PDFs oficiales de Inteligencia Artificial (M1, M2, AP1, AP2, TP1, TP2)
-├── INICIAR_SISTEMA_LOCAL.bat        # Lanzador automático con 1 clic
+├── app/                             # La web (lo que sirve npm run dev)
+│   ├── index.html                   # SPA con el selector de materias
+│   └── js/
+│       ├── subjects_data.js         # Datos de las 3 materias: temario, resúmenes, casos y preguntas
+│       ├── app.js                   # Lógica: banco de preguntas, simulador, flashcards y labs
+│       ├── three_visualizers.js     # Escenas 3D interactivas
+│       ├── three.min.js             # Three.js local
+│       └── OrbitControls.js         # Controles de cámara 360°
+├── materiales/                      # PDFs de la cursada (lecturas, enunciados, resúmenes)
+│   ├── base-de-datos/
+│   ├── ingenieria-de-software/
+│   └── inteligencia-artificial/
+├── pregunteros/                     # Pregunteros originales (Daypo, JSON) usados para cargar el banco
+├── extras/db-visualizer/            # Proyecto aparte (React + Vite) para visualizar modelos de BD
+├── INICIAR.bat                      # Lanzador con doble clic (Windows)
+├── package.json
 └── README.md
 ```
+
+Los PDFs descargados de Studocu (traen el nombre y mail de quien los bajó) y los intentos de examen personales (`Examen_*.pdf`) quedan fuera de git; ver `.gitignore`.
 
 ---
 

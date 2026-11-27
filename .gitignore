@@ -17,3 +17,7 @@ desktop.ini
 
 # Agentes locales
 .agents/
+
+# Descargas de Studocu (traen el nombre y mail de quien las bajó) e intentos de examen personales
+materiales/**/\[studocu.com\]*
+materiales/**/Examen_*
